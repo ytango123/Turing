@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .wave-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="white" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 text-white">
+        <div class="flex flex-col items-center mb-10">
+            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold mb-2 text-center">图灵挑战</h1>
+            <p class="text-lg opacity-90 text-center mb-6">你能分辨出谁是AI吗？</p>
+        </div>
+        
+        <div class="text-center mb-8">
+            <p class="mb-4 text-sm opacity-80">通过聆听对话，判断对话者是人类还是AI</p>
+            <p class="mb-4 text-sm opacity-80">挑战你的感知能力，获得成就与荣誉</p>
+        </div>
+        
+        <button class="bg-white text-indigo-600 font-bold py-3 px-10 rounded-full text-lg shadow-lg transform transition hover:scale-105">
+            开始挑战
+        </button>
+        
+        <p class="mt-6 text-xs opacity-70">已有超过10,000人参与挑战</p>
+    </div>
+    
+    <div class="wave-animation"></div>
+</body>
+</html> 

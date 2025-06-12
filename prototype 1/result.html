@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断结果</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9fafb;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .progress-bar {
+            height: 4px;
+            background-color: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366F1, #8B5CF6);
+            border-radius: 2px;
+            width: 30%;
+        }
+        .result-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .result-icon.correct {
+            background: linear-gradient(135deg, #10B981, #34D399);
+            box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+        }
+        .result-icon.incorrect {
+            background: linear-gradient(135deg, #EF4444, #F87171);
+            box-shadow: 0 8px 16px rgba(239, 68, 68, 0.2);
+        }
+        .combo-badge {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            border-radius: 12px;
+            padding: 4px 12px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.2);
+        }
+        .message-bubble-a {
+            background-color: #e5e7eb;
+            border-radius: 18px 18px 18px 4px;
+            max-width: 80%;
+        }
+        .message-bubble-b {
+            background-color: #ede9fe;
+            border-radius: 18px 18px 4px 18px;
+            max-width: 80%;
+        }
+        .avatar-a {
+            background-color: #9ca3af;
+            color: white;
+        }
+        .avatar-b {
+            background-color: #8b5cf6;
+            color: white;
+        }
+        .ai-badge {
+            background-color: #ef4444;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 8px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+    </style>
+</head>
+<body class="p-6 pb-24">
+    <div class="max-w-md mx-auto">
+        <!-- 顶部导航 -->
+        <div class="flex items-center justify-between mb-6">
+            <button class="p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div>
+                <h1 class="text-lg font-bold text-gray-800">对话 3/10</h1>
+                <div class="combo-badge mt-1 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>连击 x3</span>
+                </div>
+            </div>
+            <div class="w-8"></div>
+        </div>
+        
+        <!-- 进度条 -->
+        <div class="mb-8">
+            <div class="flex justify-between text-sm text-gray-500 mb-2">
+                <span>挑战进度</span>
+                <span>3/10</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+        
+        <!-- 结果展示 -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="result-icon correct mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">判断正确！</h2>
+            <p class="text-gray-500 text-center">
+                你成功识别出了AI，获得<span class="text-indigo-600 font-bold">+2点</span>奖励
+            </p>
+        </div>
+        
+        <!-- 对话内容 -->
+        <div class="card p-4 mb-6">
+            <div class="flex mb-6">
+                <div class="w-8 h-8 rounded-full avatar-a flex items-center justify-center text-sm font-bold mr-2 relative">
+                    甲
+                </div>
+                <div class="message-bubble-a p-3">
+                    <p class="text-gray-800">今天天气真不错，你有什么计划吗？</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-end mb-6">
+                <div class="message-bubble-b p-3">
+                    <p class="text-gray-800">我打算去公园散步，也许再读一会书。你呢？</p>
+                </div>
+                <div class="w-8 h-8 rounded-full avatar-b flex items-center justify-center text-sm font-bold ml-2 relative">
+                    乙
+                    <span class="ai-badge">AI</span>
+                </div>
+            </div>
+            
+            <div class="flex mb-6">
+                <div class="w-8 h-8 rounded-full avatar-a flex items-center justify-center text-sm font-bold mr-2 relative">
+                    甲
+                </div>
+                <div class="message-bubble-a p-3">
+                    <p class="text-gray-800">我要去见朋友，我们计划一起去看电影。最近有部新上映的科幻片很受欢迎。</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-end">
+                <div class="message-bubble-b p-3">
+                    <p class="text-gray-800">听起来不错！希望你们玩得开心。什么电影？我也对科幻片很感兴趣。</p>
+                </div>
+                <div class="w-8 h-8 rounded-full avatar-b flex items-center justify-center text-sm font-bold ml-2 relative">
+                    乙
+                    <span class="ai-badge">AI</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI特征解析 -->
+        <div class="card p-4 mb-6">
+            <h3 class="font-bold text-gray-800 mb-3">AI特征解析</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>回答过于通用，缺乏个人偏好和具体细节</span>
+                </li>
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>语言表达过于完美，缺乏口语中常见的停顿和重复</span>
+                </li>
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>对科幻片的兴趣表达缺乏具体的电影名称或偏好</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- 底部按钮 -->
+        <button class="w-full bg-indigo-600 text-white py-3 rounded-full font-bold text-lg shadow-md">
+            下一题
+        </button>
+    </div>
+</body>
+</html> 
