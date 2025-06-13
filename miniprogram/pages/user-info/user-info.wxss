@@ -1,0 +1,72 @@
+.container {
+  padding: 48rpx 32rpx;
+}
+
+.back-button {
+  padding: 16rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.form-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.p-medium {
+  padding: 48rpx;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.option-card {
+  padding: 32rpx;
+  border: 4rpx solid #E5E7EB;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.option-card.selected {
+  border-color: #6366F1;
+  background-color: #EEF2FF;
+}
+
+.radio-button {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 4rpx solid #9CA3AF;
+  margin-right: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-button.selected {
+  border-color: #6366F1;
+}
+
+.radio-inner {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #6366F1;
+}
+
+.privacy-notice {
+  text-align: center;
+  font-size: 24rpx;
+  color: #9CA3AF;
+  margin-top: 32rpx;
+} 

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4948772 */
+  src: 
+       url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+       url('iconfont.woff?t=1749812134394') format('woff'),
+       url('iconfont.ttf?t=1749812134394') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-coin-fill:before {
+  content: "\e7b3";
+}
+
+.icon-check_circle_line:before {
+  content: "\e729";
+}
+
+.icon-magic_star_line:before {
+  content: "\e765";
+}
+
+.icon-medal_line:before {
+  content: "\e769";
+}
+
+.icon-star_line:before {
+  content: "\e7b6";
+}
+
+.icon-trophy_2_line:before {
+  content: "\e7c5";
+}
+
+.icon-flash_line:before {
+  content: "\e74d";
+}
+
+.icon-lock_line:before {
+  content: "\e764";
+}
+
+.icon-play_circle_line:before {
+  content: "\e790";
+}
+
+.icon-a-MATE_huaban1fuben118:before {
+  content: "\e60b";
+}
+

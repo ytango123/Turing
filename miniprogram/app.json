@@ -1,13 +1,42 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/welcome/welcome",
+    "pages/user-info/user-info",
+    "pages/game-home/game-home",
+    "pages/conversation/conversation",
+    "pages/result/result",
+    "pages/summary/summary",
+    "pages/profile/profile"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f9fafb",
+    "navigationBarTitleText": "图灵挑战",
+    "navigationBarTextStyle": "black"
   },
-  "componentFramework": "glass-easel",
-  "lazyCodeLoading": "requiredComponents"
-}
+  "tabBar": {
+    "custom": false,
+    "color": "#999999",
+    "selectedColor": "#6366F1",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/game-home/game-home",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/icons/profile.png",
+        "selectedIconPath": "assets/icons/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar"
+  }
+} 

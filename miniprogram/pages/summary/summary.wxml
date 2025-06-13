@@ -1,0 +1,112 @@
+<view class="container">
+  <!-- 装饰性彩带 -->
+  <view class="confetti-container">
+    <view class="confetti" wx:for="{{5}}" wx:key="index" style="left: {{index * 20}}%;"></view>
+  </view>
+  
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="挑战完成" 
+    left-arrow="{{false}}"
+    title-color="#1F2937"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  >
+    <view slot="left" class="custom-back-btn" bindtap="goBack">
+      <t-icon name="chevron-left" size="48rpx" color="#1F2937" />
+    </view>
+  </t-navbar>
+  
+  <!-- 成绩展示 -->
+  <view class="result-container mb-large">
+    <view class="trophy mb-medium">
+      <t-icon name="star" size="112rpx" color="#FFF" />
+    </view>
+    <view class="result-title mb-small">优秀的表现！</view>
+    <view class="result-desc mb-medium">
+      你在本轮挑战中获得了<text class="text-primary font-bold">{{correctRate}}</text>的正确率
+    </view>
+    
+    <view class="stats-container">
+      <view class="stat-item">
+        <view class="stat-value">{{pointsGained}}</view>
+        <view class="stat-label">获得点数</view>
+      </view>
+      
+      <view class="stat-item">
+        <view class="stat-value">{{maxCombo}}</view>
+        <view class="stat-label">最大连击</view>
+      </view>
+      
+      <view class="stat-item">
+        <view class="stat-value">{{percentile}}%</view>
+        <view class="stat-label">超过用户</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 等级进度 -->
+  <view class="card level-card mb-medium">
+    <view class="flex-between mb-medium">
+      <view class="level-title">你的等级</view>
+      <view class="level-badge">{{level}}</view>
+    </view>
+    
+    <view class="flex-start text-gray mb-small">
+      <text class="mr-small">{{totalPoints}}点</text>
+      <text class="dot mx-small">•</text>
+      <text>距离"{{nextLevel}}"还需{{pointsToNextLevel}}点</text>
+    </view>
+    
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{levelProgress}}%;"></view>
+    </view>
+    
+    <view class="level-up-notice" wx:if="{{hasLevelUp}}">
+      <t-icon name="check-circle" size="40rpx" color="#6366F1" />
+      <text class="level-up-text">恭喜！你已晋升为"{{level}}"，解锁了新的头像框！</text>
+    </view>
+  </view>
+  
+  <!-- 分析结果 -->
+  <view class="card analysis-card mb-medium">
+    <view class="analysis-title mb-medium">分析结果</view>
+    
+    <view class="analysis-desc mb-medium">
+      你在识别AI方面展现出了不错的敏锐度，尤其擅长发现AI回答中缺乏个人化细节的特征。继续提高你的观察力，下次可以尝试注意AI在情感表达上的微妙差异。
+    </view>
+    
+    <view class="skill-levels mb-small">
+      <view class="skill-level">
+        <view class="skill-bar good"></view>
+        <text class="skill-label">擅长</text>
+      </view>
+      <view class="skill-level">
+        <view class="skill-bar average"></view>
+        <text class="skill-label">一般</text>
+      </view>
+      <view class="skill-level">
+        <view class="skill-bar weak"></view>
+        <text class="skill-label">需提高</text>
+      </view>
+    </view>
+    
+    <view class="skills-grid">
+      <view class="skill-tag good">识别通用回答</view>
+      <view class="skill-tag good">发现逻辑矛盾</view>
+      <view class="skill-tag average">情感表达判断</view>
+      <view class="skill-tag weak">专业知识辨别</view>
+    </view>
+  </view>
+  
+  <!-- 分享和再来一轮按钮 -->
+  <button class="share-button mb-medium" bindtap="shareResults">
+    <t-icon name="share" size="40rpx" color="#FFF" class="mr-small" />
+    分享我的成绩
+  </button>
+  
+  <button class="full-width-button" bindtap="playAgain">
+    再来一轮
+  </button>
+</view> 

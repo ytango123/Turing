@@ -1,0 +1,285 @@
+.container {
+  padding: 0 32rpx;
+  padding-top: 10rpx;
+  padding-bottom: 96rpx;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-button {
+  padding: 16rpx;
+}
+
+.custom-back-btn {
+  padding: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 8rpx;
+}
+
+.combo-badge {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 24rpx;
+  padding: 8rpx 24rpx;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8rpx 16rpx rgba(239, 68, 68, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.combo-text {
+  margin-left: 8rpx;
+}
+
+.mb-small {
+  margin-bottom: 16rpx;
+}
+
+.mb-medium {
+  margin-bottom: 48rpx;
+}
+
+.mb-large {
+  margin-bottom: 64rpx;
+}
+
+.text-gray {
+  color: #6B7280;
+  font-size: 28rpx;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-icon {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32rpx;
+}
+
+.result-icon.correct {
+  background: linear-gradient(135deg, #10B981, #34D399);
+  box-shadow: 0 16rpx 32rpx rgba(16, 185, 129, 0.2);
+}
+
+.result-icon.incorrect {
+  background: linear-gradient(135deg, #EF4444, #F87171);
+  box-shadow: 0 16rpx 32rpx rgba(239, 68, 68, 0.2);
+}
+
+.result-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 16rpx;
+}
+
+.result-desc {
+  font-size: 32rpx;
+  color: #6B7280;
+  text-align: center;
+}
+
+.text-success {
+  color: #10B981;
+  font-weight: bold;
+}
+
+.text-error {
+  color: #EF4444;
+  font-weight: bold;
+}
+
+.dialogue-card {
+  padding: 32rpx;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 48rpx;
+  position: relative;
+}
+
+.message-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 48rpx;
+  position: relative;
+}
+
+.message-row:last-child,
+.message-row-reverse:last-child {
+  margin-bottom: 0;
+}
+
+.avatar-container {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.avatar-a {
+  background-color: #9ca3af;
+  margin-right: 16rpx;
+}
+
+.avatar-b {
+  background-color: #8b5cf6;
+  margin-left: 16rpx;
+}
+
+.ai-badge {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background-color: #ef4444;
+  color: white;
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 16rpx;
+  font-weight: bold;
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 24rpx;
+  border-radius: 36rpx;
+}
+
+.message-bubble-a {
+  background-color: #e5e7eb;
+  border-radius: 36rpx 36rpx 36rpx 8rpx;
+}
+
+.message-bubble-b {
+  background-color: #ede9fe;
+  border-radius: 36rpx 36rpx 8rpx 36rpx;
+}
+
+.ai-analysis-card {
+  padding: 32rpx;
+}
+
+.analysis-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.analysis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.analysis-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.analysis-icon {
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.analysis-text {
+  font-size: 28rpx;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* 连击提示样式 */
+.combo-notification {
+  position: fixed;
+  bottom: -100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 24rpx;
+  padding: 16rpx 32rpx;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8rpx 24rpx rgba(239, 68, 68, 0.3);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 100;
+}
+
+.combo-notification.show {
+  bottom: 120rpx;
+  opacity: 1;
+  animation: comboFadeInOut 3s ease forwards;
+}
+
+@keyframes comboFadeInOut {
+  0% {
+    bottom: -100rpx;
+    opacity: 0;
+  }
+  20% {
+    bottom: 120rpx;
+    opacity: 1;
+  }
+  80% {
+    bottom: 120rpx;
+    opacity: 1;
+  }
+  100% {
+    bottom: 120rpx;
+    opacity: 0;
+  }
+}
+
+/* 导航栏样式 */
+.t-navbar {
+  background: transparent !important;
+}
+
+/* 进度条样式 */
+.progress-bar {
+  width: 100%;
+  height: 16rpx;
+  background-color: #E5E7EB;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-radius: 8rpx;
+} 

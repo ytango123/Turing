@@ -1,10 +1,148 @@
 /**app.wxss**/
-.container {
+
+@import "./assets/iconfont/iconfont.wxss";
+
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.card {
+  background: white;
+  border-radius: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.05);
+}
+
+.level-badge {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-radius: 24rpx;
+  padding: 4rpx 20rpx;
+  color: white;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 12rpx;
+  background-color: #e5e7eb;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
   height: 100%;
+  background: linear-gradient(90deg, #6366F1, #8B5CF6);
+  border-radius: 6rpx;
+}
+
+.container {
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.flex-center {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
+}
+
+.text-primary {
+  color: #6366F1;
+}
+
+.text-secondary {
+  color: #8B5CF6;
+}
+
+.text-gray {
+  color: #6B7280;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mb-small {
+  margin-bottom: 16rpx;
+}
+
+.mb-medium {
+  margin-bottom: 32rpx;
+}
+
+.mb-large {
+  margin-bottom: 48rpx;
+}
+
+.mt-small {
+  margin-top: 16rpx;
+}
+
+.mt-medium {
+  margin-top: 32rpx;
+}
+
+.mt-large {
+  margin-top: 48rpx;
+}
+
+.full-width-button {
+  width: 100%;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #6366F1;
+  color: white;
+  font-weight: bold;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.combo-badge {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 24rpx;
+  padding: 8rpx 24rpx;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8rpx 16rpx rgba(239, 68, 68, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 导航栏样式 */
+.t-navbar {
+  --td-navbar-color: #1F2937;
+  --td-navbar-bg-color: #f9fafb;
+  margin-bottom: 16rpx;
+}
+
+.t-navbar__center-title {
+  font-weight: bold;
 } 

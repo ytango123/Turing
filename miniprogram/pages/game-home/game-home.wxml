@@ -1,0 +1,80 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  
+  <t-navbar 
+    title="首页" 
+    title-color="#ffffff"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  />
+  
+  <!-- 顶部用户信息 -->
+  <view class="card user-info-card mb-medium">
+    <view class="flex-start">
+      <view class="avatar mr-medium">
+        <text>{{userInitial}}</text>
+      </view>
+      <view class="flex-1">
+        <view class="flex-start mb-small">
+          <text class="username mr-small">{{username}}</text>
+          <view class="level-badge">{{level}}</view>
+        </view>
+        <view class="flex-start text-gray text-sm">
+          <text class="mr-small">{{points}}点</text>
+          <text class="dot mx-small">•</text>
+          <text>距离"{{nextLevel}}"还需{{pointsToNextLevel}}点</text>
+        </view>
+        <view class="progress-bar mt-small">
+          <view class="progress-bar-fill" style="width: {{levelProgress + '%'}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 游戏模式选择 -->
+  <view class="section-title mb-medium">挑战模式</view>
+  
+  <view class="game-modes mb-large">
+    <!-- 快速挑战 -->
+    <view class="game-card" bindtap="startQuickChallenge">
+      <view class="game-icon-container mr-medium" style="background-color: {{gameModes[0].bgColor}};">
+        <text class="iconfont icon-{{gameModes[0].icon}}" style="color: {{gameModes[0].color}}; font-size: 48rpx;"></text>
+      </view>
+      <view class="flex-1">
+        <view class="game-mode-title">{{gameModes[0].title}}</view>
+        <view class="game-mode-desc">{{gameModes[0].description}}</view>
+      </view>
+      <t-icon name="chevron-right" size="40rpx" color="#9CA3AF" />
+    </view>
+    
+    <!-- 高难模式 -->
+    <view class="game-card">
+      <view class="game-icon-container purple mr-medium" style="background-color: {{gameModes[1].bgColor}};">
+        <text class="iconfont icon-{{gameModes[1].icon}}" style="color: {{gameModes[1].color}}; font-size: 48rpx;"></text>
+      </view>
+      <view class="flex-1">
+        <view class="game-mode-title">{{gameModes[1].title}}</view>
+        <view class="game-mode-desc">{{gameModes[1].description}}</view>
+      </view>
+      <view class="coming-soon-tag">即将推出</view>
+    </view>
+  </view>
+  
+  <!-- 排行榜 -->
+  <view class="flex-between mb-medium">
+    <view class="section-title">排行榜</view>
+    <view class="view-all" bindtap="viewAllRankings">查看全部</view>
+  </view>
+  
+  <view class="card ranking-card">
+    <view class="ranking-item" wx:for="{{rankings}}" wx:key="index">
+      <view class="flex-start">
+        <view class="ranking-number {{index < 3 ? 'top-' + (index + 1) : ''}}" wx:if="{{item.rank !== 'you'}}">{{item.rank}}</view>
+        <view class="ranking-number you" wx:else>{{item.rank}}</view>
+        <text class="{{item.rank === 'you' ? 'text-primary font-bold' : ''}}">{{item.name}}</text>
+      </view>
+      <text class="{{item.rank === 'you' ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}点</text>
+    </view>
+  </view>
+</view> 

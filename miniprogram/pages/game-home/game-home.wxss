@@ -1,0 +1,189 @@
+.container {
+  padding: 0 32rpx;
+  padding-bottom: 32rpx;
+}
+
+.user-info-card {
+  padding: 32rpx;
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mr-small {
+  margin-right: 16rpx;
+}
+
+.mr-medium {
+  margin-right: 32rpx;
+}
+
+.mx-small {
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+}
+
+.mb-small {
+  margin-bottom: 8rpx;
+}
+
+.mb-medium {
+  margin-bottom: 32rpx;
+}
+
+.mb-large {
+  margin-bottom: 48rpx;
+}
+
+.mt-small {
+  margin-top: 8rpx;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.username {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.text-gray {
+  color: #6B7280;
+}
+
+.text-sm {
+  font-size: 24rpx;
+}
+
+.text-primary {
+  color: #6366F1;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.dot {
+  font-size: 20rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.game-modes {
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+
+.game-card {
+  border: 4rpx solid #E5E7EB;
+  border-radius: 32rpx;
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.game-card:active {
+  transform: scale(0.98);
+}
+
+.game-icon-container {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background-color: #EEF2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-icon-container.purple {
+  background-color: #F5F3FF;
+}
+
+.game-mode-title {
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #1F2937;
+}
+
+.game-mode-desc {
+  font-size: 28rpx;
+  color: #6B7280;
+}
+
+.coming-soon-tag {
+  padding: 8rpx 24rpx;
+  border-radius: 32rpx;
+  background-color: #F3F4F6;
+  font-size: 24rpx;
+  color: #6B7280;
+}
+
+.view-all {
+  font-size: 28rpx;
+  color: #6366F1;
+  font-weight: 500;
+}
+
+.ranking-card {
+  padding: 32rpx;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid #F3F4F6;
+}
+
+.ranking-item:last-child {
+  border-bottom: none;
+}
+
+.ranking-number {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: white;
+  margin-right: 24rpx;
+}
+
+.ranking-number.top-1 {
+  background-color: #FBBF24;
+}
+
+.ranking-number.top-2 {
+  background-color: #9CA3AF;
+}
+
+.ranking-number.top-3 {
+  background-color: #B45309;
+}
+
+.ranking-number.you {
+  background-color: #EEF2FF;
+  color: #6366F1;
+} 

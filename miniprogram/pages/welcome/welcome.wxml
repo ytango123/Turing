@@ -1,0 +1,24 @@
+<view class="welcome-container">
+  <view class="content">
+    <view class="logo-container">
+      <view class="logo">
+        <text class="iconfont icon-a-MATE_huaban1fuben118"></text>
+      </view>
+      <text class="title">图灵挑战</text>
+      <text class="subtitle">你能分辨出谁是AI吗？</text>
+    </view>
+    
+    <view class="description">
+      <text class="desc-text">通过聆听对话，判断对话者是人类还是AI</text>
+      <text class="desc-text">挑战你的感知能力，获得成就与荣誉</text>
+    </view>
+    
+    <button class="start-button" bindtap="startChallenge">
+      开始挑战
+    </button>
+    
+    <text class="user-count">已有超过10,000人参与挑战</text>
+  </view>
+  
+  <view class="wave-animation"></view>
+</view> 

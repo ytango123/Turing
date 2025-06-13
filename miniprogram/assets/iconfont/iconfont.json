@@ -1,0 +1,79 @@
+{
+  "id": "4948772",
+  "name": "图灵dasai",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "42229903",
+      "name": "coin-fill",
+      "font_class": "coin-fill",
+      "unicode": "e7b3",
+      "unicode_decimal": 59315
+    },
+    {
+      "icon_id": "34023428",
+      "name": "check_circle_line",
+      "font_class": "check_circle_line",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "34023982",
+      "name": "magic_star_line",
+      "font_class": "magic_star_line",
+      "unicode": "e765",
+      "unicode_decimal": 59237
+    },
+    {
+      "icon_id": "34023992",
+      "name": "medal_line",
+      "font_class": "medal_line",
+      "unicode": "e769",
+      "unicode_decimal": 59241
+    },
+    {
+      "icon_id": "34024463",
+      "name": "star_line",
+      "font_class": "star_line",
+      "unicode": "e7b6",
+      "unicode_decimal": 59318
+    },
+    {
+      "icon_id": "34024489",
+      "name": "trophy_2_line",
+      "font_class": "trophy_2_line",
+      "unicode": "e7c5",
+      "unicode_decimal": 59333
+    },
+    {
+      "icon_id": "34023854",
+      "name": "flash_line",
+      "font_class": "flash_line",
+      "unicode": "e74d",
+      "unicode_decimal": 59213
+    },
+    {
+      "icon_id": "34023981",
+      "name": "lock_line",
+      "font_class": "lock_line",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    },
+    {
+      "icon_id": "34024387",
+      "name": "play_circle_line",
+      "font_class": "play_circle_line",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "39554909",
+      "name": "联想，大脑",
+      "font_class": "a-MATE_huaban1fuben118",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

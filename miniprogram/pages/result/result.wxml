@@ -1,0 +1,62 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="结果" 
+    left-arrow="{{false}}"
+    title-color="#1F2937"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  >
+    <view slot="left" class="custom-back-btn" bindtap="goBack">
+      <t-icon name="chevron-left" size="48rpx" color="#1F2937" />
+    </view>
+  </t-navbar>
+  
+  <!-- 结果展示 -->
+  <view class="result-container mb-large">
+    <view class="result-icon {{isCorrect ? 'correct' : 'incorrect'}}">
+      <t-icon name="{{isCorrect ? 'check' : 'close'}}" size="96rpx" color="#FFF" />
+    </view>
+    <view class="result-title">{{isCorrect ? '判断正确！' : '判断错误！'}}</view>
+    <view class="result-desc">
+      {{isCorrect ? '你成功识别出了AI，获得' : '很遗憾，判断错误，扣除'}}
+      <text class="{{isCorrect ? 'text-success' : 'text-error'}}">{{isCorrect ? '+' + pointsGained : '-' + pointsLost}}</text>点{{isCorrect ? '奖励' : ''}}
+    </view>
+  </view>
+  
+  <!-- 对话内容 -->
+  <view class="card dialogue-card mb-medium">
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="{{item.role === 'A' ? 'message-row' : 'message-row-reverse'}}">
+        <view class="avatar-container {{item.role === 'A' ? 'avatar-a' : 'avatar-b'}} {{aiRole === item.role ? 'has-ai-badge' : ''}}">
+          <text>{{item.role}}</text>
+          <view class="ai-badge" wx:if="{{aiRole === item.role}}">AI</view>
+        </view>
+        <view class="message-bubble {{item.role === 'A' ? 'message-bubble-a' : 'message-bubble-b'}}">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- AI特征解析 -->
+  <view class="card ai-analysis-card mb-large" wx:if="{{aiRole !== 'none'}}">
+    <view class="analysis-title mb-medium">AI特征解析</view>
+    <view class="analysis-list">
+      <view class="analysis-item" wx:for="{{aiFeatures}}" wx:key="index">
+        <t-icon name="info-circle" size="40rpx" color="#6366F1" class="analysis-icon" />
+        <text class="analysis-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部按钮 -->
+  <button class="full-width-button" bindtap="nextDialogue">下一题</button>
+  
+  <!-- 连击提示 -->
+  <view class="combo-notification {{showComboNotification ? 'show' : ''}}" wx:if="{{comboCount > 1}}">
+    <t-icon name="lightning" size="32rpx" color="#FFF" />
+    <text class="combo-text">连击 x{{comboCount}}</text>
+  </view>
+</view> 

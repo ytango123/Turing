@@ -1,0 +1,70 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="对话 {{currentDialogue}}/{{totalDialogues}}" 
+    left-arrow="{{false}}"
+    title-color="#1F2937"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  >
+    <view slot="left" class="custom-back-btn" bindtap="goBack">
+      <t-icon name="chevron-left" size="48rpx" color="#1F2937" />
+    </view>
+  </t-navbar>
+  
+  <!-- 进度条 -->
+  <view class="mb-large">
+    <view class="flex-between text-gray mb-small">
+      <text>挑战进度</text>
+      <text>{{currentDialogue}}/{{totalDialogues}}</text>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{(currentDialogue/totalDialogues)*100 + '%'}}"></view>
+    </view>
+  </view>
+  
+  <!-- 对话内容 -->
+  <view class="card dialogue-card mb-medium">
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="{{item.role === 'A' ? 'message-row' : 'message-row-reverse'}}">
+        <view class="avatar-container {{item.role === 'A' ? 'avatar-a' : 'avatar-b'}}">
+          <text>{{item.role}}</text>
+        </view>
+        <view class="message-bubble {{item.role === 'A' ? 'message-bubble-a' : 'message-bubble-b'}}">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 播放控制 -->
+  <view class="play-button-container mb-large">
+    <view class="play-button" bindtap="playAudio">
+      <t-icon name="play" size="80rpx" color="#FFF" />
+    </view>
+  </view>
+  
+  <!-- 提示文本 -->
+  <view class="hint-text mb-large">
+    请仔细聆听对话，判断哪一方是AI
+  </view>
+  
+  <!-- 判断按钮 -->
+  <view class="judgment-buttons">
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="A">
+      <view class="judgment-title">甲是AI</view>
+      <view class="judgment-desc">乙是人类</view>
+    </view>
+    
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="B">
+      <view class="judgment-title">乙是AI</view>
+      <view class="judgment-desc">甲是人类</view>
+    </view>
+    
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="none">
+      <view class="judgment-title">都是人类</view>
+      <view class="judgment-desc">没有AI</view>
+    </view>
+  </view>
+</view> 

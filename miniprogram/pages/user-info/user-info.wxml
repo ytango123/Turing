@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="个人信息" 
+    left-arrow
+    title-color="#ffffff"
+    left-arrow-color="#ffffff"
+    t-class="t-navbar"
+    fixed
+    placeholder
+    bind:click-left="onBackTap"
+  />
+  
+  <!-- 进度条 -->
+  <view class="mb-large">
+    <view class="flex-between text-gray mb-small">
+      <text>完成基本信息</text>
+      <text>{{currentStep}}/{{totalSteps}}</text>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{(currentStep/totalSteps)*100 + '%'}};"></view>
+    </view>
+  </view>
+  
+  <!-- 表单 -->
+  <view class="card p-medium mb-medium">
+    <view class="form-title mb-medium">请选择您的{{formTitle}}</view>
+    
+    <view class="options-container">
+      <block wx:for="{{options}}" wx:key="index">
+        <view class="option-card {{selectedOption === index ? 'selected' : ''}}" 
+              bindtap="selectOption" data-index="{{index}}">
+          <view class="radio-button {{selectedOption === index ? 'selected' : ''}}">
+            <view wx:if="{{selectedOption === index}}" class="radio-inner"></view>
+          </view>
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <!-- 底部按钮 -->
+  <button class="full-width-button" bindtap="nextStep">下一步</button>
+  
+  <view class="privacy-notice">
+    <text>信息仅用于研究目的，我们将严格保护您的隐私</text>
+  </view>
+</view> 
