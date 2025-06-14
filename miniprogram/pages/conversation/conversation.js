@@ -308,6 +308,14 @@ Page({
     // 保存游戏数据到全局状态
     if (app.globalData) {
       app.globalData.gameData = gameData;
+      
+      // 如果用户已登录，同步数据到云数据库
+      if (app.globalData.openid && app.globalData.userInfo) {
+        // 异步更新，不等待结果
+        app.updateUserGameData().catch(err => {
+          console.error('同步游戏数据到云数据库失败', err);
+        });
+      }
     }
     
     this.setData({

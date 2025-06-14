@@ -63,6 +63,14 @@ Page({
       maxCombo,
       percentile
     });
+    
+    // 更新游戏数据中的完成挑战次数
+    if (app.globalData && app.globalData.gameData) {
+      app.globalData.gameData.completedChallenges = (app.globalData.gameData.completedChallenges || 0) + 1;
+      
+      // 同步最终结果到云数据库
+      this.syncGameDataToCloud();
+    }
   },
   
   updateLevelInfo(points) {
@@ -175,5 +183,29 @@ Page({
       path: '/pages/welcome/welcome',
       imageUrl: '/assets/images/share-image.png' // 需要准备一张分享图片
     };
+  },
+  
+  // 同步游戏数据到云数据库
+  syncGameDataToCloud() {
+    // 检查是否已初始化云环境
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+      return;
+    }
+    
+    // 检查用户是否已登录
+    if (!app.globalData || !app.globalData.openid || !app.globalData.userInfo) {
+      console.log('用户未登录，跳过同步');
+      return;
+    }
+    
+    // 调用app.js中的更新方法
+    app.updateUserGameData()
+      .then(() => {
+        console.log('最终游戏数据同步成功');
+      })
+      .catch(err => {
+        console.error('最终游戏数据同步失败', err);
+      });
   }
 }) 

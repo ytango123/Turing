@@ -42,26 +42,59 @@ Page({
   },
   
   onLoad() {
-    // 检查是否已有用户信息
-    const userInfo = wx.getStorageSync('userInfo');
-    if (!userInfo) {
-      // 如果没有用户信息，跳转到欢迎页
-      wx.reLaunch({
-        url: '/pages/welcome/welcome'
-      });
-      return;
+    // 检查是否已有用户信息（从全局状态获取）
+    if (!app.globalData.userInfo) {
+      // 如果全局状态中没有用户信息，尝试检查用户注册状态
+      app.isUserRegistered()
+        .then(isRegistered => {
+          if (!isRegistered) {
+            // 用户未注册，跳转到欢迎页
+            wx.reLaunch({
+              url: '/pages/welcome/welcome'
+            });
+          } else {
+            // 用户已注册，更新页面数据
+            this.updatePageData();
+          }
+        })
+        .catch(err => {
+          console.error('检查用户注册状态失败', err);
+          // 出错时暂时不跳转，尝试继续加载页面
+          this.updatePageData();
+        });
+    } else {
+      // 已有用户信息，直接更新页面数据
+      this.updatePageData();
     }
-    
+  },
+  
+  // 更新页面数据
+  updatePageData() {
     // 获取游戏数据
     const gameData = app.globalData.gameData;
     if (gameData) {
       this.setData({
-        points: gameData.points,
-        level: gameData.level
+        points: gameData.points || 0,
+        level: gameData.level || '新手'
       });
       
       // 计算等级进度
       this.calculateLevelProgress();
+    }
+    
+    // 如果有用户信息，更新用户名和头像
+    if (app.globalData.userInfo) {
+      // 这里可以根据用户信息更新用户名和头像
+      // 例如：从用户年龄、性别等信息生成一个友好的用户名
+      const userInfo = app.globalData.userInfo;
+      let username = '图灵测试者';
+      
+      // 如果有性别信息，可以加入到用户名中
+      
+      
+      this.setData({
+        username: username
+      });
     }
   },
   

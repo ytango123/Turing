@@ -1,4 +1,6 @@
 // pages/user-info/user-info.js
+const app = getApp()
+
 Page({
   data: {
     currentStep: 1,
@@ -40,6 +42,10 @@ Page({
       formTitle: this.data.steps[0].title,
       options: this.data.steps[0].options
     });
+  },
+  
+  onBackTap() {
+    this.goBack();
   },
   
   goBack() {
@@ -100,10 +106,52 @@ Page({
       // 完成信息收集，保存用户信息
       wx.setStorageSync('userInfo', this.data.userInfo);
       
-      // 跳转到游戏主页
-      wx.reLaunch({
-        url: '/pages/game-home/game-home'
+      // 显示加载提示
+      wx.showLoading({
+        title: '保存信息中...',
+        mask: true
       });
+      
+      // 注册用户到云数据库
+      this.registerUser();
     }
+  },
+  
+  // 注册用户到云数据库
+  registerUser() {
+    // 检查是否已初始化云环境
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+      this.navigateToHome();
+      return;
+    }
+    
+    // 调用app.js中的注册方法
+    app.registerUser(this.data.userInfo)
+      .then(() => {
+        console.log('用户注册成功');
+        wx.hideLoading();
+        this.navigateToHome();
+      })
+      .catch(err => {
+        console.error('用户注册失败', err);
+        wx.hideLoading();
+        wx.showToast({
+          title: '保存信息失败，请重试',
+          icon: 'none'
+        });
+        // 仍然跳转到首页，但不保证数据已保存
+        setTimeout(() => {
+          this.navigateToHome();
+        }, 1500);
+      });
+  },
+  
+  // 导航到首页
+  navigateToHome() {
+    // 跳转到游戏主页
+    wx.reLaunch({
+      url: '/pages/game-home/game-home'
+    });
   }
 }) 
