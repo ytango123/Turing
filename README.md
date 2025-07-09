@@ -2,6 +2,8 @@
 
 这是一个基于微信小程序的图灵测试应用，用户可以通过判断对话中哪一方是AI来挑战自己的辨别能力。
 
+小程序Appid（更新）：wx0aa6c0af7848b725
+
 ## 云开发配置
 
 本项目使用微信云开发，需要进行以下配置：
@@ -50,7 +52,7 @@
 
 ```javascript
 wx.cloud.init({
-  env: 'turing-0gnrkrhx98fccb50', // 云环境ID
+  env: 'cloud1-8gbjshfgf7c95b79', // 云环境ID
   traceUser: true,
 })
 ```
