@@ -1,0 +1,23 @@
+<view class="bg">
+  <!-- 背景彩色圆圈 -->
+  <view class="circle circle1"></view>
+  <view class="circle circle2"></view>
+  <view class="circle circle3"></view>
+</view>
+
+<view class="content">
+  <view class="title">{{t.title}}</view>
+  <view class="desc">
+    <text>{{t.descLine1}}</text>
+    <text>{{t.descLine2}}</text>
+    <text>{{t.descLine3}}</text>
+  </view>
+  <view class="start-button" 
+    bindtap="startChallenge" 
+    bindtouchstart="onPress" 
+    bindtouchend="onRelease" 
+    bindtouchcancel="onRelease" 
+    style="transform: scale({{pressed ? 0.95 : 1}});">
+    <text>{{t.startButton}}</text>
+  </view>
+</view> 

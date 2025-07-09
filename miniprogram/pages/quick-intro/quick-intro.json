@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-navbar": "tdesign-miniprogram/navbar/navbar"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+} 

@@ -1,0 +1,96 @@
+.container {
+  padding: 0 32rpx;
+  padding-bottom: 32rpx;
+}
+
+.scroll-area {
+  height: calc(100vh - 88rpx);
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+}
+
+.text-primary {
+  color: #4f82ce;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid #F3F4F6;
+}
+
+.ranking-number {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: white;
+  margin-right: 24rpx;
+}
+
+.ranking-number.top-1 {
+  background-color: #FBBF24;
+}
+
+.ranking-number.top-2 {
+  background-color: #9CA3AF;
+}
+
+.ranking-number.top-3 {
+  background-color: #B45309;
+}
+
+.ranking-number.you {
+  background-color: #EEF2FF;
+  color: #6366F1;
+}
+
+.load-more {
+  text-align: center;
+  padding: 24rpx;
+  color: #9CA3AF;
+  font-size: 26rpx;
+}
+
+.ranking-avatar,
+.ranking-avatar-fallback {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.ranking-avatar {
+  object-fit: cover;
+}
+
+.ranking-avatar-fallback {
+  background: linear-gradient(135deg, #7072f0, #4767c2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+.mr-small {
+  margin-right: 16rpx;
+}
+
+.ranking-medal {
+  width: 48rpx;
+  height: 48rpx;
+} 

@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="{{t.navTitle || '设置'}}"
+    title-color="#1F2937"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  />
+  
+  <!-- 设置列表 -->
+  <view class="settings-list">
+    <!-- 语言设置 -->
+    <view class="setting-item">
+      <view class="setting-left">
+        <t-icon name="translate" size="40rpx" color="#6B7280" />
+        <text class="setting-title">{{t.languageText}}</text>
+      </view>
+      <view class="setting-right">
+        <view class="language-switch" bindtap="switchLanguage">
+          <text>{{language === 'zh' ? '中文' : 'English'}}</text>
+          <view class="arrow"></view>
+        </view>
+        <t-icon name="chevron-right" size="32rpx" color="#9CA3AF" />
+      </view>
+    </view>
+    
+    <!-- 主题设置 -->
+    <view class="setting-item">
+      <view class="setting-left">
+        <t-icon name="{{theme === 'light' ? 'sunny' : 'moon'}}" size="40rpx" color="#6B7280" />
+        <text class="setting-title">{{t.themeText}}</text>
+      </view>
+      <view class="setting-right">
+        <view class="coming-soon-tag">{{language === 'zh' ? '即将推出' : 'Coming'}}</view>
+      </view>
+    </view>
+  </view>
+</view> 

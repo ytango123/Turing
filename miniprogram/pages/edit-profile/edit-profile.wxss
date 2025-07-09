@@ -1,0 +1,115 @@
+.container {
+  padding: 32rpx;
+}
+
+/* 滚动区域（预留底部按钮空间） */
+.scroll-area {
+  height: calc(100vh - 200rpx);
+  padding-bottom: 120rpx;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx 0;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 24rpx;
+}
+
+.avatar-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c8add , #4a4ddd );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.edit-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  border-radius: 0 0 100rpx 100rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+
+.hint-text {
+  font-size: 28rpx;
+  color: #1F2937;
+}
+
+.avatar-tip {
+  margin-top: 16rpx;
+  color: #6B7280;
+  font-size: 26rpx;
+}
+
+/* 卡片化表单 */
+.form-section {
+  background-color: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.05);
+  padding: 8rpx 32rpx;
+  margin-bottom: 64rpx;
+}
+
+/* 表单项分割线 */
+.form-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  border-bottom: 2rpx solid #F3F4F6;
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 32rpx;
+  color: #1F2937;
+}
+
+.input, .picker-value {
+  flex: 1;
+  text-align: right;
+  font-size: 32rpx;
+  color: #1F2937;
+}
+
+/* 渐变主按钮 */
+.save-btn {
+  position: fixed;
+  bottom: 32rpx;
+  left: 32rpx;
+  right: 32rpx;
+  background: linear-gradient(135deg, #5777cf , #5d4fda );
+  color: #fff;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(99,102,241,0.25);
+} 

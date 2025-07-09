@@ -97,7 +97,7 @@
 }
 
 .avatar-b {
-  background-color: #8b5cf6;
+  background-color: #577CE2;
   margin-left: 16rpx;
 }
 
@@ -113,29 +113,75 @@
 }
 
 .message-bubble-b {
-  background-color: #ede9fe;
+  background-color: #e7eeff;
   border-radius: 36rpx 36rpx 8rpx 36rpx;
+}
+
+/* 展开/折叠按钮样式 */
+.expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx;
+  margin-top: 24rpx;
+  color: #6B7280;
+  font-size: 28rpx;
+  background-color: #F9FAFB;
+  border-radius: 16rpx;
+  cursor: pointer;
+}
+
+.expand-button text {
+  margin-right: 8rpx;
+}
+
+.expand-button:active {
+  background-color: #F3F4F6;
 }
 
 .play-button-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .play-button {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  background: linear-gradient(135deg, #6366F1, #578fe2);
   box-shadow: 0 8rpx 24rpx rgba(99, 102, 241, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  margin-bottom: 16rpx;
+  position: relative;
+}
+
+/* 加载图标样式 */
+.loading-icon {
+  width: 48rpx;
+  height: 48rpx;
+  border: 6rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 6rpx solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .play-button:active {
   transform: scale(0.95);
+}
+
+.audio-id {
+  font-size: 24rpx;
+  color: #6B7280;
+  margin-top: 8rpx;
 }
 
 .hint-text {
@@ -194,7 +240,7 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  background: linear-gradient(135deg, #6366F1, #577CE2);
   border-radius: 8rpx;
 }
 

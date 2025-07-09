@@ -1,24 +1,46 @@
 <view class="welcome-container">
-  <view class="content">
-    <view class="logo-container">
-      <view class="logo">
-        <text class="iconfont icon-a-MATE_huaban1fuben118"></text>
-      </view>
-      <text class="title">图灵挑战</text>
-      <text class="subtitle">你能分辨出谁是AI吗？</text>
-    </view>
-    
-    <view class="description">
-      <text class="desc-text">通过聆听对话，判断对话者是人类还是AI</text>
-      <text class="desc-text">挑战你的感知能力，获得成就与荣誉</text>
-    </view>
-    
-    <button class="start-button" bindtap="startChallenge">
-      开始挑战
-    </button>
-    
-    <text class="user-count">已有超过10,000人参与挑战</text>
+  <!-- 背景 -->
+  <view class="background">
+    <view class="bg-gradient"></view>
+    <view class="bg-blur blur-1"></view>
+    <view class="bg-blur blur-2"></view>
+    <view class="bg-blur blur-3"></view>
   </view>
   
-  <view class="wave-animation"></view>
+  <!-- 背景波浪 -->
+  <view class="bg-waves" style="overflow: visible;">
+    <image class="wave-bg" src="/assets/images/welcome/wave_bg.svg" mode="scaleToFill" style="transform: scale(1.2);"></image>
+  </view>
+  
+  <!-- 机器人 -->
+  <view class="robot" style="left:50%; transform:translateX(-50%);">
+    <image class="robot-all" src="/assets/images/welcome/robot_all.svg" mode="aspectFit"></image>
+    <!-- 渐变遮罩层，使机器人自上而下透明 -->
+    <view class="robot-mask"></view>
+  </view>
+    
+  <!-- 标题内容 -->
+  <view class="content {{currentLang === 'EN' ? 'content-en' : ''}}">
+    <!-- 根据语言选择不同的标题显示方式 -->
+    <image class="title-img zh {{currentLang==='ZH' ? 'show' : ''}}" src="/assets/images/welcome/title_zh.svg" mode="widthFix" />
+    <image class="title-img en {{currentLang==='EN' ? 'show' : ''}}" src="/assets/images/welcome/title_en.svg" mode="widthFix" />
+    <view class="description {{currentLang === 'EN' ? 'description-en' : ''}}">
+      <text>{{i18n[currentLang].description1}}</text>
+      <text>{{i18n[currentLang].description2}}</text>
+      <text>{{i18n[currentLang].description3}}</text>
+    </view>
+  </view>
+  
+  <!-- 底部按钮 -->
+  <view class="bottom-area">
+    <button class="start-button {{currentLang === 'EN' ? 'start-button-en' : ''}}" bindtap="startChallenge">
+      {{i18n[currentLang].startButton}}
+    </button>
+    <view class="user-count {{currentLang === 'EN' ? 'user-count-en' : ''}}">{{i18n[currentLang].userCount}}</view>
+  </view>
+  
+  <!-- 语言切换 -->
+  <view class="language-switch" bindtap="switchLanguage">
+    <text>{{currentLang}}</text>
+  </view>
 </view> 

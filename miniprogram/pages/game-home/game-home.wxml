@@ -2,7 +2,7 @@
   <!-- 顶部导航 -->
   
   <t-navbar 
-    title="首页" 
+    title="{{t.navTitle || '首页'}}" 
     title-color="#ffffff"
     t-class="t-navbar"
     fixed
@@ -10,20 +10,23 @@
   />
   
   <!-- 顶部用户信息 -->
-  <view class="card user-info-card mb-medium">
+  <view class="card user-info-card mb-medium" bindtap="editProfile">
     <view class="flex-start">
-      <view class="avatar mr-medium">
-        <text>{{userInitial}}</text>
+      <view class="avatar-wrapper mr-medium">
+        <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+        <view wx:else class="avatar">
+          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:64rpx;"></text>
+        </view>
       </view>
       <view class="flex-1">
         <view class="flex-start mb-small">
           <text class="username mr-small">{{username}}</text>
-          <view class="level-badge">{{level}}</view>
+          <view class="level-badge level-{{levelClass}}">{{level}}</view>
         </view>
         <view class="flex-start text-gray text-sm">
-          <text class="mr-small">{{points}}点</text>
+          <text class="mr-small">{{points}}{{t.points}}</text>
           <text class="dot mx-small">•</text>
-          <text>距离"{{nextLevel}}"还需{{pointsToNextLevel}}点</text>
+          <text>{{progressText}}</text>
         </view>
         <view class="progress-bar mt-small">
           <view class="progress-bar-fill" style="width: {{levelProgress + '%'}}"></view>
@@ -33,7 +36,7 @@
   </view>
   
   <!-- 游戏模式选择 -->
-  <view class="section-title mb-medium">挑战模式</view>
+  <view class="section-title mb-medium">{{t.challengeModes}}</view>
   
   <view class="game-modes mb-large">
     <!-- 快速挑战 -->
@@ -42,8 +45,8 @@
         <text class="iconfont icon-{{gameModes[0].icon}}" style="color: {{gameModes[0].color}}; font-size: 48rpx;"></text>
       </view>
       <view class="flex-1">
-        <view class="game-mode-title">{{gameModes[0].title}}</view>
-        <view class="game-mode-desc">{{gameModes[0].description}}</view>
+        <view class="game-mode-title">{{t.quickChallengeTitle}}</view>
+        <view class="game-mode-desc">{{t.quickChallengeDesc}}</view>
       </view>
       <t-icon name="chevron-right" size="40rpx" color="#9CA3AF" />
     </view>
@@ -54,27 +57,35 @@
         <text class="iconfont icon-{{gameModes[1].icon}}" style="color: {{gameModes[1].color}}; font-size: 48rpx;"></text>
       </view>
       <view class="flex-1">
-        <view class="game-mode-title">{{gameModes[1].title}}</view>
-        <view class="game-mode-desc">{{gameModes[1].description}}</view>
+        <view class="game-mode-title">{{t.hardModeTitle}}</view>
+        <view class="game-mode-desc">{{t.hardModeDesc}}</view>
       </view>
-      <view class="coming-soon-tag">即将推出</view>
+      <view class="coming-soon-tag">{{t.hardModeComingSoon}}</view>
     </view>
   </view>
   
   <!-- 排行榜 -->
   <view class="flex-between mb-medium">
-    <view class="section-title">排行榜</view>
-    <view class="view-all" bindtap="viewAllRankings">查看全部</view>
+    <view class="section-title">{{t.rankings}}</view>
+    <view class="view-all" bindtap="viewAllRankings">{{t.viewAll}}</view>
   </view>
   
   <view class="card ranking-card">
     <view class="ranking-item" wx:for="{{rankings}}" wx:key="index">
       <view class="flex-start">
-        <view class="ranking-number {{index < 3 ? 'top-' + (index + 1) : ''}}" wx:if="{{item.rank !== 'you'}}">{{item.rank}}</view>
-        <view class="ranking-number you" wx:else>{{item.rank}}</view>
+        <block wx:if="{{item.rank <= 3}}">
+          <image class="ranking-medal mr-small" src="/assets/icons/{{item.rank === 1 ? 'first' : (item.rank === 2 ? 'second' : 'third')}}.png" mode="aspectFit" />
+        </block>
+        <block wx:else>
+          <view class="ranking-number {{item.rank === 'you' ? 'you' : ''}}">{{item.rank}}</view>
+        </block>
+        <image wx:if="{{item.avatarUrl}}" class="ranking-avatar mr-small" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+        <view wx:else class="ranking-avatar-fallback mr-small">
+          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:28rpx;"></text>
+        </view>
         <text class="{{item.rank === 'you' ? 'text-primary font-bold' : ''}}">{{item.name}}</text>
       </view>
-      <text class="{{item.rank === 'you' ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}点</text>
+      <text class="{{item.rank === 'you' ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}{{t.points}}</text>
     </view>
   </view>
 </view> 

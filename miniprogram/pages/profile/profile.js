@@ -1,11 +1,30 @@
-const app = getApp()
+const { createPage } = require('../../utils/basePage')
+const { t } = require('../../utils/i18n')
 
-Page({
+createPage({
+  pageKey: 'profile',
+  i18nKeys: {
+    navTitle: 'navTitle',
+    challengesCompleted: 'challengesCompleted',
+    pointsLabel: 'points',
+    statsCorrectRate: 'stats.correctRate',
+    statsMaxCombo: 'stats.maxCombo',
+    statsAchievements: 'stats.achievements',
+    tabAchievements: 'tabs.achievements',
+    tabHistory: 'tabs.history',
+    historyEmpty: 'history.empty',
+    historyChallenge: 'history.challenge',
+    historyCorrectRate: 'history.correctRate',
+    historyPointsGained: 'history.pointsGained'
+  },
+
   data: {
+    avatarUrl: '',
     userInitial: 'T',
     username: '图灵测试者',
     level: '业余探索者',
-    points: 81,
+    levelClass: 'blue',
+    points: 0,
     completedChallenges: 12,
     nextLevel: '资深鉴别师',
     pointsToNextLevel: 19,
@@ -25,7 +44,8 @@ Page({
         description: '完成第一轮图灵挑战',
         icon: 'check_circle_line',
         iconType: 'iconfont',
-        unlocked: true
+        unlocked: false,
+        key: 'firstTry'
       },
       {
         id: 2,
@@ -33,117 +53,198 @@ Page({
         description: '在一轮挑战中获得5次连击',
         icon: 'star_line',
         iconType: 'iconfont',
-        unlocked: true
+        unlocked: false,
+        key: 'comboMaster'
       },
       {
         id: 3,
-        title: '业余探索者',
-        description: '累计获得80点以上',
-        icon: 'medal_line',
-        iconType: 'iconfont',
-        unlocked: true
-      },
-      {
-        id: 4,
         title: '完美判断',
         description: '在一轮挑战中获得10/10的正确率',
         icon: 'trophy_2_line',
         iconType: 'iconfont',
-        unlocked: false
+        unlocked: false,
+        key: 'perfectJudge'
       }
     ],
     
-    history: [
-      {
-        id: 12,
-        date: '2023-06-15',
-        correctRate: 80,
-        pointsGained: 16
-      },
-      {
-        id: 11,
-        date: '2023-06-10',
-        correctRate: 70,
-        pointsGained: 12
-      },
-      {
-        id: 10,
-        date: '2023-06-05',
-        correctRate: 60,
-        pointsGained: 8
-      }
-    ],
-    
-    rankings: [
-      { rank: 1, name: '王小明', points: 256, isUser: false },
-      { rank: 2, name: '李华', points: 198, isUser: false },
-      { rank: 3, name: '张三', points: 175, isUser: false },
-      { rank: 8, name: '你', points: 81, isUser: true }
-    ]
+    history: [],
+    progressText: ''
   },
   
   onLoad() {
-    // 获取用户信息和游戏数据
-    const userInfo = wx.getStorageSync('userInfo');
-    const gameData = app.globalData.gameData;
+    this.fetchLatestUserData();
+  },
+  
+  // 从云端获取最新用户数据
+  fetchLatestUserData() {
+    const db = wx.cloud.database();
     
-    if (userInfo) {
-      // 设置用户名首字母
-      const username = userInfo.nickname || '图灵测试者';
-      const userInitial = username.charAt(0).toUpperCase();
-      
-      this.setData({
-        username,
-        userInitial
-      });
+    // 确保有openid
+    if (!getApp().globalData || !getApp().globalData.openid) {
+      return;
     }
     
-    if (gameData) {
-      // 更新游戏数据
+    db.collection('users')
+      .where({
+        _openid: getApp().globalData.openid
+      })
+      .get()
+      .then(res => {
+        if (res.data && res.data[0]) {
+          const userData = res.data[0];
+          const gameData = userData.gameData || {};
+          
+          // 更新全局数据
+          getApp().globalData.gameData = gameData;
+    
+          // 生成默认昵称（若数据库中无昵称）
+          const nickname = userData.nickname || `用户${(getApp().globalData.openid || '').slice(-4)}`;
+          const userInitial = nickname.charAt(0);
+          const avatarUrl = userData.avatarUrl || '';
+          
+          // 更新页面数据
       this.setData({
         level: gameData.level,
         points: gameData.points,
+            username: nickname,
+            userInitial: userInitial,
+            avatarUrl: avatarUrl,
         completedChallenges: gameData.completedChallenges || 0,
-        correctRate: gameData.correctRate || 0,
-        maxCombo: gameData.maxCombo || 0
+            maxCombo: gameData.maxCombo || 0,
+            history: gameData.history || []
       });
       
       // 计算等级进度
       this.calculateLevelProgress();
+          
+          // 更新成就解锁状态
+          if (gameData.achievements) {
+            const language = wx.getStorageSync('language') || 'zh';
+            const achievements = this.data.achievements.map(achievement => {
+              return {
+              ...achievement,
+                title: t(`profile.achievements.${achievement.key}.title`, language),
+                description: t(`profile.achievements.${achievement.key}.description`, language),
+              unlocked: !!gameData.achievements[achievement.key]
+              };
+            });
       
       // 计算已解锁成就数量
-      const unlockedAchievements = (gameData.achievements || []).length;
+            const unlockedAchievements = Object.keys(gameData.achievements).length;
+            
       this.setData({
+              achievements,
         unlockedAchievements
       });
     }
+
+          // 计算总正确率（历史平均）
+          const historyArr = gameData.history || [];
+    let totalCorrectRate = 0;
+          if (historyArr.length > 0) {
+            const sum = historyArr.reduce((acc, item) => acc + (item.correctRate || 0), 0);
+            totalCorrectRate = Math.round(sum / historyArr.length);
+          } else if (gameData.correctRate !== undefined) {
+            totalCorrectRate = gameData.correctRate;
+          }
+          
+    this.setData({
+      correctRate: totalCorrectRate
+          });
+        }
+      })
+      .catch(err => {
+        console.error('获取用户数据失败', err);
+    });
   },
   
   calculateLevelProgress() {
-    // 根据不同等级设置不同的下一等级和所需点数
-    const levels = {
-      '新手': { next: '业余探索者', required: 100 },
-      '业余探索者': { next: '资深鉴别师', required: 200 },
-      '资深鉴别师': { next: '图灵大师', required: 300 },
-      '图灵大师': { next: '超级鉴别者', required: 500 }
-    };
-    
-    const currentLevel = this.data.level;
-    if (levels[currentLevel]) {
-      const nextLevel = levels[currentLevel].next;
-      const requiredPoints = levels[currentLevel].required;
-      const pointsToNextLevel = requiredPoints - this.data.points;
-      const progress = (this.data.points / requiredPoints) * 100;
+    const currentPoints = this.data.points;
+    let currentLevelKey = 'newUser';
+    let nextLevelKey = 'amateurExplorer';
+    let requiredPoints = 100;
+
+    if (currentPoints >= 500) {
+      currentLevelKey = 'superIdentifier';
+      nextLevelKey = 'superIdentifier';
+      requiredPoints = 500;
+    } else if (currentPoints >= 300) {
+      currentLevelKey = 'turingMaster';
+      nextLevelKey = 'superIdentifier';
+      requiredPoints = 500;
+    } else if (currentPoints >= 200) {
+      currentLevelKey = 'seniorIdentifier';
+      nextLevelKey = 'turingMaster';
+      requiredPoints = 300;
+    } else if (currentPoints >= 100) {
+      currentLevelKey = 'amateurExplorer';
+      nextLevelKey = 'seniorIdentifier';
+      requiredPoints = 200;
+    }
+
+    const pointsToNextLevel = requiredPoints - currentPoints;
+    // 进度条仅显示当前等级区间内 0-100 点
+    let progress;
+    if (currentPoints >= 500) {
+      progress = 100;
+    } else {
+      progress = currentPoints % 100;
+    }
+
+    const language = wx.getStorageSync('language') || 'zh';
+    const currentLevelText = t(`gameHome.${currentLevelKey}`, language);
+    const nextLevelText = t(`gameHome.${nextLevelKey}`, language);
+    const progressTemplate = t('gameHome.levelProgress', language);
+    let progressText = progressTemplate
+      .replace('{nextLevel}', nextLevelText)
+      .replace('{points}', pointsToNextLevel);
+      
+      // 最高等级时隐藏进度文本
+      if (currentLevelKey === 'superIdentifier') {
+        progressText = '';
+      }
+      
+      // 根据等级键映射徽章颜色类
+      let badgeClass = 'green';
+      if (currentLevelKey === 'amateurExplorer') {
+        badgeClass = 'blue';
+      } else if (currentLevelKey === 'seniorIdentifier') {
+        badgeClass = 'purple';
+      } else if (currentLevelKey === 'turingMaster') {
+        badgeClass = 'orange';
+      } else if (currentLevelKey === 'superIdentifier') {
+        badgeClass = 'platinum';
+      }
       
       this.setData({
-        nextLevel,
+      level: currentLevelText,
+      nextLevel: nextLevelText,
         pointsToNextLevel,
-        levelProgress: progress
+      levelProgress: progress,
+      progressText,
+      levelClass: badgeClass
       });
-    }
+  },
+
+  // 语言切换后刷新动态文本
+  refreshLanguageDependentData(language) {
+    // 更新等级进度相关文本
+    this.calculateLevelProgress();
+
+    // 更新成就标题与描述
+    const updatedAchievements = this.data.achievements.map(item => ({
+      ...item,
+      title: t(`profile.achievements.${item.key}.title`, language),
+      description: t(`profile.achievements.${item.key}.description`, language)
+    }));
+
+    this.setData({ achievements: updatedAchievements });
   },
   
   switchTab(e) {
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
     const tab = e.currentTarget.dataset.tab;
     this.setData({
       currentTab: tab
@@ -151,9 +252,30 @@ Page({
   },
   
   openSettings() {
-    wx.showToast({
-      title: '设置功能即将上线',
-      icon: 'none'
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    wx.navigateTo({
+      url: '/pages/settings/settings'
     });
+  },
+  
+  editProfile() {
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    wx.navigateTo({
+      url: '/pages/edit-profile/edit-profile'
+    });
+  },
+
+  onTabItemTap(item) {
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+  },
+
+  onShow() {
+    this.fetchLatestUserData();
   }
 }) 

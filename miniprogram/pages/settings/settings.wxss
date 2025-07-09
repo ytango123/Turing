@@ -1,0 +1,49 @@
+.container {
+  padding: 0 32rpx;
+  padding-bottom: 96rpx;
+}
+
+.settings-list {
+  margin-top: 32rpx;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  background-color: white;
+  border-radius: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+}
+
+.setting-left {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.setting-title {
+  font-size: 32rpx;
+  color: #1F2937;
+}
+
+.setting-right {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.setting-value {
+  font-size: 28rpx;
+  color: #6B7280;
+} 
+
+.coming-soon-tag {
+  padding: 8rpx 24rpx;
+  border-radius: 32rpx;
+  background-color: #F3F4F6;
+  font-size: 24rpx;
+  color: #6B7280;
+} 

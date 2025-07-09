@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- 顶部导航 -->
+  <t-navbar 
+    title="{{t.navTitle}}" 
+    left-arrow
+    title-color="#ffffff"
+    left-arrow-color="#ffffff"
+    t-class="t-navbar"
+    fixed
+    placeholder
+    bind:click-left="onBackTap"
+  />
+  
+  <scroll-view scroll-y="true" class="scroll-area">
+    <!-- 头像 -->
+    <view class="avatar-section">
+      <view class="avatar-wrapper">
+        <block wx:if="{{avatarUrl}}">
+          <image src="{{avatarUrl}}" class="avatar-img" mode="aspectFill" bindtap="chooseAvatar"></image>
+        </block>
+        <block wx:else>
+          <view class="avatar" bindtap="chooseAvatar">
+            <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:96rpx;"></text>
+          </view>
+        </block>
+      </view>
+      <text class="hint-text">{{t.avatarHint}}</text>
+    </view>
+    
+    <!-- 表单项 -->
+    <view class="form-section">
+      <view class="form-item">
+        <view class="label">{{t.nickLabel}}</view>
+        <input class="input" value="{{nickname}}" bindinput="onNicknameInput" placeholder="{{t.nickPlaceholder}}"></input>
+      </view>
+      
+      <view class="form-item">
+        <view class="label">{{t.ageLabel}}</view>
+        <picker mode="selector" range="{{ages}}" value="{{ageIndex}}" bindchange="onAgeChange">
+          <view class="picker-value">{{ages[ageIndex]}}</view>
+        </picker>
+      </view>
+      
+      <view class="form-item">
+        <view class="label">{{t.genderLabel}}</view>
+        <picker mode="selector" range="{{genders}}" value="{{genderIndex}}" bindchange="onGenderChange">
+          <view class="picker-value">{{genders[genderIndex]}}</view>
+        </picker>
+      </view>
+      
+      <view class="form-item">
+        <view class="label">{{t.educationLabel}}</view>
+        <picker mode="selector" range="{{educations}}" value="{{educationIndex}}" bindchange="onEducationChange">
+          <view class="picker-value">{{educations[educationIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    
+    <button class="save-btn" bindtap="saveProfile">{{t.saveButton}}</button>
+  </scroll-view>
+</view> 

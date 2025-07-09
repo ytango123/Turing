@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 顶部导航 -->
   <t-navbar 
-    title="对话 {{currentDialogue}}/{{totalDialogues}}" 
+    title="{{pageReady ? (t.dialogueTitle + ' ' + currentDialogue + '/' + totalDialogues) : t.loading}}"
     left-arrow="{{false}}"
     title-color="#1F2937"
     t-class="t-navbar"
@@ -16,7 +16,7 @@
   <!-- 进度条 -->
   <view class="mb-large">
     <view class="flex-between text-gray mb-small">
-      <text>挑战进度</text>
+      <text>{{t.progress}}</text>
       <text>{{currentDialogue}}/{{totalDialogues}}</text>
     </view>
     <view class="progress-bar">
@@ -26,7 +26,7 @@
   
   <!-- 对话内容 -->
   <view class="card dialogue-card mb-medium">
-    <block wx:for="{{messages}}" wx:key="index">
+    <block wx:for="{{displayMessages}}" wx:key="index">
       <view class="{{item.role === 'A' ? 'message-row' : 'message-row-reverse'}}">
         <view class="avatar-container {{item.role === 'A' ? 'avatar-a' : 'avatar-b'}}">
           <text>{{item.role}}</text>
@@ -36,35 +36,45 @@
         </view>
       </view>
     </block>
+    <!-- 展开/折叠按钮 -->
+    <view wx:if="{{messages.length > maxLines}}" class="expand-button" bindtap="toggleExpand">
+      <text>{{isExpanded ? t.collapse : t.expand}}</text>
+      <t-icon name="{{isExpanded ? 'chevron-up' : 'chevron-down'}}" size="32rpx" color="#6B7280" />
+    </view>
   </view>
   
   <!-- 播放控制 -->
   <view class="play-button-container mb-large">
-    <view class="play-button" bindtap="playAudio">
-      <t-icon name="play" size="80rpx" color="#FFF" />
+    <view class="play-button {{audioLoading ? 'loading' : ''}}" bindtap="playAudio" bindtouchstart="onPlayButtonPress" bindtouchend="onPlayButtonRelease" bindtouchcancel="onPlayButtonRelease" style="transform: scale({{isPressed ? 0.9 : 1}}); transition: transform 0.1s;">
+      <block wx:if="{{audioLoading}}">
+        <view class="loading-icon"></view>
+      </block>
+      <block wx:else>
+      <t-icon name="{{isPlaying ? 'pause' : 'play'}}" size="80rpx" color="#FFF" />
+      </block>
     </view>
   </view>
   
   <!-- 提示文本 -->
   <view class="hint-text mb-large">
-    请仔细聆听对话，判断哪一方是AI
+    {{t.hintText}}
   </view>
   
   <!-- 判断按钮 -->
   <view class="judgment-buttons">
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="A">
-      <view class="judgment-title">甲是AI</view>
-      <view class="judgment-desc">乙是人类</view>
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="MH">
+      <view class="judgment-title">{{t.judgeA}}</view>
+      <view class="judgment-desc">{{t.descA}}</view>
     </view>
     
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="B">
-      <view class="judgment-title">乙是AI</view>
-      <view class="judgment-desc">甲是人类</view>
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="HM">
+      <view class="judgment-title">{{t.judgeB}}</view>
+      <view class="judgment-desc">{{t.descB}}</view>
     </view>
     
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="none">
-      <view class="judgment-title">都是人类</view>
-      <view class="judgment-desc">没有AI</view>
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="HH">
+      <view class="judgment-title">{{t.judgeNone}}</view>
+      <view class="judgment-desc">{{t.descNone}}</view>
     </view>
   </view>
 </view> 

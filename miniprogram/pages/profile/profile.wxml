@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 顶部导航 -->
   <t-navbar 
-    title="个人中心" 
+    title="{{t.navTitle}}" 
     title-color="#ffffff"
     t-class="t-navbar"
     fixed
@@ -11,29 +11,29 @@
     
   
   <!-- 用户信息卡片 -->
-  <view class="card user-info-card mb-medium">
+  <view class="card user-info-card mb-medium" bindtap="editProfile">
     <view class="flex-start">
       <view class="avatar-wrapper mr-medium">
-        <view class="avatar">
-          <text>{{userInitial}}</text>
+        <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+        <view wx:else class="avatar">
+          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:80rpx;"></text>
         </view>
-        <view class="avatar-frame" wx:if="{{hasFrame}}"></view>
       </view>
       <view class="flex-1">
         <view class="flex-start mb-small">
           <text class="username mr-small">{{username}}</text>
-          <view class="level-badge">{{level}}</view>
+          <view class="level-badge level-{{levelClass}}">{{level}}</view>
         </view>
         <view class="flex-start text-gray text-sm">
-          <text class="mr-small">已参与{{completedChallenges}}轮挑战</text>
+          <text class="mr-small">{{t.challengesCompleted}}{{completedChallenges}}</text>
           <text class="dot mx-small">•</text>
-          <text>{{points}}点</text>
+          <text>{{points}}{{t.pointsLabel}}</text>
         </view>
         <view class="progress-bar mt-small">
           <view class="progress-bar-fill" style="width: {{levelProgress + '%'}}"></view>
         </view>
         <view class="text-right text-gray text-xs mt-small">
-          距离"{{nextLevel}}"还需{{pointsToNextLevel}}点
+          {{progressText}}
         </view>
       </view>
     </view>
@@ -43,28 +43,26 @@
   <view class="stats-grid mb-medium">
     <view class="stat-card">
       <view class="stat-value">{{correctRate}}%</view>
-      <view class="stat-label">正确率</view>
+      <view class="stat-label">{{t.statsCorrectRate}}</view>
     </view>
     
     <view class="stat-card">
       <view class="stat-value">{{maxCombo}}</view>
-      <view class="stat-label">最大连击</view>
+      <view class="stat-label">{{t.statsMaxCombo}}</view>
     </view>
     
     <view class="stat-card">
       <view class="stat-value">{{unlockedAchievements}}</view>
-      <view class="stat-label">已解锁成就</view>
+      <view class="stat-label">{{t.statsAchievements}}</view>
     </view>
   </view>
   
   <!-- 标签页 -->
   <view class="tabs mb-medium">
     <view class="tab {{currentTab === 'achievements' ? 'active' : ''}}" 
-          bindtap="switchTab" data-tab="achievements">成就</view>
+          bindtap="switchTab" data-tab="achievements">{{t.tabAchievements}}</view>
     <view class="tab {{currentTab === 'history' ? 'active' : ''}}" 
-          bindtap="switchTab" data-tab="history">历史记录</view>
-    <view class="tab {{currentTab === 'ranking' ? 'active' : ''}}" 
-          bindtap="switchTab" data-tab="ranking">排行榜</view>
+          bindtap="switchTab" data-tab="history">{{t.tabHistory}}</view>
   </view>
   
   <!-- 成就列表 -->
@@ -86,34 +84,20 @@
   <view class="history-list" wx:if="{{currentTab === 'history'}}">
     <view class="empty-state" wx:if="{{history.length === 0}}">
       <t-icon name="time" size="96rpx" color="#D1D5DB" />
-      <view class="empty-text">暂无历史记录</view>
+      <view class="empty-text">{{t.historyEmpty}}</view>
     </view>
     <view class="history-item" wx:for="{{history}}" wx:key="id">
-      <view class="history-date">{{item.date}}</view>
       <view class="history-content">
-        <view class="history-title">挑战 #{{item.id}}</view>
+        <view class="history-title">{{t.historyChallenge}} {{item.id}}</view>
         <view class="history-stats">
-          <text>正确率: {{item.correctRate}}</text>
+          <text>{{t.historyCorrectRate}}: {{item.correctRate}}%</text>
           <text class="dot mx-small">•</text>
-          <text>获得 {{item.pointsGained}} 点</text>
+          <text>{{t.historyPointsGained}} {{item.pointsGained}}{{t.pointsLabel}}</text>
         </view>
       </view>
       <view class="history-score {{item.correctRate >= 70 ? 'good' : (item.correctRate >= 50 ? 'average' : 'poor')}}">
         {{item.correctRate}}%
       </view>
-    </view>
-  </view>
-  
-  <!-- 排行榜 -->
-  <view class="ranking-list" wx:if="{{currentTab === 'ranking'}}">
-    <view class="ranking-item" wx:for="{{rankings}}" wx:key="rank">
-      <view class="flex-start">
-        <view class="ranking-number {{item.rank <= 3 ? 'top-' + item.rank : ''}} {{item.isUser ? 'you' : ''}}">
-          {{item.rank}}
-        </view>
-        <text class="{{item.isUser ? 'text-primary font-bold' : ''}}">{{item.name}}</text>
-      </view>
-      <text class="{{item.isUser ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}点</text>
     </view>
   </view>
 </view> 

@@ -3,10 +3,14 @@
     "pages/welcome/welcome",
     "pages/user-info/user-info",
     "pages/game-home/game-home",
+    "pages/quick-intro/quick-intro",
     "pages/conversation/conversation",
     "pages/result/result",
     "pages/summary/summary",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/rankings/rankings",
+    "pages/edit-profile/edit-profile",
+    "pages/settings/settings"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,8 +20,8 @@
   },
   "tabBar": {
     "custom": false,
-    "color": "#999999",
-    "selectedColor": "#6366F1",
+    "color": "#6B7280",
+    "selectedColor": "#577CE2",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
@@ -32,6 +36,12 @@
         "text": "我的",
         "iconPath": "assets/icons/profile.png",
         "selectedIconPath": "assets/icons/profile-active.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "assets/icons/settings.png",
+        "selectedIconPath": "assets/icons/settings-active.png"
       }
     ]
   },

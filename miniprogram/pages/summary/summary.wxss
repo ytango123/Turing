@@ -47,7 +47,7 @@
 }
 
 .text-primary {
-  color: #6366F1;
+  color: #577CE2;
 }
 
 .font-bold {
@@ -66,7 +66,7 @@
 .confetti-container {
   position: absolute;
   top: 0;
-  left: 0;
+  left:0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -78,7 +78,7 @@
   position: absolute;
   width: 20rpx;
   height: 20rpx;
-  background-color: #6366F1;
+  background-color: #577CE2;
   border-radius: 4rpx;
   opacity: 0.8;
   animation: fall 3s ease-in infinite;
@@ -100,7 +100,7 @@
 }
 
 .confetti:nth-child(5) {
-  background-color: #8B5CF6;
+  background-color: #577CE2;
   animation-delay: 0.8s;
 }
 
@@ -161,7 +161,7 @@
 .stat-value {
   font-size: 60rpx;
   font-weight: bold;
-  color: #6366F1;
+  color: #577CE2;
 }
 
 .stat-label {
@@ -192,7 +192,7 @@
 .level-up-text {
   margin-left: 16rpx;
   font-size: 28rpx;
-  color: #4F46E5;
+  color: #577CE2;
   line-height: 1.5;
 }
 
@@ -224,14 +224,17 @@
 }
 
 .skill-bar {
-  width: 128rpx;
-  height: 8rpx;
-  border-radius: 4rpx;
+  width: 106rpx;
+  height: 12rpx;
+  border-radius: 20rpx;
   margin-bottom: 8rpx;
 }
 
+.skill-bar.excellent {
+  background-color:#10B981;
+}
 .skill-bar.good {
-  background-color: #10B981;
+  background-color: rgb(92, 165, 220);
 }
 
 .skill-bar.average {
@@ -317,6 +320,113 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  /* 底色渐变 */
+  background: repeating-linear-gradient(
+              45deg,
+              rgba(255,255,255,0.15) 0rpx,
+              rgba(255,255,255,0.15) 8rpx,
+              transparent 8rpx,
+              transparent 16rpx
+            ),
+            linear-gradient(90deg, #FBBF24, #F59E0B);
   border-radius: 8rpx;
+} 
+
+/* ================= 成就弹窗样式 ================= */
+.achievement-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.achievement-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8rpx);
+}
+
+.achievement-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600rpx;
+  width: 80%;
+  padding: 96rpx 32rpx 64rpx;
+  box-sizing: border-box;
+}
+
+.achievement-icon {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.achievement-title {
+  margin-top: 64rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.achievement-name {
+  margin-top: 16rpx;
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #a6ccf7;
+}
+
+.achievement-date {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #D1D5DB;
+}
+
+.achievement-share-btn {
+  margin-top: 96rpx;
+  width: 40%;
+  height: 80rpx;
+  border-radius: 44rpx;
+  background: #E5E7EB;
+  color: #1F2937;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center !important;
+  padding: 0 !important;
+  line-height: 80rpx !important;
+  border: none !important;
+  box-sizing: border-box !important;
+}
+
+/* 重置所有可能影响居中的样式 */
+.achievement-share-btn::after,
+.achievement-share-btn::before {
+  display: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.achievement-close {
+  margin-top: 48rpx;
+  width: 56rpx;
+  height: 56rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  line-height: 1;
 } 

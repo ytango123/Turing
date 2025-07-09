@@ -46,7 +46,8 @@
 }
 
 .combo-text {
-  margin-left: 8rpx;
+  margin-left: 12rpx;
+  font-size: 36rpx;
 }
 
 .mb-small {
@@ -156,7 +157,7 @@
 }
 
 .avatar-b {
-  background-color: #8b5cf6;
+  background-color: #577CE2;
   margin-left: 16rpx;
 }
 
@@ -184,7 +185,7 @@
 }
 
 .message-bubble-b {
-  background-color: #ede9fe;
+  background-color: #e7eeff;
   border-radius: 36rpx 36rpx 8rpx 36rpx;
 }
 
@@ -223,43 +224,42 @@
 /* 连击提示样式 */
 .combo-notification {
   position: fixed;
-  bottom: -100rpx;
   left: 50%;
-  transform: translateX(-50%);
+  bottom: 260rpx; /* 固定最终位置，使用 translateY 控制进出场 */
+  transform: translate(-50%, 150%);
   background: linear-gradient(135deg, #f59e0b, #ef4444);
   border-radius: 24rpx;
-  padding: 16rpx 32rpx;
+  padding: 24rpx 40rpx;
   color: white;
   font-weight: bold;
   box-shadow: 0 8rpx 24rpx rgba(239, 68, 68, 0.3);
   display: flex;
   align-items: center;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   z-index: 100;
 }
 
 .combo-notification.show {
-  bottom: 120rpx;
+  transform: translate(-50%, 0);
   opacity: 1;
-  animation: comboFadeInOut 3s ease forwards;
 }
 
 @keyframes comboFadeInOut {
   0% {
-    bottom: -100rpx;
+    transform: translate(-50%, 150%);
     opacity: 0;
   }
   20% {
-    bottom: 120rpx;
+    transform: translate(-50%, 0);
     opacity: 1;
   }
   80% {
-    bottom: 120rpx;
+    transform: translate(-50%, 0);
     opacity: 1;
   }
   100% {
-    bottom: 120rpx;
+    transform: translate(-50%, 150%);
     opacity: 0;
   }
 }
@@ -269,17 +269,24 @@
   background: transparent !important;
 }
 
-/* 进度条样式 */
-.progress-bar {
-  width: 100%;
-  height: 16rpx;
-  background-color: #E5E7EB;
-  border-radius: 8rpx;
-  overflow: hidden;
+
+.expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx;
+  margin-top: 24rpx;
+  color: #6B7280;
+  font-size: 28rpx;
+  background-color: #F9FAFB;
+  border-radius: 16rpx;
+  transition: transform 0.1s;
 }
 
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
-  border-radius: 8rpx;
+.expand-button:active {
+  transform: scale(0.95);
+}
+
+.expand-button text {
+  margin-right: 8rpx;
 } 

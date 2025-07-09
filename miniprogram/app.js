@@ -6,7 +6,7 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        env: 'turing-0gnrkrhx98fccb50', // 云环境ID
+        env: 'cloud1-8gbjshfgf7c95b79', // 云环境ID
         traceUser: true, // 是否将用户访问记录到用户管理中，在控制台可见
       })
       console.log('云环境初始化成功')
@@ -15,10 +15,43 @@ App({
       this.getUserInfo()
     }
     
+    // 从本地存储获取设置
+    let language = wx.getStorageSync('language');
+    if (!language) {
+      language = 'zh';
+      wx.setStorageSync('language', language); // 首次写入默认语言
+    }
+    const theme = wx.getStorageSync('theme') || 'light';
+    
+    // 更新全局设置
+    this.globalData.language = language;
+    this.globalData.theme = theme;
+    
+    // 应用主题
+    this.applyTheme(theme);
+    
+    // 根据语言更新底部 TabBar 文字
+    this.updateTabBarLabels(language);
+    
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+  },
+  
+  // 应用主题
+  applyTheme(theme) {
+    if (theme === 'dark') {
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#1f1f1f'
+      });
+    } else {
+      wx.setNavigationBarColor({
+        frontColor: '#000000',
+        backgroundColor: '#ffffff'
+      });
+    }
   },
   
   // 获取用户信息并检查是否已注册
@@ -134,8 +167,11 @@ App({
     
     const db = wx.cloud.database()
     
-    // 构建用户数据
+    // 若未提供昵称，则基于 openid 生成唯一默认昵称
+    const defaultNickname = `用户${this.globalData.openid.slice(-4)}`
+
     const userData = {
+      nickname: userInfo.nickname || defaultNickname,
       ...userInfo,
       gameData: this.globalData.gameData,
       createTime: db.serverDate(),
@@ -178,6 +214,21 @@ App({
     })
   },
   
+  // 根据语言更新底部 TabBar 文本
+  updateTabBarLabels(language) {
+    // 默认中文文案
+    const textsZh = ['首页', '我的', '设置'];
+    const textsEn = ['Home', 'Profile', 'Settings'];
+    const texts = language === 'en' ? textsEn : textsZh;
+
+    texts.forEach((text, idx) => {
+      wx.setTabBarItem({
+        index: idx,
+        text
+      });
+    });
+  },
+  
   globalData: {
     openid: null,
     userInfo: null,
@@ -192,7 +243,11 @@ App({
       currentCombo: 0,
       dialogues: [],
       completedChallenges: 0,
-      achievements: []
-    }
+      achievements: {},
+      heardDialogues: [] // 存储用户听过的对话ID
+    },
+    totalDialoguesCount: 0,
+    language: 'zh',    // 默认中文
+    theme: 'light'     // 默认浅色主题
   }
 }) 

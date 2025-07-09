@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 顶部导航 -->
   <t-navbar 
-    title="个人信息" 
+    title="{{t.navTitle}}" 
     left-arrow
     title-color="#ffffff"
     left-arrow-color="#ffffff"
@@ -14,7 +14,7 @@
   <!-- 进度条 -->
   <view class="mb-large">
     <view class="flex-between text-gray mb-small">
-      <text>完成基本信息</text>
+      <text>{{t.progressTitle}}</text>
       <text>{{currentStep}}/{{totalSteps}}</text>
     </view>
     <view class="progress-bar">
@@ -24,7 +24,7 @@
   
   <!-- 表单 -->
   <view class="card p-medium mb-medium">
-    <view class="form-title mb-medium">请选择您的{{formTitle}}</view>
+    <view class="form-title mb-medium">{{formTitle}}</view>
     
     <view class="options-container">
       <block wx:for="{{options}}" wx:key="index">
@@ -40,9 +40,9 @@
   </view>
   
   <!-- 底部按钮 -->
-  <button class="full-width-button" bindtap="nextStep">下一步</button>
+  <button class="full-width-button" bindtap="nextStep">{{t.nextButton}}</button>
   
   <view class="privacy-notice">
-    <text>信息仅用于研究目的，我们将严格保护您的隐私</text>
+    <text>{{t.privacyNotice}}</text>
   </view>
 </view> 

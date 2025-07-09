@@ -29,4 +29,4 @@
 同时兼具一定的游戏炫酷性
 
 appid：wx858244ef04892940
-云环境id：turing-0gnrkrhx98fccb50
+云环境id：cloud1-8gbjshfgf7c95b79
