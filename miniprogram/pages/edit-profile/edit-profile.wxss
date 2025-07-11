@@ -42,29 +42,9 @@
   font-weight: bold;
 }
 
-.edit-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-  border-radius: 0 0 100rpx 100rpx;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20rpx;
-}
-
 .hint-text {
   font-size: 28rpx;
   color: #1F2937;
-}
-
-.avatar-tip {
-  margin-top: 16rpx;
-  color: #6B7280;
-  font-size: 26rpx;
 }
 
 /* 卡片化表单 */
@@ -83,6 +63,7 @@
   justify-content: space-between;
   padding: 32rpx 0;
   border-bottom: 2rpx solid #F3F4F6;
+  min-height: 96rpx;
 }
 
 .form-item:last-child {
@@ -92,6 +73,8 @@
 .label {
   font-size: 32rpx;
   color: #1F2937;
+  flex-shrink: 0;
+  margin-right: 32rpx;
 }
 
 .input, .picker-value {
@@ -99,17 +82,26 @@
   text-align: right;
   font-size: 32rpx;
   color: #1F2937;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* 渐变主按钮 */
 .save-btn {
-  position: fixed;
-  bottom: 32rpx;
-  left: 32rpx;
-  right: 32rpx;
-  background: linear-gradient(135deg, #5777cf , #5d4fda );
-  color: #fff;
-  border-radius: 48rpx;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #ffffff;
   font-size: 32rpx;
-  box-shadow: 0 8rpx 24rpx rgba(99,102,241,0.25);
+  font-weight: bold;
+  background: linear-gradient(135deg, #6c8add , #4a4ddd );
+  border-radius: 44rpx;
+  margin-top: 64rpx;
+  border: none;
+}
+
+.save-btn:active {
+  opacity: 0.9;
 } 

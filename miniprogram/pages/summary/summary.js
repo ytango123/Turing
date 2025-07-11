@@ -421,11 +421,7 @@ createPage({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
     });
-    
-    wx.showToast({
-      title: '请点击右上角分享',
-      icon: 'none'
-    });
+    // 已启用 open-type="share" 按钮，无需再提示点击右上角
   },
   
   playAgain() {
@@ -455,10 +451,20 @@ createPage({
   },
   
   onShareAppMessage() {
+    const inviter = app.globalData.openid || '';
     return {
-      title: `我在图灵挑战中获得了${this.data.correctRate}的正确率，成功晋升为${this.data.level}！`,
-      path: '/pages/welcome/welcome',
-      imageUrl: '/assets/images/share-image.png' // 需要准备一张分享图片
+      title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
+      path: `/pages/welcome/welcome?inviter=${inviter}`,
+      imageUrl: '/assets/images/share-image.png'
+    };
+  },
+
+  onShareTimeline() {
+    const inviter = app.globalData.openid || '';
+    return {
+      title: '图灵挑战：你能识破 AI 吗？',
+      query: `inviter=${inviter}`,
+      imageUrl: '/assets/images/share-image.png'
     };
   },
   

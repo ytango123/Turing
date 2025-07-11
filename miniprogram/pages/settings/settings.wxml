@@ -35,5 +35,29 @@
         <view class="coming-soon-tag">{{language === 'zh' ? '即将推出' : 'Coming'}}</view>
       </view>
     </view>
+
+    <!-- 反馈 -->
+    <view class="setting-item" bindtap="openFeedback">
+      <view class="setting-left">
+        <t-icon name="chat-bubble-1" size="40rpx" color="#6B7280" />
+        <text class="setting-title">{{t.feedback}}</text>
+      </view>
+      <view class="setting-right">
+        <t-icon name="chevron-right" size="32rpx" color="#9CA3AF" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 反馈弹窗 -->
+  <view class="feedback-modal" wx:if="{{showFeedbackModal}}">
+    <view class="modal-mask" bindtap="closeFeedback"></view>
+    <view class="modal-content">
+      <view class="modal-header">{{language==='zh'?'意见反馈':'Feedback'}}</view>
+      <textarea class="modal-textarea" placeholder="{{language==='zh'?'请输入您的建议...':'Please enter your feedback...'}}" value="{{feedbackText}}" bindinput="onInputFeedback" maxlength="300"/>
+      <view class="modal-actions">
+        <button class="modal-btn cancel" bindtap="closeFeedback">{{language==='zh'?'取消':'Cancel'}}</button>
+        <button class="modal-btn submit" bindtap="submitFeedback">{{language==='zh'?'提交':'Submit'}}</button>
+      </view>
+    </view>
   </view>
 </view> 

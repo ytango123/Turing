@@ -5,6 +5,7 @@ const i18nMessages = {
       title: '设置',
       language: '语言',
       theme: '深色模式',
+      feedback: '意见反馈',
       chinese: '中文',
       english: '英文'
     },
@@ -22,6 +23,7 @@ const i18nMessages = {
       },
       rankings: '排行榜',
       viewAll: '查看全部',
+      collapse: '收起',
       points: '点',
       levelProgress: '距离"{nextLevel}"还需{points}点',
       newUser: '新手',
@@ -93,6 +95,7 @@ const i18nMessages = {
         ageLabel: '年龄',
         genderLabel: '性别',
         educationLabel: '学历',
+        aiFamiliarityLabel: 'AI 工具熟悉度',
         saveButton: '保存',
         pleaseFillNick: '请填写昵称',
         uploading: '上传中...',
@@ -101,7 +104,8 @@ const i18nMessages = {
         saveFailed: '保存失败',
         ages: ['18岁以下', '18-25岁', '26-35岁', '36-45岁', '46岁以上'],
         genders: ['男', '女', '其他'],
-        educations: ['高中及以下', '大专', '本科', '硕士', '博士及以上']
+        educations: ['高中及以下', '大专', '本科', '硕士', '博士及以上'],
+        aiFamiliarities: ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具']
       }
     },
     conversation: {
@@ -110,13 +114,13 @@ const i18nMessages = {
       progress: '挑战进度',
       expand: '展开全部对话',
       collapse: '收起对话',
-      hintText: '请仔细聆听对话，判断哪一方是AI',
-      judgeA: 'A是AI',
+      hintText: '请仔细聆听对话，判断回应者（B）的身份',
+      judgeA: 'B是人类',
       judgeB: 'B是AI',
-      judgeNone: '都是人类',
-      descA: 'B是人类',
-      descB: 'A是人类',
-      descNone: '没有AI',
+      judgeNone: '（已移除）',
+      descA: '选择此项若你认为B是真人',
+      descB: '选择此项若你认为B是AI',
+      descNone: '',
       exitConfirm: '确定要退出当前挑战吗？退出后将不会保存进度'
     },
     result: {
@@ -175,6 +179,7 @@ const i18nMessages = {
       ageTitle: '请选择您的年龄段',
       genderTitle: '请选择您的性别',
       educationTitle: '请选择您的学历',
+      aiFamiliarityTitle: '请选择您对 AI 工具熟悉程度',
       nextButton: '下一步',
       privacyNotice: '信息仅用于研究目的，我们将严格保护您的隐私',
       pleaseSelect: '请选择一个选项',
@@ -196,6 +201,7 @@ const i18nMessages = {
       ageLabel: '年龄',
       genderLabel: '性别',
       educationLabel: '学历',
+      aiFamiliarityLabel: 'AI 工具熟悉度',
       saveButton: '保存',
       pleaseFillNick: '请填写昵称',
       uploading: '上传中...',
@@ -204,7 +210,8 @@ const i18nMessages = {
       saveFailed: '保存失败',
       ages: ['18岁以下', '18-25岁', '26-35岁', '36-45岁', '46岁以上'],
       genders: ['男', '女', '其他'],
-      educations: ['高中及以下', '大专', '本科', '硕士', '博士及以上']
+      educations: ['高中及以下', '大专', '本科', '硕士', '博士及以上'],
+      aiFamiliarities: ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具']
     }
   },
   en: {
@@ -213,6 +220,7 @@ const i18nMessages = {
       title: 'Settings',
       language: 'Language',
       theme: 'Dark Mode',
+      feedback: 'Feedback',
       chinese: 'Chinese',
       english: 'English'
     },
@@ -230,6 +238,7 @@ const i18nMessages = {
       },
       rankings: 'Rankings',
       viewAll: 'View All',
+      collapse: 'Collapse',
       points: 'pts',
       levelProgress: '{points} points to "{nextLevel}"',
       newUser: 'Novice',
@@ -301,6 +310,7 @@ const i18nMessages = {
         ageLabel: 'Age',
         genderLabel: 'Gender',
         educationLabel: 'Education',
+        aiFamiliarityLabel: 'AI Tools Familiarity',
         saveButton: 'Save',
         pleaseFillNick: 'Please enter a nickname',
         uploading: 'Uploading...',
@@ -309,7 +319,8 @@ const i18nMessages = {
         saveFailed: 'Save failed',
         ages: ['Under 18', '18-25', '26-35', '36-45', '46+'],
         genders: ['Male', 'Female', 'Other'],
-        educations: ['High school or below', 'Associate', 'Bachelor', 'Master', 'PhD+']
+        educations: ['High school or below', 'Associate', 'Bachelor', 'Master', 'PhD+'],
+        aiFamiliarities: ['Never used', 'Occasionally encountered (e.g., saw others use)', 'Used a few times, understand basic functions', 'Use frequently, have some operational experience', 'Very familiar, have extensively used multiple AI tools']
       }
     },
     conversation: {
@@ -318,13 +329,13 @@ const i18nMessages = {
       progress: 'Progress',
       expand: 'Show full dialogue',
       collapse: 'Collapse dialogue',
-      hintText: 'Listen carefully and decide who is AI',
-      judgeA: 'A is AI',
+      hintText: 'Listen carefully and decide if the responder (B) is human or AI',
+      judgeA: 'B is Human',
       judgeB: 'B is AI',
-      judgeNone: 'Both human',
-      descA: 'B is human',
-      descB: 'A is human',
-      descNone: 'No AI',
+      judgeNone: '(removed)',
+      descA: 'Select if you think B is human',
+      descB: 'Select if you think B is AI',
+      descNone: '',
       exitConfirm: 'Are you sure you want to quit the current challenge? Your progress will not be saved.'
     },
     result: {
@@ -383,6 +394,7 @@ const i18nMessages = {
       ageTitle: 'Please select your age range',
       genderTitle: 'Please select your gender',
       educationTitle: 'Please select your education',
+      aiFamiliarityTitle: 'Please select your familiarity with AI tools',
       nextButton: 'Next',
       privacyNotice: 'Information is for research purposes only, we will protect your privacy',
       pleaseSelect: 'Please select an option',
@@ -404,6 +416,7 @@ const i18nMessages = {
       ageLabel: 'Age',
       genderLabel: 'Gender',
       educationLabel: 'Education',
+      aiFamiliarityLabel: 'AI Tools Familiarity',
       saveButton: 'Save',
       pleaseFillNick: 'Please enter a nickname',
       uploading: 'Uploading...',
@@ -412,7 +425,8 @@ const i18nMessages = {
       saveFailed: 'Save failed',
       ages: ['Under 18', '18-25', '26-35', '36-45', '46+'],
       genders: ['Male', 'Female', 'Other'],
-      educations: ['High school or below', 'Associate', 'Bachelor', 'Master', 'PhD+']
+      educations: ['High school or below', 'Associate', 'Bachelor', 'Master', 'PhD+'],
+      aiFamiliarities: ['Never used', 'Occasionally encountered (e.g., saw others use)', 'Used a few times, understand basic functions', 'Use frequently, have some operational experience', 'Very familiar, have extensively used multiple AI tools']
     }
   }
 }

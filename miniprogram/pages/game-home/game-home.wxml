@@ -38,54 +38,49 @@
   <!-- 游戏模式选择 -->
   <view class="section-title mb-medium">{{t.challengeModes}}</view>
   
-  <view class="game-modes mb-large">
-    <!-- 快速挑战 -->
-    <view class="game-card" bindtap="startQuickChallenge">
-      <view class="game-icon-container mr-medium" style="background-color: {{gameModes[0].bgColor}};">
-        <text class="iconfont icon-{{gameModes[0].icon}}" style="color: {{gameModes[0].color}}; font-size: 48rpx;"></text>
-      </view>
-      <view class="flex-1">
-        <view class="game-mode-title">{{t.quickChallengeTitle}}</view>
-        <view class="game-mode-desc">{{t.quickChallengeDesc}}</view>
-      </view>
-      <t-icon name="chevron-right" size="40rpx" color="#9CA3AF" />
+  <view class="challenge-modes mb-large">
+    <!-- 快速挑战卡片 -->
+    <view class="mode-card" bindtap="startQuickChallenge">
+      <image class="card-icon" src="/assets/figma/quick_challenge_top.png" mode="widthFix"></image>
+      <image class="card-image" src="/assets/images/game-home/quick-challenge.svg" mode="widthFix"></image>
     </view>
-    
-    <!-- 高难模式 -->
-    <view class="game-card">
-      <view class="game-icon-container purple mr-medium" style="background-color: {{gameModes[1].bgColor}};">
-        <text class="iconfont icon-{{gameModes[1].icon}}" style="color: {{gameModes[1].color}}; font-size: 48rpx;"></text>
-      </view>
-      <view class="flex-1">
-        <view class="game-mode-title">{{t.hardModeTitle}}</view>
-        <view class="game-mode-desc">{{t.hardModeDesc}}</view>
-      </view>
-      <view class="coming-soon-tag">{{t.hardModeComingSoon}}</view>
+
+    <!-- 困难模式卡片 -->
+    <view class="mode-card">
+      <image class="card-icon" src="/assets/figma/hard_mode_top.png" mode="widthFix"></image>
+      <image class="card-image" src="/assets/images/game-home/hard-mode.svg" mode="widthFix"></image>
     </view>
   </view>
   
   <!-- 排行榜 -->
-  <view class="flex-between mb-medium">
-    <view class="section-title">{{t.rankings}}</view>
-    <view class="view-all" bindtap="viewAllRankings">{{t.viewAll}}</view>
-  </view>
+  <view class="section-title mb-medium">{{t.rankings}}</view>
   
   <view class="card ranking-card">
-    <view class="ranking-item" wx:for="{{rankings}}" wx:key="index">
+    <view class="ranking-item" wx:for="{{displayRankings}}" wx:key="index">
       <view class="flex-start">
-        <block wx:if="{{item.rank <= 3}}">
-          <image class="ranking-medal mr-small" src="/assets/icons/{{item.rank === 1 ? 'first' : (item.rank === 2 ? 'second' : 'third')}}.png" mode="aspectFit" />
-        </block>
-        <block wx:else>
-          <view class="ranking-number {{item.rank === 'you' ? 'you' : ''}}">{{item.rank}}</view>
-        </block>
-        <image wx:if="{{item.avatarUrl}}" class="ranking-avatar mr-small" src="{{item.avatarUrl}}" mode="aspectFill"></image>
-        <view wx:else class="ranking-avatar-fallback mr-small">
-          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:28rpx;"></text>
+        <view class="ranking-avatar-wrapper mr-medium">
+          <!-- 头像 -->
+          <image wx:if="{{item.avatarUrl}}" class="ranking-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+          <view wx:else class="ranking-avatar-fallback">
+            <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:36rpx;"></text>
+          </view>
+          <!-- 右下角排名徽章/数字 -->
+          <block wx:if="{{item.rank <= 3}}">
+            <image class="ranking-rank-badge" src="/assets/icons/{{item.rank === 1 ? 'first' : (item.rank === 2 ? 'second' : 'third')}}.png" mode="aspectFit" />
+          </block>
+          <block wx:else>
+            <view class="ranking-rank-number {{item.isUser ? 'you' : ''}}">{{item.rank}}</view>
+          </block>
         </view>
-        <text class="{{item.rank === 'you' ? 'text-primary font-bold' : ''}}">{{item.name}}</text>
+        <text class="{{item.isUser ? 'text-primary font-bold' : ''}}">{{item.name}}</text>
       </view>
-      <text class="{{item.rank === 'you' ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}{{t.points}}</text>
+      <text class="{{item.isUser ? 'text-primary font-bold' : 'font-bold'}}">{{item.points}}{{t.points}}</text>
+    </view>
+    
+    <!-- 展开/收起按钮 -->
+    <view class="view-all-button" bindtap="toggleRankings">
+      <text>{{showFullRankings ? t.collapse : t.viewAll}}</text>
+      <t-icon name="{{showFullRankings ? 'chevron-up' : 'chevron-down'}}" size="32rpx" color="#577CE2" />
     </view>
   </view>
 </view> 

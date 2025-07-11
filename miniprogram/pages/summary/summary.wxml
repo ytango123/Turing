@@ -113,7 +113,7 @@
   </view>
   
   <!-- 分享和再来一轮按钮 -->
-  <button class="share-button mb-medium" bindtap="shareResults">
+  <button class="share-button mb-medium" open-type="share">
     <t-icon name="share" size="40rpx" color="#FFF" class="mr-small" />
     {{t.shareButton}}
   </button>

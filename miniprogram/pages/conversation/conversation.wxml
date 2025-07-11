@@ -62,19 +62,14 @@
   
   <!-- 判断按钮 -->
   <view class="judgment-buttons">
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="MH">
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="H">
       <view class="judgment-title">{{t.judgeA}}</view>
-      <view class="judgment-desc">{{t.descA}}</view>
+      
     </view>
     
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="HM">
+    <view class="judgment-button" bindtap="makeJudgment" data-judgment="M">
       <view class="judgment-title">{{t.judgeB}}</view>
-      <view class="judgment-desc">{{t.descB}}</view>
-    </view>
-    
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="HH">
-      <view class="judgment-title">{{t.judgeNone}}</view>
-      <view class="judgment-desc">{{t.descNone}}</view>
+      
     </view>
   </view>
 </view> 

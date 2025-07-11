@@ -157,6 +157,25 @@
   border-bottom: none;
 }
 
+/* 展开/收起按钮样式 */
+.view-all-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24rpx 0 8rpx;
+  margin-top: 16rpx;
+  border-top: 2rpx solid #F3F4F6;
+  color: #577CE2;
+  font-size: 28rpx;
+  font-weight: 500;
+  gap: 8rpx;
+  transition: all 0.2s;
+}
+
+.view-all-button:active {
+  opacity: 0.8;
+}
+
 .ranking-number {
   width: 48rpx;
   height: 48rpx;
@@ -215,29 +234,73 @@
   object-fit: cover;
 }
 
-.ranking-avatar,
-.ranking-avatar-fallback {
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 50%;
-}
-
+/* 覆盖排行榜头像大小 */
 .ranking-avatar {
   object-fit: cover;
 }
 
+/* 头像包装器，用于定位排名徽章 */
+.ranking-avatar-wrapper {
+  position: relative;
+  width: 72rpx;
+  height: 72rpx;
+}
+
+/* 排名徽章（前3名奖牌） */
+.ranking-rank-badge {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  bottom: -4rpx;
+  right: -4rpx;
+}
+
+/* 普通数字排名徽章 */
+.ranking-rank-number {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  bottom: -4rpx;
+  right: -4rpx;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  color: #ffffff;
+  font-size: 20rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ranking-rank-number.you {
+  background-color: #EEF2FF;
+  color: #4a6ed3;
+}
+
+/* 调整文字头像字体大小 */
 .ranking-avatar-fallback {
   background: linear-gradient(135deg, #7072f0, #4767c2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28rpx;
   color: #ffffff;
+  font-size: 36rpx;
 }
 
 .ranking-medal {
   width: 48rpx;
   height: 48rpx;
+}
+
+.ranking-avatar,
+.ranking-avatar-fallback {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+
+.ranking-avatar {
+  object-fit: cover;
 }
 
 /* ========== Level Progress Bar ========== */
@@ -252,4 +315,41 @@
             ),
             linear-gradient(90deg, #FBBF24, #F59E0B);
   border-radius: 8rpx;
+} 
+
+/* 新版挑战模式卡片样式 */
+.challenge-modes {
+  display: flex;
+  flex-direction: row;
+  gap: 3rpx;
+  padding-top: 60rpx; /* 为顶部图标预留空间 */
+}
+
+.mode-card {
+  position: relative;
+  width: 320rpx;
+  transition: transform 0.2s ease;
+}
+
+.mode-card:active {
+  transform: scale(0.95);
+}
+
+.card-icon {
+  position: absolute;
+  width: 194rpx;
+  height: auto;
+  top: -72rpx; /* 让图标超出卡片顶部 */
+  left: 51%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 40rpx;
+  display: block;
+  position: relative;
+  z-index: 1;
 } 

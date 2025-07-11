@@ -11,6 +11,7 @@ createPage({
     ageLabel: 'ageLabel',
     genderLabel: 'genderLabel',
     educationLabel: 'educationLabel',
+    aiFamiliarityLabel: 'aiFamiliarityLabel',
     saveButton: 'saveButton',
     pleaseFillNick: 'pleaseFillNick',
     uploading: 'uploading',
@@ -29,30 +30,42 @@ createPage({
     genderIndex: 0,
     educations: [],
     educationIndex: 0,
+    aiFamiliarityIndex: 0,
+    aiFamiliarities: [],
     isSubmitting: false
   },
 
   onLoad() {
-    // 设置多语言下拉选项
-    this.updatePickerOptions()
-
-    // 预填充数据
-    const userDoc = getApp().globalData.userInfo || {}
-    const avatarUrl = userDoc.avatarUrl || ''
-    const nickname = userDoc.nickname || `用户${(getApp().globalData.openid || '').slice(-4)}`
-
-    const ageIdx = this.data.ages.indexOf(userDoc.age)
-    const genderIdx = this.data.genders.indexOf(userDoc.gender)
-    const eduIdx = this.data.educations.indexOf(userDoc.education)
-
+    // 获取语言环境
+    const language = wx.getStorageSync('language') || 'zh';
+    
+    // 初始化选项数据
     this.setData({
-      avatarUrl,
-      nickname,
-      userInitial: nickname ? nickname.charAt(0) : 'T',
-      ageIndex: ageIdx >= 0 ? ageIdx : 0,
-      genderIndex: genderIdx >= 0 ? genderIdx : 0,
-      educationIndex: eduIdx >= 0 ? eduIdx : 0
-    })
+      ages: t('editProfile.ages', language),
+      genders: t('editProfile.genders', language),
+      educations: t('editProfile.educations', language),
+      aiFamiliarities: t('editProfile.aiFamiliarities', language)
+    });
+    
+    // 获取用户信息
+    if (getApp().globalData && getApp().globalData.userInfo) {
+      const userInfo = getApp().globalData.userInfo;
+      
+      this.setData({
+        nickname: userInfo.nickname || '',
+        avatarUrl: userInfo.avatarUrl || '',
+        ageIndex: this.getIndexByValue(this.data.ages, userInfo.age),
+        genderIndex: this.getIndexByValue(this.data.genders, userInfo.gender),
+        educationIndex: this.getIndexByValue(this.data.educations, userInfo.education),
+        aiFamiliarityIndex: this.getIndexByValue(this.data.aiFamiliarities, userInfo.aiFamiliarity)
+      });
+    }
+  },
+
+  // 获取选项在数组中的索引
+  getIndexByValue(array, value) {
+    const index = array.indexOf(value);
+    return index === -1 ? 0 : index;
   },
 
   // 在语言变化时更新下拉选项
@@ -108,13 +121,18 @@ createPage({
   onEducationChange(e) {
     this.setData({ educationIndex: e.detail.value })
   },
+  onAiFamiliarityChange(e) {
+    this.setData({
+      aiFamiliarityIndex: e.detail.value
+    });
+  },
 
   saveProfile() {
     // 震动反馈
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
-    const { avatarUrl, nickname, ages, ageIndex, genders, genderIndex, educations, educationIndex } = this.data
+    const { avatarUrl, nickname, ages, ageIndex, genders, genderIndex, educations, educationIndex, aiFamiliarities, aiFamiliarityIndex } = this.data
     if (!nickname) {
       wx.showToast({ title: this.data.t.pleaseFillNick, icon: 'none' })
       return
@@ -129,7 +147,8 @@ createPage({
       nickname,
       age: ages[ageIndex],
       gender: genders[genderIndex],
-      education: educations[educationIndex]
+      education: educations[educationIndex],
+      aiFamiliarity: aiFamiliarities[aiFamiliarityIndex]
     })
 
     const db = wx.cloud.database()
@@ -145,13 +164,14 @@ createPage({
         age: ages[ageIndex],
         gender: genders[genderIndex],
         education: educations[educationIndex],
+        aiFamiliarity: aiFamiliarities[aiFamiliarityIndex],
         updateTime: db.serverDate()
       }
     }).then(() => {
-      wx.showToast({ title: this.data.t.saveSuccess, icon: 'success' })
-      setTimeout(() => { wx.navigateBack() }, 800)
+      wx.showToast({ title: this.data.t.saveSuccess })
+      setTimeout(() => wx.navigateBack(), 1500)
     }).catch(err => {
-      console.error('保存用户信息失败', err)
+      console.error('保存失败：', err)
       wx.showToast({ title: this.data.t.saveFailed, icon: 'none' })
     })
   }

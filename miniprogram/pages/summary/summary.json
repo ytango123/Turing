@@ -4,5 +4,7 @@
     "t-icon": "tdesign-miniprogram/icon/icon"
   },
   "navigationBarTitleText": "挑战完成",
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "enableShareAppMessage": true,
+  "enableShareTimeline": true
 } 

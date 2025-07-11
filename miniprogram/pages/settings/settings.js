@@ -6,12 +6,15 @@ createPage({
   i18nKeys: {
     navTitle: 'navTitle',
     languageText: 'language',
-    themeText: 'theme'
+    themeText: 'theme',
+    feedback: 'feedback'
   },
   
   data: {
     language: 'zh',  // 默认中文
     theme: 'light',   // 默认浅色主题
+    showFeedbackModal: false,
+    feedbackText: ''
   },
   
   onLoad() {
@@ -100,6 +103,45 @@ createPage({
         backgroundColor: '#ffffff'
       });
     }
+  },
+  
+  // 打开反馈弹窗
+  openFeedback() {
+    if (wx.vibrateShort) wx.vibrateShort({ type: 'light' });
+    this.setData({ showFeedbackModal: true, feedbackText: '' });
+  },
+  // 关闭反馈弹窗
+  closeFeedback() {
+    this.setData({ showFeedbackModal: false });
+  },
+  // 输入监听
+  onInputFeedback(e) {
+    this.setData({ feedbackText: e.detail.value });
+  },
+  // 提交反馈
+  submitFeedback() {
+    const text = (this.data.feedbackText || '').trim();
+    if (!text) {
+      wx.showToast({ title: this.data.language==='zh'?'请输入内容':'Please input', icon:'none' });
+      return;
+    }
+    wx.showLoading({ title: this.data.language==='zh'?'提交中':'Submitting', mask:true });
+    const db = wx.cloud.database();
+    db.collection('feedback').add({
+      data:{
+        content: text,
+        createTime: db.serverDate(),
+        _openid: ''
+      }
+    }).then(()=>{
+      wx.hideLoading();
+      wx.showToast({ title: this.data.language==='zh'?'感谢反馈':'Thanks', icon:'success' });
+      this.setData({ showFeedbackModal:false, feedbackText:'' });
+    }).catch(err=>{
+      wx.hideLoading();
+      console.error('提交反馈失败',err);
+      wx.showToast({ title: this.data.language==='zh'?'提交失败':'Failed', icon:'none' });
+    });
   },
   
   onTabItemTap(item) {

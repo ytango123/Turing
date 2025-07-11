@@ -9,6 +9,7 @@ createPage({
     ageTitle: 'ageTitle',
     genderTitle: 'genderTitle',
     educationTitle: 'educationTitle',
+    aiFamiliarityTitle: 'aiFamiliarityTitle',
     nextButton: 'nextButton',
     privacyNotice: 'privacyNotice',
     pleaseSelect: 'pleaseSelect',
@@ -18,11 +19,12 @@ createPage({
 
   data: {
     currentStep: 1,
-    totalSteps: 3,
+    totalSteps: 4,
     selectedOption: null,
     
     // 存储用户信息
     userInfo: {
+      aiFamiliarity: '',
       age: '',
       gender: '',
       education: ''
@@ -41,6 +43,10 @@ createPage({
       {
         key: 'education',
         options: ['高中及以下', '大专', '本科', '硕士', '博士及以上']
+      },
+      {
+        key: 'aiFamiliarity',
+        options: ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具']
       }
     ]
   },
@@ -58,6 +64,9 @@ createPage({
 
     // 定义中英选项映射
     const optionsMap = {
+      aiFamiliarity: language === 'en'
+        ? ['Never used', 'Occasionally encountered (e.g., saw others use)', 'Used a few times, understand basic functions', 'Use frequently, have some operational experience', 'Very familiar, have extensively used multiple AI tools']
+        : ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具'],
       age: language === 'en'
         ? ['Under 18', '18-25', '26-35', '36-45', '46+']
         : ['18岁以下', '18-25岁', '26-35岁', '36-45岁', '46岁以上'],

@@ -14,10 +14,7 @@ createPage({
     hintText: 'hintText',
     judgeA: 'judgeA',
     judgeB: 'judgeB',
-    judgeNone: 'judgeNone',
-    descA: 'descA',
-    descB: 'descB',
-    descNone: 'descNone'
+    // 描述文本已移除
   },
 
   data: {
@@ -468,8 +465,8 @@ createPage({
         };
       });
       
-      // 直接使用对话类型作为正确答案(HH/HM/MH)
-      const answer = dialogue.type;
+      // 直接使用对话类型（H: Human, M: AI）作为正确答案
+      const answer = dialogue.type === 'M' ? 'M' : 'H';
       
       // 保存当前音频ID与所属 Session
       const currentAudioId = dialogue.conversation_id;
@@ -682,8 +679,8 @@ createPage({
     gameData.dialogues.push({
       id: this.data.currentDialogue,              // 本地对话序号 1-10
       conversationId: this.data.currentAudioId,  // 云端 conversation_id / 音频ID
-      correctAnswer: this.data.currentAnswer,    // HH / HM / MH
-      userAnswer: judgment,                      // 用户选择
+      correctAnswer: this.data.currentAnswer,    // H / M
+      userAnswer: judgment,                      // 用户选择 (H/M)
       isCorrect: isCorrect                       // 是否判定正确
     });
     

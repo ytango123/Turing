@@ -9,6 +9,7 @@ createPage({
     challengeModes: 'challengeModes',
     rankings: 'rankings',
     viewAll: 'viewAll',
+    collapse: 'collapse',
     points: 'points',
     quickChallengeTitle: 'quickChallenge.title',
     quickChallengeDesc: 'quickChallenge.description',
@@ -54,7 +55,9 @@ createPage({
       }
     ],
     
-    rankings: []
+    rankings: [],
+    displayRankings: [],
+    showFullRankings: false
   },
   
   onLoad() {
@@ -223,14 +226,23 @@ createPage({
     });
   },
   
+  // 根据是否展开设置显示的排行榜数据
+  updateDisplayRankings(rankList = this.data.rankings) {
+    const display = this.data.showFullRankings ? rankList : rankList.slice(0, 3)
+    this.setData({
+      displayRankings: display
+    })
+  },
+  
   fetchRankingsPreview() {
     const db = wx.cloud.database();
     const _ = db.command;
     const userPoints = app.globalData.gameData ? (app.globalData.gameData.points || 0) : 0;
     
+    // 获取前20名用户数据
     db.collection('users')
       .orderBy('gameData.points', 'desc')
-      .limit(3)
+      .limit(20)
       .get()
       .then(resTop => {
         const topList = resTop.data.map((u, idx) => ({
@@ -249,13 +261,13 @@ createPage({
           .count()
           .then(resCnt => {
             const userRankNum = resCnt.total + 1;
-            let preview = topList;
+            let rankingList = topList;
             
-            // 检查当前用户是否已经在前三名中
-            const isUserInTop3 = topList.some(item => item.isUser);
+            // 检查当前用户是否已经在列表中
+            const isUserInList = topList.some(item => item.isUser);
             
-            if (!isUserInTop3 && userRankNum > 3) {
-              preview = [
+            if (!isUserInList) {
+              rankingList = [
                 ...topList,
                 {
                   rank: userRankNum,
@@ -269,7 +281,9 @@ createPage({
             }
             
             this.setData({
-              rankings: preview
+              rankings: rankingList
+            }, () => {
+              this.updateDisplayRankings(rankingList)
             });
           })
           .catch(err => {
@@ -281,15 +295,17 @@ createPage({
       });
   },
   
-  viewAllRankings() {
+  toggleRankings() {
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
-    wx.navigateTo({
-      url: '/pages/rankings/rankings'
+    this.setData({
+      showFullRankings: !this.data.showFullRankings
+    }, () => {
+      this.updateDisplayRankings()
     });
   },
-  
+
   editProfile() {
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });

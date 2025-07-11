@@ -54,6 +54,13 @@
           <view class="picker-value">{{educations[educationIndex]}}</view>
         </picker>
       </view>
+
+      <view class="form-item">
+        <view class="label">{{t.aiFamiliarityLabel}}</view>
+        <picker mode="selector" range="{{aiFamiliarities}}" value="{{aiFamiliarityIndex}}" bindchange="onAiFamiliarityChange">
+          <view class="picker-value">{{aiFamiliarities[aiFamiliarityIndex]}}</view>
+        </picker>
+      </view>
     </view>
     
     <button class="save-btn" bindtap="saveProfile">{{t.saveButton}}</button>
