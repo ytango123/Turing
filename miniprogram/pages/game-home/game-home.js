@@ -35,7 +35,11 @@ createPage({
     pointsToNextLevel: 35,
     levelProgress: 65,
     progressText: '',
-    
+
+    // 根据语言切换的模式卡片SVG
+    quickChallengeSvg: '/assets/images/game-home/quick-challenge-zh.svg',
+    hardModeSvg: '/assets/images/game-home/hard-mode-zh.svg',
+
     gameModes: [
       {
         id: 'quick',
@@ -54,12 +58,16 @@ createPage({
         locked: true
       }
     ],
-    
+
     rankings: [],
     displayRankings: [],
-    showFullRankings: false
+    showFullRankings: false,
+    // 新增：前三名与后续排名分离及卡片高度
+    topRankings: [],
+    restRankings: [],
+    rankCardHeight: 0
   },
-  
+
   onLoad() {
     // 检查是否已有用户信息（从全局状态获取）
     if (!app.globalData.userInfo) {
@@ -86,12 +94,12 @@ createPage({
       this.updatePageData();
     }
   },
-  
+
   // 新增：页面每次显示时都刷新数据，确保点数及时更新
   onShow() {
     this.updatePageData();
   },
-  
+
   // 更新页面数据
   updatePageData() {
     // 从云端获取最新游戏数据
@@ -105,15 +113,15 @@ createPage({
         if (res.data && res.data[0]) {
           const userData = res.data[0];
           const gameData = userData.gameData || {};
-          
+
           // 更新全局数据
           app.globalData.gameData = gameData;
-          
+
           // 生成默认昵称（若数据库中无昵称）
           const nickname = userData.nickname || `用户${(app.globalData.openid || '').slice(-4)}`;
           const userInitial = nickname.charAt(0);
           const avatarUrl = userData.avatarUrl || '';
-          
+
           // 更新页面数据
       this.setData({
         points: gameData.points || 0,
@@ -122,7 +130,7 @@ createPage({
             userInitial: userInitial,
             avatarUrl: avatarUrl
       });
-      
+
       // 计算等级进度
       this.calculateLevelProgress();
     }
@@ -130,11 +138,11 @@ createPage({
       .catch(err => {
         console.error('获取用户数据失败', err);
       });
-    
+
     // 获取排行榜预览
     this.fetchRankingsPreview();
   },
-  
+
   calculateLevelProgress() {
     const currentPoints = this.data.points;
     let currentLevel = 'newUser';
@@ -184,11 +192,11 @@ createPage({
 
     // 获取当前语言环境
     const language = wx.getStorageSync('language') || 'zh';
-    
+
     // 设置当前等级和下一等级的显示文本
     const currentLevelText = t(`gameHome.${currentLevel}`, language);
     const nextLevelText = t(`gameHome.${nextLevel}`, language);
-    
+
     // 获取进度文本模板并替换变量
     const progressTemplate = t('gameHome.levelProgress', language);
     let progressText = progressTemplate
@@ -199,7 +207,7 @@ createPage({
     if (currentLevel === 'superIdentifier') {
       progressText = '';
     }
-      
+
       this.setData({
       level: currentLevelText,
       nextLevel: nextLevelText,
@@ -214,8 +222,15 @@ createPage({
   refreshLanguageDependentData(language) {
     // 重新计算等级进度（内部已根据 language 读取本地存储）
     this.calculateLevelProgress();
+
+    // 更新模式卡片 SVG 路径
+    const langCode = (language === 'en') ? 'en' : 'zh'
+    this.setData({
+      quickChallengeSvg: `/assets/images/game-home/quick-challenge-${langCode}.svg`,
+      hardModeSvg: `/assets/images/game-home/hard-mode-${langCode}.svg`
+    })
   },
-  
+
   startQuickChallenge() {
     // 震动反馈
     if (wx.vibrateShort) {
@@ -225,20 +240,28 @@ createPage({
       url: '/pages/quick-intro/quick-intro'
     });
   },
-  
+
   // 根据是否展开设置显示的排行榜数据
   updateDisplayRankings(rankList = this.data.rankings) {
-    const display = this.data.showFullRankings ? rankList : rankList.slice(0, 3)
+    const top = rankList.slice(0, 3)
+    const rest = rankList.slice(3)
+    // 估算每条记录高度（含间距）
+    const ITEM_HEIGHT = 230 // rpx，包括卡片本身+间距
+    const cardHeight = rest.length * ITEM_HEIGHT + 20; // 顶部+底部留白
+
     this.setData({
-      displayRankings: display
+      topRankings: top,
+      restRankings: rest,
+      rankCardHeight: cardHeight,
+      displayRankings: rankList // 兼容旧字段，避免报错
     })
   },
-  
+
   fetchRankingsPreview() {
     const db = wx.cloud.database();
     const _ = db.command;
     const userPoints = app.globalData.gameData ? (app.globalData.gameData.points || 0) : 0;
-    
+
     // 获取前20名用户数据
     db.collection('users')
       .orderBy('gameData.points', 'desc')
@@ -253,7 +276,7 @@ createPage({
           userInitial: (u.nickname || '匿').charAt(0),
           isUser: u._openid === app.globalData.openid
         }));
-        
+
         db.collection('users')
           .where({
             'gameData.points': _.gt(userPoints)
@@ -262,10 +285,10 @@ createPage({
           .then(resCnt => {
             const userRankNum = resCnt.total + 1;
             let rankingList = topList;
-            
+
             // 检查当前用户是否已经在列表中
             const isUserInList = topList.some(item => item.isUser);
-            
+
             if (!isUserInList) {
               rankingList = [
                 ...topList,
@@ -279,7 +302,7 @@ createPage({
                 }
               ];
             }
-            
+
             this.setData({
               rankings: rankingList
             }, () => {
@@ -294,7 +317,7 @@ createPage({
         console.error('获取排行榜失败', err);
       });
   },
-  
+
   toggleRankings() {
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });

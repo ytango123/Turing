@@ -332,101 +332,83 @@
   border-radius: 8rpx;
 } 
 
-/* ================= 成就弹窗样式 ================= */
-.achievement-modal {
+/* 弹窗 */
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 999;
 }
 
-.achievement-mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8rpx);
-}
-
-.achievement-content {
-  position: relative;
+.modal-content {
+  width: 600rpx;
+  background: #ffffff;
+  border-radius: 48rpx;
+  padding: 64rpx 30rpx 90rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  max-width: 600rpx;
-  width: 80%;
-  padding: 96rpx 32rpx 64rpx;
-  box-sizing: border-box;
+  position: relative;
 }
 
-.achievement-icon {
-  width: 400rpx;
-  height: 400rpx;
-}
-
-.achievement-title {
-  margin-top: 64rpx;
-  font-size: 36rpx;
-  color: #FFFFFF;
-  opacity: 0.9;
-}
-
-.achievement-name {
-  margin-top: 16rpx;
-  font-size: 56rpx;
-  font-weight: bold;
-  color: #a6ccf7;
-}
-
-.achievement-date {
-  margin-top: 24rpx;
-  font-size: 28rpx;
-  color: #D1D5DB;
-}
-
-.achievement-share-btn {
-  margin-top: 96rpx;
-  width: 40%;
-  height: 80rpx;
-  border-radius: 44rpx;
-  background: #E5E7EB;
-  color: #1F2937;
-  font-size: 32rpx;
-  font-weight: bold;
-  text-align: center !important;
-  padding: 0 !important;
-  line-height: 80rpx !important;
-  border: none !important;
-  box-sizing: border-box !important;
-}
-
-/* 重置所有可能影响居中的样式 */
-.achievement-share-btn::after,
-.achievement-share-btn::before {
-  display: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.achievement-close {
-  margin-top: 48rpx;
-  width: 56rpx;
-  height: 56rpx;
-  border: 2rpx solid rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
+.modal-badge-wrapper {
+  width: 240rpx;
+  height: 240rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  margin-bottom: 48rpx;
+}
+
+.modal-badge {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #3b5ba5;
+  margin-bottom: 16rpx;
+}
+
+.modal-desc {
+  font-size: 28rpx;
+  color: #9CA3AF;
+  text-align: center;
+  margin-bottom: 64rpx;
+}
+
+.modal-close-btn {
+  margin-top: 32rpx;
+  width: 240rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 32rpx;
-  line-height: 1;
+  color: #555555;
+  font-weight: 600;
+  border: none;
+  position: relative;
+}
+
+.modal-close-btn .btn-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.modal-close-btn .btn-text {
+  position: relative;
+  z-index: 1;
 } 

@@ -10,12 +10,14 @@ createPage({
     statsCorrectRate: 'stats.correctRate',
     statsMaxCombo: 'stats.maxCombo',
     statsAchievements: 'stats.achievements',
+    statsRank: 'stats.rank',
     tabAchievements: 'tabs.achievements',
     tabHistory: 'tabs.history',
     historyEmpty: 'history.empty',
     historyChallenge: 'history.challenge',
     historyCorrectRate: 'history.correctRate',
-    historyPointsGained: 'history.pointsGained'
+    historyPointsGained: 'history.pointsGained',
+    closeLabel: 'close'
   },
 
   data: {
@@ -34,6 +36,9 @@ createPage({
     correctRate: 76,
     maxCombo: 5,
     unlockedAchievements: 3,
+    userRank: '--',
+    showBadgeModal: false,
+    selectedBadge: null,
     
     currentTab: 'achievements',
     
@@ -45,7 +50,9 @@ createPage({
         icon: 'check_circle_line',
         iconType: 'iconfont',
         unlocked: false,
-        key: 'firstTry'
+        key: 'firstTry',
+        image: '/assets/images/summary/first_try.svg',
+        size: 210
       },
       {
         id: 2,
@@ -54,7 +61,9 @@ createPage({
         icon: 'star_line',
         iconType: 'iconfont',
         unlocked: false,
-        key: 'comboMaster'
+        key: 'comboMaster',
+        image: '/assets/images/summary/five.svg',
+        size: 198
       },
       {
         id: 3,
@@ -63,7 +72,9 @@ createPage({
         icon: 'trophy_2_line',
         iconType: 'iconfont',
         unlocked: false,
-        key: 'perfectJudge'
+        key: 'perfectJudge',
+        image: '/assets/images/summary/perfect.svg',
+        size: 240
       }
     ],
     
@@ -78,6 +89,7 @@ createPage({
   // 从云端获取最新用户数据
   fetchLatestUserData() {
     const db = wx.cloud.database();
+    const _ = db.command;
     
     // 确保有openid
     if (!getApp().globalData || !getApp().globalData.openid) {
@@ -96,7 +108,24 @@ createPage({
           
           // 更新全局数据
           getApp().globalData.gameData = gameData;
-    
+          
+          // 获取用户排名
+          const userPoints = gameData.points || 0;
+          db.collection('users')
+            .where({
+              'gameData.points': _.gt(userPoints)
+            })
+            .count()
+            .then(resCnt => {
+              const userRankNum = resCnt.total + 1;
+              this.setData({
+                userRank: userRankNum
+              });
+            })
+            .catch(err => {
+              console.error('获取用户排名失败', err);
+            });
+
           // 生成默认昵称（若数据库中无昵称）
           const nickname = userData.nickname || `用户${(getApp().globalData.openid || '').slice(-4)}`;
           const userInitial = nickname.charAt(0);
@@ -119,7 +148,7 @@ createPage({
           
           // 更新成就解锁状态
           if (gameData.achievements) {
-            const language = wx.getStorageSync('language') || 'zh';
+            const language = this.currentLanguage || wx.getStorageSync('language') || 'zh';
             const achievements = this.data.achievements.map(achievement => {
               return {
               ...achievement,
@@ -249,6 +278,27 @@ createPage({
     this.setData({
       currentTab: tab
     });
+  },
+
+  // 打开徽章弹窗
+  openBadgeModal(e) {
+    const idx = e.currentTarget.dataset.idx;
+    const badge = this.data.achievements[idx];
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    this.setData({
+      showBadgeModal: true,
+      selectedBadge: badge
+    });
+  },
+
+  // 关闭弹窗
+  closeBadgeModal() {
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    this.setData({ showBadgeModal: false });
   },
   
   openSettings() {

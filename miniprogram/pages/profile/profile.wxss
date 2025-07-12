@@ -121,51 +121,259 @@
   color: #1F2937;
 }
 
+/* 统计卡片样式 */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24rpx;
 }
 
+/* 统计卡片基础样式 */
 .stat-card {
-  background-color: white;
-  border-radius: 32rpx;
-  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.05);
-  padding: 24rpx;
+  border-radius: 36rpx;
+  padding: 22rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 24rpx;
+  box-shadow: none;
 }
 
-.stat-value {
+.stat-icon {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  /* 移除阴影 */
+  box-shadow: none;
+}
+
+/* 不同卡片的颜色方案 */
+.accuracy-card {
+  background-color: #F0F6E8;
+}
+.accuracy-card .stat-icon .iconfont {
+  color: #57B404;
+}
+
+.combo-card {
+  background-color: #DBECFF;
+}
+.combo-card .stat-icon .iconfont {
+  color: #385DB6;
+}
+
+.achievement-card {
+  background-color: #FFEDF9;
+}
+.achievement-card .stat-icon .iconfont {
+  color: #C95065;
+}
+
+.rank-card {
+  background-color: #F5F2E1;
+}
+.rank-card .stat-icon .iconfont {
+  color: #E2A030;
+}
+
+/* 调整图标大小 */
+.stat-icon .iconfont {
   font-size: 48rpx;
-  font-weight: bold;
-  color: #577CE2;
+}
+
+/* 调整文字样式 */
+.stat-content {
+  flex: 1;
 }
 
 .stat-label {
   font-size: 24rpx;
   color: #6B7280;
+  margin-bottom: 8rpx;
+}
+
+.stat-value {
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+/* 不同卡片的背景色 */
+.accuracy-card .stat-icon {
+  background-color: #FFFFFF;
+}
+
+.combo-card .stat-icon {
+  background-color: #FFFFFF;
+}
+
+.achievement-card .stat-icon {
+  background-color: #FFFFFF;
+}
+
+.rank-card .stat-icon {
+  background-color: #FFFFFF;
 }
 
 .tabs {
   display: flex;
-  border-bottom: 2rpx solid #E5E7EB;
 }
 
+/* Tabs 样式调整 */
 .tab {
   flex: 1;
   text-align: center;
-  padding: 24rpx 0;
+  padding: 12rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-text {
   font-size: 32rpx;
   color: #6B7280;
   font-weight: 500;
 }
 
-.tab.active {
+.tab-text.active {
   color: #577CE2;
-  border-bottom: 4rpx solid #577CE2;
+  font-weight: bold;
 }
+
+.tab-dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #577CE2;
+  margin-top: 12rpx;
+}
+
+/* 成就徽章网格 */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32rpx 18rpx;
+  justify-items: center;
+  min-height: 400rpx;  /* 预留最小高度 */
+  align-items: center;
+  margin-top: -130rpx;
+}
+
+.badge-item {
+  width: 210rpx;  /* 设置固定宽度，使用最大徽章尺寸 */
+  height: 210rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  will-change: transform;  /* 优化变换性能 */
+  align-self: center;
+}
+
+.badge-item image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 保持图片比例 */
+}
+
+.badge-item:active {
+  transform: scale(0.94);
+}
+
+.badge-item.locked image {
+  filter: grayscale(100%);
+  opacity: 0.75;
+}
+
+/* 弹窗 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  width: 600rpx;
+  background: #ffffff;
+  border-radius: 48rpx;
+  padding: 64rpx 30rpx 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.modal-badge-wrapper {
+  width: 240rpx;
+  height: 240rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48rpx;
+}
+
+.modal-badge {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #3b5ba5;
+  margin-bottom: 16rpx;
+}
+
+.modal-desc {
+  font-size: 28rpx;
+  color: #9CA3AF;
+  text-align: center;
+  margin-bottom: 64rpx;
+}
+
+.modal-close {
+  /* 旧样式弃用 */
+}
+
+.modal-close-btn {
+  margin-top: 32rpx;
+  width: 240rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #555555;
+  font-weight: 600;
+  border: none;
+  position: relative;
+}
+
+.modal-close-btn .btn-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.modal-close-btn .btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* 移除旧成就列表样式不再使用 (可留作备份) */
 
 .achievements-list {
   display: flex;

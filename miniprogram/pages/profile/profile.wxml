@@ -1,4 +1,5 @@
 <view class="container">
+  <image src="/assets/images/component/button.svg" style="width:0;height:0;opacity:0;position:absolute;" />
   <!-- 顶部导航 -->
   <t-navbar 
     title="{{t.navTitle}}" 
@@ -41,42 +42,67 @@
   
   <!-- 统计数据 -->
   <view class="stats-grid mb-medium">
-    <view class="stat-card">
-      <view class="stat-value">{{correctRate}}%</view>
-      <view class="stat-label">{{t.statsCorrectRate}}</view>
+    <view class="stat-card accuracy-card">
+      <view class="stat-icon">
+        <text class="iconfont icon-check_circle_line"></text>
+      </view>
+      <view class="stat-content">
+        <view class="stat-label">{{t.statsCorrectRate}}</view>
+        <view class="stat-value">{{correctRate}}%</view>
+      </view>
     </view>
     
-    <view class="stat-card">
-      <view class="stat-value">{{maxCombo}}</view>
-      <view class="stat-label">{{t.statsMaxCombo}}</view>
+    <view class="stat-card combo-card">
+      <view class="stat-icon">
+        <text class="iconfont icon-flash_line"></text>
+      </view>
+      <view class="stat-content">
+        <view class="stat-label">{{t.statsMaxCombo}}</view>
+        <view class="stat-value">{{maxCombo}}</view>
+      </view>
     </view>
     
-    <view class="stat-card">
-      <view class="stat-value">{{unlockedAchievements}}</view>
-      <view class="stat-label">{{t.statsAchievements}}</view>
+    <view class="stat-card achievement-card">
+      <view class="stat-icon">
+        <text class="iconfont icon-star_line"></text>
+      </view>
+      <view class="stat-content">
+        <view class="stat-label">{{t.statsAchievements}}</view>
+        <view class="stat-value">{{unlockedAchievements}}</view>
+      </view>
+    </view>
+    
+    <view class="stat-card rank-card">
+      <view class="stat-icon">
+        <text class="iconfont icon-medal_line"></text>
+      </view>
+      <view class="stat-content">
+        <view class="stat-label">{{t.statsRank}}</view>
+        <view class="stat-value">#{{userRank}}</view>
+      </view>
     </view>
   </view>
   
   <!-- 标签页 -->
   <view class="tabs mb-medium">
-    <view class="tab {{currentTab === 'achievements' ? 'active' : ''}}" 
-          bindtap="switchTab" data-tab="achievements">{{t.tabAchievements}}</view>
-    <view class="tab {{currentTab === 'history' ? 'active' : ''}}" 
-          bindtap="switchTab" data-tab="history">{{t.tabHistory}}</view>
+    <view class="tab" bindtap="switchTab" data-tab="achievements">
+      <text class="tab-text {{currentTab === 'achievements' ? 'active' : ''}}">{{t.tabAchievements}}</text>
+      <view wx:if="{{currentTab === 'achievements'}}" class="tab-dot"></view>
+    </view>
+    <view class="tab" bindtap="switchTab" data-tab="history">
+      <text class="tab-text {{currentTab === 'history' ? 'active' : ''}}">{{t.tabHistory}}</text>
+      <view wx:if="{{currentTab === 'history'}}" class="tab-dot"></view>
+    </view>
   </view>
-  
-  <!-- 成就列表 -->
-  <view class="achievements-list" wx:if="{{currentTab === 'achievements'}}">
-    <view class="achievement {{achievement.unlocked ? 'unlocked' : 'locked'}}" 
-          wx:for="{{achievements}}" wx:key="id" wx:for-item="achievement">
-      <view class="achievement-icon {{achievement.unlocked ? 'unlocked' : 'locked'}}">
-        <text wx:if="{{achievement.iconType === 'iconfont'}}" class="iconfont icon-{{achievement.icon}}" style="color: {{achievement.unlocked ? '#10B981' : '#9CA3AF'}}; font-size: 48rpx;"></text>
-        <t-icon wx:else name="{{achievement.icon}}" size="48rpx" color="{{achievement.unlocked ? '#10B981' : '#9CA3AF'}}" />
-      </view>
-      <view class="achievement-content">
-        <view class="achievement-title">{{achievement.title}}</view>
-        <view class="achievement-desc">{{achievement.description}}</view>
-      </view>
+
+  <!-- 成就徽章网格 -->
+  <view class="achievements-grid" wx:if="{{currentTab === 'achievements'}}">
+    <view class="badge-item {{achievement.unlocked ? 'unlocked' : 'locked'}}" 
+          style="width: {{achievement.size}}rpx; height: {{achievement.size}}rpx;" 
+          wx:for="{{achievements}}" wx:key="id" wx:for-item="achievement"
+          data-idx="{{index}}" 
+          bindtap="{{achievement.unlocked ? 'openBadgeModal' : ''}}">
+      <image src="{{achievement.image}}" mode="aspectFit"/>
     </view>
   </view>
   
@@ -98,6 +124,21 @@
       <view class="history-score {{item.correctRate >= 70 ? 'good' : (item.correctRate >= 50 ? 'average' : 'poor')}}">
         {{item.correctRate}}%
       </view>
+    </view>
+  </view>
+</view> 
+
+<!-- 徽章弹窗 -->
+<view wx:if="{{showBadgeModal}}" class="modal-overlay" bindtap="closeBadgeModal">
+  <view class="modal-content" bindtap="">
+    <view class="modal-badge-wrapper">
+      <image class="modal-badge" src="{{selectedBadge.image}}" mode="aspectFit" />
+    </view>
+    <view class="modal-title">{{selectedBadge.title}}</view>
+    <view class="modal-desc">{{selectedBadge.description}}</view>
+    <view class="modal-close-btn" bindtap="closeBadgeModal">
+      <image class="btn-bg" src="/assets/images/component/button.svg" mode="widthFix" />
+      <text class="btn-text">{{t.closeLabel}}</text>
     </view>
   </view>
 </view> 

@@ -32,6 +32,9 @@ const i18nMessages = {
       turingMaster: '图灵大师',
       superIdentifier: '超级鉴别者'
     },
+    common: {
+      close: '关闭'
+    },
     quickIntro: {
       navTitle: '快速挑战',
       title: '快速挑战',
@@ -55,13 +58,15 @@ const i18nMessages = {
     },
     profile: {
       navTitle: '个人中心',
+      close: '关闭',
       challengesCompleted: '已参与挑战：',
       points: '点',
       pointsToNext: '距离"',
       stats: {
         correctRate: '总正确率',
         maxCombo: '最大连击',
-        achievements: '已解锁成就'
+        achievements: '已解锁成就',
+        rank: '排名'
       },
       tabs: {
         achievements: '成就',
@@ -139,6 +144,7 @@ const i18nMessages = {
     },
     summary: {
       navTitle: '挑战完成',
+      close: '关闭',
       greatPerformance: '优秀的表现！',
       resultPrefix: '你在本轮挑战中获得了',
       accuracySuffix: '的正确率',
@@ -247,6 +253,9 @@ const i18nMessages = {
       turingMaster: 'Turing Master',
       superIdentifier: 'Super Identifier'
     },
+    common: {
+      close: 'Close'
+    },
     quickIntro: {
       navTitle: 'Quick Challenge',
       title: 'Quick Challenge',
@@ -270,13 +279,15 @@ const i18nMessages = {
     },
     profile: {
       navTitle: 'Profile',
+      close: 'Close',
       challengesCompleted: 'Completed: ',
       points: ' pts',
       pointsToNext: 'Need ',
       stats: {
         correctRate: 'Accuracy',
         maxCombo: 'Max Combo',
-        achievements: 'Achievements'
+        achievements: 'Achievements',
+        rank: 'Rank'
       },
       tabs: {
         achievements: 'Achievements',
@@ -354,6 +365,7 @@ const i18nMessages = {
     },
     summary: {
       navTitle: 'Summary',
+      close: 'Close',
       greatPerformance: 'Great job!',
       resultPrefix: 'You achieved ',
       accuracySuffix: ' accuracy this round',

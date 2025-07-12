@@ -26,7 +26,7 @@ createPage({
     shareButton: 'shareButton',
     playAgain: 'playAgain',
     achievementUnlocked: 'achievementUnlocked',
-    shareShort: 'shareShort'
+    closeLabel: 'close'
   },
 
   data: {
@@ -62,13 +62,12 @@ createPage({
     },
     // --- 成就弹窗相关 ---
     showAchievementModal: false,      // 是否展示成就弹窗
-    achievementDate: '',              // 成就获得日期，格式: YYYY.M.D
     achievementType: '',              // 成就类型：'firstTry' | 'comboMaster' | 'perfectJudge'
     achievementIcon: '',              // 成就图标路径
     achievementName: '',              // 成就名称
-    achievementColor: '',              // 成就标题颜色
     newAchievements: [],              // 收集本次获得的所有成就
-    currentAchievementIndex: 0        // 当前显示的成就索引
+    currentAchievementIndex: 0,       // 当前显示的成就索引
+    achievementDescription: ''        // 成就描述文本
   },
   
   onLoad(options) {
@@ -210,7 +209,7 @@ createPage({
         type: 'firstTry',
         icon: '/assets/images/summary/first_try.svg',
         name: t('profile.achievements.firstTry.title', language),
-        color: '#a6ccf7'
+        description: t('profile.achievements.firstTry.description', language)
       });
       // 标记成就已解锁
       gameData.achievements.firstTry = true;
@@ -221,7 +220,7 @@ createPage({
         type: 'comboMaster',
         icon: '/assets/images/summary/five.svg',
         name: t('profile.achievements.comboMaster.title', language),
-        color: '#E4C196'
+        description: t('profile.achievements.comboMaster.description', language)
       });
       // 标记成就已解锁
       gameData.achievements.comboMaster = true;
@@ -232,24 +231,30 @@ createPage({
         type: 'perfectJudge',
         icon: '/assets/images/summary/perfect.svg',
         name: t('profile.achievements.perfectJudge.title', language),
-        color: '#FFEBC3'
+        description: t('profile.achievements.perfectJudge.description', language)
       });
       // 标记成就已解锁
       gameData.achievements.perfectJudge = true;
     }
 
-    // 如果有新获得的成就，显示成就弹窗
+    // 如果有新获得的成就，延时 800ms 后显示第一个成就弹窗
     if (newAchievements.length > 0) {
+      // 先保存成就列表
       this.setData({
-        showAchievementModal: true,
-        achievementDate: dateStr,
-        newAchievements: newAchievements,
-        currentAchievementIndex: 0,
-        achievementType: newAchievements[0].type,
-        achievementIcon: newAchievements[0].icon,
-        achievementName: newAchievements[0].name,
-        achievementColor: newAchievements[0].color
+        newAchievements,
+        currentAchievementIndex: 0
       });
+
+      setTimeout(() => {
+        const first = newAchievements[0];
+        this.setData({
+          showAchievementModal: true,
+          achievementType: first.type,
+          achievementIcon: first.icon,
+          achievementName: first.name,
+          achievementDescription: first.description
+      });
+      }, 800);
     }
     
     this.setData({
@@ -559,13 +564,14 @@ createPage({
 
       // 延迟500ms后显示下一个成就
       setTimeout(() => {
+        const next = this.data.newAchievements[nextIndex];
         this.setData({
           showAchievementModal: true,
           currentAchievementIndex: nextIndex,
-          achievementType: this.data.newAchievements[nextIndex].type,
-          achievementIcon: this.data.newAchievements[nextIndex].icon,
-          achievementName: this.data.newAchievements[nextIndex].name,
-          achievementColor: this.data.newAchievements[nextIndex].color
+          achievementType: next.type,
+          achievementIcon: next.icon,
+          achievementName: next.name,
+          achievementDescription: next.description
         });
       }, 500);
     } else {
@@ -576,15 +582,6 @@ createPage({
         currentAchievementIndex: 0
       });
     }
-  },
-  
-  /** 分享成就 */
-  shareAchievement() {
-    if (wx.vibrateShort) {
-      wx.vibrateShort({ type: 'light' });
-    }
-    // 直接复用现有分享逻辑
-    this.shareResults();
   },
   
   // 生成分析结果
