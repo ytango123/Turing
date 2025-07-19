@@ -1,23 +1,19 @@
-<view class="bg">
-  <!-- 背景彩色圆圈 -->
-  <view class="circle circle1"></view>
-  <view class="circle circle2"></view>
-  <view class="circle circle3"></view>
-</view>
+<view class="intro-container" hidden="{{!pageReady}}">
+  <!-- 背景 SVG，根据语言切换 -->
+  <image class="intro-bg" src="/assets/images/quick-intro/bg_zh.svg" mode="aspectFill" hidden="{{currentLang!=='zh'}}" />
+  <image class="intro-bg" src="/assets/images/quick-intro/bg_en.svg" mode="aspectFill" hidden="{{currentLang!=='en'}}" />
 
-<view class="content">
-  <view class="title">{{t.title}}</view>
-  <view class="desc">
-    <text>{{t.descLine1}}</text>
-    <text>{{t.descLine2}}</text>
-    <text>{{t.descLine3}}</text>
-  </view>
-  <view class="start-button" 
-    bindtap="startChallenge" 
-    bindtouchstart="onPress" 
-    bindtouchend="onRelease" 
-    bindtouchcancel="onRelease" 
-    style="transform: scale({{pressed ? 0.95 : 1}});">
-    <text>{{t.startButton}}</text>
+  <!-- 开始按钮 -->
+  <view class="button-container">
+    <image 
+      class="start-button-img {{currentLang === 'zh' ? 'show' : ''}}" 
+      src="/assets/images/quick-intro/button_zh.svg" 
+      mode="widthFix" 
+      bindtap="startChallenge" />
+    <image 
+      class="start-button-img {{currentLang === 'en' ? 'show' : ''}}" 
+      src="/assets/images/quick-intro/button_en.svg" 
+      mode="widthFix" 
+      bindtap="startChallenge" />
   </view>
 </view> 

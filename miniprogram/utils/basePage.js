@@ -16,9 +16,10 @@ const basePage = {
   updatePageLanguage(language) {
     const i18nData = this.getPageI18n(language, this.pageKey)
     
-    // 更新页面文本
+    // 更新页面文本，并同步 currentLang 方便模板里根据语言切换显示/隐藏
     this.setData({
-      t: i18nData
+      t: i18nData,
+      currentLang: language
     })
 
     // 记录当前语言
@@ -72,7 +73,14 @@ const createPage = (pageConfig) => {
     const language = wx.getStorageSync('language') || 'zh'
     // 初始化页面文本和导航栏
     this.updatePageLanguage(language)
-    
+
+    // ---------- 开启右上角分享菜单（好友 & 朋友圈） ----------
+    if (wx.showShareMenu) {
+      wx.showShareMenu({
+        menus: ['shareAppMessage', 'shareTimeline']
+      })
+    }
+
     // 调用原始onLoad
     if (originalOnLoad) {
       originalOnLoad.call(this, options)
@@ -92,7 +100,38 @@ const createPage = (pageConfig) => {
       originalOnShow.call(this)
     }
   }
-  
+
+  // -------- 默认分享实现：若页面未自定义 onShareAppMessage / onShareTimeline --------
+  if (!methods.onShareAppMessage) {
+    methods.onShareAppMessage = function() {
+      const language = wx.getStorageSync('language') || 'zh'
+      // 页面可自定义 getShareData(language, scene) 返回更丰富的分享数据
+      if (typeof this.getShareData === 'function') {
+        const data = this.getShareData(language, 'appMessage')
+        if (data) return data
+      }
+      return {
+        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
+        path: '/pages/game-home/game-home'
+      }
+    }
+  }
+
+  if (!methods.onShareTimeline) {
+    methods.onShareTimeline = function() {
+      const language = wx.getStorageSync('language') || 'zh'
+      if (typeof this.getShareData === 'function') {
+        const data = this.getShareData(language, 'timeline')
+        if (data) return data
+      }
+      return {
+        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
+        query: '',
+        imageUrl: ''
+      }
+    }
+  }
+
   return Page(methods)
 }
 

@@ -28,6 +28,7 @@ createPage({
     pointsLost: 2,
     aiRole: 'B', // 'A', 'B', or 'none'
     showComboNotification: false, // 控制连击提示的显示
+    currentLang: wx.getStorageSync('language') || 'zh', // 当前语言
     
     // 当前对话内容
     messages: [],
@@ -37,10 +38,14 @@ createPage({
     
     // AI特征解析
     aiFeatures: [],
+    // 页面准备状态，用于避免闪烁
+    pageReady: false,
     },
   
   onLoad(options) {
     console.log('结果页面加载，参数:', options);
+    
+    // currentLang 已在 data 中初始化，无需再次 set
     
     // 启用页面返回提示 (多语言)
     const language = wx.getStorageSync('language') || 'zh';
@@ -96,10 +101,11 @@ createPage({
     
     if (dialogue) {
       // 设置AI角色
-      const answerType = dialogue.type || dialogue.answer;
+      // 适配新的答案格式 (H/M)
+      const answerType = dialogue.type || dialogue.answer || 'H';
       let aiRole = 'none';
-      if(answerType==='HM') aiRole='B';
-      else if(answerType==='MH') aiRole='A';
+      // B是回应者，当答案为M时，B是AI
+      if(answerType === 'M') aiRole = 'B';
       
       // 设置获得/失去的点数（基础1分，连击≥3额外+2）
       const pointsGained = comboCount >= 3 ? 3 : 1;
@@ -116,6 +122,9 @@ createPage({
         aiFeatures: dialogue.aiFeatures || [],
         isExpanded: false
       });
+
+      // 数据就绪后显示页面
+      this.setData({ pageReady: true });
 
       this.updateDisplayMessages();
     }
@@ -138,13 +147,32 @@ createPage({
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
-          // 退出挑战时恢复到挑战开始前的点数
-          if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
-            app.globalData.gameData.points = app.globalData.gameData.basePoints;
-          }
-    // 触发系统返回行为，会自动调用返回确认
-    wx.navigateBack({
-      delta: 1
+    const language = wx.getStorageSync('language') || 'zh';
+    const confirmMsg = t('conversation.exitConfirm', language);
+
+    wx.showModal({
+      title: '',
+      content: confirmMsg,
+      cancelText: language === 'en' ? 'Cancel' : '取消',
+      confirmText: language === 'en' ? 'Exit' : '退出',
+      success: (res) => {
+        if (!res.confirm) return;
+
+        // 恢复到挑战开始前的点数并清空对话记录
+        if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
+          const gd = app.globalData.gameData;
+          gd.points = gd.basePoints;
+          gd.dialogues = [];
+          gd.correctCount = 0;
+          gd.wrongCount = 0;
+          gd.currentCombo = 0;
+          // 保持历史最大连击
+          gd.maxCombo = gd.maxCombo || 0;
+        }
+
+        wx.disableAlertBeforeUnload();
+        wx.switchTab({ url: '/pages/game-home/game-home' });
+      }
     });
   },
   

@@ -11,7 +11,7 @@ const i18nMessages = {
     },
     gameHome: {
       navTitle: '首页',
-      challengeModes: '挑战模式',
+      challengeModes: '挑战模式🔥',
       quickChallenge: {
         title: '快速挑战',
         description: '10段对话，5分钟内完成'
@@ -21,7 +21,7 @@ const i18nMessages = {
         description: '更具挑战性的对话判断',
         comingSoon: '即将推出'
       },
-      rankings: '排行榜',
+      rankings: '排行榜🏆',
       viewAll: '查看全部',
       collapse: '收起',
       points: '点',
@@ -232,7 +232,7 @@ const i18nMessages = {
     },
     gameHome: {
       navTitle: 'Home',
-      challengeModes: 'Challenge Modes',
+      challengeModes: 'Challenge Modes🔥',
       quickChallenge: {
         title: 'Quick Challenge',
         description: '10 dialogues in 5 minutes'
@@ -242,7 +242,7 @@ const i18nMessages = {
         description: 'More challenging dialogues',
         comingSoon: 'Coming'
       },
-      rankings: 'Rankings',
+      rankings: 'Rankings🏆',
       viewAll: 'View All',
       collapse: 'Collapse',
       points: 'pts',

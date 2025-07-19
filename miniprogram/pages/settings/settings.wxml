@@ -55,8 +55,8 @@
       <view class="modal-header">{{language==='zh'?'意见反馈':'Feedback'}}</view>
       <textarea class="modal-textarea" placeholder="{{language==='zh'?'请输入您的建议...':'Please enter your feedback...'}}" value="{{feedbackText}}" bindinput="onInputFeedback" maxlength="300"/>
       <view class="modal-actions">
-        <button class="modal-btn cancel" bindtap="closeFeedback">{{language==='zh'?'取消':'Cancel'}}</button>
-        <button class="modal-btn submit" bindtap="submitFeedback">{{language==='zh'?'提交':'Submit'}}</button>
+        <image class="modal-btn-img" src="/assets/images/settings/cancel_{{language}}.svg" bindtap="closeFeedback" />
+        <image class="modal-btn-img" src="/assets/images/settings/submit_{{language}}.svg" bindtap="submitFeedback" />
       </view>
     </view>
   </view>

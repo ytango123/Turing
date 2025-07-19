@@ -89,6 +89,7 @@
   font-size: 28rpx;
   font-weight: bold;
   color: white;
+  position: relative;
 }
 
 .avatar-a {
@@ -146,16 +147,16 @@
 }
 
 .play-button {
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366F1, #578fe2);
-  box-shadow: 0 8rpx 24rpx rgba(99, 102, 241, 0.3);
+  width: 128rpx;   /* 约等于 100px */
+  height: 128rpx;
+  border-radius: 50%; /* 约 96px */
+  background: #7190E6;
+  box-shadow: 0 -12rpx 0 rgba(0, 0, 0, 0.13) inset;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
-  margin-bottom: 16rpx;
+  transition: transform 0.15s ease;
+  margin-bottom: 32rpx;
   position: relative;
 }
 
@@ -163,8 +164,8 @@
 .loading-icon {
   width: 48rpx;
   height: 48rpx;
-  border: 6rpx solid rgba(255, 255, 255, 0.3);
-  border-top: 6rpx solid #ffffff;
+  border: 8rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 8rpx solid #ffffff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -190,38 +191,30 @@
   color: #6B7280;
 }
 
-.judgment-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
-}
-
-.judgment-button {
-  background-color: white;
-  border: 4rpx solid #E5E7EB;
-  border-radius: 24rpx;
-  padding: 32rpx 16rpx;
+/* 新：判断选项SVG容器 */
+.judgment-images {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  transition: all 0.2s;
+  margin-top: 48rpx;
 }
 
-.judgment-button:active {
-  transform: scale(0.98);
-  background-color: #F9FAFB;
+/* SVG 基础样式 */
+.judge-img {
+  width: 39vw;
+  transition: transform 0.15s ease;
+  height: 88rpx; /* 新增: 固定高度，提前占位，消除闪烁 */
+  object-fit: contain; /* 新增: 保证缩放后不裁剪 */
+  pointer-events: auto;
 }
 
-.judgment-title {
-  font-size: 28rpx;
-  font-weight: 500;
-  color: #1F2937;
-  margin-bottom: 8rpx;
+.judge-img.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.judgment-desc {
-  font-size: 24rpx;
-  color: #6B7280;
+.judge-img:active {
+  transform: scale(0.94);
 }
 
 /* 导航栏样式 */
@@ -249,4 +242,155 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.play-icon {
+  width: 40rpx;
+} 
+
+/* 结果阶段样式 */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+/* 调整结果 svg margin 与顶部导航间距 */
+.result-svg {
+  width: 260rpx;
+  margin-bottom: 26rpx;
+}
+
+.result-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 16rpx;
+}
+
+.result-desc {
+  font-size: 32rpx;
+  color: #6B7280;
+  text-align: center;
+}
+
+.text-success {
+  color: #10B981;
+  font-weight: bold;
+  
+}
+
+.text-error {
+  color: #EF4444;
+  font-weight: bold;
+}
+
+/* 下一题按钮复用已有 next-button 样式自 result 页面 */
+.next-button {
+  width: 87vw;
+  display: block;
+  margin: 64rpx auto 0;
+  transition: transform 0.15s ease;
+  height: 112rpx;
+  object-fit: contain;
+}
+
+.next-button:active {
+  transform: scale(0.94);
+} 
+
+/* AI徽章 */
+.ai-badge {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background-color: #ef4444;
+  color: white;
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 16rpx;
+  font-weight: bold;
+}
+
+/* AI特征解析 */
+.ai-analysis-card {
+  padding: 32rpx;
+}
+
+.analysis-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.analysis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.analysis-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.analysis-icon {
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.analysis-text {
+  font-size: 28rpx;
+  color: #4B5563;
+  line-height: 1.5;
+} 
+
+.result-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 结果页动态连击提示 */
+.combo-toast {
+  position: fixed;
+  top: 160rpx;
+  right: 40rpx;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: #fff;
+  padding: 16rpx 28rpx;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8rpx 24rpx rgba(239,68,68,0.3);
+  transform: translateY(100%) scale(0.9);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1200;
+}
+
+.combo-toast.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+} 
+
+/* phase 切换动画，避免闪屏 */
+.phase-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.phase-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.phase-show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s ease;
 } 

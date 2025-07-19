@@ -1,5 +1,4 @@
 <view class="container">
-  <image src="/assets/images/component/button.svg" style="width:0;height:0;opacity:0;position:absolute;" />
   <!-- 顶部导航 -->
   <t-navbar 
     title="{{t.navTitle}}" 
@@ -48,7 +47,7 @@
       </view>
       <view class="stat-content">
         <view class="stat-label">{{t.statsCorrectRate}}</view>
-        <view class="stat-value">{{correctRate}}%</view>
+      <view class="stat-value">{{correctRate}}%</view>
       </view>
     </view>
     
@@ -58,7 +57,7 @@
       </view>
       <view class="stat-content">
         <view class="stat-label">{{t.statsMaxCombo}}</view>
-        <view class="stat-value">{{maxCombo}}</view>
+      <view class="stat-value">{{maxCombo}}</view>
       </view>
     </view>
     
@@ -68,7 +67,7 @@
       </view>
       <view class="stat-content">
         <view class="stat-label">{{t.statsAchievements}}</view>
-        <view class="stat-value">{{unlockedAchievements}}</view>
+      <view class="stat-value">{{unlockedAchievements}}</view>
       </view>
     </view>
     
@@ -94,7 +93,7 @@
       <view wx:if="{{currentTab === 'history'}}" class="tab-dot"></view>
     </view>
   </view>
-
+  
   <!-- 成就徽章网格 -->
   <view class="achievements-grid" wx:if="{{currentTab === 'achievements'}}">
     <view class="badge-item {{achievement.unlocked ? 'unlocked' : 'locked'}}" 
@@ -137,8 +136,8 @@
     <view class="modal-title">{{selectedBadge.title}}</view>
     <view class="modal-desc">{{selectedBadge.description}}</view>
     <view class="modal-close-btn" bindtap="closeBadgeModal">
-      <image class="btn-bg" src="/assets/images/component/button.svg" mode="widthFix" />
-      <text class="btn-text">{{t.closeLabel}}</text>
+      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" />
     </view>
   </view>
 </view> 

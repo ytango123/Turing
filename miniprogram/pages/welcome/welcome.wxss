@@ -19,238 +19,131 @@
   z-index: -10;
 }
 
-.bg-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(80px);
-  z-index: -9;
-}
-
-.bg-waves {
-  position: absolute;
-  top: 47px;
-  left: -102px;
-  width: 646.7px;
-  height: 605.243px;
-  z-index: -7;
-  flex-shrink: 0;
-}
-
-.wave-bg {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  left: 0;
-  top: 0;
-}
-
+/* 背景已经简化，去掉 blur */
 .robot {
-  position: absolute;
-  top: 18vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 165px;
-  height: 174.455px;
+  position: relative;      /* 进入文档流，使下方元素自动跟随 */
+  width: 22vh;
+  height: 22vh;
+  align-self: flex-end;    /* 靠右显示 */
+  margin-top: 7vh;
+  margin-right: 4vh;     /* 露出半身 */
   z-index: 1;
   overflow: visible;
 }
 
 .robot-all {
-  width: 104%;
-  height: 102%;
-}
+  width: 170%;
+  height: 170%;
 
-/* 渐变遮罩层 */
-.robot-mask {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 104%;
-  height: 102%;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 95%);
-}
-
-.content {
-  margin-top: 25vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  width: 100%;
-}
-
-/* 英文版内容向上调整 */
-.content-en {
-  margin-top: 25vh;
-}
-
-/* 标题根据语言调整样式 */
-.title {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.075em;
-  text-align: center;
-  color: #000000;
-  margin-bottom: 1px;
-  letter-spacing: 0.03em;
-}
-
-/* 英文标题样式覆盖 */
-.title-en {
-  font-size: 44px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1em;
-  margin-bottom: 1px;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.8125em;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 0 40px;
-  margin-top: 11vh;
-}
-
-/* 英文描述样式覆盖 */
-.description-en {
-  line-height: 1.4em;
-  letter-spacing: 0;
-  font-weight: 600;
-  margin-top: 11vh;
-}
-
-.description-en text {
-  margin-bottom: 4px;
-}
-
-.bottom-area {
-  position: absolute;
-  bottom: 10vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-}
-
-.start-button {
-  width: 188px;
-  height: 43px;
-  border-radius: 18px;
-  background-color: rgba(183, 201, 255, 0.5);
-  border: 2px solid rgba(101, 121, 179, 0.47);
-  color: #000000;
-  font-size: 15px;
-  font-weight: 550;
-  line-height: 2.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.03em;
-  transition: transform 0.2s ease-in-out;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(183, 201, 255, 0.5);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.start-button:active {
-  transform: scale(0.95);
-  animation-play-state: paused;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* 英文按钮样式覆盖 */
-.start-button-en {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.user-count {
-  margin-top: 3vh;
-  font-size: 12px;
-  font-weight: 450;
-  line-height: 1.833em;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.75);
-}
-
-/* 英文用户数样式覆盖 */
-.user-count-en {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.language-switch {
-  position: absolute;
-  bottom: 18px;
-  right: 18px;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: transform 0.2s ease-in-out;
-}
-
-.language-switch:active {
-  transform: scale(0.92);
-}
-
-.language-switch text {
-  width: 34px;
-  height: 23px;
-  background-color: #F0D05C;
-  border: 2px solid #F0E4B7;
-  border-radius: 18px;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 23px;
-  text-align: center;
-  color: #000000;
 }
 
 .title-img {
-  width: 70vw;
-  max-width: 340px;
-  height: 64px;
+  width: 100vw;   /* 更加醒目 */
+  max-width: 540px;
   opacity: 0;
 
-  margin-bottom: 1vh;
+
 }
 
 .title-img.show {
   opacity: 1;
 }
 
+/* 标题整体下移一些 */
 .title-img.zh {
-  transform: translateY(95px); /* 向上微调4px，按需调整 */
+  transform: translateY(5vh);         /* 保持原位 */
+  margin-top: 8vh;  
+
+}
+.title-img.en {
+  transform: translateY(-14vh);         /* 保持原位 */
+  margin-top: 8vh;         /* 位于机器人下方一定距离 */
 }
 
-.title-img.en {
-  transform: translateY(22px);
+/* 固定位置布局，不再依赖JS动态计算 */
+.content-img {
+  width: 64vw;
+  max-width:360px;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 62vh; /* 固定在页面42%高度处 */
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 开始按钮默认隐藏 */
+.start-button-img {
+  position: absolute;
+  bottom: 15vh;
+  width: 128px;
+  height: auto;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+.start-button-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 点击缩放反馈 */
+.start-button-img:active {
+  transform: scale(0.93);
+}
+
+/* 用户数默认隐藏 */
+.user-count-img {
+  position: absolute;
+  bottom: 10vh;
+  
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.user-count-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.user-count-img.zh{
+  width: 150px;
+  height: auto;
+}
+
+.user-count-img.en{
+  width: 220px;
+  height: auto;
+}
+
+
+/* 语言切换默认隐藏 */
+.language-switch-img {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  width: 38px;
+  height: auto;
+  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.language-switch-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.language-switch-img:active {
+  transform: scale(0.92);
 }

@@ -15,9 +15,20 @@ createPage({
     judgeA: 'judgeA',
     judgeB: 'judgeB',
     // 描述文本已移除
+    // 结果页面字段（映射到 result.*）
+    correct: 'result.correct',
+    wrong: 'result.wrong',
+    correctDesc1: 'result.correctDesc1',
+    wrongDesc1: 'result.wrongDesc1',
+    pointsUnit: 'result.pointsUnit',
+    rewardSuffix: 'result.rewardSuffix',
+    aiAnalysis: 'result.aiAnalysis',
+    nextButton: 'result.nextButton',
+    combo: 'result.combo',
   },
 
   data: {
+    currentLang: wx.getStorageSync('language') || 'zh',
     currentDialogue: 1,
     totalDialogues: 10,
     pageReady: false,  // 添加页面准备状态标记
@@ -68,14 +79,45 @@ createPage({
     // 判断按钮锁（防止重复点击）
     isJudging: false,
     // 本地已下载音频路径
-    localAudioPath: ''
+    localAudioPath: '',
+    phase: 'loading',           // loading | dialogue | result | summary
+    curIndex: 0,               // 当前对话下标 0-9
+    preloadAudios: {},         // { conversationId: localPath }
+    lastIsCorrect: false,
+    lastPointsGained: 0,
+    lastPointsLost: 0,
+    aiRole: 'none',
+    aiFeatures: [],
+    comboCount: 0,
+    showComboResult: false,
+  },
+  /** 停止并销毁音频，避免页面跳转后仍在后台播放 */
+  stopAndDestroyAudio() {
+    if (this.audioContext) {
+      try { this.audioContext.stop(); } catch (e) {}
+      try { this.audioContext.destroy(); } catch (e) {}
+      this.audioContext = null;
+      this.setData({ isPlaying: false, audioLoading: false });
+    }
+  },
+
+  /** 清理 combo 提示相关定时器，避免跨题残留 */
+  clearComboTimers() {
+    if (this.comboShowTimer) {
+      clearTimeout(this.comboShowTimer);
+      this.comboShowTimer = null;
+    }
+    if (this.comboHideTimer) {
+      clearTimeout(this.comboHideTimer);
+      this.comboHideTimer = null;
+    }
   },
   
-  onLoad(options) {
+  async onLoad(options) {
     console.log('页面加载，参数:', options);
     
     // 启用页面返回提示 (多语言)
-    const language = wx.getStorageSync('language') || 'zh';
+    const language = this.data.currentLang;
     wx.enableAlertBeforeUnload({
       message: t('conversation.exitConfirm', language)
     });
@@ -85,11 +127,18 @@ createPage({
       app.globalData = {};
     }
     
+    // 若 quick-intro 已预下载音频，直接注入
+    if (app.globalData && app.globalData.preloadAudios) {
+      this.setData({ preloadAudios: app.globalData.preloadAudios });
+    }
+    
     // 初始化游戏数据
     this.initGameData();
     
     // 初始化音频播放器
     this.audioContext = wx.createInnerAudioContext();
+    // iOS 默认遵循侧边静音开关，导致显示播放但无声；关闭该行为
+    this.audioContext.obeyMuteSwitch = false;
     // 监听实际开始播放
     this.audioContext.onPlay(() => {
       this.setData({ 
@@ -115,7 +164,11 @@ createPage({
     });
 
     this.audioContext.onWaiting(() => {
+      // 仅在用户主动播放后（audioLoading 已标记）或音频正在播放时才显示加载状态，
+      // 避免预加载阶段触发 onWaiting 导致按钮一直处于 loading
+      if (this.data.audioLoading || this.data.isPlaying) {
       this.setData({ audioLoading: true });
+      }
     });
     
     this.audioContext.onCanplay(() => {
@@ -133,10 +186,10 @@ createPage({
       clearTimeout(this.loadingTimer);
       // 仅在用户触发播放动作后再提示错误，避免预加载阶段打扰
       if (this.data.audioLoadingPrev || this.data.isPlayingPrev || this.data.audioLoading || this.data.isPlaying) {
-        wx.showToast({
-          title: '音频播放失败',
-          icon: 'none'
-        });
+      wx.showToast({
+        title: '音频播放失败',
+        icon: 'none'
+      });
       }
     });
     
@@ -150,53 +203,9 @@ createPage({
     });
     
     // 从云存储获取对话数据
-    this.loadDialoguesFromCloud().then(() => {
-      // 从URL参数或全局状态获取当前对话ID
-      let dialogueId = this.data.currentDialogue;
-      
-      // 如果URL中有对话ID参数，则使用该参数
-      if (options && options.reset) {
-        // 重置为第一段对话
-        dialogueId = 1;
-        if (app.globalData && app.globalData.gameData) {
-          app.globalData.gameData.currentDialogue = 1;
-          app.globalData.gameData.dialogues = [];
-          // 清零上一局留下的统计数据
-          app.globalData.gameData.correctCount = 0;
-          app.globalData.gameData.wrongCount = 0;
-          app.globalData.gameData.currentCombo = 0;
-          app.globalData.gameData.maxCombo = 0;
-          // 记录本轮开始前的点数，用于中途退出时还原
-          app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
-        }
-      } else if (options && options.dialogueId) {
-        dialogueId = parseInt(options.dialogueId);
-      } 
-      // 如果全局状态中有当前对话ID，则使用该ID
-      else if (app.globalData && app.globalData.gameData && app.globalData.gameData.currentDialogue) {
-        dialogueId = app.globalData.gameData.currentDialogue;
-      }
-      
-      // 确保对话ID在有效范围内
-      if (dialogueId < 1) dialogueId = 1;
-      if (dialogueId > this.data.totalDialogues) dialogueId = 1;
-      
-      // 更新当前对话ID
-      this.setData({
-        currentDialogue: dialogueId,
-        pageReady: true  // 标记页面已准备好
-      });
-      
-      // 更新全局状态中的当前对话ID
-      if (app.globalData && app.globalData.gameData) {
-        app.globalData.gameData.currentDialogue = dialogueId;
-      }
-      
-      // 加载对话
-      this.loadDialogue(dialogueId);
-      
-      console.log('当前对话ID:', dialogueId);
-      console.log('游戏数据:', this.data.gameData);
+    this.loadDialoguesFromCloud().then(async () => {
+      // 进入第一题
+      this.enterDialogue(0);
     }).catch(err => {
       console.error('加载对话数据失败:', err);
       wx.showToast({
@@ -209,11 +218,10 @@ createPage({
   onUnload() {
     // 页面卸载时禁用返回提示
     wx.disableAlertBeforeUnload();
-    
     // 页面卸载时停止音频播放
-    if (this.audioContext) {
-      this.audioContext.stop();
-    }
+    this.stopAndDestroyAudio();
+    // 清理 combo 定时器
+    this.clearComboTimers();
     // 删除最后一段音频的本地文件
     if (this.data.localAudioPath) {
       const fs = wx.getFileSystemManager();
@@ -267,7 +275,7 @@ createPage({
                 wx.cloud.downloadFile({ fileID }).then(dlRes => {
                   const tempFilePath = dlRes.tempFilePath;
                   if (!tempFilePath) {
-                    rejectInner(err);
+                rejectInner(err);
                     return;
                   }
                   const fs = wx.getFileSystemManager();
@@ -298,7 +306,7 @@ createPage({
           });
         });
       });
-      
+
       // 全部 Session 加载完毕后合并对话并随机抽取 (改为 Promise.allSettled 容错)
       Promise.allSettled(sessionPromises).then(results => {
         const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
@@ -309,15 +317,15 @@ createPage({
         console.log('已加载 Session 对话总数:', allDialogues.length);
 
         const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
-        this.setData({
+            this.setData({
           cloudDialogues: allDialogues,
           gameDialogues
-        });
+            });
         if (app.globalData) {
-          app.globalData.gameDialogues = gameDialogues;
+              app.globalData.gameDialogues = gameDialogues;
           app.globalData.totalDialoguesCount = allDialogues.length; // 记录总对话数量
         }
-        resolve();
+            resolve();
       }).catch(err => {
         console.error('加载多 Session 对话失败', err && (err.errMsg || err.message || err));
         reject(err);
@@ -336,13 +344,13 @@ createPage({
   selectRandomDialogues(dialogues, count) {
     // 1) 有效对话
     const validDialogues = (dialogues || []).filter(d => d && d.type);
-
+    
     // 2) 已听过的对话
     if (!app.globalData.gameData.heardDialogues) {
       app.globalData.gameData.heardDialogues = [];
     }
     const heardSet = new Set(app.globalData.gameData.heardDialogues);
-
+    
     // 3) 去重 conversation_id（同时排除已听过）
     const uniqueMap = new Map(); // conversation_id -> dialogue
     validDialogues.forEach(d => {
@@ -361,13 +369,13 @@ createPage({
     });
 
     let candidates = Array.from(uniqueMap.values());
-
+    
     // 如果候选数量不足，需要清空 heardDialogues 再重新选择
     if (candidates.length < count) {
       app.globalData.gameData.heardDialogues.length = 0; // 清空听过记录
       return this.selectRandomDialogues(dialogues, count);
     }
-
+    
     // 4) Fisher-Yates 洗牌
     for (let i = candidates.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -483,6 +491,9 @@ createPage({
       
       // 更新展示的对话
       this.updateDisplayMessages(messages, false);
+
+      // 对话数据与 messages 均就绪后再显示页面
+      this.setData({ pageReady: true });
       
       // 预加载音频
       this.preloadAudio(currentAudioId, currentAudioSession);
@@ -499,7 +510,7 @@ createPage({
     
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
     const fileID = `${envPrefix}/${session}/${audioId}.wav`;
-
+    
     // 若已有本地缓存则直接使用
     if (this.data.localAudioPath) {
       this.audioContext.src = this.data.localAudioPath;
@@ -538,6 +549,19 @@ createPage({
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
+    const language = this.data.currentLang;
+    const confirmMsg = t('conversation.exitConfirm', language);
+
+    wx.showModal({
+      title: '',
+      content: confirmMsg,
+      cancelText: language === 'en' ? 'Cancel' : '取消',
+      confirmText: language === 'en' ? 'Exit' : '退出',
+      success: (res) => {
+        if (!res.confirm) return; // 用户取消
+
+        // 停止并销毁音频，避免后台播放
+        this.stopAndDestroyAudio();
           // 退出挑战时恢复到挑战开始前的点数
           if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
             app.globalData.gameData.points = app.globalData.gameData.basePoints;
@@ -548,9 +572,12 @@ createPage({
             app.globalData.gameData.currentCombo = 0;
             app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
           }
-    // 触发系统返回行为，会自动调用返回确认
-    wx.navigateBack({
-      delta: 1
+        // 关闭系统 beforeUnload 提示，避免出现两次弹窗
+        wx.disableAlertBeforeUnload();
+
+        // 直接返回首页，避免 quick-intro 闪屏
+        wx.switchTab({ url: '/pages/game-home/game-home' });
+      }
     });
   },
   
@@ -587,8 +614,11 @@ createPage({
       }
     }, 10000);
 
-    // 如果已经加载过当前音频，直接播放
-    if (this.audioContext.src && (this.audioContext.src.includes(this.data.currentAudioId) || this.audioContext.src.startsWith('wxfile://'))) {
+    // 已缓存本地路径则直接播放
+    const cachePath = this.data.preloadAudios[this.data.currentAudioId];
+    if (cachePath && (!this.audioContext.src || !this.audioContext.src.includes(this.data.currentAudioId))) {
+      this.audioContext.src = cachePath;
+      try { this.audioContext.seek(0); } catch(e){}
       this.audioContext.play();
       return;
     }
@@ -597,11 +627,16 @@ createPage({
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
     const session = this.data.currentAudioSession || 'Session2';
     const audioFileID = `${envPrefix}/${session}/${this.data.currentAudioId}.wav`;
-
+    
     // 使用 downloadFile 下载后播放（避免再次 waiting）
     wx.cloud.downloadFile({ fileID: audioFileID }).then(res => {
       const localPath = res.tempFilePath;
-      this.setData({ localAudioPath: localPath });
+      const cid = this.data.currentAudioId;
+      const newMap = { ...this.data.preloadAudios, [cid]: localPath };
+      this.setData({ localAudioPath: localPath, preloadAudios: newMap });
+      if (getApp().globalData) {
+        getApp().globalData.preloadAudios = newMap;
+      }
       this.audioContext.src = localPath;
       this.audioContext.play();
     }).catch(err => {
@@ -625,6 +660,10 @@ createPage({
   makeJudgment(e) {
     // 防止重复点击
     if (this.data.isJudging) return;
+
+    // -------- 新增：开始判定前清理旧的 combo 定时器 --------
+    this.clearComboTimers();
+ 
     this.setData({ isJudging: true });
     // 若页面尚未准备好，直接返回
     if (!this.data.pageReady) {
@@ -650,6 +689,7 @@ createPage({
     gameData.dialogues = gameData.dialogues || [];
     gameData.heardDialogues = gameData.heardDialogues || new Set();
     
+    let pointsToAdd = 0;
     if (isCorrect) {
       // 判断正确
       gameData.correctCount++;
@@ -661,7 +701,7 @@ createPage({
       }
       
       // 计算得分：基础 +1，若当前连击 ≥3 再额外 +2（共计3分）
-      let pointsToAdd = 1;
+      pointsToAdd = 1;
       if (gameData.currentCombo >= 3) {
         pointsToAdd += 2;
       }
@@ -701,15 +741,114 @@ createPage({
       gameData: gameData
     });
     
-    // 停止音频播放
+    // 停止音频但不销毁，后续继续复用
     if (this.audioContext) {
-      this.audioContext.stop();
-      this.setData({ isPlaying: false });
+      try { this.audioContext.stop(); } catch(e) {}
     }
-    
-    // 跳转到结果页
-    wx.redirectTo({
-      url: `/pages/result/result?dialogueId=${this.data.currentDialogue}&judgment=${judgment}&isCorrect=${isCorrect}&combo=${gameData.currentCombo}`
+
+    // 显示结果阶段
+    this.setData({
+      phase: 'result',
+      lastIsCorrect: isCorrect,
+      lastPointsGained: pointsToAdd || 0,
+      lastPointsLost: 2,
+      comboCount: gameData.currentCombo,
+      showComboResult: false // 先隐藏，稍后触发动画
     });
-  }
+
+    // 下一事件循环再显示，触发 CSS 过渡
+    this.comboShowTimer = setTimeout(() => {
+      this.setData({ showComboResult: true });
+
+      // 3秒后淡出
+      this.comboHideTimer = setTimeout(() => {
+        this.setData({ showComboResult: false });
+      }, 2000);
+    }, 50);
+    this.setData({ isJudging: false });
+  },
+  switchLanguage() { /* conversation page 无语言切换，若存在忽略 */ },
+  /** 进入指定索引的对话 */
+  enterDialogue(index) {
+    // 切题前清理之前的 combo 动画定时器，重置显示状态
+    this.clearComboTimers();
+    this.setData({ showComboResult: false });
+
+    const dlg = this.data.gameDialogues[index];
+    if (!dlg) return;
+    const messages = dlg.utterances ? dlg.utterances.map((u, idx) => ({
+      role: idx % 2 === 0 ? 'A' : 'B',
+      content: u.text
+    })) : dlg.messages;
+    const answer = dlg.type === 'M' ? 'M' : 'H';
+    // 设置音频
+    const localPath = this.data.preloadAudios[dlg.conversation_id] || '';
+    if (localPath) {
+      this.audioContext.src = localPath;
+    }
+    this.setData({
+      phase: 'dialogue',
+      curIndex: index,
+      messages,
+      currentAnswer: answer,
+      isExpanded: false,
+      pageReady: true,
+      currentAudioId: dlg.conversation_id,
+      currentAudioSession: dlg.session || 'Session2',
+      currentDialogue: index+1,
+      aiFeatures: dlg.aiFeatures || [],
+      aiRole: (dlg.type === 'M' ? 'B' : 'none'),
+    });
+    this.updateDisplayMessages(messages, false);
+    // 预拉下一题音频
+    this.prefetchNextAudio(index + 1);
+  },
+  /** 预拉下一题音频 */
+  prefetchNextAudio(nextIndex) {
+    if (nextIndex >= this.data.totalDialogues) return;
+    const nextDlg = this.data.gameDialogues[nextIndex];
+    if (!nextDlg) return;
+    const cid = nextDlg.conversation_id;
+    if (this.data.preloadAudios[cid]) return; // 已缓存
+    const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
+    const session = nextDlg.session || 'Session2';
+    const fileID = `${envPrefix}/${session}/${cid}.wav`;
+    wx.cloud.downloadFile({ fileID }).then(res => {
+      const path = res.tempFilePath;
+      const newMap = { ...this.data.preloadAudios, [cid]: path };
+      this.setData({ preloadAudios: newMap });
+      if (getApp().globalData) {
+        getApp().globalData.preloadAudios = newMap;
+      }
+    }).catch(() => {});
+  },
+  /** 结果页点击下一题 */
+  nextFromResult() {
+    // 清理 combo 动画定时器，避免影响下一题或总结页
+    this.clearComboTimers();
+
+    if (wx.vibrateShort) wx.vibrateShort({ type: 'light' });
+    const nextIdx = this.data.curIndex + 1;
+    if (nextIdx >= 10) {
+      // TODO: 切换到 summary 阶段，保留原逻辑 or redirect
+      wx.redirectTo({ url: '/pages/summary/summary' });
+      return;
+    }
+    this.enterDialogue(nextIdx);
+  },
+  // 语言切换后刷新动态文本
+  refreshLanguageDependentData(language) {
+    const extra = {
+      correct: t('result.correct', language),
+      wrong: t('result.wrong', language),
+      correctDesc1: t('result.correctDesc1', language),
+      wrongDesc1: t('result.wrongDesc1', language),
+      pointsUnit: t('result.pointsUnit', language),
+      rewardSuffix: t('result.rewardSuffix', language),
+      aiAnalysis: t('result.aiAnalysis', language),
+      nextButton: t('result.nextButton', language),
+      combo: t('result.combo', language)
+    };
+    this.setData({ t: { ...this.data.t, ...extra } });
+  },
 }) 

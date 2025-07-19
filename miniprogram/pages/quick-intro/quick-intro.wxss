@@ -2,97 +2,55 @@
 .container,
 .intro-card { display:none; }
 
-.bg {
-  position: fixed;
+/* 新整体容器 */
+.intro-container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+/* 背景 SVG */
+.intro-bg {
+  position: absolute;
   top: 0;
   left: 0;
-  background: #f8fafc;
-  z-index: -2;
+  width: 100%;
+  height: 100%;
 }
 
-.circle {
+/* 重新定位按钮容器至底部中央 */
+.button-container {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(60rpx);
-  opacity: 0.6;
-  animation: float 20s linear infinite alternate;
+  left: 50%;
+  bottom: 160rpx;
+  transform: translateX(-50%);
+  width: 250rpx;
+  height: 100rpx;
 }
 
-.circle1 {
-  width: 400rpx;
-  height: 400rpx;
-  background: #a5b4fc;
-  top: 10%;
-  left: -100rpx;
-  animation-duration: 25s;
-}
-
-.circle2 {
-  width: 300rpx;
-  height: 300rpx;
-  background: #fbcfe8;
-  bottom: 15%;
-  right: -120rpx;
-  animation-duration: 22s;
-}
-
-.circle3 {
-  width: 350rpx;
-  height: 350rpx;
-  background: #bfdbfe;
-  top: 50%;
-  left: 40%;
-  animation-duration: 28s;
-}
-
-@keyframes float {
-  0%   { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-60rpx) scale(1.1); }
-}
-
-.content {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 64rpx 48rpx;
-  text-align: center;
-}
-
-.title {
-  font-size: 48rpx;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 48rpx;
-  backdrop-filter: blur(8rpx);
-}
-
-.desc {
-  font-size: 28rpx;
-  color: #374151;
-  line-height: 48rpx;
-  margin-bottom: 64rpx;
-  display: flex;
-  flex-direction: column;
-  gap: 16rpx;
-  max-width: 650rpx;
-  backdrop-filter: blur(8rpx);
-}
-
-.start-button {
-  width: 60%;
+/* SVG 按钮样式 */
+.start-button-img {
+  width: 250rpx;
   max-width: 400rpx;
-  padding: 24rpx 0;
-  background: linear-gradient(135deg, #6c8add 0%, #4a4ddd 100%);
-  border-radius: 60rpx;
-  color: #FFFFFF;
-  font-size: 32rpx;
-  font-weight: 600;
-  text-align: center;
-  transition: transform 0.1s;
-  backdrop-filter: blur(4rpx);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.15s ease;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform; /* 提示浏览器预先做好变换准备 */
+  backface-visibility: hidden; /* 防止闪烁 */
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+
+.start-button-img.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 使用active伪类代替JS控制的transform */
+.start-button-img:active {
+  transform: scale(0.93);
 } 

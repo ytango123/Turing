@@ -105,3 +105,14 @@
 .save-btn:active {
   opacity: 0.9;
 } 
+
+/* 保存按钮SVG */
+.save-button {
+  width: 87vw;
+  display: block;
+  margin: 64rpx auto 0;
+  transition: transform 0.15s ease;
+}
+.save-button:active {
+  transform: scale(0.94);
+} 

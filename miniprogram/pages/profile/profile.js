@@ -21,6 +21,7 @@ createPage({
   },
 
   data: {
+    currentLang: wx.getStorageSync('language') || 'zh',
     avatarUrl: '',
     userInitial: 'T',
     username: '图灵测试者',
@@ -167,14 +168,19 @@ createPage({
       });
     }
 
-          // 计算总正确率（历史平均）
-          const historyArr = gameData.history || [];
-    let totalCorrectRate = 0;
-          if (historyArr.length > 0) {
-            const sum = historyArr.reduce((acc, item) => acc + (item.correctRate || 0), 0);
-            totalCorrectRate = Math.round(sum / historyArr.length);
-          } else if (gameData.correctRate !== undefined) {
-            totalCorrectRate = gameData.correctRate;
+          /* 计算总正确率：优先使用累计字段 totalCorrectRate；
+             若不存在则回退到历史平均或最后一轮 */
+          let totalCorrectRate = 0;
+          if (gameData.totalCorrectRate !== undefined) {
+            totalCorrectRate = gameData.totalCorrectRate;
+          } else {
+            const historyArr = gameData.history || [];
+            if (historyArr.length > 0) {
+              const sum = historyArr.reduce((acc, item) => acc + (item.correctRate || 0), 0);
+              totalCorrectRate = Math.round(sum / historyArr.length);
+            } else if (gameData.correctRate !== undefined) {
+              totalCorrectRate = gameData.correctRate;
+            }
           }
           
     this.setData({

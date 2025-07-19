@@ -40,7 +40,8 @@
   </view>
   
   <!-- 底部按钮 -->
-  <button class="full-width-button" bindtap="nextStep">{{t.nextButton}}</button>
+  <image wx:if="{{currentLang==='zh'}}" class="next-button" src="/assets/images/user-info/next_zh.svg" mode="widthFix" bindtap="nextStep" />
+  <image wx:if="{{currentLang==='en'}}" class="next-button" src="/assets/images/user-info/next_en.svg" mode="widthFix" bindtap="nextStep" />
   
   <view class="privacy-notice">
     <text>{{t.privacyNotice}}</text>

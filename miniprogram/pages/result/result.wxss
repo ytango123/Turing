@@ -221,6 +221,21 @@
   line-height: 1.5;
 }
 
+/* 新的下一题按钮样式 */
+.next-button {
+  width: 87vw;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.15s ease;
+  height: 112rpx; /* 新增: 固定高度，提前占位，消除闪烁 */
+  line-height: 112rpx; /* 补充: 与高度一致，防止出现垂直偏移 */
+  object-fit: contain;
+}
+
+.next-button:active {
+  transform: scale(0.94);
+}
+
 /* 连击提示样式 */
 .combo-notification {
   position: fixed;

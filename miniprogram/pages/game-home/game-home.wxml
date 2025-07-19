@@ -40,13 +40,13 @@
   
   <view class="challenge-modes mb-large">
     <!-- 快速挑战卡片 -->
-    <view class="mode-card" bindtap="startQuickChallenge">
+    <view class="mode-card" bindtap="startQuickChallenge" hover-class="mode-card-pressed" hover-stay-time="0">
       <image class="card-icon" src="/assets/figma/quick_challenge_top.png" mode="widthFix"></image>
       <image class="card-image" src="{{quickChallengeSvg}}" mode="widthFix"></image>
     </view>
     
     <!-- 困难模式卡片 -->
-    <view class="mode-card">
+    <view class="mode-card" hover-class="mode-card-pressed" hover-stay-time="0">
       <image class="card-icon" src="/assets/figma/hard_mode_top.png" mode="widthFix"></image>
       <image class="card-image" src="{{hardModeSvg}}" mode="widthFix"></image>
     </view>
@@ -62,7 +62,7 @@
           <image wx:if="{{item.rank === 1}}" class="crown-icon" src="/assets/images/game-home/star.svg" mode="widthFix" />
           <image wx:if="{{item.avatarUrl}}" class="podium-avatar" src="{{item.avatarUrl}}" mode="aspectFill" />
           <view wx:else class="podium-avatar-fallback">
-            <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:32rpx;"></text>
+            <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:52rpx;"></text>
           </view>
           <text class="podium-name">{{item.name}}</text>
           <view class="podium-points">{{item.points}} {{t.points}}</view>
@@ -71,10 +71,10 @@
     </view>
 
     <!-- 排行榜柱 -->
-    <image class="rank-bar" src="/assets/images/game-home/rank-bar.svg" mode="widthFix" />
+    <image class="rank-bar" src="/assets/images/game-home/rank-bar.svg" mode="widthFix" hidden="{{!rankDataReady}}" />
 
     <!-- 第四名及后续 -->
-    <view class="rest-card" style="height: {{rankCardHeight}}rpx;">
+    <view class="rest-card" style="height: {{rankCardHeight}}rpx;" hidden="{{!rankDataReady}}">
       <!-- 顶部凹槽与灰点 -->
       <view class="rest-notch">
         <view class="rest-notch-dot"></view>
@@ -85,7 +85,7 @@
             <view class="rest-rank">{{item.rank}}</view>
             <image wx:if="{{item.avatarUrl}}" class="rest-avatar" src="{{item.avatarUrl}}" mode="aspectFill" />
             <view wx:else class="rest-avatar-fallback">
-              <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:28rpx;"></text>
+              <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:52rpx;"></text>
             </view>
             <view class="rest-info">
               <text class="rest-name">{{item.name}}</text>
@@ -95,5 +95,8 @@
         </block>
       </view>
     </view>
+
+    <!-- 排行榜提示小字 -->
+    <text class="rank-tip" hidden="{{!rankDataReady}}">{{t.rankingsTip}}</text>
   </view>
 </view> 

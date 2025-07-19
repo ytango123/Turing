@@ -1,5 +1,5 @@
 <view class="container">
-  <image src="/assets/images/component/button.svg" style="width:0;height:0;opacity:0;position:absolute;" />
+  
   <!-- 装饰性彩带 -->
   <view class="confetti-container">
     <view class="confetti" wx:for="{{5}}" wx:key="index" style="left: calc(10% + {{index * 20}}%);"></view>
@@ -78,50 +78,22 @@
       {{analysisResult}}
     </view>
     
-    <view class="skill-levels mb-small">
-      <view class="skill-level">
-        <view class="skill-bar excellent"></view>
-        <text class="skill-label">{{t.skillExcellent}}</text>
-      </view>
-      <view class="skill-level">
-        <view class="skill-bar good"></view>
-        <text class="skill-label">{{t.skillGood}}</text>
-      </view>
-      <view class="skill-level">
-        <view class="skill-bar average"></view>
-        <text class="skill-label">{{t.skillAverage}}</text>
-      </view>
-      <view class="skill-level">
-        <view class="skill-bar weak"></view>
-        <text class="skill-label">{{t.skillWeak}}</text>
-      </view>
-    </view>
-    
-    <view class="skills-grid">
-      <block wx:for="{{skillLevels.excellent}}" wx:key="*this">
-        <view class="skill-tag excellent">{{item}}</view>
-      </block>
-      <block wx:for="{{skillLevels.good}}" wx:key="*this">
-        <view class="skill-tag good">{{item}}</view>
-      </block>
-      <block wx:for="{{skillLevels.average}}" wx:key="*this">
-        <view class="skill-tag average">{{item}}</view>
-      </block>
-      <block wx:for="{{skillLevels.weak}}" wx:key="*this">
-        <view class="skill-tag weak">{{item}}</view>
-      </block>
-    </view>
+    <!-- 删除 skill-levels 和 skills-grid 块，不再显示技能条及彩色标签 -->
   </view>
   
-  <!-- 分享和再来一轮按钮 -->
-  <button class="share-button mb-medium" open-type="share">
-    <t-icon name="share" size="40rpx" color="#FFF" class="mr-small" />
-    {{t.shareButton}}
+  <!-- 分享按钮替换为可分享的 button 组件 -->
+  <!-- 分享 -->
+  <button class="summary-button mb-medium" bindtap="shareResults" open-type="share" hidden="{{currentLang!=='zh'}}">
+    <image src="/assets/images/summary/share_zh.svg" mode="widthFix" class="btn-img" />
+  </button>
+  <button class="summary-button mb-medium" bindtap="shareResults" open-type="share" hidden="{{currentLang!=='en'}}">
+    <image src="/assets/images/summary/share_en.svg" mode="widthFix" class="btn-img" />
   </button>
   
-  <button class="full-width-button" bindtap="playAgain">
-    {{t.playAgain}}
-  </button>
+  <!-- 再来一轮 -->
+  <image class="summary-button" src="/assets/images/summary/again_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="playAgain" />
+  <image class="summary-button" src="/assets/images/summary/again_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="playAgain" />
+  
 </view> 
 
 <!-- 成就弹窗 -->
@@ -133,8 +105,8 @@
     <view class="modal-title">{{achievementName}}</view>
     <view class="modal-desc">{{achievementDescription}}</view>
     <view class="modal-close-btn" bindtap="closeAchievement">
-      <image class="btn-bg" src="/assets/images/component/button.svg" mode="widthFix" />
-      <text class="btn-text">{{t.closeLabel}}</text>
+      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" />
     </view>
   </view>
 </view> 

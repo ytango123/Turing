@@ -21,7 +21,7 @@ createPage({
     currentStep: 1,
     totalSteps: 4,
     selectedOption: null,
-    
+    currentLang: 'zh',
     // 存储用户信息
     userInfo: {
       aiFamiliarity: '',
@@ -52,6 +52,8 @@ createPage({
   },
   
   onLoad() {
+    const language = wx.getStorageSync('language') || 'zh';
+    this.setData({ currentLang: language });
     // 初始化第一步
     this.updateStepData();
   },

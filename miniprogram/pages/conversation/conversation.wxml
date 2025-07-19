@@ -1,4 +1,9 @@
-<view class="container">
+<!-- 预加载 SVG，避免首帧闪烁 -->
+<image src="/assets/images/component/correct.svg" style="width:0;height:0;opacity:0;position:absolute" />
+<image src="/assets/images/component/wrong.svg" style="width:0;height:0;opacity:0;position:absolute" />
+
+<!-- 对话视图 -->
+<view class="container dialogue-phase phase-wrapper {{phase==='dialogue'?'phase-show':'phase-hidden'}}" hidden="{{!pageReady}}">
   <!-- 顶部导航 -->
   <t-navbar 
     title="{{pageReady ? (t.dialogueTitle + ' ' + currentDialogue + '/' + totalDialogues) : t.loading}}"
@@ -50,7 +55,8 @@
         <view class="loading-icon"></view>
       </block>
       <block wx:else>
-      <t-icon name="{{isPlaying ? 'pause' : 'play'}}" size="80rpx" color="#FFF" />
+        <image wx:if="{{!isPlaying}}" class="play-icon" src="/assets/images/conversation/play.svg" mode="widthFix" />
+        <image wx:if="{{isPlaying}}" class="play-icon" src="/assets/images/conversation/pause.svg" mode="widthFix" />
       </block>
     </view>
   </view>
@@ -60,16 +66,83 @@
     {{t.hintText}}
   </view>
   
-  <!-- 判断按钮 -->
-  <view class="judgment-buttons">
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="H">
-      <view class="judgment-title">{{t.judgeA}}</view>
+  <!-- 判断按钮改为SVG -->
+  <view class="judgment-images">
+    <!-- 人类判断 -->
+    <image class="judge-img" src="/assets/images/conversation/H_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="H" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/assets/images/conversation/H_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="H" hidden="{{currentLang!=='en'}}" />
       
+    <!-- AI 判断 -->
+    <image class="judge-img" src="/assets/images/conversation/M_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="M" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/assets/images/conversation/M_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="M" hidden="{{currentLang!=='en'}}" />
+  </view>
+</view>
+
+<!-- 结果视图 -->
+<view class="result-phase phase-wrapper {{phase==='result'?'phase-show':'phase-hidden'}}" hidden="{{!pageReady}}">
+  <view class="container" hidden="{{!pageReady}}">
+    <!-- 顶部导航复用 -->
+    <t-navbar 
+      title="" 
+      left-arrow="{{false}}"
+      title-color="#1F2937"
+      t-class="t-navbar"
+      fixed
+      placeholder
+    />
+    <!-- 结果展示 -->
+    <view class="result-container mb-large">
+      <!-- SVG 结果图标 -->
+      <image class="result-svg" src="/assets/images/component/correct.svg" mode="widthFix" hidden="{{!lastIsCorrect}}" />
+      <image class="result-svg" src="/assets/images/component/wrong.svg" mode="widthFix" hidden="{{lastIsCorrect}}" />
+      <view class="result-title-row">
+        <view class="result-title">{{lastIsCorrect ? t.correct : t.wrong}}</view>
+        <!-- 静态连击徽章已移除 -->
+      </view>
+      <view class="result-desc">
+        {{lastIsCorrect ? t.correctDesc1 : t.wrongDesc1}}
+        <text class="{{lastIsCorrect ? 'text-success' : 'text-error'}}">{{lastIsCorrect ? '+' + lastPointsGained : '-' + lastPointsLost}}</text>{{t.pointsUnit}}{{lastIsCorrect ? t.rewardSuffix : ''}}
+      </view>
+    </view>
+
+    <!-- 对话内容 -->
+    <view class="card dialogue-card mb-medium">
+      <block wx:for="{{displayMessages}}" wx:key="index">
+        <view class="{{item.role === 'A' ? 'message-row' : 'message-row-reverse'}}">
+          <view class="avatar-container {{item.role === 'A' ? 'avatar-a' : 'avatar-b'}} {{aiRole === item.role ? 'has-ai-badge' : ''}}">
+            <text>{{item.role}}</text>
+            <view class="ai-badge" wx:if="{{aiRole === item.role}}">AI</view>
+          </view>
+          <view class="message-bubble {{item.role === 'A' ? 'message-bubble-a' : 'message-bubble-b'}}">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{messages.length>maxLines}}" class="expand-button" bindtap="toggleExpand">
+        <text>{{isExpanded ? t.collapse : t.expand}}</text>
+        <t-icon name="{{isExpanded?'chevron-up':'chevron-down'}}" size="32rpx" color="#6B7280" />
+      </view>
+    </view>
+
+    <!-- AI特征解析 -->
+    <view class="card ai-analysis-card mb-large" wx:if="{{aiRole !== 'none'}}">
+      <view class="analysis-title mb-medium">{{t.aiAnalysis}}</view>
+      <view class="analysis-list">
+        <view class="analysis-item" wx:for="{{aiFeatures}}" wx:key="index">
+          <t-icon name="info-circle" size="40rpx" color="#6366F1" class="analysis-icon" />
+          <text class="analysis-text">{{item}}</text>
+        </view>
+      </view>
     </view>
     
-    <view class="judgment-button" bindtap="makeJudgment" data-judgment="M">
-      <view class="judgment-title">{{t.judgeB}}</view>
-      
+    <!-- 下一题按钮 -->
+    <image class="next-button" src="/assets/images/result/next_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="nextFromResult" />
+    <image class="next-button" src="/assets/images/result/next_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="nextFromResult" />
+    
+    <!-- 动态连击提示 -->
+    <view class="combo-toast {{showComboResult ? 'show' : ''}}" wx:if="{{comboCount>1 && lastIsCorrect}}">
+      <text class="iconfont icon-flash_line" style="font-size:36rpx;color:#FFF;margin-right:8rpx;"></text>
+      <text class="combo-toast-text">{{t.combo}} x{{comboCount}}</text>
     </view>
   </view>
 </view> 

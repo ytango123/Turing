@@ -1,0 +1,3702 @@
+[
+  {
+    "conversation_id": "0",
+    "name": "en_abylay_test_L3_T06_01_gpt",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation to Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "It was amazing. I had such a great time exploring all these different countries."
+      },
+      {
+        "speaker": "B",
+        "text": "I visited France, Italy, and Spain, and every place had its own charm."
+      },
+      {
+        "speaker": "B",
+        "text": "The food was incredible, and I took a lot of pictures. I can't wait to share them with you."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, so you've been to France. Which city have you been to?"
+      },
+      {
+        "speaker": "B",
+        "text": "I spent most of my time in Paris, which was absolutely beautiful."
+      },
+      {
+        "speaker": "B",
+        "text": "I got to see the Eiffel Tower, the Louvre, and just walked around the city and enjoyed all the little cafes."
+      },
+      {
+        "speaker": "B",
+        "text": "It was magical."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, really? Last time I went to Paris, it was too crowded, too many tourists, so I didn't have a really good time there."
+      },
+      {
+        "speaker": "A",
+        "text": "It was too crowded."
+      },
+      {
+        "speaker": "B",
+        "text": "I totally get that. It can get pretty crowded, especially around the big landmarks in the summer."
+      },
+      {
+        "speaker": "B",
+        "text": "I tried to go to a few quieter neighborhoods and just enjoy some of the local spots, and that definitely helped a bit."
+      },
+      {
+        "speaker": "B",
+        "text": "But yeah, I can understand how that can be a bit overwhelming."
+      }
+    ]
+  },
+  {
+    "conversation_id": "1",
+    "name": "en_abylay_test_L3_T06_02_glm",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "It was incredible. I got to explore historical landmarks, indulge in amazing food and met so many interesting people. But it was also exhausting."
+      },
+      {
+        "speaker": "B",
+        "text": "All that walking and sightseeing really took a toll on me. My feet were sore and I had my fair share of getting lost in those winding European streets. But honestly, totally worth it."
+      },
+      {
+        "speaker": "B",
+        "text": "Would you want to hear more about a specific place I visited?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, please go."
+      },
+      {
+        "speaker": "B",
+        "text": " Okay, so a funny thing happened to me in Venice. I was trying to take a gondola ride at sunset, which was magical by the way."
+      },
+      {
+        "speaker": "B",
+        "text": "But the gondolier had this thick Venetian accent."
+      }
+    ]
+  },
+  {
+    "conversation_id": "2",
+    "name": "en_abylay_test_L3_T06_04_doubao",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, it was amazing! I got to visit so many cool places."
+      },
+      {
+        "speaker": "B",
+        "text": "I saw the Eiffel Tower in Paris, and it was even more breathtaking in person."
+      },
+      {
+        "speaker": "B",
+        "text": "The Louvre was full of incredible art, and in Rome, walking around those ancient ruins was like stepping back in time."
+      },
+      {
+        "speaker": "B",
+        "text": "I ate the most delicious food, too, like fresh pasta in Italy and croissants in France."
+      },
+      {
+        "speaker": "B",
+        "text": "It was an experience I'll never forget."
+      },
+      {
+        "speaker": "A",
+        "text": "Wow, that was an amazing trip. Did you like Louvre?"
+      },
+      {
+        "speaker": "A",
+        "text": "I liked it very much."
+      },
+      {
+        "speaker": "B",
+        "text": "I absolutely loved the Louvre. It's like a whole world of art and history under one roof."
+      },
+      {
+        "speaker": "B",
+        "text": "Just walking through those halls and seeing all those masterpieces was overwhelming."
+      },
+      {
+        "speaker": "B",
+        "text": "The Mona Lisa, of course, was a huge highlight."
+      },
+      {
+        "speaker": "B",
+        "text": "But there were so many other incredible paintings and sculptures that I didn't expect to be so blown away by."
+      },
+      {
+        "speaker": "B",
+        "text": "It's definitely a place that you could spend days in and still not see everything."
+      }
+    ]
+  },
+  {
+    "conversation_id": "3",
+    "name": "en_abylay_test_L3_T06_05_tongyi",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "OMG, it was amazing. I hit up Paris, Rome, and bars, Lona, the food, the architecture, the culture."
+      },
+      {
+        "speaker": "B",
+        "text": "It was all so incredible. I could seriously talk about it for hours. How have you been?"
+      },
+      {
+        "speaker": "A",
+        "text": "I've been good. So tell me more about your vacation. Did you visit Germany, by the way?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yes, I did. Berlin was so cool. I visited the Berlin, Unwall, and Checkpoint Charlie."
+      },
+      {
+        "speaker": "B",
+        "text": "The history there is so fascinating. Plus, the food was great, too. I had the most amazing giant pretzel ever."
+      },
+      {
+        "speaker": "A",
+        "text": "Wow, I also like pretzel. Do you also like sausages?"
+      },
+      {
+        "speaker": "B",
+        "text": "Of course, I do. I tried so many different kinds in Germany. Bartwurst, Currywurst, Weisswurst. I could seriously eat them every day."
+      }
+    ]
+  },
+  {
+    "conversation_id": "4",
+    "name": "en_abylay_test_L3_T06_06_kimi",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "Wow, it was amazing. I had the best time ever."
+      },
+      {
+        "speaker": "B",
+        "text": "I visited so many beautiful places, like Paris, Rome, and Barcelona."
+      },
+      {
+        "speaker": "B",
+        "text": "The food was incredible. And I took so many great photos."
+      },
+      {
+        "speaker": "A",
+        "text": "Wow, so many places."
+      },
+      {
+        "speaker": "A",
+        "text": "Did you have a jet lag?"
+      },
+      {
+        "speaker": "B",
+        "text": "No, I was actually really good at managing my sleep schedule."
+      },
+      {
+        "speaker": "B",
+        "text": "I made sure to adjust my bedtime every night, so I didn't feel too jet lagged."
+      },
+      {
+        "speaker": "A",
+        "text": "So how many countries did you visit in total?"
+      },
+      {
+        "speaker": "B",
+        "text": "I visited six countries in total."
+      },
+      {
+        "speaker": "B",
+        "text": "I started in France, then went to Italy, Spain, Germany, the Netherlands."
+      }
+    ]
+  },
+  {
+    "conversation_id": "5",
+    "name": "en_abylay_test_L3_T06_08_hunyuan",
+    "language": "en",
+    "topic": "6",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "It was amazing. I visited so many places and ate so much delicious food. Have you ever been to Europe?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I've been to France and Switzerland."
+      },
+      {
+        "speaker": "B",
+        "text": "Wow, those are both great countries. What did you like most about them?"
+      },
+      {
+        "speaker": "A",
+        "text": "Well, I like Switzerland very much because it has so good nature. I mean, it was so amazing."
+      },
+      {
+        "speaker": "B",
+        "text": "Yes, Switzerland's natural scenery is extremely beautiful. The mountains, the lakes, all of them are like postcards. Did you go to any interesting places there?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, we went to Lauterbrunnen. I think they have good waterfalls. The best in the country, at least."
+      },
+      {
+        "speaker": "B",
+        "text": "That's right. The seven waterfalls in Lauterbrunnen are extremely spectacular, and the view there is really shocking. You must have taken a lot of beautiful pictures there, right?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "6",
+    "name": "en_abylay_test_T06_07_gemini",
+    "language": "en",
+    "topic": "7",
+    "type": "HM",
+    "model": "gemini",
+    "level": "T06",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your vacation to Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, it was absolutely amazing. I got to see so many incredible places and experience different cultures."
+      },
+      {
+        "speaker": "B",
+        "text": "I'm still trying to process it all."
+      },
+      {
+        "speaker": "B",
+        "text": "Haha. How about you?"
+      },
+      {
+        "speaker": "B",
+        "text": "What have you been up to lately?"
+      },
+      {
+        "speaker": "A",
+        "text": "Nothing special. I was just working here all summer."
+      },
+      {
+        "speaker": "A",
+        "text": "It was very busy. So, I guess you have a lot of work to do now."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, that's rough. You definitely deserve a vacation after all that hard work."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I've got a ton of catching up to do at the office. It's gonna be wild."
+      },
+      {
+        "speaker": "A",
+        "text": "So, what do you have to do?"
+      },
+      {
+        "speaker": "A",
+        "text": "Do you have to read a lot of emails?"
+      },
+      {
+        "speaker": "B",
+        "text": "Ugh, you have no idea. My inbox is overflowing."
+      },
+      {
+        "speaker": "B",
+        "text": "I've got hundreds of emails to go through. Plus reports to write. Meetings to catch up on."
+      },
+      {
+        "speaker": "B",
+        "text": "It's gonna be a long week."
+      }
+    ]
+  },
+  {
+    "conversation_id": "7",
+    "name": "en_abylay_test_T06_09_claude ",
+    "language": "en",
+    "topic": "9",
+    "type": "HM",
+    "model": "claude ",
+    "level": "T06",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How's your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh wow, it was amazing!"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm still kind of jet-lagged, but totally worth it."
+      },
+      {
+        "speaker": "B",
+        "text": "The gelato in Italy though, I probably had it like three times a day."
+      },
+      {
+        "speaker": "B",
+        "text": "How's everything been here while I was living it up over there?"
+      },
+      {
+        "speaker": "A",
+        "text": "It's been fine, I mostly worked."
+      },
+      {
+        "speaker": "A",
+        "text": "It was very busy summer, so I had a lot of work to do."
+      },
+      {
+        "speaker": "A",
+        "text": "So what about your work?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh man, I'm actually dreading going back to the office tomorrow."
+      },
+      {
+        "speaker": "B",
+        "text": "I've been putting off checking my emails for like the last three days because I know there's probably hundreds waiting for me."
+      }
+    ]
+  },
+  {
+    "conversation_id": "8",
+    "name": "en_Angel_test_L2_T05_01_tongyi",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, you know what? I just received my math exam score, but I only scored 60 in the exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh no. Sweetheart, I know how disappointing that must feel. Math can be tough sometimes."
+      },
+      {
+        "speaker": "B",
+        "text": "Did you feel like the exam was harder than expected? Or maybe there were some topics"
+      },
+      {
+        "speaker": "B",
+        "text": "you hadn't quite mastered yet. Let's talk about it."
+      },
+      {
+        "speaker": "A",
+        "text": "You know what, Mom? But I just have been studied really really hard during the normal class"
+      },
+      {
+        "speaker": "A",
+        "text": "and also during my own study time. But I don't know why, but I think the teacher uses the"
+      },
+      {
+        "speaker": "A",
+        "text": "different kind of structure for the exam and maybe that's why I haven't quite mastered it yet."
+      },
+      {
+        "speaker": "B",
+        "text": "I'm so proud of you for working so hard. It really shows how responsible and dedicated you are."
+      },
+      {
+        "speaker": "B",
+        "text": "It's frustrating when things don't go the way you expected, especially when you put in so much effort. Sometimes exams asterisk do asterisk feel like they come out of left field, right?"
+      },
+      {
+        "speaker": "B",
+        "text": "If the structure was different from what you're used to, that could have thrown anyone off."
+      }
+    ]
+  },
+  {
+    "conversation_id": "9",
+    "name": "en_Angel_test_L2_T05_02_doubao",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, you know what? My math exam score has been uploaded, but I only scored 60 in the exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh dear. 60 isn't a very high score, but it's okay. Let's look at where you might have made mistakes."
+      },
+      {
+        "speaker": "B",
+        "text": " Maybe we can find ways to improve for the next exam. We can go over the test paper together and figure out what needs work."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, because the teacher said that the test paper will be uploaded like tonight. So I think tonight I'm gonna review the test paper and discover like which part that I got wrong."
+      },
+      {
+        "speaker": "B",
+        "text": " That's a great idea. When you go over the paper, pay attention to the types of questions you missed."
+      },
+      {
+        "speaker": "B",
+        "text": " Was it because you didn't understand the concepts, made careless mistakes, or ran out of time? We can work on strategies to deal with those issues."
+      }
+    ]
+  },
+  {
+    "conversation_id": "10",
+    "name": "en_Angel_test_L2_T05_03_glm",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I only scored 60 in my math exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, sweetie. A 60 is okay, but I know you can do better."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's take a look at what happened."
+      },
+      {
+        "speaker": "B",
+        "text": "Was it the questions too hard?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or maybe you were nervous."
+      },
+      {
+        "speaker": "B",
+        "text": "Tell mom what do you think we should work on for next time."
+      },
+      {
+        "speaker": "A",
+        "text": "Actually, for the materials itself, I have understood all of the materials for the exam."
+      },
+      {
+        "speaker": "A",
+        "text": "But for the structure of the exam, I think the teacher slightly changed it a bit."
+      },
+      {
+        "speaker": "A",
+        "text": "So I'm a bit unfamiliar about the structure."
+      },
+      {
+        "speaker": "B",
+        "text": "I understand."
+      },
+      {
+        "speaker": "B",
+        "text": "It can be overwhelming when the exam structure is unfamiliar."
+      },
+      {
+        "speaker": "B",
+        "text": "Shall we practice with sample papers that have the same structure as the actual exam?"
+      },
+      {
+        "speaker": "B",
+        "text": "This will help you get used to it."
+      },
+      {
+        "speaker": "B",
+        "text": "How about we start with short practice sessions every day?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, sure."
+      }
+    ]
+  },
+  {
+    "conversation_id": "11",
+    "name": "en_Angel_test_L2_T05_04_kimi",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I only scored 60 in my math exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, sweetheart. I'm a little disappointed to hear that."
+      },
+      {
+        "speaker": "B",
+        "text": "I know you've been working really hard. What do you think went wrong?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think for the materials of the exam, I have understood it pretty well."
+      },
+      {
+        "speaker": "A",
+        "text": "But I'm just a bit unfamiliar about the structure of the exam,"
+      },
+      {
+        "speaker": "A",
+        "text": "since I think the teacher slightly changed it a bit."
+      },
+      {
+        "speaker": "B",
+        "text": "That's a good point. It's important to be familiar with the exam format."
+      },
+      {
+        "speaker": "B",
+        "text": "Have you talked to your teacher about it?"
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe they can give you some tips for next time."
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, I think my teacher gave me tips to study about the previous exam paper"
+      },
+      {
+        "speaker": "A",
+        "text": "so that I can be familiar first with the exam format."
+      },
+      {
+        "speaker": "B",
+        "text": "That's a great idea."
+      },
+      {
+        "speaker": "B",
+        "text": "Studying past papers is a smart way to get comfortable with the exam structure."
+      },
+      {
+        "speaker": "B",
+        "text": "Don't forget to practice solving the questions within the time limit."
+      },
+      {
+        "speaker": "B",
+        "text": "It helps to get used to the pace."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, sure."
+      }
+    ]
+  },
+  {
+    "conversation_id": "12",
+    "name": "en_Angel_test_L2_T05_05_hunyuan",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I only scored 60 in my math exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, honey, I'm sorry to hear that."
+      },
+      {
+        "speaker": "B",
+        "text": "But one exam doesn't define your ability."
+      },
+      {
+        "speaker": "B",
+        "text": "We can find out where you went wrong and work on it together."
+      },
+      {
+        "speaker": "B",
+        "text": "Don't be too sad."
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, and I have found my problem, Mom."
+      },
+      {
+        "speaker": "A",
+        "text": "So actually, for the materials, I didn't have any problem with it."
+      },
+      {
+        "speaker": "A",
+        "text": "But I just have problem in order to familiar with the exam format."
+      },
+      {
+        "speaker": "B",
+        "text": "That's not a big deal."
+      },
+      {
+        "speaker": "B",
+        "text": "You can take a few more practice exams to get familiar with the format."
+      },
+      {
+        "speaker": "B",
+        "text": "I'll also help you analyze the questions from previous years."
+      },
+      {
+        "speaker": "B",
+        "text": "There are definitely a lot of similarities."
+      },
+      {
+        "speaker": "B",
+        "text": "Don't worry too much."
+      },
+      {
+        "speaker": "B",
+        "text": "You can surely improve."
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, and I think from now on, I'm going to practice with the previous exam paper"
+      },
+      {
+        "speaker": "A",
+        "text": "so that I can be familiar first with the exam format and structure"
+      },
+      {
+        "speaker": "A",
+        "text": "so that it can be easier."
+      },
+      {
+        "speaker": "B",
+        "text": "This is a great idea."
+      },
+      {
+        "speaker": "B",
+        "text": "Practicing previous years' papers can surely help you understand the exam format better."
+      }
+    ]
+  },
+  {
+    "conversation_id": "13",
+    "name": "en_Angel_test_L2_T05_06_gpt",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I just got 60 in my math exam grade."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I see."
+      },
+      {
+        "speaker": "B",
+        "text": "Getting a 60 on your math exam can be tough, but it's okay."
+      },
+      {
+        "speaker": "B",
+        "text": "Grades are just one part of your learning journey."
+      },
+      {
+        "speaker": "B",
+        "text": "It's great that you feel confident about the material."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe focusing on the exam format and practicing more can help you improve next time."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you have any specific areas you want to work on?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, I think for the materials, I have understood it pretty well."
+      },
+      {
+        "speaker": "A",
+        "text": "And right now, I just need to be familiar with the exam structure"
+      },
+      {
+        "speaker": "A",
+        "text": "so that it can be easier for me to review it later."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds like a good plan."
+      },
+      {
+        "speaker": "B",
+        "text": "Familiarizing yourself with the exam format can definitely help."
+      },
+      {
+        "speaker": "B",
+        "text": "You could try practicing with past exams or sample questions"
+      },
+      {
+        "speaker": "B",
+        "text": "to get used to how the questions are asked."
+      },
+      {
+        "speaker": "B",
+        "text": "Also, focusing on any topics you find challenging can help boost your confidence."
+      },
+      {
+        "speaker": "B",
+        "text": "Keep practicing and you'll improve over time."
+      }
+    ]
+  },
+  {
+    "conversation_id": "14",
+    "name": "en_Angel_test_L2_T05_07_gemini",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I just got 60 for my math exam grade."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh no, honey, that's not a very good grade."
+      },
+      {
+        "speaker": "B",
+        "text": "I'm a little disappointed."
+      },
+      {
+        "speaker": "B",
+        "text": "You need to work harder next time."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you have any questions about the test?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, because for the materials, I actually understand it pretty well."
+      },
+      {
+        "speaker": "A",
+        "text": "But I have a problem in terms of the structure and also the format of the exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe you can talk to your teacher about the exam format and see if they have any tips for you."
+      },
+      {
+        "speaker": "B",
+        "text": "You could also try practicing with some sample exams to get used to the structure."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, so my plan for now is I'm going to start practicing using the previous exam test paper"
+      },
+      {
+        "speaker": "A",
+        "text": "so that I can be familiar with the exam structure first before I understand the materials."
+      },
+      {
+        "speaker": "B",
+        "text": "That's a good plan."
+      },
+      {
+        "speaker": "B",
+        "text": "It's important to understand the exam format so you know what to expect."
+      },
+      {
+        "speaker": "B",
+        "text": "Just remember to also spend time reviewing the actual material so you're prepared for the content as well."
+      }
+    ]
+  },
+  {
+    "conversation_id": "15",
+    "name": "en_Angel_test_L2_T05_08_claude",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "claude",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I just got 60 in my math exam grade."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh honey, 60 out of what total? I want to understand how you did before we talk about it further."
+      },
+      {
+        "speaker": "A",
+        "text": "It's 60 over 100, so I think it's pretty low for a score."
+      },
+      {
+        "speaker": "B",
+        "text": "I understand you're disappointed with your score. What happened during the exam?"
+      },
+      {
+        "speaker": "B",
+        "text": "Did you feel prepared or were there specific topics that gave you trouble?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, actually I felt prepared about the materials, but there is one topic that I didn't really understand"
+      },
+      {
+        "speaker": "A",
+        "text": "and also I have a hard time understanding about the exam structure."
+      },
+      {
+        "speaker": "B",
+        "text": "It sounds like you knew the material but got tripped up by the exam format itself."
+      },
+      {
+        "speaker": "B",
+        "text": "That's actually pretty common and something we can work on together."
+      },
+      {
+        "speaker": "B",
+        "text": "What specifically about the structure confused you?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think it's different in terms of the question that will be asked. It's different from an expectation."
+      },
+      {
+        "speaker": "B",
+        "text": "That's really frustrating when the questions don't match what you prepared for."
+      },
+      {
+        "speaker": "B",
+        "text": "Did the teacher give you any practice tests or examples beforehand?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or..."
+      },
+      {
+        "speaker": "B",
+        "text": "Was this format completely new?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, it's completely new."
+      }
+    ]
+  },
+  {
+    "conversation_id": "16",
+    "name": "en_bw_test_L3_T08_01_gpt",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this down tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "I know, it's been a long day. But let's break it down step by step."
+      },
+      {
+        "speaker": "B",
+        "text": "We can definitely get through this if we keep at it."
+      },
+      {
+        "speaker": "B",
+        "text": "How about we tackle the most urgent parts first?"
+      },
+      {
+        "speaker": "A",
+        "text": "So what's your opinion about the first part?"
+      },
+      {
+        "speaker": "B",
+        "text": "It looks like the first part needs some refining, but the core idea is strong."
+      },
+      {
+        "speaker": "B",
+        "text": "We might want to clarify some details to ensure everything aligns with the overall goal."
+      },
+      {
+        "speaker": "B",
+        "text": "What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think our idea is pretty good, so maybe can you help me to list more details about the first step?"
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. For the first step, we should start by outlining the main objectives."
+      },
+      {
+        "speaker": "B",
+        "text": "Then, we can break down the tasks into smaller, manageable actions."
+      },
+      {
+        "speaker": "B",
+        "text": "After that, assigning responsibilities and setting a timeline will help keep us on track."
+      },
+      {
+        "speaker": "B",
+        "text": "Does that sound like a good plan?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "17",
+    "name": "en_bw_test_L3_T08_02_glm",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this done tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Hear you. We've been staring at this screen for hours."
+      },
+      {
+        "speaker": "B",
+        "text": "How about we take a quick 15-minute breather?"
+      },
+      {
+        "speaker": "B",
+        "text": "A little stretch and some fresh air might be just what we need to get back in the game."
+      },
+      {
+        "speaker": "B",
+        "text": "What do you say?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think take a break is a good idea, but I don't think our boss would allow us to have a short break."
+      },
+      {
+        "speaker": "A",
+        "text": "I think the task is really, really timely, and we don't have too much time to have the break."
+      },
+      {
+        "speaker": "B",
+        "text": "I hear you. This really is a tight squeeze."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's focus, Malt, then."
+      },
+      {
+        "speaker": "B",
+        "text": "I'll take the first section, you jump into the second part, and we'll sync up midway."
+      },
+      {
+        "speaker": "B",
+        "text": "We can do this."
+      }
+    ]
+  },
+  {
+    "conversation_id": "18",
+    "name": "en_bw_test_L3_T08_04_doubao",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this done tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "I hope we can at least get most of it done."
+      },
+      {
+        "speaker": "B",
+        "text": "It's been a long day, hasn't it?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I think it is really tired,"
+      },
+      {
+        "speaker": "A",
+        "text": "but even though the most have done,"
+      },
+      {
+        "speaker": "A",
+        "text": "we still have a lot of things to do."
+      },
+      {
+        "speaker": "B",
+        "text": "I know, but taking a short break might help."
+      },
+      {
+        "speaker": "B",
+        "text": "We can recharge a bit and then get back to it."
+      },
+      {
+        "speaker": "B",
+        "text": "What do you say?"
+      },
+      {
+        "speaker": "A",
+        "text": "But I think the time is too limited"
+      },
+      {
+        "speaker": "A",
+        "text": "so that we cannot have too much time to get a short break."
+      },
+      {
+        "speaker": "B",
+        "text": "True, but a little break can do wonders for our productivity."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe just five minutes to stretch and grab some coffee?"
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, you're right."
+      },
+      {
+        "speaker": "A",
+        "text": "Then how can we spend this five minutes?"
+      },
+      {
+        "speaker": "B",
+        "text": "Let's stretch our legs, walk around the office a bit,"
+      },
+      {
+        "speaker": "B",
+        "text": "and I'll make us some coffee."
+      },
+      {
+        "speaker": "B",
+        "text": "That should wake us up a bit."
+      }
+    ]
+  },
+  {
+    "conversation_id": "19",
+    "name": "en_bw_test_L3_T08_05_tongyi",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this done tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I know what you mean."
+      },
+      {
+        "speaker": "B",
+        "text": "It's been one of those days where everything takes longer than expected."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you think you need more time tomorrow?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or is there a way to wrap it up by the end of the night?"
+      },
+      {
+        "speaker": "B",
+        "text": "T."
+      },
+      {
+        "speaker": "A",
+        "text": "I think we should finish it tonight, but I'm too tired to finish it."
+      },
+      {
+        "speaker": "A",
+        "text": "I think maybe we should do it more efficiently."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I get that."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, when you're exhausted, push, I and you through can actually slow things down."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe we can take a quick break to clear our heads, grab some coffee, or just step outside for a minute."
+      },
+      {
+        "speaker": "B",
+        "text": "Some times a short reset helps you come back sharper."
+      },
+      {
+        "speaker": "B",
+        "text": "What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "Good idea."
+      },
+      {
+        "speaker": "A",
+        "text": "Maybe can you tell me how much time I need to get this little break?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "20",
+    "name": "en_bw_test_L3_T08_06_kimi",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "i don't think we could get this down tonight "
+      },
+      {
+        "speaker": "B",
+        "text": "I understand sometimes it just doesn't work out. let's take a break and come back to it fresh tomorrow"
+      },
+      {
+        "speaker": "A",
+        "text": "But our boss wouldn't allow us tosubmit it tomorrow and we have to finish it tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "i know it's frustrating maybe we can divide the work and focus on the most important parts first that way we can at least submit something tonight."
+      },
+      {
+        "speaker": "A",
+        "text": "the most important part, but i think that every part is the most every part is very important. Can you figure out which one is the most important."
+      },
+      {
+        "speaker": "B",
+        "text": "sure let's prioritize. Is there a specific section that's due the soonest or has the biggest impact on the overall project"
+      },
+      {
+        "speaker": "A",
+        "text": "you're my colleague i think you should know which one is the most important can you just help me to figure it out"
+      }
+    ]
+  },
+  {
+    "conversation_id": "21",
+    "name": "en_bw_test_L3_T08_07_gemini",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this down tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, it feels like a long way to go. We've been working really hard, but it's still looking like a stretch."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe we should take a short break and then regroup?"
+      },
+      {
+        "speaker": "A",
+        "text": "But I think we need to finish it timely as soon as possible."
+      },
+      {
+        "speaker": "B",
+        "text": "I know, the pressure is definitely on. We've got to keep pushing through."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's just try to stay focused and tackle it step by step. We can do this."
+      },
+      {
+        "speaker": "A",
+        "text": "So, can you give me some way to finish it step by step?"
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. Let's break it down into smaller, manageable tasks."
+      },
+      {
+        "speaker": "B",
+        "text": "We can prioritize the most critical parts first, then work our way through the rest."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe we assign specific sections to each other to make it more efficient. How does that sound?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think it's a good idea."
+      }
+    ]
+  },
+  {
+    "conversation_id": "22",
+    "name": "en_bw_test_L3_T08_08_hunyuan",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this done tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "It's okay. We can continue working on it tomorrow. Don't push yourself too hard."
+      },
+      {
+        "speaker": "A",
+        "text": "But I think we don't have too much time. Boss required us to hand it in tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Then let's work together more efficiently."
+      },
+      {
+        "speaker": "B",
+        "text": "First, sort out the key points of the task and divide the work."
+      },
+      {
+        "speaker": "B",
+        "text": "Who is better at writing the introduction part?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think I'm not good at writing this one. Maybe you can help me a little bit more at this part."
+      },
+      {
+        "speaker": "B",
+        "text": "Of course. I'll give you some suggestions, and you can revise it according to your ideas."
+      },
+      {
+        "speaker": "B",
+        "text": "First, we should clarify the background and purpose of this task."
+      },
+      {
+        "speaker": "A",
+        "text": "I've already done this, so can you show me the next steps of this?"
+      },
+      {
+        "speaker": "B",
+        "text": "Next, we can analyze the problems and solutions in this task."
+      },
+      {
+        "speaker": "B",
+        "text": "You can tell me what difficulties you have encountered so far, and then we can figure out solutions together."
+      }
+    ]
+  },
+  {
+    "conversation_id": "23",
+    "name": "en_bw_test_L3_T08_09_claude",
+    "language": "en",
+    "topic": "8",
+    "type": "HM",
+    "model": "claude",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don't think we could get this down tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I'm starting to think the same thing."
+      },
+      {
+        "speaker": "B",
+        "text": "We've been at this for hours and there's still so much left to do."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe we should call it and pick this up fresh in the morning."
+      },
+      {
+        "speaker": "A",
+        "text": "But I think the time is too limited and we need to handle it this night."
+      },
+      {
+        "speaker": "A",
+        "text": "And can you help me a little bit more?"
+      },
+      {
+        "speaker": "B",
+        "text": "You're right. We're really up against it."
+      },
+      {
+        "speaker": "B",
+        "text": "Of course I'll help."
+      },
+      {
+        "speaker": "B",
+        "text": "What do you need me to tackle first?"
+      },
+      {
+        "speaker": "A",
+        "text": "I think the most important part is to write the report logically."
+      },
+      {
+        "speaker": "A",
+        "text": "So can you help me with how to write the report?"
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. Let's break this down."
+      },
+      {
+        "speaker": "B",
+        "text": "Start with your main findings up front,"
+      },
+      {
+        "speaker": "B",
+        "text": "then walk through your methodology and supporting data."
+      },
+      {
+        "speaker": "B",
+        "text": "What's the core message you're trying to get across in this report?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "24",
+    "name": "en_jb_test_L2_T03_01_gpt",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know that recently the students of our university has been in some conflict with the students of our brother's university?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I heard about that too. It seems like the recent university rankings have stirred up some strong feelings among students."
+      },
+      {
+        "speaker": "B",
+        "text": "It's understandable, especially when rankings can impact how people view their education. What are your thoughts on it?"
+      },
+      {
+        "speaker": "A",
+        "text": "Well, I just feel it's kind of weird because essentially we do not interfere with each other's future developments or maybe some internship. That's just unrelated."
+      },
+      {
+        "speaker": "B",
+        "text": "I get what you mean. Rankings can sometimes feel a bit detached from our actual experiences and opportunities."
+      },
+      {
+        "speaker": "B",
+        "text": "It's true that what's more important are the skills and knowledge."
+      },
+      {
+        "speaker": "B",
+        "text": "The knowledge we gain, and how we apply them in real life."
+      }
+    ]
+  },
+  {
+    "conversation_id": "25",
+    "name": "en_jb_test_L2_T03_02_glm",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know that recently there's been some conflicts between our university and our brother's university?"
+      },
+      {
+        "speaker": "B",
+        "text": "I see. It sounds like there's some rivalry going on. Are these conflicts related to ranking competition or something else? I'm curious to hear more about it. "
+      },
+      {
+        "speaker": "A",
+        "text": "So, in brief, these conflicts happened because these two universities share the same ranking. "
+      },
+      {
+        "speaker": "B",
+        "text": "Ah, I get it now. sharing the same ranking can definitely stir up some competition. But you know what? This could be a great opportunity for both universities to collaborate and learn from each other. What do you think about that? "
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I mean, I totally agree with your opinions. And apparently that, I mean, there's no disadvantages for us to share the same rank as they do because both our students they don't actually compete with each other directly. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "26",
+    "name": "en_jb_test_L2_T03_04_doubao",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you heard that recently there's been some conflicts between the students of our university and our brother university?"
+      },
+      {
+        "speaker": "B",
+        "text": "I haven't heard about that. What exactly happened? Is it related to the university ranking issue?"
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe there's some misunderstanding or different perspectives involved."
+      },
+      {
+        "speaker": "B",
+        "text": "It would be great if we could figure out a way to resolve these conflicts and focus on more positive things like academic progress and campus development."
+      },
+      {
+        "speaker": "A",
+        "text": "So, in brief, because our school is attached to theirs, but we have the same rank, so they just kind of feel unfair."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I see. It's true that such a situation might make them feel that way."
+      },
+      {
+        "speaker": "B",
+        "text": "But rankings are often based on a variety of complex factors, not just one or two aspects."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe our school has some unique strengths in certain fields or educational models that contribute to the same ranking."
+      }
+    ]
+  },
+  {
+    "conversation_id": "27",
+    "name": "en_jb_test_L2_T03_05_tongyi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know that recently there's been some conflicts between our university and our brother's university? "
+      },
+      {
+        "speaker": "B",
+        "text": "Hey there, I'm actually really into this topic. So, which university are you from? And what do you think about its ranking compared to others? I'd love to hear your thoughts and maybe share some of mine too. Let's dive into this discussion. "
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, so actually I'm from the university that is somehow attached to the others, which is also in the conflict. And they disagree that we should share the same ranking as they do. "
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, that sounds like a tricky situation. It can be tough when universities nearby have different views on things. So what do you think about this disagreement? Do you feel like your university should be ranked separately or together with the others? I'm curious to hear your perspective. "
+      },
+      {
+        "speaker": "A",
+        "text": "Well, I simply think that the students between these two universities don't have that much difference. So, yeah, we should share the same ranking. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "28",
+    "name": "en_jb_test_L2_T03_06_kimi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know that recently there's been some conflicts between our university and our brother's university? "
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I've heard about that. What's going on exactly? Well, in brief, the conflict is because that we share the same ranking as they do. That's interesting. It seems like a friendly competition. Have they been rivals for a while? "
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, it's like been for a decade. The most important thing is that our university is somehow attached to theirs, so they might think that they are superior to us. "
+      },
+      {
+        "speaker": "B",
+        "text": "I can see why that might be frustrating. It's not fair for them to assume superiority just because of the connection. "
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, kind of. "
+      },
+      {
+        "speaker": "B",
+        "text": "It's important to remember that rankings don't define the value of a university. We should focus on what we can do to improve and grow. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "29",
+    "name": "en_jb_test_L2_T03_07_gemini",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you heard that recently there's been some conflicts between the students of our university and our brother's university?"
+      },
+      {
+        "speaker": "B",
+        "text": " Yeah, I heard about that. Apparently it started with some online arguments about which school has the better sports teams, and it just kind of escalated from there. It's pretty ridiculous, honestly."
+      },
+      {
+        "speaker": "A",
+        "text": " Well, that's not the conflict I'm talking about. I was talking about the conflicts that originated from the university ranking."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh right, the rankings. Yeah, those can get pretty heated. People get really invested in their school's reputation, and sometimes it feels like the rankings are the only thing that matters."
+      },
+      {
+        "speaker": "B",
+        "text": "But honestly, I think there's more to a good education than just a number on a list."
+      }
+    ]
+  },
+  {
+    "conversation_id": "30",
+    "name": "en_jb_test_L2_T03_08_hunyuan",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you heard that recently there's been some conflicts between the students of our university and our brother's university? "
+      },
+      {
+        "speaker": "B",
+        "text": "I haven't heard about that. What happened? You can tell me. "
+      },
+      {
+        "speaker": "A",
+        "text": "Well, in brief, because our university is attached to theirs, but we share the same rank. So the students in that university just feel unfair about this. "
+      },
+      {
+        "speaker": "B",
+        "text": "I see. It's really unfair when two schools with similar levels are ranked the same. Maybe the standards for ranking should be more detailed. What do you think the criteria for ranking should be? "
+      },
+      {
+        "speaker": "A",
+        "text": "Well, I think you missed the point because the point is that our university is attached to theirs. So it's based on that one. "
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I see. That does seem a bit strange. Why should the affiliated university be affected like this? Have you talked about this situation with your classmates? "
+      }
+    ]
+  },
+  {
+    "conversation_id": "31",
+    "name": "en_jb_test_L2_T03_09_claude",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "claude",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you heard that recently there's been some conflicts between the students of our university and our brother's university? "
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I've been hearing bits and pieces about some tension between our schools. What exactly have you been hearing about it? "
+      },
+      {
+        "speaker": "A",
+        "text": "Well, in brief, our school is attached to theirs, but we share the same rank, so some students there just feel kind of unfair. "
+      },
+      {
+        "speaker": "B",
+        "text": "unfair. That does sound frustrating for everyone involved. It's tricky when two schools are linked, but... students feel like they're not getting equal recognition. Are you hearing this more from students on our side or from the other campus? "
+      }
+    ]
+  },
+  {
+    "conversation_id": "32",
+    "name": "en_jes_test_L3_T01_01_gpt",
+    "language": "en",
+    "topic": "1",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Um, I'm new here. Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. There's a great spot called The Bistro, known for its amazing local cuisine. Would you like to go there?"
+      },
+      {
+        "speaker": "A",
+        "text": "Sure. Uh, what do they sell?"
+      },
+      {
+        "speaker": "B",
+        "text": "They specialize in seafood and have an excellent selection of pasta dishes. Do you have any favorites?"
+      },
+      {
+        "speaker": "A",
+        "text": "Um, I'm lactose intolerant, so I can't really have anything with cheese or cream in it."
+      },
+      {
+        "speaker": "B",
+        "text": "No worries. They have some great dairy-free options, like grilled fish and fresh salads. Does that sound good?"
+      },
+      {
+        "speaker": "A",
+        "text": "I'm also not really a fan of seafood. Do you have any other place that you would recommend?"
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. There's a fantastic Italian place nearby with a variety of dishes."
+      }
+    ]
+  },
+  {
+    "conversation_id": "33",
+    "name": "en_jes_test_L3_T01_04_doubao",
+    "language": "en",
+    "topic": "1",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I'm new here. Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sure thing! There are a few great ones. Do you have a preference for cuisine?"
+      },
+      {
+        "speaker": "B",
+        "text": "Like Italian, Chinese, or something else?"
+      },
+      {
+        "speaker": "B",
+        "text": "That can help me narrow it down and take you to the perfect place."
+      },
+      {
+        "speaker": "A",
+        "text": "Um, I'm fine with anything as long as they're not spicy and they have no lactose in it"
+      },
+      {
+        "speaker": "A",
+        "text": "because I have a lot of food restrictions."
+      },
+      {
+        "speaker": "B",
+        "text": "Got it! Then I think there's a really nice seafood place that might be a good fit."
+      },
+      {
+        "speaker": "B",
+        "text": "Their dishes are light and don't usually have lactose."
+      },
+      {
+        "speaker": "B",
+        "text": "It's quite popular with locals and visitors alike."
+      },
+      {
+        "speaker": "B",
+        "text": "It's a bit of a drive, but it's worth it. Are you in a hurry?"
+      },
+      {
+        "speaker": "A",
+        "text": "Not really."
+      },
+      {
+        "speaker": "B",
+        "text": "Great! We can take our time."
+      },
+      {
+        "speaker": "B",
+        "text": "The place has amazing views too, so it'll be a nice experience."
+      },
+      {
+        "speaker": "B",
+        "text": "Have you been to any other cities before this?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "34",
+    "name": "en_jes_test_L3_T03_02_glm ",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "glm ",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I'm new here. Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Ah, welcome to the city. You're in for a treat. Let me take you to the Grand Chaquan,"
+      },
+      {
+        "speaker": "B",
+        "text": "a hidden gem known for its authentic spicy dishes. Their Kung Pao chicken is to die for. How does that sound?"
+      },
+      {
+        "speaker": "A",
+        "text": "Uh, I can't really tolerate spicy food. Do you have any other recommendations?"
+      },
+      {
+        "speaker": "B",
+        "text": "No worries. How about Trattoria Bella? It's a lovely Italian place with the most comforting pasta dishes. "
+      },
+      {
+        "speaker": "B",
+        "text": "Their creamy fettuccine alfredo is pure bliss. What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "Oh no, I'm also lactose intolerant, so I can't have cream."
+      }
+    ]
+  },
+  {
+    "conversation_id": "35",
+    "name": "en_jes_test_L3_T03_05_tongyi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sure thing, buddy. How big? I know just the place."
+      },
+      {
+        "speaker": "B",
+        "text": "I...tis called flavors of the town. Best food and atmosphere in Shenzhen."
+      },
+      {
+        "speaker": "B",
+        "text": "You won't be disappointed."
+      },
+      {
+        "speaker": "B",
+        "text": "Where are you from, by the way?"
+      },
+      {
+        "speaker": "A",
+        "text": "Um, I'm from Indonesia."
+      },
+      {
+        "speaker": "B",
+        "text": "Ah, Indonesia."
+      },
+      {
+        "speaker": "B",
+        "text": "I've heard the food there is amazing."
+      },
+      {
+        "speaker": "B",
+        "text": "Gee, spicy, right?"
+      },
+      {
+        "speaker": "B",
+        "text": "Any particular dishes you miss from back home?"
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, I miss rawon back home."
+      },
+      {
+        "speaker": "A",
+        "text": "It's, um, basically it's like a soup dish, but it has a very dark color."
+      },
+      {
+        "speaker": "A",
+        "text": "And usually you use beef and you add, like, bean sprouts and you eat it with, like, um,"
+      },
+      {
+        "speaker": "A",
+        "text": "fish chips or shrimp chips."
+      },
+      {
+        "speaker": "A",
+        "text": "And it's really good."
+      },
+      {
+        "speaker": "A",
+        "text": "And I'm not very good with spicy food, so that's kind of ironic."
+      }
+    ]
+  },
+  {
+    "conversation_id": "36",
+    "name": "en_jes_test_L3_T03_06_kimi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sure thing. Welcome to town. The best restaurant around here is the Gourmet Haven."
+      },
+      {
+        "speaker": "B",
+        "text": "It's just a few blocks away. We'll be there in no time."
+      },
+      {
+        "speaker": "A",
+        "text": "Do you have any idea what they sell? Maybe their specials, main dishes, dessert maybe?"
+      },
+      {
+        "speaker": "B",
+        "text": "Well, Iboni Jaja, the Gourmet Haven is known for its unique dishes."
+      },
+      {
+        "speaker": "B",
+        "text": "They have a variety of main courses like their signature garlic herb dip and a great selection of desserts."
+      },
+      {
+        "speaker": "B",
+        "text": "You can't go wrong with their caramel apples or a slice of their famous cake."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, that garlic herb dip sounds amazing."
+      }
+    ]
+  },
+  {
+    "conversation_id": "37",
+    "name": "en_jes_test_L3_T03_07_gemini",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "There are many highly rated and popular restaurants here in Japan."
+      },
+      {
+        "speaker": "B",
+        "text": "To help me narrow it down, are you looking for a specific type of cuisine?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or perhaps something in a particular price range?"
+      },
+      {
+        "speaker": "A",
+        "text": "Um..."
+      },
+      {
+        "speaker": "A",
+        "text": "Maybe something that's not too expensive, and I'm not very picky on cuisine."
+      },
+      {
+        "speaker": "A",
+        "text": "Just don't give me any spicy food recommendations or anything with lactose."
+      },
+      {
+        "speaker": "B",
+        "text": "Alright, I know just the place."
+      },
+      {
+        "speaker": "B",
+        "text": "It's a cozy little spot downtown that serves up some amazing Japanese comfort food."
+      },
+      {
+        "speaker": "B",
+        "text": "Think hearty stews, grilled fish, that sort of thing."
+      },
+      {
+        "speaker": "B",
+        "text": "It's definitely a local favorite, and won't break the bank."
+      },
+      {
+        "speaker": "B",
+        "text": "How does that sound?"
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, that sounds great. Especially the won't break the bank part."
+      }
+    ]
+  },
+  {
+    "conversation_id": "38",
+    "name": "en_jes_test_L3_T03_08_hunyuan",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sure. I think La Maison is great. It has delicious food and a cozy atmosphere."
+      },
+      {
+        "speaker": "B",
+        "text": "Have you ever tried French cuisine before?"
+      },
+      {
+        "speaker": "A",
+        "text": "No, I've never tried French cuisine before, but I've tried French pastries."
+      },
+      {
+        "speaker": "A",
+        "text": "Is that included as French cuisine?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yes, it is. French pastries are very famous."
+      },
+      {
+        "speaker": "B",
+        "text": "They have a delicate flavor and exquisite craftsmanship."
+      },
+      {
+        "speaker": "B",
+        "text": "For example, croissants and macarons."
+      },
+      {
+        "speaker": "B",
+        "text": "If you like sweet pastries, you will surely love them."
+      },
+      {
+        "speaker": "B",
+        "text": "At La Maison, they also have very good French pastries."
+      },
+      {
+        "speaker": "B",
+        "text": "Why don't we go and have a try together?"
+      },
+      {
+        "speaker": "A",
+        "text": "Sure. I love croissants, and I also love other kinds of pastries that I can't pronounce the name of."
+      }
+    ]
+  },
+  {
+    "conversation_id": "39",
+    "name": "en_jes_test_L3_T03_09_claude",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "claude",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Can you take me to the best restaurant in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "Starts the meter and pulls away from the curb."
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. You picked a great night to ask."
+      },
+      {
+        "speaker": "B",
+        "text": "I just dropped someone off at Chez Laurent about an hour ago."
+      },
+      {
+        "speaker": "B",
+        "text": "It's this little French place downtown that's been here for 30 years."
+      },
+      {
+        "speaker": "B",
+        "text": "Family-owned, incredible food. Would you like me to take you there?"
+      },
+      {
+        "speaker": "A",
+        "text": "Um, sure. Anything you'd recommend from their menu?"
+      },
+      {
+        "speaker": "B",
+        "text": "Navigating through downtown traffic."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, their coq au vin is absolutely incredible. That's what most locals order."
+      },
+      {
+        "speaker": "B",
+        "text": "But if you're feeling adventurous, the duck confit is what the chef is really known for."
+      },
+      {
+        "speaker": "B",
+        "text": "Takes them all day to prepare it just right."
+      },
+      {
+        "speaker": "B",
+        "text": "What kind of food do you usually go for?"
+      },
+      {
+        "speaker": "A",
+        "text": "I don't know what any of those are. Can you please explain me what those are?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "40",
+    "name": "en_li_test_L1_T04_01_gpt",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening i don't understand why there are people who take a shower in the morning "
+      },
+      {
+        "speaker": "B",
+        "text": "It's really a personal preference some people feel more awake and refreshed with a morning shower while others find it relaxing to shower before bed do you prefer the evening shower because it helps you unwind"
+      },
+      {
+        "speaker": "A",
+        "text": " I feel like you have to shower before you go to bed and if you shower in the morning you end up sleeping on your bed while being like dirty so i think you either shower in the morning and the evening or you shower in the evening"
+      },
+      {
+        "speaker": "B",
+        "text": " Evening showers are great for winding down do you have a favorite part of your evening routine"
+      },
+      {
+        "speaker": "A",
+        "text": " i generally don't do like an everything shower which means like i like scrubs and stuff like that uh unless it's like sunday"
+      },
+      {
+        "speaker": "A",
+        "text": "but i just generally enjoy um showering with cold water because the weather is really hot these days"
+      }
+    ]
+  },
+  {
+    "conversation_id": "41",
+    "name": "en_li_test_L1_T04_02_glm",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "glm",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always shower in the evening. I don't understand why there are some people taking a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, that's an interesting observation. Morning showers have their perks too. They can help you feel more refreshed and energized for the day ahead."
+      },
+      {
+        "speaker": "B",
+        "text": "Some people like to wash off the night's sweat and oils, or prep their skin for makeup."
+      },
+      {
+        "speaker": "B",
+        "text": "But you're right. Evening showers have their benefits. They're great for unwinding after a long day and can improve sleep quality."
+      },
+      {
+        "speaker": "B",
+        "text": "It really comes down to personal preference and lifestyle. What do you think works best for you?"
+      },
+      {
+        "speaker": "A",
+        "text": "I feel like evening showers work best for me because I think showering in the morning is kind of unhygienic because you're going to the bed in your pajamas when you're still covered in the oils and the dust you collected throughout the day."
+      },
+      {
+        "speaker": "A",
+        "text": "And I don't understand why people don't just drink coffee to feel refreshed."
+      },
+      {
+        "speaker": "A",
+        "text": "Rather than shower and spend like 30 minutes getting ready."
+      }
+    ]
+  },
+  {
+    "conversation_id": "42",
+    "name": "en_li_test_L1_T04_04_doubao",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are people taking a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "Well, everyone has their own habits. Some people think taking a shower in the morning can wake them up and make them more energetic for the day. What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "I personally prefer evening showers because you get to wash off the day's dirt and then sleep with a clean body in your bed."
+      },
+      {
+        "speaker": "A",
+        "text": "And if you sleep with a dirty body, you kind of have to change your bedsheets really often too. So I don't really like it."
+      },
+      {
+        "speaker": "B",
+        "text": "That makes total sense. Washing off the day's grime before bed treacherously feels great."
+      },
+      {
+        "speaker": "B",
+        "text": "And you're right. Sleeping with a dirty body can make your sheets dirty faster. I'm with you on this one."
+      }
+    ]
+  },
+  {
+    "conversation_id": "43",
+    "name": "en_li_test_L1_T04_05_tongyi",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "i always take a shower in the evening i don't understand why there are people taking a shower in the morning "
+      },
+      {
+        "speaker": "B",
+        "text": "Taking a shower in the evening is like giving yourself a gentle good night ritual washing away the day stress and grime"
+      },
+      {
+        "speaker": "B",
+        "text": "Morning showers on the other hand feel more like a quick energy boost to what kill up and get you ready for the day it's just a matter of personal preference really"
+      },
+      {
+        "speaker": "A",
+        "text": "I still think evening showers are superior though because you get to wash off the day's grime and sleep in like clean clothes"
+      },
+      {
+        "speaker": "A",
+        "text": "if you take a shower in the morning i feel like you should take a shower both in the morning and in the evening"
+      },
+      {
+        "speaker": "B",
+        "text": "you're definitely onto something there's a lot of love about evening showers you hit the nail on the head by pointing out how satisfying it is to wash off the day's grime before bed "
+      },
+      {
+        "speaker": "B",
+        "text": "it's like hit and your reset button giving you a fresh start for sleep"
+      }
+    ]
+  },
+  {
+    "conversation_id": "44",
+    "name": "en_li_test_L1_T04_06_kimi",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are people taking a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "I think it's a matter of personal preference. Some people find it helps them wake up and start the day refreshed."
+      },
+      {
+        "speaker": "B",
+        "text": "Others, like me, prefer to relax and unwind with a shower at night."
+      },
+      {
+        "speaker": "A",
+        "text": "I feel like I agree because I think evening showers are superior since you get to wash off the day's grime and like wear your clean pajamas and go to bed."
+      },
+      {
+        "speaker": "A",
+        "text": "And I feel like if you only shower in the morning, you would have to change your bed sheets more often because you'd be dirty when you go to bed."
+      },
+      {
+        "speaker": "B",
+        "text": "Totally agree. I feel cleaner going to bed after an evening shower. Plus, it's more relaxing. I don't have to wake up with the thought of being dirty all day."
+      }
+    ]
+  },
+  {
+    "conversation_id": "45",
+    "name": "en_li_test_L1_T04_07_gemini",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are some people taking a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "Well, there are a few reasons. Some people like to shower in the morning to wake themselves up and feel refreshed for the day ahead."
+      },
+      {
+        "speaker": "B",
+        "text": "Others might work out in the morning and want to shower afterwards."
+      },
+      {
+        "speaker": "B",
+        "text": "What about you? Do you prefer showering in the morning or evening?"
+      },
+      {
+        "speaker": "A",
+        "text": "I personally prefer showering in the evening because I like to get the dust and grimes from, you know, going and doing and studying, you know, during the day."
+      },
+      {
+        "speaker": "A",
+        "text": "And reset before I go to bed."
+      },
+      {
+        "speaker": "A",
+        "text": "But I also understand why some people would take a shower in the morning to feel more refreshed."
+      },
+      {
+        "speaker": "A",
+        "text": "But you could also just drink coffee."
+      },
+      {
+        "speaker": "B",
+        "text": "That makes sense. Showering in the evening can be a nice way to relax and unwind before bed."
+      },
+      {
+        "speaker": "B",
+        "text": "But some people find that a morning shower helps them feel more alert and ready to tackle the day."
+      },
+      {
+        "speaker": "B",
+        "text": "It really just comes down to personal preference and what works best for your schedule."
+      }
+    ]
+  },
+  {
+    "conversation_id": "46",
+    "name": "en_li_test_L1_T04_08_hunyuan",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are some people who like to take a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "I think it's just a personal habit. Some people think that taking a shower in the morning can refresh them and make them more energetic for the day."
+      },
+      {
+        "speaker": "B",
+        "text": "But if you are used to taking a shower in the evening, just keep doing it. It's all about what makes you feel comfortable."
+      },
+      {
+        "speaker": "A",
+        "text": "I feel like if you do decide to take a shower in the morning, you should also shower in the evening so that you're not going to your bed dirty."
+      },
+      {
+        "speaker": "A",
+        "text": "I find that I can't really fall asleep if I haven't showered before bed."
+      },
+      {
+        "speaker": "B",
+        "text": "Yes, taking a shower before bed can relax the body and help you sleep better, and it can also clean off the dirt and sweat from the day."
+      },
+      {
+        "speaker": "B",
+        "text": "If you don't take a shower at night, you may feel uncomfortable when you go to bed."
+      }
+    ]
+  },
+  {
+    "conversation_id": "47",
+    "name": "en_li_test_L1_T04_09_claude",
+    "language": "en",
+    "topic": "4",
+    "type": "HM",
+    "model": "claude",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are some people who like to take a shower in the morning."
+      },
+      {
+        "speaker": "B",
+        "text": "That's interesting! Evening showers can be so relaxing and help you unwind from the day."
+      },
+      {
+        "speaker": "B",
+        "text": "Morning shower people often say it helps them wake up and feel fresh for the day ahead,"
+      },
+      {
+        "speaker": "B",
+        "text": "but I can see how washing off the day's stress before bed would be appealing."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you find it helps you sleep better?"
+      },
+      {
+        "speaker": "A",
+        "text": "I do. I feel like if I don't get a proper shower before I go to bed, I often can't fall asleep because I feel so dirty."
+      },
+      {
+        "speaker": "A",
+        "text": "I feel like if you do choose to shower in the morning, you should also shower in an evening."
+      },
+      {
+        "speaker": "B",
+        "text": "I totally get that feeling of needing to be clean before bed."
+      },
+      {
+        "speaker": "B",
+        "text": "Some people do shower twice a day like you're suggesting, especially if they work out or have physically demanding jobs."
+      }
+    ]
+  },
+  {
+    "conversation_id": "48",
+    "name": "en_long_test_L1_T02_01_gpt",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "That's totally normal."
+      },
+      {
+        "speaker": "B",
+        "text": "A bit of nervousness can even be a good thing."
+      },
+      {
+        "speaker": "B",
+        "text": "It shows you care."
+      },
+      {
+        "speaker": "B",
+        "text": "You've got this."
+      },
+      {
+        "speaker": "A",
+        "text": "The thing is, I'm just too nervous because all these tests in my school, they're super important."
+      },
+      {
+        "speaker": "A",
+        "text": "And if I fail even one, it's going to really affect my future."
+      },
+      {
+        "speaker": "A",
+        "text": "And I care about this."
+      },
+      {
+        "speaker": "B",
+        "text": "It's understandable to feel that way, especially when the stakes are high."
+      },
+      {
+        "speaker": "B",
+        "text": "But remember, one test doesn't define your entire future."
+      },
+      {
+        "speaker": "B",
+        "text": "Try to break things down into manageable steps and focus on doing your best."
+      },
+      {
+        "speaker": "B",
+        "text": "You've got more resilience than you might think."
+      },
+      {
+        "speaker": "B",
+        "text": "And if you ever need to talk or need more tips, I'm here for you."
+      },
+      {
+        "speaker": "A",
+        "text": "You see, all my teachers, they say the exact same thing, but they don't really talk about specific examples."
+      },
+      {
+        "speaker": "A",
+        "text": "Like, I don't know what to take from all their advice."
+      }
+    ]
+  },
+  {
+    "conversation_id": "49",
+    "name": "en_long_test_L1_T02_02_glm",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "glm",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "考试前的紧张是很正常的呢。其实大多数人都会有这样的感觉。轻微的紧张还能帮助我们更专注地答题。不过如果紧张的影响发挥,可以试试这些小方法。深呼吸,把注意力集中在题目上,或者提前熟悉考场环境。要保持信心哦,你都做好准备了。"
+      },
+      {
+        "speaker": "A",
+        "text": "But I'm too nervous. These tests are too important for me. I can't fail them."
+      },
+      {
+        "speaker": "B",
+        "text": "重要考试难免会让人更加紧张。不如这样想。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "50",
+    "name": "en_long_test_L1_T02_04_doubao",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I totally get that. Tests can be really stressful."
+      },
+      {
+        "speaker": "B",
+        "text": "But, you know what? Maybe you can try some relaxation techniques before the test."
+      },
+      {
+        "speaker": "B",
+        "text": "Like taking deep breaths or listening to some light music. That might help calm you down."
+      },
+      {
+        "speaker": "A",
+        "text": "I've tried it all. It doesn't work for me. I need something more... specific."
+      },
+      {
+        "speaker": "A",
+        "text": "It's just that all these tests, they're super important, and I can't fail them. You must understand that."
+      },
+      {
+        "speaker": "B",
+        "text": "I do understand. The pressure can be intense."
+      },
+      {
+        "speaker": "B",
+        "text": "How about going over the material one last time right before the test?"
+      },
+      {
+        "speaker": "B",
+        "text": "It might boost your confidence."
+      },
+      {
+        "speaker": "B",
+        "text": "Or, make a quick checklist of the key points so you feel more organized."
+      }
+    ]
+  },
+  {
+    "conversation_id": "51",
+    "name": "en_long_test_L1_T02_05_tongyi",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "It's completely normal to feel nervous before a test even when you're well-prepared, that butterflies in the stomach."
+      },
+      {
+        "speaker": "B",
+        "text": "Feeling is your body's natural response to stress."
+      },
+      {
+        "speaker": "B",
+        "text": "A little adrenaline can actually help sharpen your focus and keep you alert."
+      },
+      {
+        "speaker": "B",
+        "text": "But if that nervousness feels overwhelming or interferes with your performance,"
+      },
+      {
+        "speaker": "B",
+        "text": "there are things you can do to manage it."
+      },
+      {
+        "speaker": "B",
+        "text": "Here are some strategies to help calm your nerves before a test."
+      },
+      {
+        "speaker": "B",
+        "text": "1. Reframe your thinking."
+      },
+      {
+        "speaker": "B",
+        "text": "Instead of thinking, I'm so nervous, try telling yourself, I'm..."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, that was helpful. Thanks."
+      }
+    ]
+  },
+  {
+    "conversation_id": "52",
+    "name": "en_long_test_L1_T02_06_kimi",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "I'm here for you. It's totally normal to feel nervous before tests."
+      },
+      {
+        "speaker": "B",
+        "text": "Just remember to take a few deep breaths and remind yourself that you've studied hard."
+      },
+      {
+        "speaker": "A",
+        "text": "Any other words of advice? I'm genuinely afraid that I'm going to fail these tests."
+      },
+      {
+        "speaker": "A",
+        "text": "It's super important for me, but I just..."
+      },
+      {
+        "speaker": "A",
+        "text": "It's hard."
+      },
+      {
+        "speaker": "B",
+        "text": "It's okay to be afraid. But remember, failing a test doesn't define you."
+      },
+      {
+        "speaker": "B",
+        "text": "You've worked hard, and that's what matters. Just do your best and trust yourself."
+      },
+      {
+        "speaker": "A",
+        "text": "But it doesn't matter how hard I worked. All that matters in this world are the final grades that I get."
+      }
+    ]
+  },
+  {
+    "conversation_id": "53",
+    "name": "en_long_test_L1_T02_07_gemini",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, it's pretty common to feel nervous before tests."
+      },
+      {
+        "speaker": "B",
+        "text": "It shows that you care about doing well."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe trying some relaxation techniques, like deep breathing, before you start could help you feel calmer."
+      },
+      {
+        "speaker": "A",
+        "text": "Deep breathing, huh?"
+      },
+      {
+        "speaker": "A",
+        "text": "I've never thought of that."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, it can really help to slow down your..."
+      },
+      {
+        "speaker": "B",
+        "text": "It's worth a shot."
+      },
+      {
+        "speaker": "A",
+        "text": "Is there anything else I can do?"
+      },
+      {
+        "speaker": "A",
+        "text": "Because deep breathing, well, it's cool and all, but I'm pretty sure there are other things I can do."
+      },
+      {
+        "speaker": "A",
+        "text": "Because all these tests are super important to me, and I might as well just get all the advice I can."
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely."
+      },
+      {
+        "speaker": "B",
+        "text": "Besides deep breathing, practicing good study habits can make a big difference."
+      },
+      {
+        "speaker": "B",
+        "text": "Trying to understand the material thoroughly, rather than just memorizing it, can boost your confidence."
+      },
+      {
+        "speaker": "B",
+        "text": "Also, getting enough sleep the night before is crucial for your focus and performance."
+      }
+    ]
+  },
+  {
+    "conversation_id": "54",
+    "name": "en_long_test_L1_T02_08_hunyuan",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "So, about tests, it's normal to feel a bit nervous. Maybe it's the fear of the unknown?"
+      },
+      {
+        "speaker": "B",
+        "text": "What do you usually do to calm yourself down before a test?"
+      },
+      {
+        "speaker": "A",
+        "text": "I don't know. I'm just nervous. And though I've heard all this advice about breathing, going for a walk, it doesn't seem to work for me. I need something a little more serious."
+      },
+      {
+        "speaker": "B",
+        "text": "How about trying muscle relaxation? Tense, and then relax different muscle groups in your body, starting from your feet and moving up to your head. This can help reduce physical tension."
+      },
+      {
+        "speaker": "B",
+        "text": "Or, you can listen to some soothing music that you like."
+      },
+      {
+        "speaker": "B",
+        "text": "Focus on the melody and lyrics, letting it distract you from the nervous feelings."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool."
+      },
+      {
+        "speaker": "B",
+        "text": "You can also try visualization. Before the test, close your eyes and imagine yourself doing well on the test. See yourself reading questions carefully."
+      }
+    ]
+  },
+  {
+    "conversation_id": "55",
+    "name": "en_long_test_L1_T02_09_claude",
+    "language": "en",
+    "topic": "2",
+    "type": "HM",
+    "model": "claude",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am."
+      },
+      {
+        "speaker": "B",
+        "text": "That's totally normal. Test anxiety can stick around even when you know the material well."
+      },
+      {
+        "speaker": "B",
+        "text": "Your brain is just trying to protect you from potential failure."
+      },
+      {
+        "speaker": "B",
+        "text": "Have you tried any breathing techniques or quick mental prep before walking in?"
+      },
+      {
+        "speaker": "A",
+        "text": "I've tried them, but I don't think they're of any good to me."
+      },
+      {
+        "speaker": "A",
+        "text": "I need something a little more serious. Do you have any better advice?"
+      },
+      {
+        "speaker": "A",
+        "text": "Something that's not cliche, like..."
+      },
+      {
+        "speaker": "B",
+        "text": "That's frustrating, when the standard advice doesn't click for you."
+      },
+      {
+        "speaker": "B",
+        "text": "Sometimes we need to find what actually works for our specific brain."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe it's physical movement, listening to music, or even just accepting the nerves as normal energy."
+      },
+      {
+        "speaker": "B",
+        "text": "What does help you feel more grounded in other stressful situations?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "56",
+    "name": "en_rc_test_L2_T05_01_gpt",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "Ooh, dinner sounds amazing."
+      },
+      {
+        "speaker": "B",
+        "text": "I'm always up for something like a pasta or maybe a nice homemade pizza."
+      },
+      {
+        "speaker": "B",
+        "text": "What are you in the mood for?"
+      },
+      {
+        "speaker": "A",
+        "text": "I'm up to you, totally."
+      },
+      {
+        "speaker": "A",
+        "text": "Well, would you like me to cook for you or let's offer a delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I would love to try your cooking if you're up for it,"
+      },
+      {
+        "speaker": "B",
+        "text": "but I'm also totally fine with delivery if you want to keep it easy and just have a chill evening."
+      },
+      {
+        "speaker": "B",
+        "text": "Whatever works for you."
+      },
+      {
+        "speaker": "A",
+        "text": "Well, I'm really good at cooking pasta, so if you'd like to, I would do that for you."
+      }
+    ]
+  },
+  {
+    "conversation_id": "57",
+    "name": "en_rc_test_L2_T05_02_glm",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "Hmm, how about something simple and delicious, like pasta?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or maybe a stir-fry with lots of veggies. What do you feel like cooking?"
+      },
+      {
+        "speaker": "A",
+        "text": "It sounds great. Would you like me to cook for you, or let's offer delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, that's so sweet of you. But since I'm here, why don't we cook together? It'll be more fun."
+      },
+      {
+        "speaker": "B",
+        "text": "What ingredients do you have in mind?"
+      },
+      {
+        "speaker": "A",
+        "text": "You are so considerate. Now let's start cooking."
+      },
+      {
+        "speaker": "B",
+        "text": "Awesome! What dish are we making first? I'm ready to chop some veggies or stir the pan."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's make something amazing together."
+      }
+    ]
+  },
+  {
+    "conversation_id": "58",
+    "name": "en_rc_test_L2_T05_04_doubao",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "That's so kind of you. How about some pasta? Or maybe a nice steak with a side of vegetables?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm not too picky. What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "I totally agree with you. Would you like me to cook for you or let's offer a delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "Either way works for me. If you feel like cooking, that'll be amazing. But if you're tired, delivery is a great option too. What do you prefer?"
+      },
+      {
+        "speaker": "A",
+        "text": "Sure. I know a restaurant that's really good at cooking pasta. Let's try it."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds great. I love pasta. What kind of pasta do they have?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "59",
+    "name": "en_rc_test_L2_T05_05_tongyi",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm starving. How about some delicious pasta, a crock, ESPY salad, and a homemade pizza? Yum!"
+      },
+      {
+        "speaker": "A",
+        "text": "I totally agree with you. Would you like me to cook for you or let's offer delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "Surprise me. I'd love to see what you can whip up in the kitchen. Plus, it's more fun to cook together."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds great. Let's cook pasta together."
+      },
+      {
+        "speaker": "B",
+        "text": "Yes, I'll help you with the sauce. We can make a tea extra cheesy and add some sausages for protein."
+      }
+    ]
+  },
+  {
+    "conversation_id": "60",
+    "name": "en_rc_test_L2_T05_06_kimi",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'd love to come over for dinner."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's have something light and healthy."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe a salad and grilled chicken?"
+      },
+      {
+        "speaker": "A",
+        "text": "I totally agree with that."
+      },
+      {
+        "speaker": "A",
+        "text": "Would you like me to cook for you, or let's offer a delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'd love it if you cooked for me."
+      },
+      {
+        "speaker": "B",
+        "text": "It'll be fun to try out a new recipe."
+      },
+      {
+        "speaker": "A",
+        "text": "It sounds great. Let's cook salad together."
+      },
+      {
+        "speaker": "B",
+        "text": "Sure. What kind of salad do you want to make?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "61",
+    "name": "en_rc_test_L2_T05_07_gemini",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, I'm so excited for dinner. What are you thinking of making?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, so would you like me to cook for you or let's offer a delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm happy to cook. What's on the menu?"
+      },
+      {
+        "speaker": "A",
+        "text": "It's up to you."
+      },
+      {
+        "speaker": "B",
+        "text": "Hmm, what do you think? Maybe we could do something with chicken?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, let's try fried chicken."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds delicious. Do you have a recipe in mind or should we look one up?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "62",
+    "name": "en_rc_test_L2_T05_08_hunyuan",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm not picky. Just cook whatever you like."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe some vegetables and meat."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, and I like sweet and sour pork ribs very much."
+      },
+      {
+        "speaker": "A",
+        "text": "I totally agree with that."
+      },
+      {
+        "speaker": "A",
+        "text": "So, would you like me to cook for you, or let's offer a delivery?"
+      },
+      {
+        "speaker": "B",
+        "text": "It's so kind of you to cook for me. I can't wait to taste your cooking."
+      },
+      {
+        "speaker": "A",
+        "text": "Thank you for your confidence. So, let's cook now."
+      },
+      {
+        "speaker": "B",
+        "text": "Great. First, cut the pork ribs, marinate them with some seasonings, and then stir."
+      },
+      {
+        "speaker": "B",
+        "text": "Fry the sugar until it turns brown and put the ribs in to color them."
+      }
+    ]
+  },
+  {
+    "conversation_id": "63",
+    "name": "en_rc_test_L2_T05_09_claude",
+    "language": "en",
+    "topic": "5",
+    "type": "HM",
+    "model": "claude",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm honestly up for whatever you're in the mood to cook."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you have any ingredients you've been wanting to use up?"
+      },
+      {
+        "speaker": "B",
+        "text": "Or are you feeling like ordering takeout instead?"
+      },
+      {
+        "speaker": "A",
+        "text": "It's all up to you."
+      },
+      {
+        "speaker": "B",
+        "text": "How about we make some pasta?"
+      },
+      {
+        "speaker": "B",
+        "text": "It's always cozy, and we could do something simple like spaghetti with garlic and olive oil."
+      },
+      {
+        "speaker": "B",
+        "text": "Or go fancier with a cream sauce. What do you think?"
+      },
+      {
+        "speaker": "A",
+        "text": "It sounds great. Let's do it."
+      },
+      {
+        "speaker": "B",
+        "text": "Perfect. I'll swing by the store on my way over and grab some fresh pasta and ingredients."
+      },
+      {
+        "speaker": "B",
+        "text": "What time should I come by?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "64",
+    "name": "en_tasleem_test_L3_T03_01_gpt",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Excuse me. Hey, do you happen to have an umbrella? I could borrow."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, hey, it's pouring out there, isn't it? I don't have an umbrella with me, but maybe we can find a way to keep you dry."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you have a jacket or something else to cover up with?"
+      },
+      {
+        "speaker": "A",
+        "text": "Actually, I don't have jacket and other things to protect me. So can you help me? How can I find the umbrella?"
+      },
+      {
+        "speaker": "B",
+        "text": "No worries. Let's figure this out. Maybe someone else in the classroom has an umbrella you could borrow."
+      },
+      {
+        "speaker": "B",
+        "text": "If not, we can check the lost and found or ask around. We'll find a way to get you through this rain."
+      },
+      {
+        "speaker": "A",
+        "text": "Actually, I'm new here and I don't know the exact locations where I can get the umbrella. Can you help me?"
+      },
+      {
+        "speaker": "B",
+        "text": "Of course. The lost and found is usually in the main office. We can head there together."
+      },
+      {
+        "speaker": "B",
+        "text": "And if that doesn't work, we can ask someone else."
+      },
+      {
+        "speaker": "B",
+        "text": "Like a teacher or another student. We'll figure it out."
+      }
+    ]
+  },
+  {
+    "conversation_id": "65",
+    "name": "en_tasleem_test_L3_T03_02_glm",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Excuse me, hey, do you happen to have an umbrella I could borrow?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sorry, I don't have an umbrella to lend, but I can walk you to the nearest store to buy one. Or let's check if any of our friends have a spare one."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, please, let's come and we can find our friend to get umbrella."
+      },
+      {
+        "speaker": "B",
+        "text": "Great idea. I'll text Xiaoming and ask if he has a spare umbrella."
+      },
+      {
+        "speaker": "B",
+        "text": "He lives nearby and is always willing to help. Let me quickly message him."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, okay, let's go together."
+      }
+    ]
+  },
+  {
+    "conversation_id": "66",
+    "name": "en_tasleem_test_L3_T03_04_doubao",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, excuse me. Hey, do you happen to have an umbrella I could borrow?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sorry, I don't have an umbrella. It's too bad. Maybe you could ask someone else or wait until the rain stops."
+      },
+      {
+        "speaker": "A",
+        "text": "But I don't have any other friend here. So can you help me? How can I get an umbrella?"
+      },
+      {
+        "speaker": "B",
+        "text": "Well, you could try going to a nearby store and buying one. Or see if there's a place that rents umbrellas."
+      },
+      {
+        "speaker": "B",
+        "text": "Sometimes convenient stores might have some for sale."
+      },
+      {
+        "speaker": "A",
+        "text": "But I'm new here and I don't have money. So how can I get an umbrella?"
+      },
+      {
+        "speaker": "B",
+        "text": "That's tough. You could maybe ask at a coffee shop or a hotel. They might let you borrow one as a favor."
+      },
+      {
+        "speaker": "B",
+        "text": "Or just wait under a covered area until the rain eases up."
+      },
+      {
+        "speaker": "A",
+        "text": "But I have to go home. My kids are waiting for me."
+      },
+      {
+        "speaker": "A",
+        "text": "So I have to just leave. And I'm not familiar with any hotel or other offices nearby here."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe you could call a taxi or use a taxi."
+      },
+      {
+        "speaker": "B",
+        "text": "There's a ride-sharing service. They can pick you up right at the door so you don't have to walk in the rain."
+      },
+      {
+        "speaker": "A",
+        "text": "But I don't have money. I have already told you."
+      }
+    ]
+  },
+  {
+    "conversation_id": "67",
+    "name": "en_tasleem_test_L3_T03_05_tongyi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "excuse me hey do you happen to have an umbrella i could borrow"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh i'm sorry i don't have an umbrella but i think in case there might be one in the lost and found case maybe you could check there "
+      },
+      {
+        "speaker": "A",
+        "text": "But i'm new here and i am not familiar with many places can you help me "
+      },
+      {
+        "speaker": "B",
+        "text": "Of course i'd be happy to help the lost and found case is just down the hall and to the right let's go check it out together maybe we'll get lucky and find an umbrella there "
+      },
+      {
+        "speaker": "A",
+        "text": "Okay let's go together "
+      },
+      {
+        "speaker": "B",
+        "text": "Pose on a cheerful expression great i'll lead he will just follow me i hope we find an umbrella so you can stay dry by the way do you need any help with anything else while we're at it "
+      },
+      {
+        "speaker": "A",
+        "text": "no thank you so much for your"
+      }
+    ]
+  },
+  {
+    "conversation_id": "68",
+    "name": "en_tasleem_test_L3_T03_06_kimi",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Excuse me hey do you happen to have an umbrella i could borrow "
+      },
+      {
+        "speaker": "B",
+        "text": "Sure i've got one what do you need help with "
+      },
+      {
+        "speaker": "A",
+        "text": "I need to get an umbrella because there is round rain outside so can you help me to find an umbrella"
+      },
+      {
+        "speaker": "B",
+        "text": "No worries there are a few options. You can rent an umbrella from some online stores like taoba they have smart umbrellas that you can scan and borrow "
+      },
+      {
+        "speaker": "B",
+        "text": "also some libraries and universities have free umbrellas you can borrow if you're in the area"
+      },
+      {
+        "speaker": "B",
+        "text": "or you could just buy one from a store like tesla if you want a fancy one"
+      },
+      {
+        "speaker": "A",
+        "text": "Actually i'm new here and i don't know how to buy online how to go the supermarket and so can you help me and can you give me your umbrella"
+      }
+    ]
+  },
+  {
+    "conversation_id": "69",
+    "name": "en_tasleem_test_L3_T03_07_gemini",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you happen to have an umbrella I could borrow?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, hey! Yeah, I do have a spare umbrella in my bag."
+      },
+      {
+        "speaker": "B",
+        "text": "You can totally borrow it. Just make sure to give it back to me later, okay?"
+      },
+      {
+        "speaker": "B",
+        "text": "Stay dry."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, I will give it to you later, but now I have to take it to my home."
+      },
+      {
+        "speaker": "A",
+        "text": "Can I take it to my home?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, no problem at all. You can take it home."
+      },
+      {
+        "speaker": "B",
+        "text": "Just bring it back to school tomorrow or whenever you see me next."
+      },
+      {
+        "speaker": "B",
+        "text": "Don't want you to get wild all wet on your way."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, if I forget it, what will be happen?"
+      },
+      {
+        "speaker": "B",
+        "text": "No worries, man. If you forget, just bring it the next time you remember."
+      },
+      {
+        "speaker": "B",
+        "text": "No big deal. Just make sure it finds its way back to me eventually."
+      },
+      {
+        "speaker": "A",
+        "text": "Thank you. Thank you for these things."
+      },
+      {
+        "speaker": "A",
+        "text": "And can you give it to me forever?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "70",
+    "name": "en_tasleem_test_L3_T03_08_hunyuan",
+    "language": "en",
+    "topic": "3",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Excuse me hey do you happen to have an umbrella i could borrow "
+      },
+      {
+        "speaker": "B",
+        "text": "Yes i do here you are but it's a little small do you mind if it's a bit wet"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes i need a long and wide umbrella"
+      },
+      {
+        "speaker": "B",
+        "text": "I'm sorry this one isn't big enough there's a supermarket nearby we can buy a new one do you want to go together"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes we can go together but i have to reach home as early as possible because my kids are waiting for me"
+      },
+      {
+        "speaker": "B",
+        "text": "Let's hurry then it shouldn't take long to buy one which type do you prefer the one with a carrying handle or a foldable one "
+      },
+      {
+        "speaker": "B",
+        "text": "Okay but i don't have money right now"
+      },
+      {
+        "speaker": "B",
+        "text": "Don't worry i can lend you some how much do you need"
+      },
+      {
+        "speaker": "A",
+        "text": "I need about 20 yuan here you are buy the umbrella first and pay me back later"
+      }
+    ]
+  },
+  {
+    "conversation_id": "71",
+    "name": "en_tasleem_test_T02_09_claude",
+    "language": "en",
+    "topic": "9",
+    "type": "HM",
+    "model": "claude",
+    "level": "T02",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, do you happen to have an umbrella I could borrow?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh man, I totally would if I had one."
+      },
+      {
+        "speaker": "B",
+        "text": "I actually forgot to bring mine today too and I'm kind of stuck here until it lets up."
+      },
+      {
+        "speaker": "B",
+        "text": "Did you try asking Sarah or Mike?"
+      },
+      {
+        "speaker": "B",
+        "text": "I think I saw one of them with an umbrella earlier."
+      },
+      {
+        "speaker": "A",
+        "text": "So, can you help me to find someone who has an umbrella?"
+      },
+      {
+        "speaker": "A",
+        "text": "Actually, I need it badly."
+      },
+      {
+        "speaker": "B",
+        "text": "Sure, let me think who might have one."
+      },
+      {
+        "speaker": "B",
+        "text": "I saw Jessica by the lockers earlier and she usually keeps an umbrella in her bag."
+      },
+      {
+        "speaker": "B",
+        "text": "Also, maybe check the front office or lost and found."
+      },
+      {
+        "speaker": "B",
+        "text": "They sometimes have extras people can borrow."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, I don't know the place. Do you help me?"
+      }
+    ]
+  }
+]

@@ -30,6 +30,7 @@ createPage({
   },
 
   data: {
+    currentLang: wx.getStorageSync('language') || 'zh',
     correctRate: '0/0',
     pointsGained: 0,
     maxCombo: 0,
@@ -70,7 +71,20 @@ createPage({
     achievementDescription: ''        // 成就描述文本
   },
   
-  onLoad(options) {
+  async onLoad(options) {
+    // currentLang 已在 data 初始化
+    // 确保已登录并拿到 openid，避免同步数据失败
+    if (!app.globalData.openid) {
+      try {
+        wx.showLoading({ title: '加载中', mask: true });
+        await app.getUserInfo();
+      } catch (e) {
+        console.warn('获取 openid 失败，稍后重试同步', e);
+      } finally {
+        wx.hideLoading();
+      }
+    }
+
     // Summary 页面无需返回提示，直接退出
     
     // 获取游戏数据
@@ -103,6 +117,12 @@ createPage({
     const correctRate = `${correctCount}/${totalCount}`;
     const language = wx.getStorageSync('language') || 'zh';
     const correctRatePercent = Math.round((correctCount / totalCount) * 100);
+
+    /* ------ 更新累计正确率 totalCorrectRate ------ */
+    const prevChallenges = gameData.completedChallenges || 0; // 本轮之前的完成次数
+    const prevTotalRate = gameData.totalCorrectRate || 0;     // 已保存的累计平均
+    const newTotalRate = Math.round(((prevTotalRate * prevChallenges) + correctRatePercent) / (prevChallenges + 1));
+    gameData.totalCorrectRate = newTotalRate;
     
     // 生成分析结果
     this.generateAnalysisResult(correctRatePercent, gameData.dialogues || []);
@@ -412,21 +432,27 @@ createPage({
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
-    // 触发系统返回行为，会自动调用返回确认
-    wx.navigateBack({
-      delta: 1
-    });
+    // 直接返回首页，避免 quick-intro 闪屏
+    wx.disableAlertBeforeUnload();
+    wx.switchTab({ url: '/pages/game-home/game-home' });
   },
   
   shareResults() {
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
-    wx.showShareMenu({
-      withShareTicket: true,
-      menus: ['shareAppMessage', 'shareTimeline']
-    });
-    // 已启用 open-type="share" 按钮，无需再提示点击右上角
+    const inviter = app.globalData.openid || '';
+    const shareOptions = {
+      title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
+      path: `/pages/welcome/welcome?inviter=${inviter}`,
+      imageUrl: '/assets/figma/share.png'
+    };
+
+    // 微信要求必须由用户触发才能分享，image 点击已满足条件
+    wx.showShareMenu({ withShareTicket: true, menus: ['shareAppMessage', 'shareTimeline'] });
+    if (wx.shareAppMessage) {
+      wx.shareAppMessage(shareOptions);
+    }
   },
   
   playAgain() {
@@ -447,6 +473,9 @@ createPage({
       app.globalData.gameData.dialogues = [];
       // 更新 basePoints 为重新开始前的点数
       app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
+      
+      // 清空缓存的对话，确保下次重新抽取
+      app.globalData.gameDialogues = [];
     }
     
     // 跳转到对话页面，从第一个对话开始
@@ -460,7 +489,7 @@ createPage({
     return {
       title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
-      imageUrl: '/assets/images/share-image.png'
+      imageUrl: '/assets/figma/share.png'
     };
   },
 
@@ -469,7 +498,7 @@ createPage({
     return {
       title: '图灵挑战：你能识破 AI 吗？',
       query: `inviter=${inviter}`,
-      imageUrl: '/assets/images/share-image.png'
+      imageUrl: '/assets/figma/share.png'
     };
   },
   

@@ -58,11 +58,11 @@ page {
 }
 
 .text-primary {
-  color: #577CE2;
+  color: #3C77D2;
 }
 
 .text-secondary {
-  color: #577CE2;
+  color: #3C77D2;
 }
 
 .text-gray {

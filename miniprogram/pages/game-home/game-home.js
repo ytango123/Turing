@@ -21,7 +21,8 @@ createPage({
     amateurExplorer: 'amateurExplorer',
     seniorIdentifier: 'seniorIdentifier',
     turingMaster: 'turingMaster',
-    superIdentifier: 'superIdentifier'
+    superIdentifier: 'superIdentifier',
+    rankingsTip: 'rankingsTip'        // ← 新增
   },
 
   data: {
@@ -65,7 +66,9 @@ createPage({
     // 新增：前三名与后续排名分离及卡片高度
     topRankings: [],
     restRankings: [],
-    rankCardHeight: 0
+    rankCardHeight: 0,
+    // 标记排行榜数据是否已准备完毕，用于避免初始渲染闪屏
+    rankDataReady: false
   },
 
   onLoad() {
@@ -247,28 +250,28 @@ createPage({
     const rest = rankList.slice(3)
     // 估算每条记录高度（含间距）
     const ITEM_HEIGHT = 230 // rpx，包括卡片本身+间距
-    const cardHeight = rest.length * ITEM_HEIGHT + 20; // 顶部+底部留白
+    const cardHeight = rest.length * ITEM_HEIGHT ; // 顶部+底部留白
 
     this.setData({
       topRankings: top,
       restRankings: rest,
       rankCardHeight: cardHeight,
-      displayRankings: rankList // 兼容旧字段，避免报错
+      displayRankings: rankList, // 兼容旧字段，避免报错
+      rankDataReady: true // 数据就绪，可安全显示排行榜卡片
     })
   },
 
+  // 只取前十名排行榜
   fetchRankingsPreview() {
     const db = wx.cloud.database();
-    const _ = db.command;
-    const userPoints = app.globalData.gameData ? (app.globalData.gameData.points || 0) : 0;
 
-    // 获取前20名用户数据
+    // 获取前 10 名
     db.collection('users')
       .orderBy('gameData.points', 'desc')
-      .limit(20)
+      .limit(10)                        // ← 20 ➜ 10
       .get()
       .then(resTop => {
-        const topList = resTop.data.map((u, idx) => ({
+        const rankingList = resTop.data.map((u, idx) => ({
           rank: idx + 1,
           name: u.nickname || '匿名',
           points: (u.gameData && u.gameData.points) || 0,
@@ -277,41 +280,12 @@ createPage({
           isUser: u._openid === app.globalData.openid
         }));
 
-        db.collection('users')
-          .where({
-            'gameData.points': _.gt(userPoints)
-          })
-          .count()
-          .then(resCnt => {
-            const userRankNum = resCnt.total + 1;
-            let rankingList = topList;
-
-            // 检查当前用户是否已经在列表中
-            const isUserInList = topList.some(item => item.isUser);
-
-            if (!isUserInList) {
-              rankingList = [
-                ...topList,
-                {
-                  rank: userRankNum,
-                  name: (app.globalData.userInfo && app.globalData.userInfo.nickname) || `用户${(app.globalData.openid || '').slice(-4)}`,
-                  points: userPoints,
-                  avatarUrl: app.globalData.userInfo ? (app.globalData.userInfo.avatarUrl || '') : '',
-                  userInitial: (app.globalData.userInfo && app.globalData.userInfo.nickname ? app.globalData.userInfo.nickname.charAt(0) : '你'),
-                  isUser: true
-                }
-              ];
-            }
-
-            this.setData({
-              rankings: rankingList
-            }, () => {
-              this.updateDisplayRankings(rankingList)
-            });
-          })
-          .catch(err => {
-            console.error('获取用户排名失败', err);
-          });
+        // 直接使用前十名数据
+        this.setData({
+          rankings: rankingList
+        }, () => {
+          this.updateDisplayRankings(rankingList);
+        });
       })
       .catch(err => {
         console.error('获取排行榜失败', err);

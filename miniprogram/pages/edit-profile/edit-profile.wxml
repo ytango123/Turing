@@ -63,6 +63,7 @@
       </view>
     </view>
     
-    <button class="save-btn" bindtap="saveProfile">{{t.saveButton}}</button>
+    <image wx:if="{{currentLang==='zh'}}" class="save-button" src="/assets/images/edit-profile/save_zh.svg" mode="widthFix" bindtap="saveProfile" />
+    <image wx:if="{{currentLang==='en'}}" class="save-button" src="/assets/images/edit-profile/save_en.svg" mode="widthFix" bindtap="saveProfile" />
   </scroll-view>
 </view> 

@@ -81,6 +81,7 @@
   font-size: 36rpx;
   font-weight: bold;
   color: #1F2937;
+  margin-left:16rpx;
 }
 
 .game-modes {
@@ -135,77 +136,7 @@
   color: #6B7280;
 }
 
-.view-all {
-  font-size: 28rpx;
-  color: #577CE2;
-  font-weight: 500;
-}
-
-.ranking-card {
-  padding: 32rpx;
-}
-
-.ranking-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16rpx 0;
-  border-bottom: 2rpx solid #F3F4F6;
-}
-
-.ranking-item:last-child {
-  border-bottom: none;
-}
-
 /* 展开/收起按钮样式 */
-.view-all-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24rpx 0 8rpx;
-  margin-top: 16rpx;
-  border-top: 2rpx solid #F3F4F6;
-  color: #577CE2;
-  font-size: 28rpx;
-  font-weight: 500;
-  gap: 8rpx;
-  transition: all 0.2s;
-}
-
-.view-all-button:active {
-  opacity: 0.8;
-}
-
-.ranking-number {
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 50%;
-  background-color: #E5E7EB;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24rpx;
-  font-weight: bold;
-  color: white;
-  margin-right: 24rpx;
-}
-
-.ranking-number.top-1 {
-  background-color: #FBBF24;
-}
-
-.ranking-number.top-2 {
-  background-color: #9CA3AF;
-}
-
-.ranking-number.top-3 {
-  background-color: #B45309;
-}
-
-.ranking-number.you {
-  background-color: #EEF2FF;
-  color: #4a6ed3;
-}
 
 .avatar-wrapper {
   position: relative;
@@ -231,75 +162,6 @@
 
 /* 图片头像覆盖裁切 */
 .avatar-img {
-  object-fit: cover;
-}
-
-/* 覆盖排行榜头像大小 */
-.ranking-avatar {
-  object-fit: cover;
-}
-
-/* 头像包装器，用于定位排名徽章 */
-.ranking-avatar-wrapper {
-  position: relative;
-  width: 72rpx;
-  height: 72rpx;
-}
-
-/* 排名徽章（前3名奖牌） */
-.ranking-rank-badge {
-  position: absolute;
-  width: 36rpx;
-  height: 36rpx;
-  bottom: -4rpx;
-  right: -4rpx;
-}
-
-/* 普通数字排名徽章 */
-.ranking-rank-number {
-  position: absolute;
-  width: 36rpx;
-  height: 36rpx;
-  bottom: -4rpx;
-  right: -4rpx;
-  border-radius: 50%;
-  background-color: #E5E7EB;
-  color: #ffffff;
-  font-size: 20rpx;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ranking-rank-number.you {
-  background-color: #EEF2FF;
-  color: #4a6ed3;
-}
-
-/* 调整文字头像字体大小 */
-.ranking-avatar-fallback {
-  background: linear-gradient(135deg, #7072f0, #4767c2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 36rpx;
-}
-
-.ranking-medal {
-  width: 48rpx;
-  height: 48rpx;
-}
-
-.ranking-avatar,
-.ranking-avatar-fallback {
-  width: 72rpx;
-  height: 72rpx;
-  border-radius: 50%;
-}
-
-.ranking-avatar {
   object-fit: cover;
 }
 
@@ -331,7 +193,7 @@
   transition: transform 0.2s ease;
 }
 
-.mode-card:active {
+.mode-card-pressed {
   transform: scale(0.95);
 }
 
@@ -406,12 +268,12 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 36rpx;
+  font-size: 54rpx;
 }
 
 .podium-name {
   margin-top: 16rpx;
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: bold;
   color: #1F2937;
 }
@@ -419,7 +281,7 @@
 /* 修改积分背景 */
 .podium-points {
   margin-top: 16rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #6B7280;
   background-color: #F5F1F1;
   padding: 12rpx 26rpx;
@@ -535,7 +397,7 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 32rpx;
+  font-size: 48rpx;
 }
 
 .rest-info {
@@ -545,13 +407,22 @@
 }
 
 .rest-name {
-  font-size: 28rpx;
+  font-size: 32rpx;
   font-weight: bold;
   color: #1F2937;
   margin-bottom: 18rpx;
 }
 
 .rest-points {
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #6B7280;
 } 
+
+/* 排行榜提示小字 */
+.rank-tip {
+  margin-top: -54rpx;
+  font-size: 24rpx;
+  color: #9CA3AF;
+  text-align: center;
+  z-index :2;
+}

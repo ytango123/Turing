@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" hidden="{{!pageReady}}">
   <!-- 顶部导航 -->
   <t-navbar 
     title="{{t.navTitle}}" 
@@ -56,7 +56,8 @@
   </view>
   
   <!-- 底部按钮 -->
-  <button class="full-width-button" bindtap="nextDialogue">{{t.nextButton}}</button>
+  <image class="next-button" src="/assets/images/result/next_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="nextDialogue" />
+  <image class="next-button" src="/assets/images/result/next_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="nextDialogue" />
   
   <!-- 连击提示 -->
   <view class="combo-notification {{showComboNotification ? 'show' : ''}}" wx:if="{{comboCount > 1}}">

@@ -126,22 +126,40 @@ createPage({
       return;
     }
     wx.showLoading({ title: this.data.language==='zh'?'提交中':'Submitting', mask:true });
+    
     const db = wx.cloud.database();
-    db.collection('feedback').add({
-      data:{
-        content: text,
-        createTime: db.serverDate(),
-        _openid: ''
-      }
-    }).then(()=>{
-      wx.hideLoading();
-      wx.showToast({ title: this.data.language==='zh'?'感谢反馈':'Thanks', icon:'success' });
-      this.setData({ showFeedbackModal:false, feedbackText:'' });
-    }).catch(err=>{
-      wx.hideLoading();
-      console.error('提交反馈失败',err);
-      wx.showToast({ title: this.data.language==='zh'?'提交失败':'Failed', icon:'none' });
-    });
+    // 添加错误重试机制
+    const trySubmit = (retryCount = 0) => {
+      db.collection('feedback').add({
+        data: {
+          content: text,
+          createTime: db.serverDate()
+        }
+      }).then(() => {
+        wx.hideLoading();
+        wx.showToast({ title: this.data.language==='zh'?'感谢反馈':'Thanks', icon:'success' });
+        this.setData({ showFeedbackModal:false, feedbackText:'' });
+      }).catch(err => {
+        console.error('提交反馈失败', err);
+        wx.hideLoading();
+        
+        // 如果是集合不存在的错误，显示特定提示
+        if (err.errCode === -502005) {
+          wx.showToast({ 
+            title: this.data.language==='zh'?'系统维护中，请稍后再试':'System maintaining, please try later', 
+            icon:'none',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({ 
+            title: this.data.language==='zh'?'提交失败，请重试':'Failed, please retry', 
+            icon:'none' 
+          });
+        }
+      });
+    };
+    
+    trySubmit();
   },
   
   onTabItemTap(item) {
