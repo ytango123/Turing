@@ -21,6 +21,7 @@ createPage({
   },
 
   data: {
+    navTitle: '',
     currentLang: wx.getStorageSync('language') || 'zh',
     avatarUrl: '',
     userInitial: 'T',
@@ -84,6 +85,8 @@ createPage({
   },
   
   onLoad() {
+    const lang = wx.getStorageSync('language') || 'zh';
+    this.setData({ navTitle: t('profile.navTitle', lang) || (lang==='en'?'Profile':'资料') });
     this.fetchLatestUserData();
   },
   
@@ -263,6 +266,7 @@ createPage({
 
   // 语言切换后刷新动态文本
   refreshLanguageDependentData(language) {
+    this.setData({ navTitle: t('profile.navTitle', language) || (language==='en'?'Profile':'资料') });
     // 更新等级进度相关文本
     this.calculateLevelProgress();
 

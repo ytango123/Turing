@@ -7,7 +7,6 @@
     "pages/conversation/conversation",
     "pages/summary/summary",
     "pages/profile/profile",
-    "pages/rankings/rankings",
     "pages/edit-profile/edit-profile",
     "pages/settings/settings"
   ],

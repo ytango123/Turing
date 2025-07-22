@@ -144,11 +144,11 @@ createPage({
       gameData.heardDialogues = [];
     }
 
-    // 将本轮 10 个对话的 conversationId 添加到 heardDialogues
+    // 将本轮 10 个对话的 name 添加到 heardDialogues
     const currentRoundDialogues = Array.isArray(gameData.dialogues) ? gameData.dialogues : [];
     currentRoundDialogues.forEach(d => {
-      if (d && d.conversationId && !gameData.heardDialogues.includes(d.conversationId)) {
-        gameData.heardDialogues.push(d.conversationId);
+      if (d && d.name && !gameData.heardDialogues.includes(d.name)) {
+        gameData.heardDialogues.push(d.name);
       }
     });
 
@@ -445,7 +445,7 @@ createPage({
     const shareOptions = {
       title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
-      imageUrl: '/assets/figma/share.png'
+      imageUrl: '/assets/figma/share2.png'
     };
 
     // 微信要求必须由用户触发才能分享，image 点击已满足条件
@@ -459,6 +459,9 @@ createPage({
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
+    // 显示加载提示
+    const lang = wx.getStorageSync('language') || 'zh';
+    wx.showLoading({ title: lang==='en' ? 'Loading...' : '加载中...', mask: true });
     // 重置游戏数据
     if (app.globalData) {
       if (!app.globalData.gameData) {
@@ -473,11 +476,9 @@ createPage({
       app.globalData.gameData.dialogues = [];
       // 更新 basePoints 为重新开始前的点数
       app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
-      
       // 清空缓存的对话，确保下次重新抽取
       app.globalData.gameDialogues = [];
     }
-    
     // 跳转到对话页面，从第一个对话开始
     wx.redirectTo({
       url: '/pages/conversation/conversation?dialogueId=1'
@@ -489,16 +490,16 @@ createPage({
     return {
       title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
-      imageUrl: '/assets/figma/share.png'
+      imageUrl: '/assets/figma/share2.png'
     };
   },
 
   onShareTimeline() {
     const inviter = app.globalData.openid || '';
     return {
-      title: '图灵挑战：你能识破 AI 吗？',
+      title: '快来参与图灵对话挑战！',
       query: `inviter=${inviter}`,
-      imageUrl: '/assets/figma/share.png'
+      imageUrl: '/assets/figma/share2.png'
     };
   },
   

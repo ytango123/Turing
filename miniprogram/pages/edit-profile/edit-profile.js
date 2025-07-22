@@ -54,18 +54,29 @@ createPage({
       this.setData({
         nickname: userInfo.nickname || '',
         avatarUrl: userInfo.avatarUrl || '',
-        ageIndex: this.getIndexByValue(this.data.ages, userInfo.age),
-        genderIndex: this.getIndexByValue(this.data.genders, userInfo.gender),
-        educationIndex: this.getIndexByValue(this.data.educations, userInfo.education),
-        aiFamiliarityIndex: this.getIndexByValue(this.data.aiFamiliarities, userInfo.aiFamiliarity)
+        ageIndex: this.getIndexByValue(this.data.ages, userInfo.age, 'ages'),
+        genderIndex: this.getIndexByValue(this.data.genders, userInfo.gender, 'genders'),
+        educationIndex: this.getIndexByValue(this.data.educations, userInfo.education, 'educations'),
+        aiFamiliarityIndex: this.getIndexByValue(this.data.aiFamiliarities, userInfo.aiFamiliarity, 'aiFamiliarities')
       });
     }
   },
 
-  // 获取选项在数组中的索引
-  getIndexByValue(array, value) {
-    const index = array.indexOf(value);
-    return index === -1 ? 0 : index;
+  // 获取选项在数组中的索引（支持跨语言对照）
+  getIndexByValue(array, value, category) {
+    // 1) 在当前语言选项里查找
+    let idx = array.indexOf(value);
+    if (idx !== -1) return idx;
+
+    // 2) 若未找到，分别在中英两套文案里查找同一位置
+    //    保证同一物理索引在不同语言下含义一致
+    const zhArr = t(`editProfile.${category}`, 'zh');
+    const enArr = t(`editProfile.${category}`, 'en');
+    idx = zhArr.indexOf(value);
+    if (idx !== -1) return idx;
+    idx = enArr.indexOf(value);
+    if (idx !== -1) return idx;
+    return 0;
   },
 
   // 在语言变化时更新下拉选项

@@ -111,9 +111,9 @@
   width: 87vw;
   display: block;
   margin: 0 auto;
-  transition: transform 0.15s ease;
 }
 
 .next-button:active {
-  transform: scale(0.94);
+  /* 移除缩放保留点击反馈，可添加轻微透明度变化 */
+  
 } 

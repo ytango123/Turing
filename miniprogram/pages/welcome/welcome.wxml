@@ -1,4 +1,4 @@
-<view class="welcome-container">
+<view class="welcome-container {{pageReady?'fade-in':''}}">
   <!-- 背景 -->
   <view class="background"></view>
   
@@ -26,7 +26,16 @@
   <image class="user-count-img zh {{currentLang==='zh' ? 'show' : ''}}" src="/assets/images/welcome/user_count_zh.svg" mode="widthFix" />
   <image class="user-count-img en {{currentLang==='en' ? 'show' : ''}}" src="/assets/images/welcome/user_count_en.svg" mode="widthFix" />
   
-  <!-- 语言切换 SVG (可点击) -->
-  <image class="language-switch-img zh {{currentLang==='zh' ? 'show' : ''}}" src="/assets/images/welcome/language_zh.svg" mode="widthFix" bindtap="switchLanguage" />
-  <image class="language-switch-img en {{currentLang==='en' ? 'show' : ''}}" src="/assets/images/welcome/language_en.svg" mode="widthFix" bindtap="switchLanguage" />
+  <!-- 语言切换 segmented control -->
+  <view class="lang-toggle">
+    <view class="lang-capsule">
+      <view class="lang-slider {{currentLang}}"></view>
+      <view class="lang-option zh" data-lang="zh" bindtap="switchLanguage">
+        <image class="lang-icon" src="/assets/images/welcome/{{currentLang==='zh'?'zh_active':'zh'}}.svg" mode="aspectFit"></image>
+      </view>
+      <view class="lang-option en" data-lang="en" bindtap="switchLanguage">
+        <image class="lang-icon" src="/assets/images/welcome/{{currentLang==='en'?'en_active':'en'}}.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
 </view> 

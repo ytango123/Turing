@@ -3,6 +3,12 @@
   <image class="intro-bg" src="/assets/images/quick-intro/bg_zh.svg" mode="aspectFill" hidden="{{currentLang!=='zh'}}" />
   <image class="intro-bg" src="/assets/images/quick-intro/bg_en.svg" mode="aspectFill" hidden="{{currentLang!=='en'}}" />
 
+  <!-- 题库选择按钮 -->
+  <view class="select-container">
+    <image class="select-btn" src="{{selectBtnSrc.zh}}" mode="widthFix" data-corpus="zh" bindtap="selectCorpus" />
+    <image class="select-btn" src="{{selectBtnSrc.en}}" mode="widthFix" data-corpus="en" bindtap="selectCorpus" />
+  </view>
+
   <!-- 开始按钮 -->
   <view class="button-container">
     <image 

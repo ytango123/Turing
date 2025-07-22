@@ -26,6 +26,7 @@ createPage({
   },
 
   data: {
+    navTitle: '',
     avatarUrl: '',
     userInitial: 'T',
     username: '图灵测试者',
@@ -72,6 +73,19 @@ createPage({
   },
 
   onLoad() {
+    const language = wx.getStorageSync('language') || 'zh';
+    this.setData({ navTitle: t('gameHome.navTitle', language) || (language==='en'?'Home':'首页') });
+    // 如果全局缓存有用户信息，先快速渲染头像等基础信息
+    if (app.globalData.userInfo) {
+      const info = app.globalData.userInfo;
+      const nickname = info.nickname || `用户${(app.globalData.openid || '').slice(-4)}`;
+      this.setData({
+        avatarUrl: info.avatarUrl || '',
+        username: nickname,
+        userInitial: nickname.charAt(0)
+      });
+    }
+
     // 检查是否已有用户信息（从全局状态获取）
     if (!app.globalData.userInfo) {
       // 如果全局状态中没有用户信息，尝试检查用户注册状态
@@ -89,7 +103,7 @@ createPage({
         })
         .catch(err => {
           console.error('检查用户注册状态失败', err);
-          // 出错时暂时不跳转，尝试继续加载页面
+          // 出错时尝试继续加载页面
           this.updatePageData();
         });
     } else {
@@ -223,6 +237,7 @@ createPage({
 
   // 语言切换后刷新动态文本
   refreshLanguageDependentData(language) {
+    this.setData({ navTitle: t('gameHome.navTitle', language) || (language==='en'?'Home':'首页') });
     // 重新计算等级进度（内部已根据 language 读取本地存储）
     this.calculateLevelProgress();
 

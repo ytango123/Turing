@@ -8,6 +8,12 @@
   align-items: center;
   font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei UI", sans-serif;
   letter-spacing: 0.01em;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 .background {
@@ -19,7 +25,6 @@
   z-index: -10;
 }
 
-/* 背景已经简化，去掉 blur */
 .robot {
   position: relative;      /* 进入文档流，使下方元素自动跟随 */
   width: 22vh;
@@ -34,15 +39,12 @@
 .robot-all {
   width: 170%;
   height: 170%;
-
 }
 
 .title-img {
   width: 100vw;   /* 更加醒目 */
   max-width: 540px;
   opacity: 0;
-
-
 }
 
 .title-img.show {
@@ -51,23 +53,23 @@
 
 /* 标题整体下移一些 */
 .title-img.zh {
-  transform: translateY(5vh);         /* 保持原位 */
+  transform: translateY(5vh);
   margin-top: 8vh;  
-
 }
+
 .title-img.en {
-  transform: translateY(-14vh);         /* 保持原位 */
-  margin-top: 8vh;         /* 位于机器人下方一定距离 */
+  transform: translateY(-15vh);
+  margin-top: 8vh;
 }
 
-/* 固定位置布局，不再依赖JS动态计算 */
+/* 固定位置布局 */
 .content-img {
   width: 64vw;
   max-width:360px;
   z-index: 10;
   position: absolute;
   left: 50%;
-  top: 62vh; /* 固定在页面42%高度处 */
+  top: 62vh;
   transform: translateX(-50%);
   opacity: 0;
   pointer-events: none;
@@ -78,7 +80,7 @@
   pointer-events: auto;
 }
 
-/* 开始按钮默认隐藏 */
+/* 开始按钮 */
 .start-button-img {
   position: absolute;
   bottom: 15vh;
@@ -95,16 +97,14 @@
   pointer-events: auto;
 }
 
-/* 点击缩放反馈 */
 .start-button-img:active {
   transform: scale(0.93);
 }
 
-/* 用户数默认隐藏 */
+/* 用户数 */
 .user-count-img {
   position: absolute;
   bottom: 10vh;
-  
   z-index: 10;
   opacity: 0;
   pointer-events: none;
@@ -125,25 +125,71 @@
   height: auto;
 }
 
-
-/* 语言切换默认隐藏 */
-.language-switch-img {
+/* 语言切换按钮 */
+.lang-toggle {
   position: absolute;
-  bottom: 24px;
-  right: 28px;
-  width: 38px;
-  height: auto;
+  bottom: 36rpx;
+  right: 40rpx;
   z-index: 10;
-  transition: transform 0.2s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
 }
 
-.language-switch-img.show {
-  opacity: 1;
-  pointer-events: auto;
+.lang-capsule {
+  width: 124rpx;
+  height: 52rpx;
+  background: #EFEFEF;
+  border-radius: 40rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 6rpx;
+  box-sizing: border-box;
 }
 
-.language-switch-img:active {
-  transform: scale(0.92);
+.lang-slider {
+  position: absolute;
+  top: 4rpx;
+  width: 60rpx;
+  height: 44rpx;
+  border-radius: 40rpx;
+  background: #FFE27A;
+  transition: transform 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+.lang-slider.zh { 
+  left: 4rpx;
+  transform: translateX(0); 
+}
+
+.lang-slider.en { 
+  left: 4rpx;
+  transform: translateX(57rpx);
+}
+
+.lang-option {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  width: 50%;
+}
+
+.lang-option.zh {
+  padding-right: 2rpx;
+}
+
+.lang-option.en {
+  padding-left: 2rpx;
+}
+
+.lang-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.lang-option:active { 
+  opacity: 0.7; 
 }

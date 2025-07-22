@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 顶部导航 -->
   <t-navbar 
-    title="{{t.navTitle}}" 
+    title="{{navTitle}}" 
     title-color="#ffffff"
     t-class="t-navbar"
     fixed

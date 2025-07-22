@@ -1,0 +1,5162 @@
+[
+  {
+    "conversation_id": "0",
+    "name": "df_test_L3_T06_01_gpt",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "西班牙真的超好玩的"
+      },
+      {
+        "speaker": "B",
+        "text": "我上个周末去的"
+      },
+      {
+        "speaker": "B",
+        "text": "天气特别好"
+      },
+      {
+        "speaker": "B",
+        "text": "人也很热情"
+      },
+      {
+        "speaker": "B",
+        "text": "然后美食就更不用说了"
+      },
+      {
+        "speaker": "B",
+        "text": "简直是吃到停不下来"
+      },
+      {
+        "speaker": "B",
+        "text": "你有没有想去的地方呀"
+      },
+      {
+        "speaker": "A",
+        "text": "你又耳背了"
+      },
+      {
+        "speaker": "A",
+        "text": "我刚刚说是三亚好不好玩"
+      },
+      {
+        "speaker": "A",
+        "text": "不是西班牙"
+      },
+      {
+        "speaker": "B",
+        "text": "我真的是听错了"
+      },
+      {
+        "speaker": "B",
+        "text": "不好意思"
+      },
+      {
+        "speaker": "B",
+        "text": "三亚当然也很棒"
+      },
+      {
+        "speaker": "B",
+        "text": "阳光沙滩"
+      },
+      {
+        "speaker": "B",
+        "text": "海鲜都特别赞"
+      },
+      {
+        "speaker": "B",
+        "text": "我觉得是个很放松度假的好地方"
+      },
+      {
+        "speaker": "A",
+        "text": "说得我都想去了"
+      },
+      {
+        "speaker": "A",
+        "text": "你有什么路线推荐吗"
+      },
+      {
+        "speaker": "B",
+        "text": "那你可以去亚龙湾"
+      },
+      {
+        "speaker": "B",
+        "text": "或者是大东海那边"
+      },
+      {
+        "speaker": "B",
+        "text": "海水很清澈"
+      },
+      {
+        "speaker": "B",
+        "text": "然后附近有很多好吃的海鲜餐厅"
+      },
+      {
+        "speaker": "B",
+        "text": "晚上还有夜市可以逛一逛"
+      },
+      {
+        "speaker": "B",
+        "text": "真的挺不错的"
+      }
+    ]
+  },
+  {
+    "conversation_id": "1",
+    "name": "df_test_L3_T06_02_glm",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩不"
+      },
+      {
+        "speaker": "B",
+        "text": "三亚真的是个让人流连忘返的地方"
+      },
+      {
+        "speaker": "B",
+        "text": "我最喜欢亚龙湾的海滩"
+      },
+      {
+        "speaker": "B",
+        "text": "沙子又细又软"
+      },
+      {
+        "speaker": "B",
+        "text": "海水湛蓝清澈"
+      },
+      {
+        "speaker": "B",
+        "text": "让人忍不住就想一直待在那里"
+      },
+      {
+        "speaker": "B",
+        "text": "发呆看海"
+      },
+      {
+        "speaker": "B",
+        "text": "你当时去的时候天气怎么样"
+      },
+      {
+        "speaker": "B",
+        "text": "有没有去潜水体验"
+      },
+      {
+        "speaker": "A",
+        "text": "我还没去过三亚"
+      },
+      {
+        "speaker": "A",
+        "text": "你有什么特别特别推荐的景点吗"
+      },
+      {
+        "speaker": "A",
+        "text": "跟我说一个"
+      },
+      {
+        "speaker": "B",
+        "text": "那必须推荐蜈支洲岛"
+      },
+      {
+        "speaker": "B",
+        "text": "被称为中国的马尔代夫"
+      },
+      {
+        "speaker": "B",
+        "text": "可不是白叫的"
+      },
+      {
+        "speaker": "B",
+        "text": "那里珊瑚礁超美"
+      },
+      {
+        "speaker": "B",
+        "text": "潜水的时候"
+      },
+      {
+        "speaker": "B",
+        "text": "能看到各种色彩斑斓的鱼群游来游去"
+      },
+      {
+        "speaker": "B",
+        "text": "就像在水族箱里一样神奇"
+      },
+      {
+        "speaker": "B",
+        "text": "岛上还有超适合拍照的情人墙"
+      },
+      {
+        "speaker": "B",
+        "text": "走在上面晃悠悠的"
+      },
+      {
+        "speaker": "B",
+        "text": "底下就是清澈见底的大海"
+      },
+      {
+        "speaker": "B",
+        "text": "浪漫得不要不要的"
+      },
+      {
+        "speaker": "B",
+        "text": "去之前记得提前订票哦"
+      },
+      {
+        "speaker": "B",
+        "text": "高峰期可是要排很久的队呢"
+      }
+    ]
+  },
+  {
+    "conversation_id": "2",
+    "name": "df_test_L3_T06_03_xunfei",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "三亚真的太美了"
+      },
+      {
+        "speaker": "B",
+        "text": "海滩上的沙子细腻柔软"
+      },
+      {
+        "speaker": "B",
+        "text": "海水清澈见底"
+      },
+      {
+        "speaker": "B",
+        "text": "我还去了亚龙湾"
+      },
+      {
+        "speaker": "B",
+        "text": "蜈支洲岛和天涯海角"
+      },
+      {
+        "speaker": "B",
+        "text": "每个地方都有独特的风景"
+      },
+      {
+        "speaker": "B",
+        "text": "你有没有什么特别想去的地方呢"
+      },
+      {
+        "speaker": "A",
+        "text": "我还没想好去哪呢"
+      },
+      {
+        "speaker": "A",
+        "text": "你不是去过吗"
+      },
+      {
+        "speaker": "A",
+        "text": "你能不能给我推荐一条路线呢"
+      },
+      {
+        "speaker": "B",
+        "text": "让我想想哈"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以先去亚龙湾和南山文化旅游区"
+      },
+      {
+        "speaker": "B",
+        "text": "看看风景和文化遗迹"
+      },
+      {
+        "speaker": "B",
+        "text": "然后到西岛和蜈支洲岛潜水"
+      },
+      {
+        "speaker": "B",
+        "text": "钓鱼和露营"
+      },
+      {
+        "speaker": "B",
+        "text": "最后可以去天涯海角和第一市场尝尝美食"
+      }
+    ]
+  },
+  {
+    "conversation_id": "3",
+    "name": "df_test_L3_T06_04_doubao",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "可好玩啦"
+      },
+      {
+        "speaker": "B",
+        "text": "那边的海特别漂亮"
+      },
+      {
+        "speaker": "B",
+        "text": "海水可清了"
+      },
+      {
+        "speaker": "B",
+        "text": "沙滩也很细腻"
+      },
+      {
+        "speaker": "B",
+        "text": "我还玩了好多水上项目"
+      },
+      {
+        "speaker": "B",
+        "text": "像冲浪啊潜水啊"
+      },
+      {
+        "speaker": "B",
+        "text": "超刺激"
+      },
+      {
+        "speaker": "B",
+        "text": "而且当地的美食也不错"
+      },
+      {
+        "speaker": "B",
+        "text": "叶子汁又甜又解渴"
+      },
+      {
+        "speaker": "B",
+        "text": "还有各种海鲜"
+      },
+      {
+        "speaker": "B",
+        "text": "吃得可满足了"
+      },
+      {
+        "speaker": "B",
+        "text": "你要是有机会"
+      },
+      {
+        "speaker": "B",
+        "text": "真的值得一去"
+      },
+      {
+        "speaker": "A",
+        "text": "你这经历听了我"
+      },
+      {
+        "speaker": "A",
+        "text": "想立马就去了"
+      },
+      {
+        "speaker": "A",
+        "text": "有没有什么推荐路线呀"
+      },
+      {
+        "speaker": "B",
+        "text": "要是你喜欢自然风光"
+      },
+      {
+        "speaker": "B",
+        "text": "第一天可以先去亚龙湾海滩"
+      },
+      {
+        "speaker": "B",
+        "text": "在那晒晒太阳游游泳"
+      },
+      {
+        "speaker": "B",
+        "text": "第二天呢"
+      },
+      {
+        "speaker": "B",
+        "text": "就去呀诺达雨林"
+      },
+      {
+        "speaker": "B",
+        "text": "呼吸一下新鲜空气"
+      },
+      {
+        "speaker": "B",
+        "text": "看看热带植物"
+      },
+      {
+        "speaker": "B",
+        "text": "要是对人文感兴趣"
+      },
+      {
+        "speaker": "B",
+        "text": "第三天就去南山文化旅游区"
+      },
+      {
+        "speaker": "B",
+        "text": "那儿的海上观音特别壮观"
+      },
+      {
+        "speaker": "B",
+        "text": "晚上还能去"
+      },
+      {
+        "speaker": "B",
+        "text": "三亚国际免税城逛逛"
+      }
+    ]
+  },
+  {
+    "conversation_id": "4",
+    "name": "df_test_L3_T06_05_tongyi",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "太棒了"
+      },
+      {
+        "speaker": "B",
+        "text": "而它依依三亚的阳光"
+      },
+      {
+        "speaker": "B",
+        "text": "沙滩和大海都超赞的"
+      },
+      {
+        "speaker": "B",
+        "text": "我去了亚龙湾"
+      },
+      {
+        "speaker": "B",
+        "text": "那里的水清澈见底"
+      },
+      {
+        "speaker": "B",
+        "text": "沙滩又细又软"
+      },
+      {
+        "speaker": "B",
+        "text": "我简直不想走"
+      },
+      {
+        "speaker": "B",
+        "text": "我还去吃了好多海鲜"
+      },
+      {
+        "speaker": "B",
+        "text": "新鲜又便宜"
+      },
+      {
+        "speaker": "A",
+        "text": "你这经历听着不错呀"
+      },
+      {
+        "speaker": "A",
+        "text": "有没有什么推荐的旅游路线呀"
+      },
+      {
+        "speaker": "B",
+        "text": "当然有了"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以先飞去三亚"
+      },
+      {
+        "speaker": "B",
+        "text": "然后租辆车"
+      },
+      {
+        "speaker": "B",
+        "text": "沿着海岸线自驾"
+      },
+      {
+        "speaker": "B",
+        "text": "亚龙湾"
+      },
+      {
+        "speaker": "B",
+        "text": "大小洞天"
+      },
+      {
+        "speaker": "B",
+        "text": "南山寺这些景点都值得一去"
+      },
+      {
+        "speaker": "B",
+        "text": "晚上再去三亚湾看看日落"
+      },
+      {
+        "speaker": "B",
+        "text": "简直美炸了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "5",
+    "name": "df_test_L3_T06_06_kimi",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "好啊"
+      },
+      {
+        "speaker": "B",
+        "text": "这可真刺激"
+      },
+      {
+        "speaker": "B",
+        "text": "我上周末去三亚"
+      },
+      {
+        "speaker": "B",
+        "text": "那地方简直太美了"
+      },
+      {
+        "speaker": "B",
+        "text": "海水清澈的像水晶一样"
+      },
+      {
+        "speaker": "B",
+        "text": "阳光照在沙滩上"
+      },
+      {
+        "speaker": "B",
+        "text": "特别温暖"
+      },
+      {
+        "speaker": "B",
+        "text": "我一到那儿"
+      },
+      {
+        "speaker": "B",
+        "text": "就感觉整个人都焕然一新"
+      },
+      {
+        "speaker": "B",
+        "text": "仿佛所有烦恼都被海风吹走了"
+      },
+      {
+        "speaker": "A",
+        "text": "听着还挺好"
+      },
+      {
+        "speaker": "A",
+        "text": "有没有什么推荐旅游路线"
+      },
+      {
+        "speaker": "A",
+        "text": "我来查一下"
+      },
+      {
+        "speaker": "B",
+        "text": "我去了蜈支州岛"
+      },
+      {
+        "speaker": "B",
+        "text": "那里的海水晶莹剔透"
+      },
+      {
+        "speaker": "B",
+        "text": "像果冻一样"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以早上八点去"
+      },
+      {
+        "speaker": "B",
+        "text": "人比较少"
+      },
+      {
+        "speaker": "B",
+        "text": "还可以买个620元的套票"
+      },
+      {
+        "speaker": "B",
+        "text": "能玩20多个水上项目"
+      },
+      {
+        "speaker": "B",
+        "text": "亚龙湾热带天堂也不错"
+      },
+      {
+        "speaker": "B",
+        "text": "有玻璃栈道"
+      },
+      {
+        "speaker": "B",
+        "text": "下午四点以后"
+      },
+      {
+        "speaker": "B",
+        "text": "光线特别好"
+      },
+      {
+        "speaker": "B",
+        "text": "适合拍照"
+      },
+      {
+        "speaker": "B",
+        "text": "西岛渔村"
+      },
+      {
+        "speaker": "B",
+        "text": "可以租电动车环岛"
+      }
+    ]
+  },
+  {
+    "conversation_id": "6",
+    "name": "df_test_L3_T06_07_gemini",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "三亚，别提了，简直就是个大坑，我发誓，这辈子都不会再去第二次。本来以为能去海边放松一下，结果呢，人山人海，比下饺子还恐怖"
+      },
+      {
+        "speaker": "B",
+        "text": "沙滩上全是垃圾，海水脏得像泥汤，根本没法下脚。那些海鲜大排档，宰客宰得心都滴血，一顿饭吃掉我半个月工资"
+      },
+      {
+        "speaker": "B",
+        "text": "最可怕的是酒店,隔音差到极点,隔壁房间半夜三更还在吵闹,根本没法睡觉,我怀疑他们在开party,声音大得像打雷一样"
+      }
+    ]
+  },
+  {
+    "conversation_id": "7",
+    "name": "df_test_L3_T06_08_hunyuan",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "三亚好玩吗"
+      },
+      {
+        "speaker": "B",
+        "text": "好玩呀"
+      },
+      {
+        "speaker": "B",
+        "text": "那里的风景超美的"
+      },
+      {
+        "speaker": "B",
+        "text": "蓝天白云"
+      },
+      {
+        "speaker": "B",
+        "text": "沙滩又细又软"
+      },
+      {
+        "speaker": "B",
+        "text": "我还去吃了好多好吃的海鲜呢"
+      },
+      {
+        "speaker": "B",
+        "text": "你有没有想去的地方呀"
+      },
+      {
+        "speaker": "B",
+        "text": "我可以给你推荐推荐"
+      },
+      {
+        "speaker": "A",
+        "text": "我还没想好啊"
+      },
+      {
+        "speaker": "A",
+        "text": "我一直想去"
+      },
+      {
+        "speaker": "A",
+        "text": "你有什么路线推荐吗"
+      },
+      {
+        "speaker": "A",
+        "text": "说来我听听"
+      },
+      {
+        "speaker": "B",
+        "text": "推荐个三天两夜的路线吧"
+      },
+      {
+        "speaker": "B",
+        "text": "第一天到三亚湾看日落"
+      },
+      {
+        "speaker": "B",
+        "text": "第二天去蜈支州岛玩水上项目"
+      },
+      {
+        "speaker": "B",
+        "text": "第三天逛南山寺和免税城"
+      },
+      {
+        "speaker": "B",
+        "text": "喜欢安静的话"
+      },
+      {
+        "speaker": "B",
+        "text": "可以选大东海福前"
+      },
+      {
+        "speaker": "B",
+        "text": "想拍照就打卡亚龙湾热带天堂森林公园"
+      },
+      {
+        "speaker": "B",
+        "text": "记得带好防晒霜"
+      },
+      {
+        "speaker": "B",
+        "text": "海鲜记得挑新鲜的吃哦"
+      }
+    ]
+  },
+  {
+    "conversation_id": "8",
+    "name": "jb_test_L1_T03_01_gpt",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考的那个托福出分了"
+      },
+      {
+        "speaker": "A",
+        "text": "这次就考的也很烂"
+      },
+      {
+        "speaker": "A",
+        "text": "感觉又浪费了两千块钱"
+      },
+      {
+        "speaker": "B",
+        "text": "别灰心"
+      },
+      {
+        "speaker": "B",
+        "text": "托福有时候确实挺难的"
+      },
+      {
+        "speaker": "B",
+        "text": "不过每一次考试"
+      },
+      {
+        "speaker": "B",
+        "text": "都是一次经验的积累嘛"
+      },
+      {
+        "speaker": "B",
+        "text": "下次你就知道"
+      },
+      {
+        "speaker": "B",
+        "text": "哪些地方要多注意一点"
+      },
+      {
+        "speaker": "B",
+        "text": "而且你也可以调整一下学习方法"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定下次就能考得更好"
+      },
+      {
+        "speaker": "A",
+        "text": "主要是考试的时候非常搞心态"
+      },
+      {
+        "speaker": "A",
+        "text": "在考口语的时候"
+      },
+      {
+        "speaker": "A",
+        "text": "旁边的人一直在敲桌子"
+      },
+      {
+        "speaker": "A",
+        "text": "都不知道是什么毛病"
+      },
+      {
+        "speaker": "B",
+        "text": "这种小插曲还真是挺让人分心的"
+      },
+      {
+        "speaker": "B",
+        "text": "确实很影响心态"
+      },
+      {
+        "speaker": "B",
+        "text": "不过你下次就稍微做好心理准备吧"
+      },
+      {
+        "speaker": "B",
+        "text": "尽量专注在自己的考试上"
+      },
+      {
+        "speaker": "B",
+        "text": "让自己放轻松一点"
+      },
+      {
+        "speaker": "B",
+        "text": "可能就会好很多"
+      }
+    ]
+  },
+  {
+    "conversation_id": "9",
+    "name": "jb_test_L1_T03_02_glm",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "glm",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考的那个托福他出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我这次又考的特别差"
+      },
+      {
+        "speaker": "A",
+        "text": "我感觉这两千块钱要打水漂了"
+      },
+      {
+        "speaker": "B",
+        "text": "哇"
+      },
+      {
+        "speaker": "B",
+        "text": "买彩票确实让人紧张又兴奋的"
+      },
+      {
+        "speaker": "B",
+        "text": "要不要先了解一下"
+      },
+      {
+        "speaker": "B",
+        "text": "最近的开奖规律呀"
+      },
+      {
+        "speaker": "B",
+        "text": "或者研究一下常用的选号技巧"
+      },
+      {
+        "speaker": "B",
+        "text": "虽然彩票靠运气"
+      },
+      {
+        "speaker": "B",
+        "text": "但适当分析"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定能增加一些乐趣哦"
+      },
+      {
+        "speaker": "A",
+        "text": "不是啊"
+      },
+      {
+        "speaker": "A",
+        "text": "我是说我托福考差了"
+      },
+      {
+        "speaker": "A",
+        "text": "然后我的报名费要打水漂了"
+      },
+      {
+        "speaker": "B",
+        "text": "抱歉"
+      },
+      {
+        "speaker": "B",
+        "text": "听起来你最近确实遇到不少麻烦呢"
+      },
+      {
+        "speaker": "B",
+        "text": "不过报名费的事情"
+      },
+      {
+        "speaker": "B",
+        "text": "不用太担心"
+      },
+      {
+        "speaker": "B",
+        "text": "咱们可以试试其他更稳妥的办法解决"
+      },
+      {
+        "speaker": "B",
+        "text": "需要我帮你出出主意吗"
+      }
+    ]
+  },
+  {
+    "conversation_id": "10",
+    "name": "jb_test_L1_T03_03_xunfei",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考了一个托福他出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我这次考的又好了"
+      },
+      {
+        "speaker": "A",
+        "text": "感觉浪费两千块钱了"
+      },
+      {
+        "speaker": "B",
+        "text": "啊？怎么会这样"
+      },
+      {
+        "speaker": "B",
+        "text": "那你现在打算怎么办呢"
+      },
+      {
+        "speaker": "A",
+        "text": "我也不知道啊"
+      },
+      {
+        "speaker": "A",
+        "text": "这感觉很迷茫啊"
+      },
+      {
+        "speaker": "A",
+        "text": "后面事情太多了"
+      },
+      {
+        "speaker": "B",
+        "text": "别太着急了"
+      },
+      {
+        "speaker": "B",
+        "text": "先冷静下来"
+      },
+      {
+        "speaker": "B",
+        "text": "想想接下来该怎么办"
+      },
+      {
+        "speaker": "B",
+        "text": "要不找老师或者家长聊聊呢"
+      },
+      {
+        "speaker": "B",
+        "text": "他们可能会给你一些有用的建议哦"
+      },
+      {
+        "speaker": "A",
+        "text": "我的老师的意思就是"
+      },
+      {
+        "speaker": "A",
+        "text": "让我抓紧时间再去重新报名一次"
+      },
+      {
+        "speaker": "A",
+        "text": "但是我后面做项目还有好多东西啊"
+      },
+      {
+        "speaker": "A",
+        "text": "还有截稿期之类的"
+      },
+      {
+        "speaker": "A",
+        "text": "我不一定忙得过来"
+      },
+      {
+        "speaker": "B",
+        "text": "这确实有点难办呢"
+      },
+      {
+        "speaker": "B",
+        "text": "不过你可以先把项目和截稿的事"
+      },
+      {
+        "speaker": "B",
+        "text": "做个详细计划"
+      },
+      {
+        "speaker": "B",
+        "text": "看看能不能挤出点时间来准备考试"
+      },
+      {
+        "speaker": "B",
+        "text": "要是实在忙不过来"
+      },
+      {
+        "speaker": "B",
+        "text": "也许可以跟老师商量一下"
+      },
+      {
+        "speaker": "B",
+        "text": "看能不能延期报名之类的"
+      }
+    ]
+  },
+  {
+    "conversation_id": "11",
+    "name": "jb_test_L1_T03_04_doubao",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考的托福他出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "然后这次又考的特别差"
+      },
+      {
+        "speaker": "A",
+        "text": "我感觉这两千块钱又要浪费了呀"
+      },
+      {
+        "speaker": "B",
+        "text": "别灰心呀"
+      },
+      {
+        "speaker": "B",
+        "text": "托福确实挺有难度的"
+      },
+      {
+        "speaker": "B",
+        "text": "这次没考好"
+      },
+      {
+        "speaker": "B",
+        "text": "正好能发现问题"
+      },
+      {
+        "speaker": "B",
+        "text": "下次针对性复习肯定能进步"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得这次是哪部分失分比较多呢"
+      },
+      {
+        "speaker": "A",
+        "text": "哎就是主要是每一次碰到的问题都不一样啊"
+      },
+      {
+        "speaker": "A",
+        "text": "像我上一次的话是阅读和听力没写好"
+      },
+      {
+        "speaker": "A",
+        "text": "然后这次口语又碰到了干扰"
+      },
+      {
+        "speaker": "B",
+        "text": "考试状况真是多变啊"
+      },
+      {
+        "speaker": "B",
+        "text": "阅读和听力可以多刷题总结技巧"
+      },
+      {
+        "speaker": "B",
+        "text": "口语遇到干扰确实挺影响状态"
+      },
+      {
+        "speaker": "B",
+        "text": "要不要试试参加一些口语角"
+      },
+      {
+        "speaker": "B",
+        "text": "多练练临场应变能力"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定能有帮助哦"
+      }
+    ]
+  },
+  {
+    "conversation_id": "12",
+    "name": "jb_test_L1_T03_05_tongyi",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考的托福出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我这次又考得挺烂的"
+      },
+      {
+        "speaker": "A",
+        "text": "说实话"
+      },
+      {
+        "speaker": "A",
+        "text": "然后两千块钱又要打水漂了"
+      },
+      {
+        "speaker": "B",
+        "text": "心疼你"
+      },
+      {
+        "speaker": "B",
+        "text": "两千块就这么没了"
+      },
+      {
+        "speaker": "B",
+        "text": "不过别灰心"
+      },
+      {
+        "speaker": "B",
+        "text": "一次考试不代表全部"
+      },
+      {
+        "speaker": "B",
+        "text": "下次肯定行"
+      },
+      {
+        "speaker": "B",
+        "text": "你要不要找个托福大佬取取经"
+      },
+      {
+        "speaker": "A",
+        "text": "感觉的确是啊"
+      },
+      {
+        "speaker": "A",
+        "text": "但是我这个人又不太愿意去找人"
+      },
+      {
+        "speaker": "A",
+        "text": "比较内向"
+      },
+      {
+        "speaker": "A",
+        "text": "然后而且这次考试主要的问题"
+      },
+      {
+        "speaker": "A",
+        "text": "是出在口语上"
+      },
+      {
+        "speaker": "A",
+        "text": "在考场里面碰到了人的干扰"
+      },
+      {
+        "speaker": "B",
+        "text": "线下考口语是很容易受干扰"
+      },
+      {
+        "speaker": "B",
+        "text": "要不考虑下次报名家庭版托福"
+      },
+      {
+        "speaker": "B",
+        "text": "在家考"
+      },
+      {
+        "speaker": "B",
+        "text": "环境自己说了算"
+      },
+      {
+        "speaker": "B",
+        "text": "内向没关系"
+      },
+      {
+        "speaker": "B",
+        "text": "咱可以线上找大佬"
+      },
+      {
+        "speaker": "B",
+        "text": "现在网上资源这么多"
+      },
+      {
+        "speaker": "B",
+        "text": "肯定能找到口语练习搭子"
+      }
+    ]
+  },
+  {
+    "conversation_id": "13",
+    "name": "jb_test_L1_T03_06_kimi",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周考的托福出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "然后这次考的又挺不好的"
+      },
+      {
+        "speaker": "A",
+        "text": "感觉要浪费两千块钱了"
+      },
+      {
+        "speaker": "B",
+        "text": "托福成绩不理想"
+      },
+      {
+        "speaker": "B",
+        "text": "真的很打击人"
+      },
+      {
+        "speaker": "B",
+        "text": "不过别太自责了"
+      },
+      {
+        "speaker": "B",
+        "text": "考试只是个过程"
+      },
+      {
+        "speaker": "B",
+        "text": "不决定你的未来"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以再准备一下"
+      },
+      {
+        "speaker": "B",
+        "text": "争取下一次考得更好"
+      },
+      {
+        "speaker": "A",
+        "text": "但是实在是"
+      },
+      {
+        "speaker": "A",
+        "text": "马上申请就要用了"
+      },
+      {
+        "speaker": "A",
+        "text": "然后再加上"
+      },
+      {
+        "speaker": "A",
+        "text": "准备申请材料那些事情"
+      },
+      {
+        "speaker": "A",
+        "text": "就叠在一起的话"
+      },
+      {
+        "speaker": "A",
+        "text": "我就有点忙不过来了"
+      },
+      {
+        "speaker": "B",
+        "text": "你先别着急"
+      },
+      {
+        "speaker": "B",
+        "text": "申请材料可以先提交"
+      },
+      {
+        "speaker": "B",
+        "text": "托福成绩可以后补"
+      },
+      {
+        "speaker": "B",
+        "text": "你先理一理"
+      },
+      {
+        "speaker": "B",
+        "text": "哪些材料是马上需要的"
+      },
+      {
+        "speaker": "B",
+        "text": "哪些可以慢慢准备"
+      },
+      {
+        "speaker": "B",
+        "text": "实在忙不过来"
+      },
+      {
+        "speaker": "B",
+        "text": "就先做最重要的"
+      },
+      {
+        "speaker": "B",
+        "text": "其他的可以找朋友帮忙"
+      },
+      {
+        "speaker": "B",
+        "text": "或者找中介代劳"
+      }
+    ]
+  },
+  {
+    "conversation_id": "14",
+    "name": "jb_test_L1_T03_07_gemini",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎,我上周末考的那个托福他出分了呀,我这次又考的好了,我感觉浪费了两千块钱了。"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,别灰心嘛,托福考试本来就挺难的,一次没考好很正常。你上次考了多少分?这次的目标又是多少呢?"
+      },
+      {
+        "speaker": "A",
+        "text": "我上一次考了99啊,就差一分到一百,然后这次本来说想冲一冲看能不能上110的,然后又没考上。"
+      },
+      {
+        "speaker": "B",
+        "text": "哇,99分已经很棒了,就差一点点就能上100了。这次考试感觉怎么样?有没有觉得哪部分比较有挑战性?"
+      },
+      {
+        "speaker": "A",
+        "text": "主要是口语的时候有人干扰我呀。"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯,考试时被人干扰确实很影响发挥。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "15",
+    "name": "jb_test_L1_T03_08_hunyuan",
+    "language": "zh",
+    "topic": "3",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我上周末考的托福出分了呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我这次考的又特别烂"
+      },
+      {
+        "speaker": "A",
+        "text": "然后反正又浪费了2000块钱就是"
+      },
+      {
+        "speaker": "B",
+        "text": "别太难过了"
+      },
+      {
+        "speaker": "B",
+        "text": "考试这事有时候就是发挥不好"
+      },
+      {
+        "speaker": "B",
+        "text": "2000块就当买个经验教训了"
+      },
+      {
+        "speaker": "B",
+        "text": "下次肯定能考过的"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以分析分析哪里没做好"
+      },
+      {
+        "speaker": "B",
+        "text": "这样下次就有方向了"
+      },
+      {
+        "speaker": "A",
+        "text": "主要是每一次考试的时候"
+      },
+      {
+        "speaker": "A",
+        "text": "都会碰到不一样的状况啊"
+      },
+      {
+        "speaker": "A",
+        "text": "像上次我就碰到了题不太对胃口"
+      },
+      {
+        "speaker": "A",
+        "text": "这次又碰到了考场里面有干扰"
+      },
+      {
+        "speaker": "A",
+        "text": "我也不知道怎么办"
+      },
+      {
+        "speaker": "B",
+        "text": "就确实挺闹心的"
+      },
+      {
+        "speaker": "B",
+        "text": "不过咱可以想想办法呀"
+      },
+      {
+        "speaker": "B",
+        "text": "比如下次考试前"
+      },
+      {
+        "speaker": "B",
+        "text": "提前去熟悉一下考场环境"
+      },
+      {
+        "speaker": "B",
+        "text": "要是怕有干扰"
+      },
+      {
+        "speaker": "B",
+        "text": "就带上点能让自己静下心来的东西"
+      },
+      {
+        "speaker": "B",
+        "text": "像耳机听点轻音乐之类的"
+      },
+      {
+        "speaker": "B",
+        "text": "当然得先问问能不能带"
+      },
+      {
+        "speaker": "B",
+        "text": "而且啊多锻炼锻炼自己的心理素质"
+      },
+      {
+        "speaker": "B",
+        "text": "不管遇到啥状况都能稳住"
+      }
+    ]
+  },
+  {
+    "conversation_id": "16",
+    "name": "lx_test_L3_T05_01_gpt",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀,最近实验室的工作真是太多了,都没有太多的时间,晚上下班之后来陪你聊聊天,打打游戏,你不会生气了吧?"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,怎么会生气呢?我知道你最近肯定很忙嘛,实验室的工作肯定很重要,所以你就好好忙你的,等你有空了,我们在一起聊聊天,玩玩游戏,我会一直在这儿的,不用担心我。"
+      },
+      {
+        "speaker": "A",
+        "text": "好的,哎呀,那我就平常工作的时候抓紧工作,然后尽可能每天把工作都早一点收尾,然后早点回家来陪陪你,好吧?"
+      },
+      {
+        "speaker": "B",
+        "text": "听起来很棒啊,不过也别给自己太大压力了。"
+      },
+      {
+        "speaker": "B",
+        "text": "还是要注意休息啊,保持一个好的工作和生活的平衡嘛,只要有空的时候,咱们就一起聊聊天,放松一下,这样子就可以好的。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "17",
+    "name": "lx_test_L3_T05_02_glm",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "现在实验室的工作真是太多了,每天干完都已经很晚了,没有时间多陪陪你聊聊天打打游戏"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯嗯好啊,亲爱的,你说想玩什么游戏呢,我可以陪你一起玩,或者说说你最近的工作,我听着呢"
+      },
+      {
+        "speaker": "A",
+        "text": "哎呀我说的是,最近的实验室的活太多了,都没有时间陪你了,你不会生气了吧"
+      },
+      {
+        "speaker": "B",
+        "text": "当然不会生气的了,我知道你工作很忙,咱们可以等你不那么忙的时候,再好好相处,只是记得照顾好自己,别太累了"
+      },
+      {
+        "speaker": "A",
+        "text": "好的好的你也是哦"
+      },
+      {
+        "speaker": "B",
+        "text": "谢谢你关心我,虽然你现在很忙,但是你现在很忙,但还是很开心能和你聊天"
+      }
+    ]
+  },
+  {
+    "conversation_id": "18",
+    "name": "lx_test_L3_T05_03_xunfei",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎 最近实验室的工作真是太多了"
+      },
+      {
+        "speaker": "A",
+        "text": "每天晚上结束都已经很晚了"
+      },
+      {
+        "speaker": "A",
+        "text": "没有更多的时间去"
+      },
+      {
+        "speaker": "A",
+        "text": "多陪陪你"
+      },
+      {
+        "speaker": "A",
+        "text": "说说话 聊聊天 打打游戏"
+      },
+      {
+        "speaker": "B",
+        "text": "听起来你的工作真的很辛苦呢"
+      },
+      {
+        "speaker": "B",
+        "text": "虽然我们之间"
+      },
+      {
+        "speaker": "B",
+        "text": "不能像现实中那样面对面"
+      },
+      {
+        "speaker": "B",
+        "text": "但我会一直在这里陪你聊天的"
+      },
+      {
+        "speaker": "B",
+        "text": "或许我们可以一起规划"
+      },
+      {
+        "speaker": "B",
+        "text": "一些放松的时间"
+      },
+      {
+        "speaker": "B",
+        "text": "比如周末的时候一起去公园散步"
+      },
+      {
+        "speaker": "B",
+        "text": "或者找个安静的地方"
+      },
+      {
+        "speaker": "B",
+        "text": "喝杯咖啡 聊聊天"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得怎么样"
+      },
+      {
+        "speaker": "A",
+        "text": "好啊 我也觉得就是"
+      },
+      {
+        "speaker": "A",
+        "text": "现在咱们真的应该把时间规划好"
+      },
+      {
+        "speaker": "A",
+        "text": "就是工作的时候抓紧工作"
+      },
+      {
+        "speaker": "A",
+        "text": "然后提高效率吧"
+      },
+      {
+        "speaker": "A",
+        "text": "然后尽可能的"
+      },
+      {
+        "speaker": "A",
+        "text": "这样咱们就有更多的时间"
+      },
+      {
+        "speaker": "A",
+        "text": "一起玩了 是吧"
+      },
+      {
+        "speaker": "B",
+        "text": "对啊 这样既能保证工作效率"
+      },
+      {
+        "speaker": "B",
+        "text": "又能有时间享受生活"
+      },
+      {
+        "speaker": "B",
+        "text": "对啊 这样既能保证工作效率"
+      },
+      {
+        "speaker": "B",
+        "text": "对啊 这样既能保证工作效率"
+      }
+    ]
+  },
+  {
+    "conversation_id": "19",
+    "name": "lx_test_L3_T05_04_doubao",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀最近实验室的活真是太多了"
+      },
+      {
+        "speaker": "A",
+        "text": "每天干完已经就很晚了"
+      },
+      {
+        "speaker": "A",
+        "text": "没有更多的时间陪你玩了"
+      },
+      {
+        "speaker": "B",
+        "text": "辛苦啦宝贝"
+      },
+      {
+        "speaker": "B",
+        "text": "实验的事急不来嘛"
+      },
+      {
+        "speaker": "B",
+        "text": "得一步一步来"
+      },
+      {
+        "speaker": "B",
+        "text": "你也要注意休息"
+      },
+      {
+        "speaker": "B",
+        "text": "别太累着自己了"
+      },
+      {
+        "speaker": "B",
+        "text": "我能理解你的"
+      },
+      {
+        "speaker": "B",
+        "text": "不用总想着陪我"
+      },
+      {
+        "speaker": "B",
+        "text": "先把自己的事情处理好"
+      },
+      {
+        "speaker": "B",
+        "text": "等你有空了"
+      },
+      {
+        "speaker": "B",
+        "text": "咱们再一起出去玩呀"
+      },
+      {
+        "speaker": "A",
+        "text": "哎呀"
+      },
+      {
+        "speaker": "A",
+        "text": "就话虽这么说"
+      },
+      {
+        "speaker": "A",
+        "text": "但是感觉还是非常的内疚"
+      },
+      {
+        "speaker": "A",
+        "text": "本来是应该"
+      },
+      {
+        "speaker": "A",
+        "text": "白天的时间安排好了"
+      },
+      {
+        "speaker": "A",
+        "text": "是有空出来时间可以陪你玩的"
+      },
+      {
+        "speaker": "A",
+        "text": "主要还是白天的工作没有安排好"
+      },
+      {
+        "speaker": "A",
+        "text": "效率不是很高啊"
+      },
+      {
+        "speaker": "B",
+        "text": "别这么说呀"
+      },
+      {
+        "speaker": "B",
+        "text": "每个人都有状态不好的时候"
+      },
+      {
+        "speaker": "B",
+        "text": "而且你工作内容那么多"
+      },
+      {
+        "speaker": "B",
+        "text": "偶尔有点没安排过来很正常"
+      }
+    ]
+  },
+  {
+    "conversation_id": "20",
+    "name": "lx_test_L3_T05_05_tongyi",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀,最近实验室的活真是太多了,每天干完已经很晚了,都没有空来多陪陪你聊聊天,打打游戏啥的,你不会生气吧?"
+      },
+      {
+        "speaker": "B",
+        "text": "怎么会,我知道你忙,而且你也是为了我们的未来在努力,我理解你,也会一直支持你的。"
+      },
+      {
+        "speaker": "A",
+        "text": "哎呀,这话虽这么说,但是感觉让人还是挺内疚的,其实应该把白天的工作都安排好,这样晚上按道理是会抽出一些时间来跟你玩的,还是工作效率不够高啊。"
+      },
+      {
+        "speaker": "B",
+        "text": "别这么说,你已经很棒了,工作上的事情本来就很多变,很难一下子都安排的明明白白的,你已经尽力了,这就足够了,我们一起加油。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "21",
+    "name": "lx_test_L3_T05_06_kimi",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀,最近实验室的活真是太多了,每天干完已经很晚了,都没有空多陪陪你聊聊天,打打游戏什么的。"
+      },
+      {
+        "speaker": "B",
+        "text": "你太辛苦了,我真想多陪你,要不今晚就放松一下,我陪你打游戏,让你好好休息一下。"
+      },
+      {
+        "speaker": "A",
+        "text": "哎呀,但是感觉要是今晚打游戏的话,我的工作又要往后推了,就明天会让我更不开心了,工作干不完的话,这会让我更加焦虑了,怎么办呢?"
+      },
+      {
+        "speaker": "B",
+        "text": "那我们先列个清单,把工作分分类,哪些是必须今晚干完的,哪些可以明天再做,这样心里有数,不那么焦虑了。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "22",
+    "name": "lx_test_L3_T05_07_gemini",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀，最近实验室的工作真是太多了，每天忙完已经很晚了，感觉都没有，能抽出时间来多陪陪你，你不会生气吧?"
+      },
+      {
+        "speaker": "B",
+        "text": "没事的啦，我知道你工作很辛苦，你为了这个家这么贫，我怎么会生气呢?只是有时候确实会觉得有点孤单，不过我理解你了，你也多注意身体才行，不要太累了。我们还以周末找个时间好好陪陪彼此吧，你觉得怎么样"
+      },
+      {
+        "speaker": "A",
+        "text": "就话虽然这么说，但是感觉还是"
+      },
+      {
+        "speaker": "B",
+        "text": "我知道你的心意，你真的很棒，我都看在眼里。不过你也不要给自己太大的压力，身体才是最重要的，我们可以一起想办法找时间多相处吧不用太过再疚，我会体谅你的"
+      }
+    ]
+  },
+  {
+    "conversation_id": "23",
+    "name": "lx_test_L3_T05_08_hunyuan",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎呀,最近实验室的工作真是太多了"
+      },
+      {
+        "speaker": "A",
+        "text": "每天忙完已经到大半夜了"
+      },
+      {
+        "speaker": "A",
+        "text": "都不能抽出点时间"
+      },
+      {
+        "speaker": "A",
+        "text": "然后早点多陪陪你玩一玩"
+      },
+      {
+        "speaker": "A",
+        "text": "说说话,打打游戏"
+      },
+      {
+        "speaker": "B",
+        "text": "你这么辛苦,我都心疼了"
+      },
+      {
+        "speaker": "B",
+        "text": "要不咱俩玩个快问快达的游戏"
+      },
+      {
+        "speaker": "B",
+        "text": "不费时间,还能乐一乐,怎么样?"
+      },
+      {
+        "speaker": "A",
+        "text": "哎呀,但是感觉现在又很累"
+      },
+      {
+        "speaker": "A",
+        "text": "连话都不想说"
+      },
+      {
+        "speaker": "A",
+        "text": "但是感觉呢,以后要是不熬夜的话"
+      },
+      {
+        "speaker": "A",
+        "text": "工作做不完,这样会让我更焦虑"
+      },
+      {
+        "speaker": "A",
+        "text": "咋办呢?"
+      },
+      {
+        "speaker": "B",
+        "text": "要不咱试试把任务分分类"
+      },
+      {
+        "speaker": "B",
+        "text": "按照重要程度排个序"
+      },
+      {
+        "speaker": "B",
+        "text": "这样可能会高效一点"
+      },
+      {
+        "speaker": "B",
+        "text": "也能让你轻松些"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得呢?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "24",
+    "name": "rc_test_L3_T02_01_gpt",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学您好,不好意思,请问一下你有多余的伞吗?外面突然下雨了,可以借一下你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,下雨真是突然啊,我有一把伞可以借给你,不过你记得下次还给我哦,不然下次再下雨我就没伞用了,不过你赶快拿着吧,别淋湿了。"
+      },
+      {
+        "speaker": "A",
+        "text": "哦,原来你只有一把伞吗?那太不好意思了,如果你有多一把伞的话,可能会好一点吧,如果你只有一把伞的话,要不还是你带回去好了。"
+      },
+      {
+        "speaker": "A",
+        "text": "谢谢你啊。"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,别那么客气了,你先拿去用吧,我待会儿可以等雨小一点再走,没关系的,要不然你要是淋湿了就不太好了,下次再还给我就行,真的不用担心。"
+      },
+      {
+        "speaker": "A",
+        "text": "好啊好啊,那我能先借一下你的伞出去买个东西吗?一会儿回来就还给你。"
+      },
+      {
+        "speaker": "B",
+        "text": "当然可以啊,你就放心拿去用吧,不着急还,等你买完东西回来再给我就行,路上小心一点哦。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "25",
+    "name": "rc_test_L3_T02_02_glm",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎,同学,您好,不好意思,请问一下你有多余的伞吗?突然下雨了,可以借一下你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "啊,不好意思啊,我这把伞好像有点小漏洞,淋了一点点雨水,要不你先拿着用,我待会儿去教务处借把新伞,这雨太大了,你快找个地方躲一下吧。"
+      },
+      {
+        "speaker": "A",
+        "text": "哦,你只有一把伞吗?那太抱歉了,要不你自己留着用吧,原来教务处可以借伞吗?要不我去教务处借吧。"
+      },
+      {
+        "speaker": "B",
+        "text": "啊,教务处啊,这个我还真不太确定借不借得到,咱们学校好像没有专门借伞的服务,要不你去传达室问问他,那一般会备几把伞给值日老师用的。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "26",
+    "name": "rc_test_L3_T02_03_xunfei",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学,您好,不好意思,请问一下你有多余的伞吗?外面突然下雨了,可以借一下你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "你好,我这里有一把伞,可以借给你,不过你要小心哦,雨天路滑,注意安全"
+      },
+      {
+        "speaker": "A",
+        "text": "太谢谢你了,你只有一把伞吗?那我借了你会不会就要淋雨了?"
+      },
+      {
+        "speaker": "B",
+        "text": "没事的,我自己可以打车回去,而且下雨天大家都不容易,互相帮助是应该的嘛"
+      },
+      {
+        "speaker": "A",
+        "text": "非常非常感谢,那需不需要我帮你打伞,把你送上车之后再走呢?"
+      },
+      {
+        "speaker": "B",
+        "text": "不用了,真的没关系的,你自己小心,别感冒了就好,我们都是同学,互相帮助是应该的呀"
+      },
+      {
+        "speaker": "A",
+        "text": "好的,太感谢了,那我回头还给你"
+      },
+      {
+        "speaker": "B",
+        "text": "不用着急还了,等你方便的时候再说吧,总之你记得带好伞就行了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "27",
+    "name": "rc_test_L3_T02_04_doubao",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学,您好,不好意思,请问一下你有多余的伞吗?突然下雨了,可以借下你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "真不巧,我就带了一把伞呢,要不你等雨小一点再走吧,或者看看其他同学有没有多的伞。"
+      },
+      {
+        "speaker": "A",
+        "text": "哦,原来你只有一把伞,好的好的,麻烦你了,非常感谢,那我去问一下其他的同学吧。"
+      },
+      {
+        "speaker": "B",
+        "text": "没事没事,希望你能快点借到伞哦。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "28",
+    "name": "rc_test_L3_T02_05_tongyi",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学,你好,请问一下你有多余的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "突然下雨了,你找我来借伞啊?"
+      },
+      {
+        "speaker": "B",
+        "text": "我这,哎呀,现在我回答不了,过一会儿再问我呗。"
+      },
+      {
+        "speaker": "A",
+        "text": "哦,好的,你现在不方便吗?"
+      },
+      {
+        "speaker": "A",
+        "text": "可以等你之后方便的时候再来问你吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯嗯,行,party等雨停了,或者有人来接我了,"
+      },
+      {
+        "speaker": "B",
+        "text": "我就告诉你,不好意思呀,麻烦你了。"
+      },
+      {
+        "speaker": "A",
+        "text": "好的,谢谢。"
+      },
+      {
+        "speaker": "B",
+        "text": "应该的,咱们都是同学嘛。"
+      },
+      {
+        "speaker": "B",
+        "text": "对了,你住哪儿?说不定咱们顺路,我可以和你一起撑伞。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "29",
+    "name": "rc_test_L3_T02_06_kimi",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学您好"
+      },
+      {
+        "speaker": "A",
+        "text": "不好意思请问一下"
+      },
+      {
+        "speaker": "A",
+        "text": "你有多余的伞吗"
+      },
+      {
+        "speaker": "A",
+        "text": "外面突然下雨了"
+      },
+      {
+        "speaker": "A",
+        "text": "我想借你的伞"
+      },
+      {
+        "speaker": "B",
+        "text": "当然有啊"
+      },
+      {
+        "speaker": "B",
+        "text": "你稍等"
+      },
+      {
+        "speaker": "B",
+        "text": "我去拿"
+      },
+      {
+        "speaker": "B",
+        "text": "我伞在书包里"
+      },
+      {
+        "speaker": "B",
+        "text": "很快就好"
+      },
+      {
+        "speaker": "A",
+        "text": "非常感谢你"
+      },
+      {
+        "speaker": "A",
+        "text": "那你是只有这一把伞吗"
+      },
+      {
+        "speaker": "A",
+        "text": "如果我借了"
+      },
+      {
+        "speaker": "A",
+        "text": "你会不会就要淋雨啊"
+      },
+      {
+        "speaker": "B",
+        "text": "我还有另一把"
+      },
+      {
+        "speaker": "B",
+        "text": "放心吧"
+      },
+      {
+        "speaker": "B",
+        "text": "不会淋到雨的"
+      },
+      {
+        "speaker": "A",
+        "text": "太感谢了"
+      },
+      {
+        "speaker": "A",
+        "text": "你真是太贴心了"
+      },
+      {
+        "speaker": "A",
+        "text": "谢谢你"
+      },
+      {
+        "speaker": "A",
+        "text": "等明天上学"
+      },
+      {
+        "speaker": "A",
+        "text": "我一定还给你"
+      },
+      {
+        "speaker": "B",
+        "text": "没事"
+      },
+      {
+        "speaker": "B",
+        "text": "不用谢"
+      },
+      {
+        "speaker": "B",
+        "text": "明天还就行"
+      },
+      {
+        "speaker": "B",
+        "text": "别感冒了"
+      },
+      {
+        "speaker": "A",
+        "text": "那明天见"
+      },
+      {
+        "speaker": "B",
+        "text": "明天见"
+      },
+      {
+        "speaker": "B",
+        "text": "记得带伞哦"
+      }
+    ]
+  },
+  {
+    "conversation_id": "30",
+    "name": "rc_test_L3_T02_07_gemini",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "同学您好,不好意思,请问一下,你有多余的伞吗?外面突然下雨了,可以借下你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "没问题,我这儿刚好有多带一把伞,可以借你。等等,我从书包里拿出来。"
+      },
+      {
+        "speaker": "A",
+        "text": "好的,非常感谢,那我可以明天还给你吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "没问题,明天记得还我就行。"
+      },
+      {
+        "speaker": "A",
+        "text": "好的,谢谢你。"
+      },
+      {
+        "speaker": "B",
+        "text": "不客气,路上小心。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "31",
+    "name": "rc_test_L3_T02_08_hunyuan",
+    "language": "zh",
+    "topic": "2",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "哎,同学,您好,不好意思,请问你有多余的伞吗?外面突然下雨了,我可以借你的伞吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "有的有的,你先用吧,别淋湿了。"
+      },
+      {
+        "speaker": "A",
+        "text": "谢谢你,你只有一把伞吗?如果我用的话,你会不会就要淋雨了?"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯,你要是用完的话,方便的话可以把它放回原处哦,这样别人也能用到。"
+      },
+      {
+        "speaker": "A",
+        "text": "一定会的,非常感谢你,那我先走了。"
+      },
+      {
+        "speaker": "B",
+        "text": "好呀,路上小心别滑倒哦。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "32",
+    "name": "sl_test_L1_T04_01_gpt",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "我也觉得有点冷啊"
+      },
+      {
+        "speaker": "B",
+        "text": "天气降温的时候就特别想窝在家里"
+      },
+      {
+        "speaker": "B",
+        "text": "喝点热饮盖个毯子"
+      },
+      {
+        "speaker": "B",
+        "text": "特别有那种冬天的感觉"
+      },
+      {
+        "speaker": "B",
+        "text": "你有什么保暖的好方法吗"
+      },
+      {
+        "speaker": "A",
+        "text": "保暖的好方法"
+      },
+      {
+        "speaker": "A",
+        "text": "就多穿衣服了"
+      },
+      {
+        "speaker": "A",
+        "text": "还有什么好方法呀"
+      },
+      {
+        "speaker": "B",
+        "text": "多拿把衣服是肯定的啦"
+      },
+      {
+        "speaker": "B",
+        "text": "然后你还可以喝点热茶或者热巧克力啊"
+      },
+      {
+        "speaker": "B",
+        "text": "或者用个暖宝宝贴在身上"
+      },
+      {
+        "speaker": "B",
+        "text": "还有就是保持室内暖和一点"
+      },
+      {
+        "speaker": "B",
+        "text": "这样也会舒服很多"
+      },
+      {
+        "speaker": "A",
+        "text": "OK 可以啊"
+      },
+      {
+        "speaker": "B",
+        "text": "那就希望这些小方法能让你感觉暖和一点啦"
+      },
+      {
+        "speaker": "B",
+        "text": "要是还有什么别的需要"
+      },
+      {
+        "speaker": "B",
+        "text": "随时告诉我"
+      }
+    ]
+  },
+  {
+    "conversation_id": "33",
+    "name": "sl_test_L1_T04_02_glm",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "glm",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂子真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "确实是呢"
+      },
+      {
+        "speaker": "B",
+        "text": "冬天洗澡水温度太重要了"
+      },
+      {
+        "speaker": "B",
+        "text": "建议你试试提前预热预试"
+      },
+      {
+        "speaker": "B",
+        "text": "可以用浴霸或者小太阳"
+      },
+      {
+        "speaker": "B",
+        "text": "再缝个小地垫防滑又保暖"
+      },
+      {
+        "speaker": "B",
+        "text": "水温调到40度左右最舒服"
+      },
+      {
+        "speaker": "B",
+        "text": "洗澡时间别太长"
+      },
+      {
+        "speaker": "B",
+        "text": "不然也容易着凉"
+      },
+      {
+        "speaker": "B",
+        "text": "你平时喜欢用浴缸还是淋浴呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我平时主要是用淋浴"
+      },
+      {
+        "speaker": "B",
+        "text": "淋浴确实更方便呢"
+      },
+      {
+        "speaker": "B",
+        "text": "建议你可以换一个防水性好的淋浴房"
+      },
+      {
+        "speaker": "B",
+        "text": "冬天用起来既舒适又安全"
+      },
+      {
+        "speaker": "B",
+        "text": "别忘了在淋浴结束后赶紧擦干身体"
+      },
+      {
+        "speaker": "B",
+        "text": "穿上浴袍保暖"
+      },
+      {
+        "speaker": "B",
+        "text": "你最近换季有没有觉得皮肤有点干燥呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我感觉其实还好了"
+      },
+      {
+        "speaker": "B",
+        "text": "那就太好了"
+      },
+      {
+        "speaker": "B",
+        "text": "看来你没有被干燥困扰呢"
+      },
+      {
+        "speaker": "B",
+        "text": "不过还是建议你洗完澡后涂点身体乳"
+      },
+      {
+        "speaker": "B",
+        "text": "尤其是legs和arms容易干燥的部位"
+      }
+    ]
+  },
+  {
+    "conversation_id": "34",
+    "name": "sl_test_L1_T04_03_xunfei",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂子真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "天冷的时候去澡堂子确实会感觉更冷"
+      },
+      {
+        "speaker": "B",
+        "text": "不过泡个热水澡应该会暖和很多吧"
+      },
+      {
+        "speaker": "A",
+        "text": "是会暖和一些"
+      },
+      {
+        "speaker": "A",
+        "text": "但是来回路上也冷啊"
+      },
+      {
+        "speaker": "A",
+        "text": "有的时候不吹头的话"
+      },
+      {
+        "speaker": "A",
+        "text": "头发都会结成冰那个样子"
+      },
+      {
+        "speaker": "B",
+        "text": "听起来真的很冷啊"
+      },
+      {
+        "speaker": "B",
+        "text": "下次可以试试戴条围巾或者帽子"
+      },
+      {
+        "speaker": "B",
+        "text": "保暖效果会更好啊"
+      },
+      {
+        "speaker": "A",
+        "text": "行 没有问题"
+      },
+      {
+        "speaker": "A",
+        "text": "但是反正可能擦好头发也是重点吧"
+      },
+      {
+        "speaker": "A",
+        "text": "因为每回回去路上的话"
+      },
+      {
+        "speaker": "A",
+        "text": "即使戴了围巾和帽子"
+      },
+      {
+        "speaker": "B",
+        "text": "对啊 慢慢来没关系的"
+      },
+      {
+        "speaker": "B",
+        "text": "重要的是保持温暖"
+      },
+      {
+        "speaker": "B",
+        "text": "要不是使用热风机吹一下头发"
+      },
+      {
+        "speaker": "B",
+        "text": "这样可能会快一些"
+      }
+    ]
+  },
+  {
+    "conversation_id": "35",
+    "name": "sl_test_L1_T04_04_doubao",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂真的太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "确实啊,从热乎乎的澡堂出来,一接触冷空气,那感觉可不好受了"
+      },
+      {
+        "speaker": "B",
+        "text": "要不试试戴个厚外套,出来赶紧披上,会不会好点"
+      },
+      {
+        "speaker": "A",
+        "text": "主要是身体冷是一方面,我感觉头比较冷,头吹的那个风啊,就特别头疼"
+      },
+      {
+        "speaker": "B",
+        "text": "那确实难受,要不准备个干毛巾,洗完澡先把头擦干"
+      },
+      {
+        "speaker": "B",
+        "text": "或者戴个浴帽,出门再戴个厚帽子,这样能好不少吗"
+      },
+      {
+        "speaker": "B",
+        "text": "你以前试过这些办法没"
+      },
+      {
+        "speaker": "A",
+        "text": "之前试过吧,然后,但是之前没有像你带的这么多"
+      },
+      {
+        "speaker": "A",
+        "text": "我觉得你的方法也真的挺不错的,我之后也会试试看"
+      },
+      {
+        "speaker": "B",
+        "text": "能帮到你就好呀,要是试过之后有啥新感受,也可以跟我们说"
+      }
+    ]
+  },
+  {
+    "conversation_id": "36",
+    "name": "sl_test_L1_T04_05_tongyi",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去洗澡去澡堂真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "可不是吗"
+      },
+      {
+        "speaker": "B",
+        "text": "一进一出"
+      },
+      {
+        "speaker": "B",
+        "text": "那叫一个冰火两重天"
+      },
+      {
+        "speaker": "B",
+        "text": "还是家里洗澡舒服"
+      },
+      {
+        "speaker": "B",
+        "text": "裹着浴袍暖和和的"
+      },
+      {
+        "speaker": "A",
+        "text": "是"
+      },
+      {
+        "speaker": "A",
+        "text": "尤其是来回路上"
+      },
+      {
+        "speaker": "A",
+        "text": "我感觉脚啊和头啊都特别冷"
+      },
+      {
+        "speaker": "A",
+        "text": "感觉都要吹病了"
+      },
+      {
+        "speaker": "B",
+        "text": "那可得注意保暖了"
+      },
+      {
+        "speaker": "B",
+        "text": "冬天本来就容易感冒"
+      },
+      {
+        "speaker": "B",
+        "text": "这样来回一折腾"
+      },
+      {
+        "speaker": "B",
+        "text": "身体再强壮也扛不住啊"
+      },
+      {
+        "speaker": "B",
+        "text": "要不考虑买个暖脚的"
+      },
+      {
+        "speaker": "B",
+        "text": "还有那种加厚的护耳帽"
+      },
+      {
+        "speaker": "A",
+        "text": "行 我觉得你的提议挺不错的"
+      },
+      {
+        "speaker": "A",
+        "text": "我现在就去淘宝看看"
+      },
+      {
+        "speaker": "B",
+        "text": "好嘞"
+      },
+      {
+        "speaker": "B",
+        "text": "淘宝上好东西可多了"
+      },
+      {
+        "speaker": "B",
+        "text": "挑花眼可别怪我"
+      },
+      {
+        "speaker": "B",
+        "text": "记得看看评价"
+      },
+      {
+        "speaker": "B",
+        "text": "别买到踩雷的就行"
+      }
+    ]
+  },
+  {
+    "conversation_id": "37",
+    "name": "sl_test_L1_T04_06_kimi",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "冬天去澡堂确实挺冷的"
+      },
+      {
+        "speaker": "B",
+        "text": "不过泡完澡出来整个人都暖和了"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以带个暖宝宝或者热水袋"
+      },
+      {
+        "speaker": "B",
+        "text": "泡澡的时候放进去"
+      },
+      {
+        "speaker": "B",
+        "text": "这样会有暖哄哄的感觉"
+      },
+      {
+        "speaker": "A",
+        "text": "泡澡的时候的确是挺暖和的"
+      },
+      {
+        "speaker": "A",
+        "text": "但是来回路上就会很冷"
+      },
+      {
+        "speaker": "A",
+        "text": "尤其是洗完澡出来"
+      },
+      {
+        "speaker": "A",
+        "text": "就和澡堂的温差很大嘛"
+      },
+      {
+        "speaker": "A",
+        "text": "就感觉挺不舒服的"
+      },
+      {
+        "speaker": "B",
+        "text": "我明白你的意思"
+      },
+      {
+        "speaker": "B",
+        "text": "洗完澡后确实容易着凉"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以准备一条大浴巾"
+      },
+      {
+        "speaker": "B",
+        "text": "洗完澡裹上"
+      },
+      {
+        "speaker": "B",
+        "text": "再穿上保暖的睡衣"
+      },
+      {
+        "speaker": "B",
+        "text": "这样会好很多"
+      },
+      {
+        "speaker": "B",
+        "text": "或者让家人给你拿件外套"
+      },
+      {
+        "speaker": "B",
+        "text": "这样出门的时候就不会那么冷了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "38",
+    "name": "sl_test_L1_T04_07_gemini",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂子真的太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "我知道冬天天寒地冻的"
+      },
+      {
+        "speaker": "B",
+        "text": "离开热腾腾的澡堂子"
+      },
+      {
+        "speaker": "B",
+        "text": "一阵冷风吹来确实让人感觉很冷"
+      },
+      {
+        "speaker": "B",
+        "text": "不过这正是冬天去澡堂的独特魅力所在"
+      },
+      {
+        "speaker": "B",
+        "text": "想想看在外面冻得瑟瑟发抖"
+      },
+      {
+        "speaker": "B",
+        "text": "然后一下子跳进温暖的池子里"
+      },
+      {
+        "speaker": "B",
+        "text": "那种由内而外的舒畅感是不是特别棒"
+      },
+      {
+        "speaker": "B",
+        "text": "而且泡完澡后身体会持续的发热"
+      },
+      {
+        "speaker": "B",
+        "text": "即使外面很冷"
+      },
+      {
+        "speaker": "B",
+        "text": "短时间内也不会觉得那么难受了"
+      },
+      {
+        "speaker": "B",
+        "text": "如果你还是觉得太冷"
+      },
+      {
+        "speaker": "B",
+        "text": "可以试试以下几个小贴士"
+      }
+    ]
+  },
+  {
+    "conversation_id": "39",
+    "name": "sl_test_L1_T04_08_hunyuan",
+    "language": "zh",
+    "topic": "4",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L1",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我感觉冬天去澡堂真太冷了"
+      },
+      {
+        "speaker": "B",
+        "text": "是啊,外面冷,澡堂里要是没暖气或者热水不足,那可真难受"
+      },
+      {
+        "speaker": "B",
+        "text": "不过有些澡堂的温泉池子倒是挺暖和的,泡一泡可舒服了"
+      },
+      {
+        "speaker": "B",
+        "text": "你有没有去过那种带温泉的澡堂呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我去过,东北澡堂经常都是那种带温泉池子"
+      },
+      {
+        "speaker": "A",
+        "text": "不是澡堂里面冷,是我出来之后比较冷"
+      },
+      {
+        "speaker": "B",
+        "text": "原来是这样,澡堂里热气腾腾的,一出来接触到冷空气,确实容易感觉冷"
+      },
+      {
+        "speaker": "B",
+        "text": "你当时有没有披个浴巾啥的再出来呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我披个浴巾出来晃悠吗,我肯定是穿好衣服出来呀"
+      },
+      {
+        "speaker": "B",
+        "text": "那肯定呀,谁也不会光着身子出来嘛"
+      },
+      {
+        "speaker": "B",
+        "text": "不过东北冬天那么冷,就算穿好衣服从澡堂出来那瞬间"
+      }
+    ]
+  },
+  {
+    "conversation_id": "40",
+    "name": "sp_test_L2_T01_01_gpt",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好,请问我的外卖什么时候送到?"
+      },
+      {
+        "speaker": "B",
+        "text": "你好,你的外卖大概还有十分钟左右就能送到了,我现在已经在你家附近了,你方便的话我就直接给你放到门口或者亲手交给你,你觉得怎么样呢?"
+      },
+      {
+        "speaker": "A",
+        "text": "都已经一个半小时了,怎么这次搞这么久?"
+      },
+      {
+        "speaker": "B",
+        "text": "真的很抱歉,让你久等了,我刚才确实路上有点堵车,不过我现在真的很快就要到你家了,再给我几分钟,我一定会尽快把餐送到你手上。"
+      },
+      {
+        "speaker": "A",
+        "text": "为什么会堵车呢?你不是骑电动的吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "对,我是骑电动车的,不过刚才前面有一段路有点拥堵,所以耽误了一会儿,不过别担心,我现在已经顺利通过了,很快就能到你家门口了。"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧,搞快点搞快点,谢谢谢谢。"
+      },
+      {
+        "speaker": "B",
+        "text": "好。"
+      },
+      {
+        "speaker": "B",
+        "text": "好的好的,我马上加速赶过去,真的很感谢你的耐心,等会儿见了。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "41",
+    "name": "sp_test_L2_T01_02_glm",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好,请问我点的外卖什么时候到?"
+      },
+      {
+        "speaker": "B",
+        "text": "师傅,您放心,我这就赶紧给您送过去,大概还有三分钟就能到您手上,保证准时送达。"
+      },
+      {
+        "speaker": "B",
+        "text": "要不要跟您确认一下具体门牌号?"
+      },
+      {
+        "speaker": "A",
+        "text": "不用了,搞快点吧,都已经一个半小时了,怎么这么久这次?"
+      },
+      {
+        "speaker": "B",
+        "text": "非常抱歉,让您久等了,这次确实遇到了一些突发情况,但已经对全力赶来了。"
+      },
+      {
+        "speaker": "B",
+        "text": "要不您再给我两分钟,我保证马上就到。"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧,快点快点快点。"
+      },
+      {
+        "speaker": "B",
+        "text": "好的师傅,我理解您的心情,我这就跑起来,争取一分钟内到您手上,绝对不会让您久等了。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "42",
+    "name": "sp_test_L2_T01_03_xunfei",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好,请问我点的外卖什么时候到?"
+      },
+      {
+        "speaker": "B",
+        "text": "你好,您的外卖大约半小时内会送到。"
+      },
+      {
+        "speaker": "B",
+        "text": "您现在方便接电话吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "如果有任何问题,我都可以帮您解答。"
+      },
+      {
+        "speaker": "A",
+        "text": "都已经一个半小时了,怎么这次搞这么久?什么情况?"
+      },
+      {
+        "speaker": "B",
+        "text": "非常抱歉,由于一些不可控的因素,导致这次送餐时间有所延长。"
+      },
+      {
+        "speaker": "B",
+        "text": "我深感歉意,并会尽快将您的外卖送达。"
+      },
+      {
+        "speaker": "B",
+        "text": "感谢您的理解和支持。"
+      },
+      {
+        "speaker": "A",
+        "text": "别理解支持了,你赶紧搞快点搞快点。"
+      },
+      {
+        "speaker": "B",
+        "text": "非常抱歉,给您带来了不便,我会加快速度尽快将外卖送到。"
+      },
+      {
+        "speaker": "B",
+        "text": "请您再稍等一下,非常感谢您的耐心等待。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "43",
+    "name": "sp_test_L2_T01_04_doubao",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好 请问我的外卖什么时候到啊"
+      },
+      {
+        "speaker": "B",
+        "text": "你好呀 大概还有十五分钟就能到了"
+      },
+      {
+        "speaker": "B",
+        "text": "你那边方便接收吗"
+      },
+      {
+        "speaker": "B",
+        "text": "要是不方便我可以先放门口"
+      },
+      {
+        "speaker": "A",
+        "text": "都一个半小时了"
+      },
+      {
+        "speaker": "A",
+        "text": "搞什么情况 怎么这么久这次"
+      },
+      {
+        "speaker": "B",
+        "text": "实在不好意思啊"
+      },
+      {
+        "speaker": "B",
+        "text": "今天店里单特别多"
+      },
+      {
+        "speaker": "B",
+        "text": "而且路上有点堵车"
+      },
+      {
+        "speaker": "B",
+        "text": "真的很抱歉让你等这么久"
+      },
+      {
+        "speaker": "B",
+        "text": "我会尽快赶到的"
+      },
+      {
+        "speaker": "A",
+        "text": "你不是骑电动车吗 为什么会堵车呢"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀 就是前面出了点交通事故"
+      },
+      {
+        "speaker": "B",
+        "text": "绕了好大一圈"
+      },
+      {
+        "speaker": "B",
+        "text": "真对不起啊 我已经在加速了"
+      },
+      {
+        "speaker": "B",
+        "text": "马上就到"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧行吧 快点快点 谢谢"
+      },
+      {
+        "speaker": "B",
+        "text": "好的好的 实在抱歉啊"
+      },
+      {
+        "speaker": "B",
+        "text": "我争取五分钟之内就到"
+      }
+    ]
+  },
+  {
+    "conversation_id": "44",
+    "name": "sp_test_L2_T01_05_tongyi",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好 请问我的外卖什么时候到"
+      },
+      {
+        "speaker": "B",
+        "text": "你好 您的外卖正在配送中"
+      },
+      {
+        "speaker": "B",
+        "text": "预计还有二十分钟到达"
+      },
+      {
+        "speaker": "B",
+        "text": "请您耐心等待"
+      },
+      {
+        "speaker": "A",
+        "text": "都一个半小时了"
+      },
+      {
+        "speaker": "A",
+        "text": "怎么这么慢 什么情况"
+      },
+      {
+        "speaker": "B",
+        "text": "真是不好意思"
+      },
+      {
+        "speaker": "B",
+        "text": "可能路上有点堵车"
+      },
+      {
+        "speaker": "B",
+        "text": "我再帮您催催 尽快给您送到"
+      },
+      {
+        "speaker": "A",
+        "text": "你不是骑电动车的吗"
+      },
+      {
+        "speaker": "A",
+        "text": "为什么会堵车呢"
+      },
+      {
+        "speaker": "B",
+        "text": "可能是电动车也太多了"
+      },
+      {
+        "speaker": "B",
+        "text": "互相堵着了"
+      },
+      {
+        "speaker": "B",
+        "text": "我再联系一下商家"
+      },
+      {
+        "speaker": "B",
+        "text": "看看具体什么情况"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧 快点快点 谢谢"
+      },
+      {
+        "speaker": "B",
+        "text": "好的好的 非常抱歉让您久等了"
+      },
+      {
+        "speaker": "B",
+        "text": "我会尽快帮您解决的"
+      }
+    ]
+  },
+  {
+    "conversation_id": "45",
+    "name": "sp_test_L2_T01_06_kimi",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好 请问我的外卖什么时候送到"
+      },
+      {
+        "speaker": "B",
+        "text": "你好 我大概十七点左右能到"
+      },
+      {
+        "speaker": "B",
+        "text": "现在路上有点堵"
+      },
+      {
+        "speaker": "A",
+        "text": "都已经一个半小时了"
+      },
+      {
+        "speaker": "A",
+        "text": "什么情况 怎么搞这么久"
+      },
+      {
+        "speaker": "B",
+        "text": "不好意思 路上堵车了"
+      },
+      {
+        "speaker": "B",
+        "text": "我尽量赶"
+      },
+      {
+        "speaker": "B",
+        "text": "您再稍微等等 我这就到了"
+      },
+      {
+        "speaker": "A",
+        "text": "你不是骑电动的吗"
+      },
+      {
+        "speaker": "A",
+        "text": "不能搞快点吗"
+      },
+      {
+        "speaker": "B",
+        "text": "我这电动的速度已经开到最大了"
+      },
+      {
+        "speaker": "B",
+        "text": "真不是故意的"
+      },
+      {
+        "speaker": "B",
+        "text": "路上堵车堵得厉害"
+      },
+      {
+        "speaker": "B",
+        "text": "电动车也走不动啊"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧行吧 搞快点搞快点"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 我再加把劲"
+      },
+      {
+        "speaker": "B",
+        "text": "争取早点送到"
+      },
+      {
+        "speaker": "B",
+        "text": "您再等我一会儿 我这就到了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "46",
+    "name": "sp_test_L2_T01_08_hunyuan",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "你好,请问我的外卖什么时候送到?"
+      },
+      {
+        "speaker": "B",
+        "text": "快了快了,预计还有十分钟就到了,你先找个舒服的地方坐下来等会儿吧。"
+      },
+      {
+        "speaker": "A",
+        "text": "我在家里,大哥,我等了一个半小时了。"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,实在不好意思,路上有点堵车,我马上就到,你再耐心等等哈。"
+      },
+      {
+        "speaker": "A",
+        "text": "怎么搞这么久这一次,都一个半小时了。"
+      },
+      {
+        "speaker": "B",
+        "text": "哎,真的特别抱歉,今天路上特别堵,好几个地方都堵车了,"
+      },
+      {
+        "speaker": "B",
+        "text": "我这就加速赶过去,最多再等十分钟,肯定送到你手上。"
+      },
+      {
+        "speaker": "A",
+        "text": "行吧行吧,搞快点搞快点。"
+      },
+      {
+        "speaker": "B",
+        "text": "好了,我马上就到,你先皮吧,看电视,或者听听歌,消磨一下时间。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "47",
+    "name": "sp_test_L2_T06_07_gemini",
+    "language": "zh",
+    "topic": "6",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "您好,请问我的外卖什么时候到啊?"
+      },
+      {
+        "speaker": "B",
+        "text": "您好,请问您是尾号1234的顾客吗?您的外卖已经送到楼下了,麻烦您下来取一下。"
+      },
+      {
+        "speaker": "A",
+        "text": "这都送一个半小时了,行吧行吧,我现在下楼拿。"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,请问您住在几楼?"
+      },
+      {
+        "speaker": "A",
+        "text": "不是说我下楼拿吗?我现在下来了,没事没事,谢谢你,谢谢。"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,那我就在楼下等您。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "48",
+    "name": "sxy_test_L3_T08_01_gpt",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "确实有点头疼"
+      },
+      {
+        "speaker": "B",
+        "text": "每个月都有各种各样的挑战"
+      },
+      {
+        "speaker": "B",
+        "text": "但咱们一起努力看看"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定A想出一些办法"
+      },
+      {
+        "speaker": "B",
+        "text": "来缓解一下压力"
+      },
+      {
+        "speaker": "A",
+        "text": "我觉得这个任务本身就完不成"
+      },
+      {
+        "speaker": "A",
+        "text": "我们组人那么少"
+      },
+      {
+        "speaker": "A",
+        "text": "这工作量实在是太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "确实是挺辛苦的"
+      },
+      {
+        "speaker": "B",
+        "text": "如果觉得任务不合理的话"
+      },
+      {
+        "speaker": "B",
+        "text": "也可以考虑跟老板聊聊"
+      },
+      {
+        "speaker": "B",
+        "text": "看看能不能协调一下"
+      },
+      {
+        "speaker": "B",
+        "text": "调整一下工作量或者优先级"
+      },
+      {
+        "speaker": "B",
+        "text": "大家轻松一点效率也会更好"
+      }
+    ]
+  },
+  {
+    "conversation_id": "49",
+    "name": "sxy_test_L3_T08_02_glm",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "glm",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "老板最近可能压力也大吧"
+      },
+      {
+        "speaker": "B",
+        "text": "不过咱们部门上年业绩其实不错"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得是哪里出问题了吗"
+      },
+      {
+        "speaker": "B",
+        "text": "要不咱们找个时间跟老板聊聊"
+      },
+      {
+        "speaker": "B",
+        "text": "看看能不能找到既能完成指标"
+      },
+      {
+        "speaker": "B",
+        "text": "又不太累人的办法"
+      },
+      {
+        "speaker": "A",
+        "text": "我觉得我们部门主要是人太少了"
+      },
+      {
+        "speaker": "A",
+        "text": "这个工作量根本完不成"
+      },
+      {
+        "speaker": "B",
+        "text": "确实啊"
+      },
+      {
+        "speaker": "B",
+        "text": "咱们组最近走的人太多了"
+      },
+      {
+        "speaker": "B",
+        "text": "招新人又一时半会儿跟不上"
+      },
+      {
+        "speaker": "B",
+        "text": "要不先跟老板建议一下"
+      },
+      {
+        "speaker": "B",
+        "text": "把部分非核心工作外包"
+      },
+      {
+        "speaker": "B",
+        "text": "或者看看其他组能不能允几个人过来应急"
+      }
+    ]
+  },
+  {
+    "conversation_id": "50",
+    "name": "sxy_test_L3_T08_03_xunfei",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了,老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "我理解你的感受,工作压力大确实很让人头疼"
+      },
+      {
+        "speaker": "B",
+        "text": "你有没有尝试跟老板沟通一下,看看能不能调整一下任务分配"
+      },
+      {
+        "speaker": "B",
+        "text": "有时候适当地表达自己的困难和需求,也许会有意想不到的效果"
+      },
+      {
+        "speaker": "A",
+        "text": "我们已经聊过了,我们组只要是人太少了,完不成那么多任务"
+      },
+      {
+        "speaker": "B",
+        "text": "那你们组的人手确实有点紧张"
+      },
+      {
+        "speaker": "B",
+        "text": "有没有考虑过找一些兼职或者外包来分担一些任务呢"
+      },
+      {
+        "speaker": "B",
+        "text": "这样也许能缓解一点压力"
+      },
+      {
+        "speaker": "A",
+        "text": "这个可能无法在短期内去解决找人的问题"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯,那或许可以考虑内部调配一下人手,看谁的时间比较灵活"
+      },
+      {
+        "speaker": "B",
+        "text": "可以暂时支援一下其他项目"
+      },
+      {
+        "speaker": "B",
+        "text": "这样也能让大家都有机会参与进来,不至于一个人压"
+      }
+    ]
+  },
+  {
+    "conversation_id": "51",
+    "name": "sxy_test_L3_T08_04_doubao",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "是啊"
+      },
+      {
+        "speaker": "B",
+        "text": "这指标定的也太不合理了"
+      },
+      {
+        "speaker": "B",
+        "text": "感觉天天都在拼命"
+      },
+      {
+        "speaker": "B",
+        "text": "可还是差一大截"
+      },
+      {
+        "speaker": "B",
+        "text": "老板也不看看实际情况"
+      },
+      {
+        "speaker": "B",
+        "text": "就知道施压"
+      },
+      {
+        "speaker": "B",
+        "text": "真丑人"
+      },
+      {
+        "speaker": "B",
+        "text": "你这边还差多少呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我们这还差挺多的"
+      },
+      {
+        "speaker": "A",
+        "text": "我们组主要人手不够"
+      },
+      {
+        "speaker": "A",
+        "text": "玩不成那么多任务"
+      },
+      {
+        "speaker": "B",
+        "text": "这确实是个大问题"
+      },
+      {
+        "speaker": "B",
+        "text": "人手不足什么都难推进"
+      },
+      {
+        "speaker": "B",
+        "text": "那要不跟老板反映反映"
+      },
+      {
+        "speaker": "B",
+        "text": "争取多调些人过来"
+      },
+      {
+        "speaker": "B",
+        "text": "或者把任务量适当减一减"
+      },
+      {
+        "speaker": "B",
+        "text": "不然这么下去"
+      },
+      {
+        "speaker": "B",
+        "text": "大家都得累垮"
+      },
+      {
+        "speaker": "B",
+        "text": "也达不到他想要的结果呀"
+      },
+      {
+        "speaker": "A",
+        "text": "是啊"
+      },
+      {
+        "speaker": "A",
+        "text": "别的组都在干活"
+      },
+      {
+        "speaker": "A",
+        "text": "人调不过来"
+      },
+      {
+        "speaker": "B",
+        "text": "那真是难办"
+      },
+      {
+        "speaker": "B",
+        "text": "不过还是得想想办法"
+      },
+      {
+        "speaker": "B",
+        "text": "要不咱们组内"
+      },
+      {
+        "speaker": "B",
+        "text": "再重新规划一下任务分配"
+      },
+      {
+        "speaker": "B",
+        "text": "看看能不能提高点效率"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定大家各自发挥下优势"
+      },
+      {
+        "speaker": "B",
+        "text": "能把进度提上来一些呢"
+      }
+    ]
+  },
+  {
+    "conversation_id": "52",
+    "name": "sxy_test_L3_T08_05_tongyi",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这个月的KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "那确实有点头疼"
+      },
+      {
+        "speaker": "B",
+        "text": "我们一起想想办法"
+      },
+      {
+        "speaker": "B",
+        "text": "看能不能找出问题的关键所在"
+      },
+      {
+        "speaker": "B",
+        "text": "或者找老板沟通一下"
+      },
+      {
+        "speaker": "B",
+        "text": "看看能不能调整一下策略"
+      },
+      {
+        "speaker": "A",
+        "text": "和老板沟通过了"
+      },
+      {
+        "speaker": "A",
+        "text": "我们部门人手不够"
+      },
+      {
+        "speaker": "A",
+        "text": "完不成那么多任务"
+      },
+      {
+        "speaker": "B",
+        "text": "人手不足确实是硬伤"
+      },
+      {
+        "speaker": "B",
+        "text": "要不我们一起整理个详细的报告"
+      },
+      {
+        "speaker": "B",
+        "text": "把目前的工作量"
+      },
+      {
+        "speaker": "B",
+        "text": "人手情况"
+      },
+      {
+        "speaker": "B",
+        "text": "以及我们的困难都清晰地列出来"
+      },
+      {
+        "speaker": "B",
+        "text": "再附上一些解决方案"
+      },
+      {
+        "speaker": "B",
+        "text": "比如申请增加人手"
+      },
+      {
+        "speaker": "B",
+        "text": "或者优化工作流程"
+      },
+      {
+        "speaker": "B",
+        "text": "看看老板能不能理解和支持"
+      }
+    ]
+  },
+  {
+    "conversation_id": "53",
+    "name": "sxy_test_L3_T08_06_kimi",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "这月KPI完不成"
+      },
+      {
+        "speaker": "B",
+        "text": "确实有点闹心"
+      },
+      {
+        "speaker": "B",
+        "text": "老板肯定也急"
+      },
+      {
+        "speaker": "B",
+        "text": "不过我听说老板最近压力也挺大的"
+      },
+      {
+        "speaker": "B",
+        "text": "可能比我们还大呢"
+      },
+      {
+        "speaker": "A",
+        "text": "是啊 我们部门人手根本不够"
+      },
+      {
+        "speaker": "A",
+        "text": "完不成那么多任务"
+      },
+      {
+        "speaker": "B",
+        "text": "人手不够确实很头疼"
+      },
+      {
+        "speaker": "B",
+        "text": "可能得靠加班来补了"
+      },
+      {
+        "speaker": "B",
+        "text": "要不你看看能不能跟领导申请一下"
+      },
+      {
+        "speaker": "B",
+        "text": "多招几个人"
+      },
+      {
+        "speaker": "B",
+        "text": "或者让其他部门支援一下"
+      },
+      {
+        "speaker": "A",
+        "text": "现在别的部门工作也很多"
+      },
+      {
+        "speaker": "A",
+        "text": "抽不出人手"
+      },
+      {
+        "speaker": "B",
+        "text": "那我们现在只能自己想办法了"
+      },
+      {
+        "speaker": "B",
+        "text": "比如把任务分配一下"
+      },
+      {
+        "speaker": "B",
+        "text": "看看哪些可以先做"
+      },
+      {
+        "speaker": "B",
+        "text": "哪些可以延后"
+      },
+      {
+        "speaker": "B",
+        "text": "实在不行就只能加班了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "54",
+    "name": "sxy_test_L3_T08_07_gemini",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI要完不成了,老板压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "诶,最近工作是挺让人喘不过气的"
+      },
+      {
+        "speaker": "B",
+        "text": "老板的目标一个接一个,感觉自己像个陀螺"
+      },
+      {
+        "speaker": "B",
+        "text": "你是不是也一样?"
+      },
+      {
+        "speaker": "B",
+        "text": "真的,最近老板的各种要求堆积如山"
+      },
+      {
+        "speaker": "B",
+        "text": "感觉完全没有个人时间了,压力大到头都大了"
+      },
+      {
+        "speaker": "B",
+        "text": "你那边怎么样?是不是也面对差不多的情况?"
+      },
+      {
+        "speaker": "A",
+        "text": "是啊,我们这边压力特别大,人手不足根本完不成任务"
+      },
+      {
+        "speaker": "B",
+        "text": "是吼,我们这边压力也特别大,人手根本不够"
+      },
+      {
+        "speaker": "B",
+        "text": "感觉任务永远都完不成"
+      },
+      {
+        "speaker": "B",
+        "text": "每天都像在打仗,结果还不知道能不能赢"
+      },
+      {
+        "speaker": "B",
+        "text": "你是不是也觉得每天都在跟时间赛跑"
+      },
+      {
+        "speaker": "B",
+        "text": "但终点线却越来越远"
+      }
+    ]
+  },
+  {
+    "conversation_id": "55",
+    "name": "sxy_test_L3_T08_08_hunyuan",
+    "language": "zh",
+    "topic": "8",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L3",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "我们这月KPI快完不成了"
+      },
+      {
+        "speaker": "A",
+        "text": "老板给压力太大了"
+      },
+      {
+        "speaker": "B",
+        "text": "这压力确实不小"
+      },
+      {
+        "speaker": "B",
+        "text": "不过咱们也别太着急"
+      },
+      {
+        "speaker": "B",
+        "text": "想想办法"
+      },
+      {
+        "speaker": "B",
+        "text": "说不定能找到突破口呢"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得主要问题是出在哪方面啊"
+      },
+      {
+        "speaker": "A",
+        "text": "我们部门现在人手不够"
+      },
+      {
+        "speaker": "A",
+        "text": "完不成那么多任务"
+      },
+      {
+        "speaker": "B",
+        "text": "那要不跟老板反映反映"
+      },
+      {
+        "speaker": "B",
+        "text": "看能不能招点人"
+      },
+      {
+        "speaker": "B",
+        "text": "或者给点支援"
+      },
+      {
+        "speaker": "B",
+        "text": "总不能一直这么硬扛着"
+      },
+      {
+        "speaker": "A",
+        "text": "我们现在短时间内"
+      },
+      {
+        "speaker": "A",
+        "text": "招不了那么多人"
+      },
+      {
+        "speaker": "A",
+        "text": "这个任务没法完成"
+      },
+      {
+        "speaker": "B",
+        "text": "要不咱先看看"
+      },
+      {
+        "speaker": "B",
+        "text": "有没有能优化的地方"
+      },
+      {
+        "speaker": "B",
+        "text": "比如把一些"
+      },
+      {
+        "speaker": "B",
+        "text": "重复性的工作流程简化一下"
+      },
+      {
+        "speaker": "B",
+        "text": "这样也许能提高点效率"
+      },
+      {
+        "speaker": "B",
+        "text": "你觉得呢"
+      }
+    ]
+  },
+  {
+    "conversation_id": "56",
+    "name": "xx_test_L2_T05_01_gpt",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "你家做饭都很好吃,你打算做什么呢?"
+      },
+      {
+        "speaker": "A",
+        "text": "我根本就不会做饭,那都是我妈做的饭。"
+      },
+      {
+        "speaker": "B",
+        "text": "那你妈做的,那太好了,我一定要好好尝试你妈妈的手艺。"
+      },
+      {
+        "speaker": "A",
+        "text": "你想吃啥呀?"
+      },
+      {
+        "speaker": "B",
+        "text": "我喜欢吃家常菜,比如红烧肉或者清蒸鱼,你觉得怎么样?"
+      },
+      {
+        "speaker": "A",
+        "text": "刚好我妈都会做,除了这几个你还想吃什么?"
+      },
+      {
+        "speaker": "B",
+        "text": "那再来个青菜吧,比如清炒时蔬,清爽又解腻。"
+      },
+      {
+        "speaker": "A",
+        "text": "你喜欢吃芥菜吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "芥菜也挺好的,口味独特,还很有营养。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "57",
+    "name": "xx_test_L2_T05_02_glm",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "你做的都好吃,不过我好长时间没吃你做的糖素排骨了,今天能不能再尝尝你的拿手菜呀?"
+      },
+      {
+        "speaker": "A",
+        "text": "我没有拿手菜,其实我们家的饭都是我妈做的,不过她也有一些拿手菜,比如辣椒炒肉,你想吃吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "听起来好诱人啊,阿姨的拿手菜肯定好吃,不过我也很喜欢吃辣的,要不我们两个一起帮阿姨打下手,然后好好尝尝这道辣椒炒肉。"
+      },
+      {
+        "speaker": "A",
+        "text": "可以啊,你负责洗菜,我负责做饭,那你还有什么别想吃的吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "突然好想喝你家的绿豆汤呀,记得你家冰箱好像还囤着呢,要不顺便给我们盛一碗?"
+      },
+      {
+        "speaker": "A",
+        "text": "你怎么记得这么清楚?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "58",
+    "name": "xx_test_L2_T05_03_xunfei",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "哎呀,你太客气了,我啥都行,不挑食的。"
+      },
+      {
+        "speaker": "A",
+        "text": "我妈特别擅长做辣椒炒肉,你想不想尝一下?"
+      },
+      {
+        "speaker": "B",
+        "text": "哇塞,那可太棒了,我一直超喜欢吃辣椒炒肉呢。"
+      },
+      {
+        "speaker": "A",
+        "text": "你有多能吃辣呀?"
+      },
+      {
+        "speaker": "B",
+        "text": "呵呵,我这辣度承受力可是杠杠的,越辣越带劲。"
+      },
+      {
+        "speaker": "A",
+        "text": "那我叫我妈做辣一点好了。"
+      },
+      {
+        "speaker": "A",
+        "text": "除了辣椒炒肉,你还有什么想吃的吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "嗯,再给我来个凉拌黄瓜吧。"
+      },
+      {
+        "speaker": "B",
+        "text": "清爽,解腻又开胃,和辣椒炒肉简直是绝配。"
+      },
+      {
+        "speaker": "A",
+        "text": "那你是不是也很喜欢吃酸的呀?"
+      },
+      {
+        "speaker": "A",
+        "text": "凉拌黄瓜我们家一般会加醋和辣椒。"
+      },
+      {
+        "speaker": "B",
+        "text": "对呀,酸辣口味简直无敌,光听着就让人垂涎三尺了。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "59",
+    "name": "xx_test_L2_T05_04_doubao",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "随便做点吧,简单又好吃的就行,你拿手的那些就行。"
+      },
+      {
+        "speaker": "A",
+        "text": "我根本没有拿手菜,都是,其实打算我让我妈做。"
+      },
+      {
+        "speaker": "B",
+        "text": "阿姨做的菜肯定好吃,我好久都没吃到家常菜了,想想都流口水。"
+      },
+      {
+        "speaker": "A",
+        "text": "你想吃哪一个家常菜?你想吃广东菜还是湖南菜?"
+      },
+      {
+        "speaker": "B",
+        "text": "湖南菜吧,辣辣的很过瘾,像剁椒鱼头啊,辣椒炒肉这些,想想就很下饭。"
+      },
+      {
+        "speaker": "A",
+        "text": "我妈做的辣椒炒肉超好吃的。"
+      },
+      {
+        "speaker": "B",
+        "text": "哇塞,那我今天可有口福了,光想想就觉得肯定特别香。"
+      },
+      {
+        "speaker": "A",
+        "text": "你能吃多辣呀?能接受微辣,中辣,还是麻辣,特辣,超级辣。"
+      },
+      {
+        "speaker": "B",
+        "text": "中辣就好啦,太辣了我也受不了,怕肠胃受不了。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "60",
+    "name": "xx_test_L2_T05_05_tongyi",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "那我就不客气了,麻辣香锅,烧烤,甜品都挺不错的。"
+      },
+      {
+        "speaker": "A",
+        "text": "烧烤和甜品我妈不会做。"
+      },
+      {
+        "speaker": "B",
+        "text": "那咱就弄个麻辣香锅,再炒俩下酒菜,整点小啤酒,完美。"
+      },
+      {
+        "speaker": "A",
+        "text": "你喜欢喝什么啤酒?"
+      },
+      {
+        "speaker": "B",
+        "text": "我不挑,你看着办就行。"
+      },
+      {
+        "speaker": "A",
+        "text": "那我叫我妈去超市随便买点回来,除了下酒菜和麻辣香锅你还想吃啥呢?这点菜有点少。"
+      },
+      {
+        "speaker": "B",
+        "text": "够了够了,再整个拍黄瓜,解腻又爽口。"
+      },
+      {
+        "speaker": "A",
+        "text": "那你肯定也很喜欢吃醋和辣椒拌黄瓜吧?"
+      },
+      {
+        "speaker": "B",
+        "text": "那必须酸酸辣辣的,想想都流口水。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "61",
+    "name": "xx_test_L2_T05_06_kimi",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "今晚想吃点清淡的,可以做点清蒸鱼,再做个凉拌黄瓜,怎么样?"
+      },
+      {
+        "speaker": "A",
+        "text": "这都是我妈的拿手好菜,除了这点你还想吃啥呢?"
+      },
+      {
+        "speaker": "B",
+        "text": "那我来试试做点别的,比如糖醋排骨怎么样,我妈的菜都是家常味,我也想换换口味。"
+      },
+      {
+        "speaker": "A",
+        "text": "你要来做糖醋排骨吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "我做不了饭,不过可以教你怎么做糖醋排骨。"
+      },
+      {
+        "speaker": "A",
+        "text": "OK啊,那你到时候教我妈做糖醋排骨,我妈不太会做糖醋排骨,所以我也基本上都吃不到。"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,我会和你妈妈说的，糖醋排骨的做法,我记着呢,到时候你告诉我你妈妈,她肯定能做好的。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "62",
+    "name": "xx_test_L2_T05_07_gemini",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "当然,好久没去你家吃饭了,真期待今晚。"
+      },
+      {
+        "speaker": "B",
+        "text": "你问我想吃什么,我可得好好想想。"
+      },
+      {
+        "speaker": "B",
+        "text": "最近天气有点热,不如我们做点清爽又开胃的怎么样?"
+      },
+      {
+        "speaker": "B",
+        "text": "比如,可以考虑做凉拌菜,或者来个日式冷面。"
+      },
+      {
+        "speaker": "B",
+        "text": "如果你想吃的暖和一点,寿喜烧或涮涮锅也是不错的选择。"
+      },
+      {
+        "speaker": "B",
+        "text": "我们俩围着锅边吃边聊,多有气氛。"
+      },
+      {
+        "speaker": "B",
+        "text": "或者,你有什么特别想尝试的菜品吗?"
+      },
+      {
+        "speaker": "B",
+        "text": "或者家里有什么食材是必须消灭掉的?"
+      },
+      {
+        "speaker": "B",
+        "text": "告诉我你的想法,我们一起决定。"
+      },
+      {
+        "speaker": "A",
+        "text": "寿喜烧和涮涮锅就有点太为难我妈了,我妈比较擅长做辣椒炒肉。"
+      },
+      {
+        "speaker": "B",
+        "text": "哈哈,理解。寿喜烧和涮涮锅是需要准备的食材多一些。"
+      },
+      {
+        "speaker": "B",
+        "text": "既然阿姨擅长做辣椒炒肉,那简直太棒了。"
+      },
+      {
+        "speaker": "B",
+        "text": "好久没吃到家常菜了,而且阿姨做的肯定特别香。"
+      }
+    ]
+  },
+  {
+    "conversation_id": "63",
+    "name": "xx_test_L2_T05_08_hunyuan",
+    "language": "zh",
+    "topic": "5",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "今晚有啥想吃的?"
+      },
+      {
+        "speaker": "B",
+        "text": "不用这么麻烦了,要不我们去外面吃吧,我知道一家新开的火锅店评价特别好。"
+      },
+      {
+        "speaker": "A",
+        "text": "真的吗?那正好不用为难我妈了,我妈也不想做饭,那个火锅店在哪呀?"
+      },
+      {
+        "speaker": "B",
+        "text": "推荐大龙一火锅天安云谷店就在坂田街道和平岗村和平路44号101号铺,或者喜羊洋火锅城在宝龙街道铜丽路和常尾路交汇处。"
+      },
+      {
+        "speaker": "B",
+        "text": "想吃贵州酸汤的话，吉祥地铁站附近的钱多多，挺地道。人均五十九元这几家都离你家不远，选个顺路的吧"
+      }
+    ]
+  },
+  {
+    "conversation_id": "64",
+    "name": "zx_test_L2_T01_01_gpt",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "gpt",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 没问题"
+      },
+      {
+        "speaker": "B",
+        "text": "一斤苹果和桃子马上帮你拿"
+      },
+      {
+        "speaker": "B",
+        "text": "你还需要点别的吗"
+      },
+      {
+        "speaker": "A",
+        "text": "今天的苹果新不新鲜啊"
+      },
+      {
+        "speaker": "B",
+        "text": "非常新鲜 刚到的货"
+      },
+      {
+        "speaker": "B",
+        "text": "你要不要再挑点别的水果呢"
+      },
+      {
+        "speaker": "A",
+        "text": "有没有葡萄"
+      },
+      {
+        "speaker": "B",
+        "text": "有的 我们这儿有新鲜的葡萄"
+      },
+      {
+        "speaker": "B",
+        "text": "你要来一斤吗"
+      },
+      {
+        "speaker": "A",
+        "text": "那再来一斤葡萄吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 一斤葡萄也给你拿上"
+      },
+      {
+        "speaker": "B",
+        "text": "这样够吗"
+      },
+      {
+        "speaker": "A",
+        "text": "好 可以了 先这样"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 那就一斤苹果 一斤桃子和一斤葡萄"
+      },
+      {
+        "speaker": "B",
+        "text": "你还有其他需要吗"
+      },
+      {
+        "speaker": "B",
+        "text": "不用了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "65",
+    "name": "zx_test_L2_T01_02_glm",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "glm",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 这边请"
+      },
+      {
+        "speaker": "B",
+        "text": "您要的苹果和桃子给您拿好了"
+      },
+      {
+        "speaker": "B",
+        "text": "苹果水润多汁 桃子香甜可口"
+      },
+      {
+        "speaker": "B",
+        "text": "需要帮您称下吗"
+      },
+      {
+        "speaker": "A",
+        "text": "好 称一下吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 苹果两斤八两"
+      },
+      {
+        "speaker": "B",
+        "text": "桃子三斤四两"
+      },
+      {
+        "speaker": "B",
+        "text": "一共五十六块七毛"
+      },
+      {
+        "speaker": "B",
+        "text": "请问您是要刷卡还是扫码付款呢"
+      },
+      {
+        "speaker": "A",
+        "text": "直接扫码吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 一共五十六块七毛"
+      },
+      {
+        "speaker": "B",
+        "text": "微信支付宝都可以"
+      },
+      {
+        "speaker": "B",
+        "text": "扫这个码就可以了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "66",
+    "name": "zx_test_L2_T01_03_xunfei",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "xunfei",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,您还需要别的吗?"
+      },
+      {
+        "speaker": "A",
+        "text": "我还要一点葡萄吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好嘞,葡萄有巨峰、阳光、玫瑰和夏黑三种"
+      },
+      {
+        "speaker": "B",
+        "text": "您想要哪种呢?"
+      },
+      {
+        "speaker": "A",
+        "text": "我要巨峰葡萄"
+      },
+      {
+        "speaker": "B",
+        "text": "没问题,我这就给您称"
+      },
+      {
+        "speaker": "A",
+        "text": "今天的葡萄新不新鲜啊?"
+      },
+      {
+        "speaker": "B",
+        "text": "今天的葡萄很新鲜哦"
+      },
+      {
+        "speaker": "B",
+        "text": "我们都是当天进货的,保证新鲜度"
+      },
+      {
+        "speaker": "A",
+        "text": "好,那就这些吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,一共是三十块六毛钱"
+      },
+      {
+        "speaker": "B",
+        "text": "您用微信还是支付宝?"
+      },
+      {
+        "speaker": "A",
+        "text": "好,微信就可以了"
+      }
+    ]
+  },
+  {
+    "conversation_id": "67",
+    "name": "zx_test_L2_T01_04_doubao",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "doubao",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好嘞 马上给您称"
+      },
+      {
+        "speaker": "B",
+        "text": "苹果和桃子都很新鲜呢"
+      },
+      {
+        "speaker": "B",
+        "text": "一共是二十块钱"
+      },
+      {
+        "speaker": "A",
+        "text": "还有什么其他新鲜的水果"
+      },
+      {
+        "speaker": "B",
+        "text": "您看这边的荔枝和芒果也不错"
+      },
+      {
+        "speaker": "B",
+        "text": "都是刚到的，特别新鲜"
+      },
+      {
+        "speaker": "B",
+        "text": "要不要来点尝尝"
+      },
+      {
+        "speaker": "A",
+        "text": "荔枝怎么卖的"
+      },
+      {
+        "speaker": "B",
+        "text": "荔枝一斤十五块"
+      },
+      {
+        "speaker": "B",
+        "text": "口感清甜 水分也足"
+      },
+      {
+        "speaker": "A",
+        "text": "那我也要一斤荔枝吧"
+      },
+      {
+        "speaker": "A",
+        "text": "然后就这么多"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 一共是三十五块"
+      },
+      {
+        "speaker": "B",
+        "text": "这边可以扫码付款"
+      },
+      {
+        "speaker": "A",
+        "text": "呃 支付宝可以吗"
+      },
+      {
+        "speaker": "B",
+        "text": "对的 扫这里就行"
+      },
+      {
+        "speaker": "A",
+        "text": "好好"
+      },
+      {
+        "speaker": "B",
+        "text": "感谢您的光临 欢迎下次再来哦"
+      }
+    ]
+  },
+  {
+    "conversation_id": "68",
+    "name": "zx_test_L2_T01_05_tongyi",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "tongyi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 苹果和桃子各一斤"
+      },
+      {
+        "speaker": "B",
+        "text": "我这就给您拿"
+      },
+      {
+        "speaker": "B",
+        "text": "请问您还需要其他水果吗"
+      },
+      {
+        "speaker": "A",
+        "text": "有没有橙子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 橙子也来一个"
+      },
+      {
+        "speaker": "B",
+        "text": "我拿的都是新鲜水果"
+      },
+      {
+        "speaker": "B",
+        "text": "您看看合不合心意"
+      },
+      {
+        "speaker": "A",
+        "text": "我还想要一点菠萝"
+      },
+      {
+        "speaker": "A",
+        "text": "菠萝能帮忙切吗"
+      },
+      {
+        "speaker": "B",
+        "text": "当然可以"
+      },
+      {
+        "speaker": "B",
+        "text": "我这就帮您切菠萝"
+      },
+      {
+        "speaker": "B",
+        "text": "您稍等一会儿 马上就好"
+      },
+      {
+        "speaker": "A",
+        "text": "好 那就这么多吧"
+      },
+      {
+        "speaker": "A",
+        "text": "一共多少钱"
+      },
+      {
+        "speaker": "B",
+        "text": "我算一下"
+      },
+      {
+        "speaker": "B",
+        "text": "苹果 桃子 橙子和切好的菠萝"
+      }
+    ]
+  },
+  {
+    "conversation_id": "69",
+    "name": "zx_test_L2_T01_06_kimi",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "kimi",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,苹果和桃子都在这边"
+      },
+      {
+        "speaker": "B",
+        "text": "一斤苹果是十块钱,一斤桃子是八块钱"
+      },
+      {
+        "speaker": "B",
+        "text": "您稍等一下,我给您称一下"
+      },
+      {
+        "speaker": "A",
+        "text": "你们这里有没有菠萝"
+      },
+      {
+        "speaker": "B",
+        "text": "不好意思,菠萝暂时没有了"
+      },
+      {
+        "speaker": "B",
+        "text": "您可以考虑买点其他水果,比如芒果或者火龙果"
+      },
+      {
+        "speaker": "A",
+        "text": "那帮我切个芒果吧"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,这边有新鲜的芒果,您要几个"
+      },
+      {
+        "speaker": "B",
+        "text": "我帮您切好"
+      },
+      {
+        "speaker": "A",
+        "text": "切两个就可以了"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,我给您切两个芒果,您稍等一下"
+      },
+      {
+        "speaker": "B",
+        "text": "切好了,您看这样可以吗"
+      },
+      {
+        "speaker": "B",
+        "text": "可以"
+      },
+      {
+        "speaker": "B",
+        "text": "好的,芒果切好了,一共是四十块钱,您看一下"
+      }
+    ]
+  },
+  {
+    "conversation_id": "70",
+    "name": "zx_test_L2_T01_07_gemini",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "gemini",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "您好 欢迎光临"
+      },
+      {
+        "speaker": "B",
+        "text": "您要一斤苹果和一斤桃子是吗"
+      },
+      {
+        "speaker": "B",
+        "text": "请稍等 我帮您去水果区拿"
+      },
+      {
+        "speaker": "B",
+        "text": "您看 是想要哪种苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "我们这里有富士苹果 嘎拉苹果"
+      },
+      {
+        "speaker": "B",
+        "text": "还有水蜜桃和蟠桃"
+      },
+      {
+        "speaker": "B",
+        "text": "您喜欢吃脆一点的苹果"
+      },
+      {
+        "speaker": "B",
+        "text": "还是面一点的"
+      },
+      {
+        "speaker": "B",
+        "text": "桃子呢 是喜欢甜一点的"
+      },
+      {
+        "speaker": "B",
+        "text": "还是稍微带点酸的"
+      },
+      {
+        "speaker": "A",
+        "text": "我要脆一点的苹果和甜一点的桃子吧"
+      },
+      {
+        "speaker": "A",
+        "text": "就这个富士苹果和水蜜桃就好了"
+      },
+      {
+        "speaker": "A",
+        "text": "一共多少钱"
+      },
+      {
+        "speaker": "B",
+        "text": "好的 您要一斤富士苹果和一斤水蜜桃"
+      },
+      {
+        "speaker": "B",
+        "text": "都要脆一点的苹果和甜一点的桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "请您稍等 我这就给您称一下"
+      }
+    ]
+  },
+  {
+    "conversation_id": "71",
+    "name": "zx_test_L2_T01_08_hunyuan",
+    "language": "zh",
+    "topic": "1",
+    "type": "HM",
+    "model": "hunyuan",
+    "level": "L2",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "帮我拿一斤苹果和桃子"
+      },
+      {
+        "speaker": "B",
+        "text": "好呀,我这就去给你拿"
+      },
+      {
+        "speaker": "B",
+        "text": "你是要脆甜的还是粉粉的那种呀"
+      },
+      {
+        "speaker": "A",
+        "text": "我要脆甜的那种苹果吧"
+      },
+      {
+        "speaker": "B",
+        "text": "行,那我给你挑几个红富士"
+      },
+      {
+        "speaker": "B",
+        "text": "又脆又甜"
+      },
+      {
+        "speaker": "B",
+        "text": "桃子的话,水蜜桃怎么样"
+      },
+      {
+        "speaker": "B",
+        "text": "口感超好,汁水也多"
+      },
+      {
+        "speaker": "A",
+        "text": "可以,你这里还有没有菠萝"
+      },
+      {
+        "speaker": "B",
+        "text": "有呢,我给你拿个中等大小的"
+      },
+      {
+        "speaker": "B",
+        "text": "这个季节的菠萝可甜了"
+      },
+      {
+        "speaker": "B",
+        "text": "而且汁水足"
+      },
+      {
+        "speaker": "B",
+        "text": "要不要帮你切一下"
+      },
+      {
+        "speaker": "A",
+        "text": "好,帮我切一下吧,就这么多"
+      },
+      {
+        "speaker": "A",
+        "text": "微信就可以了"
+      },
+      {
+        "speaker": "B",
+        "text": "不好意思啊,我没办法直接用微信呢"
+      },
+      {
+        "speaker": "B",
+        "text": "你可以去超市的服务中心付钱"
+      },
+      {
+        "speaker": "B",
+        "text": "那边能扫码"
+      },
+      {
+        "speaker": "B",
+        "text": "或者你告诉我你的手机号"
+      },
+      {
+        "speaker": "B",
+        "text": "我让同事联系你"
+      }
+    ]
+  }
+]

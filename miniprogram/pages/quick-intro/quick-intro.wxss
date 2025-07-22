@@ -22,23 +22,20 @@
 /* 重新定位按钮容器至底部中央 */
 .button-container {
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
   bottom: 160rpx;
-  transform: translateX(-50%);
-  width: 250rpx;
-  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* SVG 按钮样式 */
 .start-button-img {
-  width: 250rpx;
+  width: 18vh;
   max-width: 400rpx;
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: none; /* 默认隐藏 */
   transition: transform 0.15s ease;
-  opacity: 0;
-  pointer-events: none;
   will-change: transform; /* 提示浏览器预先做好变换准备 */
   backface-visibility: hidden; /* 防止闪烁 */
   -webkit-backface-visibility: hidden;
@@ -46,11 +43,31 @@
 }
 
 .start-button-img.show {
-  opacity: 1;
-  pointer-events: auto;
+  display: block; /* 显示选中的按钮 */
 }
 
 /* 使用active伪类代替JS控制的transform */
 .start-button-img:active {
+  transform: scale(0.93);
+} 
+
+/* 题库选择容器 */
+.select-container {
+  position: absolute;
+  left: 50%;
+  bottom: 360rpx; /* 位于开始按钮之上 */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 42rpx;
+}
+
+.select-btn {
+  width: 16vh;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.select-btn:active {
   transform: scale(0.93);
 } 

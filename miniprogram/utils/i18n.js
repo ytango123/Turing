@@ -30,7 +30,8 @@ const i18nMessages = {
       amateurExplorer: '业余探索者',
       seniorIdentifier: '资深鉴别师',
       turingMaster: '图灵大师',
-      superIdentifier: '超级鉴别者'
+      superIdentifier: '超级鉴别者',
+      rankingsTip:'注：排行榜仅展示前十名用户'
     },
     common: {
       close: '关闭'
@@ -126,7 +127,9 @@ const i18nMessages = {
       descA: '选择此项若你认为B是真人',
       descB: '选择此项若你认为B是AI',
       descNone: '',
-      exitConfirm: '确定要退出当前挑战吗？退出后将不会保存进度'
+      exitConfirm: '确定要退出当前挑战吗？退出后将不会保存进度',
+      relisten: '再听一次？',
+      relistenStop: '点击结束'
     },
     result: {
       navTitle: '结果',
@@ -251,7 +254,8 @@ const i18nMessages = {
       amateurExplorer: 'Amateur Explorer',
       seniorIdentifier: 'Senior Identifier',
       turingMaster: 'Turing Master',
-      superIdentifier: 'Super Identifier'
+      superIdentifier: 'Super Identifier',
+      rankingsTip:'Note: The leaderboard displays only the top 10 users'
     },
     common: {
       close: 'Close'
@@ -347,7 +351,9 @@ const i18nMessages = {
       descA: 'Select if you think B is human',
       descB: 'Select if you think B is AI',
       descNone: '',
-      exitConfirm: 'Are you sure you want to quit the current challenge? Your progress will not be saved.'
+      exitConfirm: 'Are you sure you want to quit the current challenge? Your progress will not be saved.',
+      relisten: 'Listen again?',
+      relistenStop: 'Stop'
     },
     result: {
       navTitle: 'Result',

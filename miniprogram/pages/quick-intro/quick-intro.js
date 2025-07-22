@@ -1,5 +1,11 @@
 const { createPage } = require('../../utils/basePage')
 
+// 在最顶部添加工具函数
+// 生成唯一音频键：session/name
+function makeAudioKey(session, name) {
+  return `${session}/${name}`;
+}
+
 createPage({
   pageKey: 'quickIntro',
   i18nKeys: {
@@ -12,12 +18,43 @@ createPage({
     currentLang: wx.getStorageSync('language') || 'zh', // 添加当前语言状态
     loadingDialogues: false, // 对话加载状态
     // 页面准备状态，控制初始渲染
-    pageReady: false
+    pageReady: false,
+    /** 本次挑战选用的题库语言：'zh' | 'en' */
+    selectedCorpus: 'zh',
+    /** 题库选择按钮的 svg 路径 */
+    selectBtnSrc: {
+      zh: '',
+      en: ''
+    }
   },
 
   onLoad() {
     // 所有基础文本已由 basePage 注入，此时标记页面已准备好
-    this.setData({ pageReady: true });
+    // 默认按照当前 UI 语言选择题库
+    const defaultCorpus = this.data.currentLang === 'en' ? 'en' : 'zh';
+    this.setData({ pageReady: true, selectedCorpus: defaultCorpus }, () => {
+      this.updateSelectBtnSrc();
+    });
+  },
+
+  /** 更新题库按钮 svg 路径 */
+  updateSelectBtnSrc() {
+    const uiLang = this.data.currentLang === 'en' ? 'en' : 'zh';
+    const selected = this.data.selectedCorpus;
+    const zhPrefix = selected === 'zh' ? 'zh_active' : 'zh';
+    const enPrefix = selected === 'en' ? 'en_active' : 'en';
+    const zhSrc = `/assets/images/quick-intro/${zhPrefix}_${uiLang}.svg`;
+    const enSrc = `/assets/images/quick-intro/${enPrefix}_${uiLang}.svg`;
+    this.setData({ selectBtnSrc: { zh: zhSrc, en: enSrc } });
+  },
+
+  /** 用户点击题库选择 */
+  selectCorpus(e) {
+    const corpus = e.currentTarget.dataset.corpus;
+    if (!corpus || corpus === this.data.selectedCorpus) return;
+    if (wx.vibrateShort) wx.vibrateShort({ type: 'light' });
+    this.setData({ selectedCorpus: corpus });
+    this.updateSelectBtnSrc();
   },
 
   /** 开始挑战 */
@@ -27,8 +64,11 @@ createPage({
     }
     const app = getApp();
     app.globalData = app.globalData || {};
-    // 清空缓存，确保重新抽取
+    // 清空旧缓存，确保重新抽取
     app.globalData.gameDialogues = [];
+
+    // 将题库语言记录到全局，供 conversation 页面使用
+    app.globalData.selectedCorpus = this.data.selectedCorpus;
 
     // loading 文案
     const lang = this.data.currentLang;
@@ -54,7 +94,7 @@ createPage({
   /** @deprecated 滚动预下载方案已启用，此函数保留备查 */
   batchPreloadAudios() { return Promise.resolve(); },
 
-  /** 预加载对话（复制自 conversation 页面简化版） */
+  /** 预加载对话（复制自 conversation 页面简化版，已适配新目录） */
   loadDialoguesFromCloud() {
     const app = getApp();
     app.globalData = app.globalData || {};
@@ -64,29 +104,46 @@ createPage({
       return Promise.resolve();
     }
 
+    const selectedLang = this.data.selectedCorpus;
+    const identityDirs = ['HH', 'HM', 'MH', 'MM'];
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-    const sessions = ['Session1', 'Session2'];
 
-    const sessionPromises = sessions.map(session => {
-      const fileID = `${envPrefix}/${session}/content.json`;
+    const jsonPromises = identityDirs.map(identity => {
+      const testFolder = `${selectedLang}_test_${identity}`;
+      const fileID = `${envPrefix}/${selectedLang}/${identity}/${testFolder}.json`;
       return wx.cloud.getTempFileURL({ fileList: [{ fileID, maxAge: 3600 }] })
         .then(res => {
-          const tempURL = res.fileList[0].tempFileURL;
+          const tempURL = res.fileList[0] && res.fileList[0].tempFileURL;
+          if (!tempURL) throw new Error('no url');
           return new Promise((resolve, reject) => {
             wx.request({
               url: tempURL,
-              success: r => resolve((r.data || []).map(d => ({ ...d, session }))),
+              success: r => {
+                let raw = r.data;
+                if (typeof raw === 'string') {
+                  try { raw = JSON.parse(raw); } catch(e) { raw = []; }
+                }
+                if (!Array.isArray(raw)) raw = [];
+                const list = raw.map(d => ({
+                  ...d,
+                  lang: selectedLang,
+                  identity,
+                  testFolder,
+                  session: `${selectedLang}/${identity}/${testFolder}`,
+                  type: d.type || d.tag || identity
+                }));
+                resolve(list);
+              },
               fail: reject
             });
           });
         });
     });
 
-    return Promise.allSettled(sessionPromises).then(results => {
+    return Promise.allSettled(jsonPromises).then(results => {
       const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
-      if (!fulfilled.length) throw new Error('fetch sessions failed');
+      if (!fulfilled.length) throw new Error('fetch json failed');
       const allDialogues = [].concat(...fulfilled);
-
       const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
       app.globalData.gameDialogues = gameDialogues;
       app.globalData.totalDialoguesCount = allDialogues.length;
@@ -99,14 +156,15 @@ createPage({
     const dlg = (app.globalData.gameDialogues || [])[0];
     if (!dlg) return Promise.resolve();
     app.globalData.preloadAudios = app.globalData.preloadAudios || {};
-    const cid = dlg.conversation_id;
-    if (app.globalData.preloadAudios[cid]) return Promise.resolve();
-    const session = dlg.session || 'Session2';
+    const audName = dlg.name || dlg.conversation_id;
+    const key = makeAudioKey(dlg.session, audName);
+    if (app.globalData.preloadAudios[key]) return Promise.resolve();
+
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-    const fileID = `${envPrefix}/${session}/${cid}.wav`;
+    const fileID = `${envPrefix}/${dlg.session}/${audName}.m4a`;
     return wx.cloud.downloadFile({ fileID }).then(res => {
-      app.globalData.preloadAudios[cid] = res.tempFilePath;
-    }).catch(()=>{});
+      app.globalData.preloadAudios[key] = res.tempFilePath;
+    }).catch(() => {});
   },
 
   selectRandomDialogues(dialogues, count) {
@@ -115,10 +173,11 @@ createPage({
     const heardSet = new Set(heard);
     const uniqueMap = new Map();
     valid.forEach(d => {
-      const cid = d.conversation_id;
-      if (!cid || heardSet.has(cid)) return;
-      if (!uniqueMap.has(cid) || Math.random() < 0.5) {
-        uniqueMap.set(cid, d);
+      const n = d.name || d.conversation_id;
+      if (!n || heardSet.has(n)) return;
+      const key = `${d.type}_${n}`;
+      if (!uniqueMap.has(key) || Math.random() < 0.5) {
+        uniqueMap.set(key, d);
       }
     });
     let candidates = Array.from(uniqueMap.values());

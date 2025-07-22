@@ -3,6 +3,11 @@ const app = getApp()
 const { createPage } = require('../../utils/basePage')
 const { t } = require('../../utils/i18n')
 
+// 统一生成音频缓存 Key，避免同 id 跨 session 复用错误
+function makeAudioKey(session, name) {
+  return `${session}/${name}`
+}
+
 createPage({
   pageKey: 'conversation',
   i18nKeys: {
@@ -14,6 +19,9 @@ createPage({
     hintText: 'hintText',
     judgeA: 'judgeA',
     judgeB: 'judgeB',
+    relisten: 'relisten',
+    relistenStop: 'relistenStop',
+    
     // 描述文本已移除
     // 结果页面字段（映射到 result.*）
     correct: 'result.correct',
@@ -82,7 +90,7 @@ createPage({
     localAudioPath: '',
     phase: 'loading',           // loading | dialogue | result | summary
     curIndex: 0,               // 当前对话下标 0-9
-    preloadAudios: {},         // { conversationId: localPath }
+    preloadAudios: {},         // { audioKey: localPath }
     lastIsCorrect: false,
     lastPointsGained: 0,
     lastPointsLost: 0,
@@ -90,6 +98,18 @@ createPage({
     aiFeatures: [],
     comboCount: 0,
     showComboResult: false,
+    replayMode: false,
+    listeningAgain: false,
+    progress: 0, // 音频播放进度百分比
+    isSeeking: false, // 是否正在拖动滑块
+    duration: 0, // 音频总时长
+  },
+
+  /** 滚动到页面顶部 */
+  scrollToTop() {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+    }
   },
   /** 停止并销毁音频，避免页面跳转后仍在后台播放 */
   stopAndDestroyAudio() {
@@ -163,6 +183,18 @@ createPage({
       clearTimeout(this.loadingTimer);
     });
 
+    // 监听音频播放进度更新
+    this.audioContext.onTimeUpdate(() => {
+      if (!this.data.isSeeking) {
+        const duration = this.audioContext.duration;
+        const progress = duration > 0 ? (this.audioContext.currentTime / duration) * 100 : 0;
+        this.setData({
+          progress: progress,
+          duration: duration
+        });
+      }
+    });
+
     this.audioContext.onWaiting(() => {
       // 仅在用户主动播放后（audioLoading 已标记）或音频正在播放时才显示加载状态，
       // 避免预加载阶段触发 onWaiting 导致按钮一直处于 loading
@@ -197,7 +229,8 @@ createPage({
     this.audioContext.onEnded(() => {
       this.setData({ 
         isPlaying: false,
-        audioLoading: false 
+        audioLoading: false,
+        progress: 100 // 播放结束时将进度条设置为100%
       });
       clearTimeout(this.loadingTimer);
     });
@@ -247,89 +280,64 @@ createPage({
       return Promise.resolve();
     }
 
-    return new Promise((resolve, reject) => {
-      const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-      // 若后续新增 Session，只需在此数组中补充即可
-      const sessions = ['Session1', 'Session2'];
+    // ---------- 新实现：按语言(en/zh) + 身份文件夹(HH/HM/MH/MM) 动态加载 ----------
+    const selectedLang = (app.globalData && app.globalData.selectedCorpus) ? app.globalData.selectedCorpus : (this.data.currentLang === 'en' ? 'en' : 'zh');
+    const identityDirs = ['HH', 'HM', 'MH', 'MM']; // 如不存在会自动忽略
+    const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
 
-      // 针对每个 Session 取 content.json
-      const sessionPromises = sessions.map(session => {
-        const fileID = `${envPrefix}/${session}/content.json`;
-        return wx.cloud.getTempFileURL({
-          fileList: [{ fileID, maxAge: 60 * 60 }]
+    // 针对每个身份目录取 <lang>_test_<identity>.json
+    const jsonPromises = identityDirs.map(identity => {
+      const testFolder = `${selectedLang}_test_${identity}`;
+      const fileID = `${envPrefix}/${selectedLang}/${identity}/${testFolder}.json`;
+      return wx.cloud.getTempFileURL({
+        fileList: [{ fileID, maxAge: 3600 }]
       }).then(res => {
-          console.log('【getTempFileURL-content.json】', session, res);
-          const tempURL = res.fileList[0].tempFileURL;
-          // 再请求 JSON 内容
-          return new Promise((resolveInner, rejectInner) => {
-        wx.request({
-              url: tempURL,
-              success: r => {
-                // 给每条对话打上所属 Session 标记，方便之后拼音频路径
-                const dialoguesWithSession = (r.data || []).map(d => ({ ...d, session }));
-                resolveInner(dialoguesWithSession);
-              },
-              fail: err => {
-                console.error(`获取 ${session} content.json 失败`, err);
-                // ---------- 新增：尝试使用 downloadFile 备用方案（不受 request 域名限制） ----------
-                wx.cloud.downloadFile({ fileID }).then(dlRes => {
-                  const tempFilePath = dlRes.tempFilePath;
-                  if (!tempFilePath) {
-                rejectInner(err);
-                    return;
-                  }
-                  const fs = wx.getFileSystemManager();
-                  fs.readFile({
-                    filePath: tempFilePath,
-                    encoding: 'utf8',
-                    success: readRes => {
-                      try {
-                        const jsonData = JSON.parse(readRes.data || '[]');
-                        const dialoguesWithSession = (jsonData || []).map(d => ({ ...d, session }));
-                        resolveInner(dialoguesWithSession);
-                      } catch (parseErr) {
-                        console.error(`解析 ${session} content.json 失败`, parseErr);
-                        rejectInner(parseErr);
-                      }
-                    },
-                    fail: readErr => {
-                      console.error(`读取 ${session} content.json 失败`, readErr);
-                      rejectInner(readErr);
-                    }
-                  });
-                }).catch(dlErr => {
-                  console.error(`downloadFile ${session} content.json 失败`, dlErr);
-                  rejectInner(dlErr);
-                });
+        const tempURL = res.fileList[0] && res.fileList[0].tempFileURL;
+        if (!tempURL) throw new Error('no url');
+        return new Promise((resolve, reject) => {
+          wx.request({
+            url: tempURL,
+            success: r => {
+              let raw = r.data;
+              if (typeof raw === 'string') {
+                try { raw = JSON.parse(raw); } catch(e) { raw = []; }
               }
-            });
+              if (!Array.isArray(raw)) raw = [];
+              const list = raw.map(d => ({
+                ...d,
+                lang: selectedLang,
+                identity,
+                testFolder,
+                session: `${selectedLang}/${identity}/${testFolder}`,
+                type: d.type || d.tag || identity
+              }));
+              resolve(list);
+            },
+            fail: reject
           });
         });
       });
+    });
 
-      // 全部 Session 加载完毕后合并对话并随机抽取 (改为 Promise.allSettled 容错)
-      Promise.allSettled(sessionPromises).then(results => {
-        const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
-        if (!fulfilled.length) {
-          throw new Error('所有 Session 均加载失败');
-        }
-        const allDialogues = [].concat(...fulfilled);
-        console.log('已加载 Session 对话总数:', allDialogues.length);
+    // 全部加载后处理结果（使用 Promise.allSettled 容错）
+    return Promise.allSettled(jsonPromises).then(results => {
+      const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+      if (!fulfilled.length) {
+        throw new Error('所有对话 JSON 加载失败');
+      }
+      const allDialogues = [].concat(...fulfilled);
+      console.log('已加载对话总数:', allDialogues.length);
 
-        const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
-            this.setData({
-          cloudDialogues: allDialogues,
-          gameDialogues
-            });
-        if (app.globalData) {
-              app.globalData.gameDialogues = gameDialogues;
-          app.globalData.totalDialoguesCount = allDialogues.length; // 记录总对话数量
-        }
-            resolve();
-      }).catch(err => {
-        console.error('加载多 Session 对话失败', err && (err.errMsg || err.message || err));
-        reject(err);
+      const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
+      this.setData({
+        cloudDialogues: allDialogues,
+        gameDialogues
       });
+      if (app.globalData) {
+        app.globalData.gameDialogues = gameDialogues;
+        app.globalData.totalDialoguesCount = allDialogues.length;
+        app.globalData.cloudDialogues = allDialogues;
+      }
     });
   },
   
@@ -352,18 +360,19 @@ createPage({
     const heardSet = new Set(app.globalData.gameData.heardDialogues);
     
     // 3) 去重 conversation_id（同时排除已听过）
-    const uniqueMap = new Map(); // conversation_id -> dialogue
+    const uniqueMap = new Map(); // key = type + name -> dialogue
     validDialogues.forEach(d => {
-      const cid = d.conversation_id;
-      if (!cid || heardSet.has(cid)) return; // 无效或已听过
+      const audName = d.name;
+      if (!audName || heardSet.has(audName)) return;
 
-      if (!uniqueMap.has(cid)) {
+      const key = `${d.type}_${audName}`;
+      if (!uniqueMap.has(key)) {
         // 直接存
-        uniqueMap.set(cid, d);
+        uniqueMap.set(key, d);
       } else {
         // 已存在相同 cid（跨 Session）。随机保留一个，增加多样性
         if (Math.random() < 0.5) {
-          uniqueMap.set(cid, d);
+          uniqueMap.set(key, d);
         }
       }
     });
@@ -398,7 +407,6 @@ createPage({
         app.globalData.gameData.correctCount = 0;
         app.globalData.gameData.wrongCount = 0;
         app.globalData.gameData.currentCombo = 0;
-        app.globalData.gameData.maxCombo = 0;
         // 更新basePoints为新一局的起始点数
         app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
       }
@@ -469,16 +477,33 @@ createPage({
         }
         return {
           role: speakerMap[u.speaker],
-        content: u.text
+          content: u.text
         };
       });
       
-      // 直接使用对话类型（H: Human, M: AI）作为正确答案
-      const answer = dialogue.type === 'M' ? 'M' : 'H';
-      
+      // 直接使用 JSON 中的 type 作为正确答案 (HH/HM/MH/MM)
+      const answer = dialogue.type;
+
+      // 解析 AI 所属角色
+      let aiRole = 'none';
+      switch (dialogue.type) {
+        case 'HM':
+          aiRole = 'B';
+          break;
+        case 'MH':
+          aiRole = 'A';
+          break;
+        case 'MM':
+          aiRole = 'both';
+          break;
+        case 'HH':
+        default:
+          aiRole = 'none';
+      }
+
       // 保存当前音频ID与所属 Session
-      const currentAudioId = dialogue.conversation_id;
-      const currentAudioSession = dialogue.session || 'Session2'; // 兼容旧数据
+      const currentAudioId = dialogue.name || dialogue.conversation_id;
+      const currentAudioSession = dialogue.session; // 现为 lang/identity/testFolder
       
       this.setData({
         messages: messages,
@@ -486,7 +511,8 @@ createPage({
         currentAudioId: currentAudioId,
         currentAudioSession: currentAudioSession,
         isExpanded: false, // 重置展开状态
-        isPlaying: false // 重置播放状态
+        isPlaying: false, // 重置播放状态
+        aiRole: aiRole
       });
       
       // 更新展示的对话
@@ -498,7 +524,7 @@ createPage({
       // 预加载音频
       this.preloadAudio(currentAudioId, currentAudioSession);
       
-      console.log('加载对话:', dialogue.conversation_id, '答案:', answer);
+      console.log('加载对话:', currentAudioId, '答案:', answer);
       // 调试输出当前对话的正确答案
       console.debug('【DEBUG】当前对话正确答案:', answer);
     }
@@ -509,7 +535,7 @@ createPage({
     if (!audioId) return;
     
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-    const fileID = `${envPrefix}/${session}/${audioId}.wav`;
+    const fileID = `${envPrefix}/${session}/${audioId}.m4a`;
     
     // 若已有本地缓存则直接使用
     if (this.data.localAudioPath) {
@@ -536,6 +562,11 @@ createPage({
       isExpanded: newExpanded
     });
     this.updateDisplayMessages(this.data.messages, newExpanded);
+
+    // 若收起对话，立即回到顶部
+    if (!newExpanded) {
+      this.scrollToTop();
+    }
   },
   
   // 根据展开状态更新displayMessages
@@ -602,6 +633,12 @@ createPage({
       return;
     }
 
+    // 如果当前是暂停状态，则直接继续播放
+    if (this.audioContext.src && this.audioContext.currentTime > 0) {
+      this.audioContext.play();
+      return;
+    }
+
     // 显示加载状态，等待实际播放
     this.setData({ audioLoading: true });
     // 设置 10 秒超时兜底，避免长时间 waiting
@@ -615,7 +652,8 @@ createPage({
     }, 10000);
 
     // 已缓存本地路径则直接播放
-    const cachePath = this.data.preloadAudios[this.data.currentAudioId];
+    const cacheKey = makeAudioKey(this.data.currentAudioSession, this.data.currentAudioId);
+    const cachePath = this.data.preloadAudios[cacheKey];
     if (cachePath && (!this.audioContext.src || !this.audioContext.src.includes(this.data.currentAudioId))) {
       this.audioContext.src = cachePath;
       try { this.audioContext.seek(0); } catch(e){}
@@ -625,14 +663,15 @@ createPage({
 
     // 否则重新加载音频URL并播放
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-    const session = this.data.currentAudioSession || 'Session2';
-    const audioFileID = `${envPrefix}/${session}/${this.data.currentAudioId}.wav`;
+    const session = this.data.currentAudioSession; // 现在为 lang/identity/testFolder
+    const audioFileID = `${envPrefix}/${session}/${this.data.currentAudioId}.m4a`;
     
     // 使用 downloadFile 下载后播放（避免再次 waiting）
     wx.cloud.downloadFile({ fileID: audioFileID }).then(res => {
       const localPath = res.tempFilePath;
       const cid = this.data.currentAudioId;
-      const newMap = { ...this.data.preloadAudios, [cid]: localPath };
+      const key = makeAudioKey(this.data.currentAudioSession, cid);
+      const newMap = { ...this.data.preloadAudios, [key]: localPath };
       this.setData({ localAudioPath: localPath, preloadAudios: newMap });
       if (getApp().globalData) {
         getApp().globalData.preloadAudios = newMap;
@@ -717,11 +756,11 @@ createPage({
     
     // 记录本次对话结果，包含正确答案及音频ID（conversationId）
     gameData.dialogues.push({
-      id: this.data.currentDialogue,              // 本地对话序号 1-10
-      conversationId: this.data.currentAudioId,  // 云端 conversation_id / 音频ID
-      correctAnswer: this.data.currentAnswer,    // H / M
-      userAnswer: judgment,                      // 用户选择 (H/M)
-      isCorrect: isCorrect                       // 是否判定正确
+      id: this.data.currentDialogue,            // 本地对话序号 1-10
+      name: this.data.currentAudioId,           // 音频文件名
+      correctAnswer: this.data.currentAnswer,   // 正确答案
+      userAnswer: judgment,                     // 用户选择
+      isCorrect: isCorrect                      // 判定是否正确
     });
     
     // 保存游戏数据到全局状态
@@ -746,15 +785,21 @@ createPage({
       try { this.audioContext.stop(); } catch(e) {}
     }
 
-    // 显示结果阶段
+    // 显示结果阶段，并重置进度条
     this.setData({
       phase: 'result',
+      isExpanded: false,
       lastIsCorrect: isCorrect,
       lastPointsGained: pointsToAdd || 0,
       lastPointsLost: 2,
       comboCount: gameData.currentCombo,
-      showComboResult: false // 先隐藏，稍后触发动画
-    });
+      showComboResult: false, // 先隐藏，稍后触发动画
+      listeningAgain: false,
+      progress: 0, // 重置进度条
+    }, () => { this.scrollToTop(); });
+
+    // 收起对话展示
+    this.updateDisplayMessages(this.data.messages, false);
 
     // 下一事件循环再显示，触发 CSS 过渡
     this.comboShowTimer = setTimeout(() => {
@@ -772,20 +817,82 @@ createPage({
   enterDialogue(index) {
     // 切题前清理之前的 combo 动画定时器，重置显示状态
     this.clearComboTimers();
-    this.setData({ showComboResult: false });
+    this.setData({ showComboResult: false, replayMode: false, listeningAgain: false });
 
     const dlg = this.data.gameDialogues[index];
     if (!dlg) return;
-    const messages = dlg.utterances ? dlg.utterances.map((u, idx) => ({
-      role: idx % 2 === 0 ? 'A' : 'B',
-      content: u.text
-    })) : dlg.messages;
-    const answer = dlg.type === 'M' ? 'M' : 'H';
-    // 设置音频
-    const localPath = this.data.preloadAudios[dlg.conversation_id] || '';
+    // 根据 speaker 动态映射 A/B
+    const speakerMap = {};
+    let nextRole = 'A';
+    const messages = dlg.utterances.map(u => {
+      if (!speakerMap[u.speaker]) {
+        speakerMap[u.speaker] = nextRole;
+        nextRole = nextRole === 'A' ? 'B' : 'A';
+      }
+      return { role: speakerMap[u.speaker], content: u.text };
+    });
+
+    // 直接使用 JSON 中的 type 作为正确答案 (HH/HM/MH/MM)
+    const answer = dlg.type;
+
+    // 解析 AI 所属角色
+    let aiRole = 'none';
+    switch (dlg.type) {
+      case 'HM':
+        aiRole = 'B';
+        break;
+      case 'MH':
+        aiRole = 'A';
+        break;
+      case 'MM':
+        aiRole = 'both';
+        break;
+      case 'HH':
+      default:
+        aiRole = 'none';
+    }
+
+    // 若无特征，提供默认示例
+    let aiFeatures = dlg.aiFeatures || [];
+    if (aiRole !== 'none' && (!aiFeatures || aiFeatures.length === 0)) {
+      const zhPool = [
+        '语调平滑，缺乏起伏变化',
+        '情绪表达不够丰富或显得过度做作',
+        '停顿节奏与语意脱节',
+        '缺乏真实呼吸声或呼吸太规则',
+        '重音放错，无法正确强调关键词',
+        '连读、生理口音处理不自然',
+        '发音过于标准，缺乏个体特征',
+        '语气变化跳跃或突兀',
+        '无法自然表达复杂情感转折',
+        '笑声、叹息等人类非语言行为僵硬或缺失'
+      ];
+      const enPool = [
+        'Monotone delivery with limited pitch variation, unlike natural human intonation.',
+        'Emotional tone can feel flat, forced, or disconnected from context.',
+        'Pauses may occur in odd places, disrupting the natural speech flow.',
+        'Breathing sounds are either absent or too mechanical.',
+        'Stress often lands on incorrect words, affecting meaning and emphasis.',
+        'Lacks natural blending of sounds between words (e.g., linking, contractions).',
+        'Over-enunciated pronunciation with little speaker individuality.',
+        'Tone shifts feel abrupt or contextually inconsistent.',
+        'Struggles to convey emotional nuance or gradual emotional shifts.',
+        'Non-verbal sounds like laughter or sighs sound robotic or are missing.'
+      ];
+      const pool = (this.data.currentLang === 'en') ? enPool : zhPool;
+      // 随机抽取3条
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      aiFeatures = pool.slice(0,3);
+    }
+
+    const localPath = this.data.preloadAudios[makeAudioKey(dlg.session, dlg.name || dlg.conversation_id)] || '';
     if (localPath) {
       this.audioContext.src = localPath;
     }
+
     this.setData({
       phase: 'dialogue',
       curIndex: index,
@@ -793,29 +900,36 @@ createPage({
       currentAnswer: answer,
       isExpanded: false,
       pageReady: true,
-      currentAudioId: dlg.conversation_id,
-      currentAudioSession: dlg.session || 'Session2',
-      currentDialogue: index+1,
-      aiFeatures: dlg.aiFeatures || [],
-      aiRole: (dlg.type === 'M' ? 'B' : 'none'),
+      currentAudioId: dlg.name || dlg.conversation_id,
+      currentAudioSession: dlg.session, // 现在为 lang/identity/testFolder
+      currentDialogue: index + 1,
+      aiFeatures: aiFeatures,
+      aiRole: aiRole,
+      listeningAgain: false,
+      progress: 0, // 重置进度条
     });
     this.updateDisplayMessages(messages, false);
     // 预拉下一题音频
     this.prefetchNextAudio(index + 1);
+
+    // 调试输出当前对话信息
+    console.log('【DEBUG】enterDialogue 当前对话: ', dlg.name || dlg.conversation_id, '类型:', dlg.type);
   },
   /** 预拉下一题音频 */
   prefetchNextAudio(nextIndex) {
     if (nextIndex >= this.data.totalDialogues) return;
     const nextDlg = this.data.gameDialogues[nextIndex];
     if (!nextDlg) return;
-    const cid = nextDlg.conversation_id;
-    if (this.data.preloadAudios[cid]) return; // 已缓存
+    const cid = nextDlg.name || nextDlg.conversation_id;
+    const session = nextDlg.session;
+    const key = makeAudioKey(session, cid);
+    if (this.data.preloadAudios[key]) return; // 已缓存
     const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
-    const session = nextDlg.session || 'Session2';
-    const fileID = `${envPrefix}/${session}/${cid}.wav`;
+    const fileID = `${envPrefix}/${session}/${cid}.m4a`;
     wx.cloud.downloadFile({ fileID }).then(res => {
       const path = res.tempFilePath;
-      const newMap = { ...this.data.preloadAudios, [cid]: path };
+      const newKey = makeAudioKey(session, cid);
+      const newMap = { ...this.data.preloadAudios, [newKey]: path };
       this.setData({ preloadAudios: newMap });
       if (getApp().globalData) {
         getApp().globalData.preloadAudios = newMap;
@@ -824,17 +938,102 @@ createPage({
   },
   /** 结果页点击下一题 */
   nextFromResult() {
+    // 防止重复点击
+    if (this.data.phase === 'transition') return;
+    
     // 清理 combo 动画定时器，避免影响下一题或总结页
     this.clearComboTimers();
 
     if (wx.vibrateShort) wx.vibrateShort({ type: 'light' });
+    
     const nextIdx = this.data.curIndex + 1;
     if (nextIdx >= 10) {
       // TODO: 切换到 summary 阶段，保留原逻辑 or redirect
       wx.redirectTo({ url: '/pages/summary/summary' });
       return;
     }
+    
+    // 先将当前结果页设置为不可见，避免闪烁
+    this.setData({ phase: 'transition' }, () => {
+    // 若正在重听，先停止音频
+    if (this.data.listeningAgain && this.audioContext) {
+      try { this.audioContext.stop(); } catch(e){}
+      this.setData({ listeningAgain: false, isPlaying: false });
+    }
+      
+      // 滚动到顶部并进入下一题
+      this.scrollToTop();
     this.enterDialogue(nextIdx);
+    });
+  },
+  /** 结果页点击再听一次 */
+  replayDialogue() {
+    // 回到对话页面，但禁用判定按钮
+    this.setData({ phase: 'dialogue', replayMode: true, isExpanded: false, progress: 0 }, () => { this.scrollToTop(); this.updateDisplayMessages(this.data.messages, false); });
+  },
+  /** 切换结果页重听状态 */
+  toggleReplayAudio() {
+    if (!this.audioContext) return;
+    
+    if (!this.data.listeningAgain) {
+      // 开始重听
+      // 确保音频已加载
+      const dlg = this.data.gameDialogues[this.data.curIndex];
+      if (!dlg) return;
+      
+      const cid = dlg.name || dlg.conversation_id;
+      const session = dlg.session;
+      const localPath = this.data.preloadAudios[makeAudioKey(session, cid)];
+      
+      // 设置加载状态
+      this.setData({ audioLoading: true });
+      
+      // 如果有本地缓存路径，直接使用
+      if (localPath) {
+        console.log('使用缓存音频:', localPath);
+        this.audioContext.src = localPath;
+        try { 
+          this.audioContext.seek(0);
+      this.audioContext.play();
+        } catch(e){
+          console.error('播放缓存音频失败:', e);
+        }
+      this.setData({ listeningAgain: true, progress: 0 });
+        return;
+      }
+      
+      // 否则重新下载
+      const envPrefix = 'cloud://cloud1-8gbjshfgf7c95b79.636c-cloud1-8gbjshfgf7c95b79-1367575007/Audio';
+      const fileID = `${envPrefix}/${session}/${cid}.m4a`;
+      
+      console.log('下载并播放音频:', fileID);
+      wx.cloud.downloadFile({ fileID }).then(res => {
+        const path = res.tempFilePath;
+        // 更新缓存
+        const newMap = { ...this.data.preloadAudios, [makeAudioKey(session, cid)]: path };
+        this.setData({ 
+          preloadAudios: newMap,
+          localAudioPath: path
+        });
+        
+        if (getApp().globalData) {
+          getApp().globalData.preloadAudios = newMap;
+        }
+        
+        // 播放音频
+        this.audioContext.src = path;
+        this.audioContext.play();
+        this.setData({ listeningAgain: true, progress: 0 });
+      }).catch(err => {
+        console.error('下载音频失败:', err);
+        this.setData({ audioLoading: false });
+        wx.showToast({ title: '音频加载失败', icon: 'none' });
+      });
+    } else {
+      // 停止重听
+      try { this.audioContext.stop(); } catch(e){}
+      this.setData({ listeningAgain: false, audioLoading: false });
+    }
   },
   // 语言切换后刷新动态文本
   refreshLanguageDependentData(language) {
@@ -851,4 +1050,68 @@ createPage({
     };
     this.setData({ t: { ...this.data.t, ...extra } });
   },
+
+  // --- 音频进度条相关函数 ---
+  
+  /** 点击进度条 */
+  onProgressBarTap(e) {
+    if (!this.audioContext || this.data.duration === 0) return;
+    
+    // 添加震动反馈
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+
+    const position = e.detail.x;
+    const query = wx.createSelectorQuery().in(this);
+    query.select('.progress-bar-track').boundingClientRect(rect => {
+      if(rect) {
+        const progress = ((position - rect.left) / rect.width) * 100;
+        this.seekAudio(progress);
+      }
+    }).exec();
+  },
+
+  /** 开始拖动滑块 */
+  onSliderTouchStart(e) {
+    if (!this.audioContext || this.data.duration === 0) return;
+    this.setData({ isSeeking: true });
+    // 添加震动反馈
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+  },
+
+  /** 正在拖动滑块 */
+  onSliderTouchMove(e) {
+    if (!this.data.isSeeking || !this.audioContext || this.data.duration === 0) return;
+    const position = e.touches[0].clientX;
+    const query = wx.createSelectorQuery().in(this);
+    query.select('.progress-bar-track').boundingClientRect(rect => {
+      if(rect) {
+        let progress = ((position - rect.left) / rect.width) * 100;
+        progress = Math.max(0, Math.min(100, progress)); // 保证进度在 0-100 之间
+        this.setData({ progress });
+      }
+    }).exec();
+  },
+
+  /** 结束拖动滑块 */
+  onSliderTouchEnd(e) {
+    if (!this.data.isSeeking) return;
+    this.setData({ isSeeking: false });
+    this.seekAudio(this.data.progress);
+  },
+  
+  /** 跳转到指定音频位置并播放 */
+  seekAudio(progress) {
+    if (!this.audioContext || this.data.duration === 0) return;
+    const position = (progress / 100) * this.data.duration;
+    // 先暂停，seek之后再播放，避免音频播放出现问题
+    this.audioContext.pause();
+    this.audioContext.seek(position);
+    this.audioContext.play();
+  },
+
+  noop() {},
 }) 

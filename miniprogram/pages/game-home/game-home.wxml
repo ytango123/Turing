@@ -2,7 +2,7 @@
   <!-- 顶部导航 -->
   
   <t-navbar 
-    title="{{t.navTitle || '首页'}}" 
+    title="{{navTitle}}" 
     title-color="#ffffff"
     t-class="t-navbar"
     fixed
@@ -13,7 +13,7 @@
   <view class="card user-info-card mb-medium" bindtap="editProfile">
     <view class="flex-start">
       <view class="avatar-wrapper mr-medium">
-        <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+        <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" priority="true" />
         <view wx:else class="avatar">
           <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:64rpx;"></text>
         </view>
@@ -60,7 +60,7 @@
       <block wx:for="{{topRankings}}" wx:key="rank">
         <view class="podium-item rank-{{item.rank}}">
           <image wx:if="{{item.rank === 1}}" class="crown-icon" src="/assets/images/game-home/star.svg" mode="widthFix" />
-          <image wx:if="{{item.avatarUrl}}" class="podium-avatar" src="{{item.avatarUrl}}" mode="aspectFill" />
+          <image wx:if="{{item.avatarUrl}}" class="podium-avatar" src="{{item.avatarUrl}}" mode="aspectFill" priority="true" />
           <view wx:else class="podium-avatar-fallback">
             <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:52rpx;"></text>
           </view>
@@ -83,7 +83,7 @@
         <block wx:for="{{restRankings}}" wx:key="rank">
           <view class="rest-item">
             <view class="rest-rank">{{item.rank}}</view>
-            <image wx:if="{{item.avatarUrl}}" class="rest-avatar" src="{{item.avatarUrl}}" mode="aspectFill" />
+            <image wx:if="{{item.avatarUrl}}" class="rest-avatar" src="{{item.avatarUrl}}" mode="aspectFill" lazy-load="true" />
             <view wx:else class="rest-avatar-fallback">
               <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:52rpx;"></text>
             </view>

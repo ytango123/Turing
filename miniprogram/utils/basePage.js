@@ -112,7 +112,8 @@ const createPage = (pageConfig) => {
       }
       return {
         title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
-        path: '/pages/game-home/game-home'
+        path: '/pages/game-home/game-home',
+        imageUrl: '/assets/figma/share2.png'
       }
     }
   }
@@ -127,7 +128,7 @@ const createPage = (pageConfig) => {
       return {
         title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
         query: '',
-        imageUrl: ''
+        imageUrl: '/assets/figma/share2.png'
       }
     }
   }

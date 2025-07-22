@@ -1,6 +1,25 @@
 .container {
   padding: 0 32rpx;
   padding-top: 10rpx;
+  padding-bottom: 40rpx; /* 增加底部内边距 */
+  min-height: 100vh; /* 确保至少占满整个视口高度 */
+  box-sizing: border-box; /* 确保内边距不会增加元素总宽高 */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.safe-area-bottom {
+  height: env(safe-area-inset-bottom, 20px);
+  min-height: 20px; /* 兜底值 */
+}
+
+.result-phase .container {
   padding-bottom: 96rpx;
 }
 
@@ -118,6 +137,68 @@
   border-radius: 36rpx 36rpx 8rpx 36rpx;
 }
 
+/* 音频进度条样式 */
+.audio-progress-container {
+  width: 88%; /* 将宽度从100%改为90%，使其变短 */
+  margin: 0 auto 44rpx; /* 水平居中并保持24rpx的底部外边距 */
+  height: 50rpx; /* 增加容器高度以容纳滑块 */
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* 去掉整个组件的触摸高亮 */
+}
+
+.audio-progress-container .progress-bar-track {
+  width: 100%;
+  height: 14rpx;
+  background-color: #E5E7EB; /* 灰色未播放区域 */
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-progress-container .progress-bar-fill {
+  height: 100%;
+  background: #7190E6; /* 紫色播放区域 */
+  border-radius: 6rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.audio-progress-container .progress-slider {
+  width: 24px; /* 34px */
+  height: 20px; /* 30px */
+  background-color: #FFFFFF;
+  border-radius: 6px; /* 较大的圆角 */
+  box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.15) inset; /* 内部阴影 */
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* -- 新增：禁用用户选择，去掉移动滑块时的选中遮罩 -- */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* 去掉触摸高亮 */
+}
+
+.audio-progress-container .slider-decorator {
+  width: 10px;
+  height: 8px;
+  background-image:
+    linear-gradient(to right, #E1E1E1, #E1E1E1),
+    linear-gradient(to right, #E1E1E1, #E1E1E1),
+    linear-gradient(to right, #E1E1E1, #E1E1E1);
+  background-size: 2px 100%, 2px 100%, 2px 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0, 4px 0, 8px 0;
+  transform: translateY(-1rpx)
+}
+
 /* 展开/折叠按钮样式 */
 .expand-button {
   display: flex;
@@ -197,6 +278,8 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 48rpx;
+  margin-bottom: 60rpx; /* 增加底部外边距 */
+  padding-bottom: 20rpx; /* 额外的内边距 */
 }
 
 /* SVG 基础样式 */
@@ -384,13 +467,61 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
+
+/* 添加页面加载状态样式 */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .phase-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  transition: opacity 0.01s ease; /* 快速淡出 */
 }
 .phase-show {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease; /* 稍慢淡入 */
+  position: relative;
+  z-index: 1;
+} 
+
+/* 再听一次小字 */
+.relisten {
+  text-align: center;
+  font-size: 28rpx;
+  color: #577CE2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.relisten:active {
+  opacity: 0.6;
+}
+
+/* 小型加载图标 */
+.loading-icon-small {
+  width: 28rpx;
+  height: 28rpx;
+  border: 4rpx solid rgba(87, 124, 226, 0.3);
+  border-top: 4rpx solid #577CE2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 } 

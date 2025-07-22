@@ -4,7 +4,8 @@ const app = getApp()
 Page({
   data: {
     // 统一使用小写 zh / en
-    currentLang: wx.getStorageSync('language') || 'zh'
+    currentLang: wx.getStorageSync('language') || 'zh',
+    pageReady: false
     // 移除动态定位数据
   },
   onLoad() {
@@ -13,6 +14,11 @@ Page({
     this.setData({ currentLang: storedLang });
 
     console.log('欢迎页面加载完成，当前语言:', this.data.currentLang);
+
+    // 下一事件循环标记页面可见，触发淡入
+    setTimeout(() => {
+      this.setData({ pageReady: true });
+    }, 50);
   },
   onShow() {
     console.log('欢迎页面显示');
@@ -24,9 +30,12 @@ Page({
     });
   },
   // 添加语言切换功能
-  switchLanguage() {
-    // 切换语言
-    const languageCode = this.data.currentLang === 'zh' ? 'en' : 'zh';
+  switchLanguage(e) {
+    // 根据 dataset 指定语言或切换
+    let languageCode = e && e.currentTarget.dataset.lang;
+    if (!languageCode) {
+      languageCode = this.data.currentLang === 'zh' ? 'en' : 'zh';
+    }
     this.setData({ currentLang: languageCode });
 
     // 更新本地存储

@@ -2,8 +2,13 @@
 <image src="/assets/images/component/correct.svg" style="width:0;height:0;opacity:0;position:absolute" />
 <image src="/assets/images/component/wrong.svg" style="width:0;height:0;opacity:0;position:absolute" />
 
+<!-- 页面加载状态 -->
+<view class="page-loading" hidden="{{pageReady}}">
+  <view class="loading-icon"></view>
+</view>
+
 <!-- 对话视图 -->
-<view class="container dialogue-phase phase-wrapper {{phase==='dialogue'?'phase-show':'phase-hidden'}}" hidden="{{!pageReady}}">
+<view class="container dialogue-phase phase-wrapper {{phase==='dialogue'?'phase-show':(phase==='transition'?'phase-hidden':'phase-hidden')}}">
   <!-- 顶部导航 -->
   <t-navbar 
     title="{{pageReady ? (t.dialogueTitle + ' ' + currentDialogue + '/' + totalDialogues) : t.loading}}"
@@ -18,6 +23,8 @@
     </view>
   </t-navbar>
   
+  <!-- 内容区域 -->
+  <view class="content-wrapper">
   <!-- 进度条 -->
   <view class="mb-large">
     <view class="flex-between text-gray mb-small">
@@ -48,6 +55,22 @@
     </view>
   </view>
   
+  <!-- 音频进度条 -->
+  <view class="audio-progress-container" bindtap="onProgressBarTap">
+    <view class="progress-bar-track">
+      <view class="progress-bar-fill" style="width: {{progress}}%;"></view>
+    </view>
+    <view class="progress-slider" 
+      style="left: {{progress}}%;"
+      bindtouchstart="onSliderTouchStart"
+      bindtouchmove="onSliderTouchMove"
+      bindtouchend="onSliderTouchEnd"
+      catchtouchcancel="onSliderTouchEnd"
+    >
+      <view class="slider-decorator"></view>
+    </view>
+  </view>
+
   <!-- 播放控制 -->
   <view class="play-button-container mb-large">
     <view class="play-button {{audioLoading ? 'loading' : ''}}" bindtap="playAudio" bindtouchstart="onPlayButtonPress" bindtouchend="onPlayButtonRelease" bindtouchcancel="onPlayButtonRelease" style="transform: scale({{isPressed ? 0.9 : 1}}); transition: transform 0.1s;">
@@ -59,28 +82,34 @@
         <image wx:if="{{isPlaying}}" class="play-icon" src="/assets/images/conversation/pause.svg" mode="widthFix" />
       </block>
     </view>
+
+    <!-- 重听模式下的下一题按钮 -->
   </view>
   
   <!-- 提示文本 -->
-  <view class="hint-text mb-large">
+  <view class="hint-text mb-large" wx:if="{{!replayMode}}">
     {{t.hintText}}
   </view>
   
   <!-- 判断按钮改为SVG -->
-  <view class="judgment-images">
+  <view class="judgment-images" wx:if="{{!replayMode}}">
     <!-- 人类判断 -->
-    <image class="judge-img" src="/assets/images/conversation/H_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="H" hidden="{{currentLang!=='zh'}}" />
-    <image class="judge-img" src="/assets/images/conversation/H_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="H" hidden="{{currentLang!=='en'}}" />
+    <image class="judge-img" src="/assets/images/conversation/H_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/assets/images/conversation/H_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='en'}}" />
       
     <!-- AI 判断 -->
-    <image class="judge-img" src="/assets/images/conversation/M_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="M" hidden="{{currentLang!=='zh'}}" />
-    <image class="judge-img" src="/assets/images/conversation/M_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="M" hidden="{{currentLang!=='en'}}" />
+    <image class="judge-img" src="/assets/images/conversation/M_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/assets/images/conversation/M_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='en'}}" />
+    </view>
+    
+    <!-- 底部安全区域 -->
+    <view class="safe-area-bottom"></view>
   </view>
 </view>
 
 <!-- 结果视图 -->
-<view class="result-phase phase-wrapper {{phase==='result'?'phase-show':'phase-hidden'}}" hidden="{{!pageReady}}">
-  <view class="container" hidden="{{!pageReady}}">
+<view class="result-phase phase-wrapper {{phase==='result'?'phase-show':(phase==='transition'?'phase-hidden':'phase-hidden')}}">
+  <view class="container">
     <!-- 顶部导航复用 -->
     <t-navbar 
       title="" 
@@ -90,6 +119,9 @@
       fixed
       placeholder
     />
+    
+    <!-- 内容区域 -->
+    <view class="content-wrapper">
     <!-- 结果展示 -->
     <view class="result-container mb-large">
       <!-- SVG 结果图标 -->
@@ -111,7 +143,7 @@
         <view class="{{item.role === 'A' ? 'message-row' : 'message-row-reverse'}}">
           <view class="avatar-container {{item.role === 'A' ? 'avatar-a' : 'avatar-b'}} {{aiRole === item.role ? 'has-ai-badge' : ''}}">
             <text>{{item.role}}</text>
-            <view class="ai-badge" wx:if="{{aiRole === item.role}}">AI</view>
+            <view class="ai-badge" wx:if="{{aiRole === item.role || aiRole==='both'}}">AI</view>
           </view>
           <view class="message-bubble {{item.role === 'A' ? 'message-bubble-a' : 'message-bubble-b'}}">
             <text>{{item.content}}</text>
@@ -123,7 +155,7 @@
         <t-icon name="{{isExpanded?'chevron-up':'chevron-down'}}" size="32rpx" color="#6B7280" />
       </view>
     </view>
-
+    
     <!-- AI特征解析 -->
     <view class="card ai-analysis-card mb-large" wx:if="{{aiRole !== 'none'}}">
       <view class="analysis-title mb-medium">{{t.aiAnalysis}}</view>
@@ -134,10 +166,21 @@
         </view>
       </view>
     </view>
+    <!-- 再听一次小字（放在所有卡片之后） -->
+    <view class="relisten" bindtap="toggleReplayAudio">
+        <block wx:if="{{audioLoading}}">
+          <view class="loading-icon-small"></view>
+        </block>
+        <text wx:else>{{listeningAgain ? t.relistenStop : t.relisten}}</text>
+    </view>
     
     <!-- 下一题按钮 -->
     <image class="next-button" src="/assets/images/result/next_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="nextFromResult" />
     <image class="next-button" src="/assets/images/result/next_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="nextFromResult" />
+      
+      <!-- 底部安全区域 -->
+      <view class="safe-area-bottom"></view>
+    </view>
     
     <!-- 动态连击提示 -->
     <view class="combo-toast {{showComboResult ? 'show' : ''}}" wx:if="{{comboCount>1 && lastIsCorrect}}">
