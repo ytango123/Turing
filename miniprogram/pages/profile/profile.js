@@ -65,7 +65,7 @@ createPage({
         unlocked: false,
         key: 'comboMaster',
         image: '/assets/images/summary/five.svg',
-        size: 198
+        size: 210
       },
       {
         id: 3,
@@ -76,7 +76,18 @@ createPage({
         unlocked: false,
         key: 'perfectJudge',
         image: '/assets/images/summary/perfect.svg',
-        size: 240
+        size: 210
+      },
+      {
+        id: 4,
+        title: '完美连胜',
+        description: '连续三轮挑战都达到 100% 正确率',
+        icon: 'flash_line',
+        iconType: 'iconfont',
+        unlocked: false,
+        key: 'flawlessStreak',
+        image: '/assets/images/summary/flawless.svg',
+        size: 210
       }
     ],
     

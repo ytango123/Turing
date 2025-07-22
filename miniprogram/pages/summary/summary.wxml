@@ -24,7 +24,7 @@
     <view class="trophy mb-medium">
       <text class="iconfont icon-magic_star_line" style="font-size: 112rpx; color: #FFF;"></text>
     </view>
-    <view class="result-title mb-small">{{t.greatPerformance}}</view>
+    <view class="result-title mb-small">{{performanceText}}</view>
     <view class="result-desc mb-medium">
       {{t.resultPrefix}}<text class="text-primary font-bold">{{correctRate}}</text>{{t.accuracySuffix}}
     </view>

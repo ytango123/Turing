@@ -85,6 +85,10 @@ const i18nMessages = {
         perfectJudge: {
           title: '完美判断',
           description: '在一轮挑战中获得10/10的正确率'
+        },
+        flawlessStreak: {
+          title: '完美连胜',
+          description: '连续三轮挑战都达到 100% 正确率'
         }
       },
       history: {
@@ -141,7 +145,7 @@ const i18nMessages = {
       rewardSuffix: '奖励',
       expand: '展开全部对话',
       collapse: '收起对话',
-      aiAnalysis: 'AI特征解析',
+      aiAnalysis: 'AI鉴别小贴士',
       nextButton: '下一题',
       combo: '连击'
     },
@@ -168,7 +172,11 @@ const i18nMessages = {
       shareButton: '分享我的成绩',
       playAgain: '再来一轮',
       achievementUnlocked: '达成成就',
-      shareShort: '分享'
+      shareShort: '分享',
+      performanceExcellent: '优秀的表现！',
+      performanceGood: '不错的表现！',
+      performanceAverage: '还有提升空间！',
+      performancePoor: '继续加油！'
     },
     index: {
       navTitle: '首页',
@@ -309,6 +317,10 @@ const i18nMessages = {
         perfectJudge: {
           title: 'Perfect Judge',
           description: 'Get 10/10 correct in one challenge'
+        },
+        flawlessStreak: {
+          title: 'Flawless Streak',
+          description: 'Achieve 100% accuracy for three consecutive rounds'
         }
       },
       history: {
@@ -365,7 +377,7 @@ const i18nMessages = {
       rewardSuffix: '',
       expand: 'Show full dialogue',
       collapse: 'Collapse dialogue',
-      aiAnalysis: 'AI Feature Analysis',
+      aiAnalysis: 'AI Detection Tips',
       nextButton: 'Next',
       combo: 'Combo'
     },
@@ -392,7 +404,11 @@ const i18nMessages = {
       shareButton: 'Share my score',
       playAgain: 'Play again',
       achievementUnlocked: 'Achievement Unlocked',
-      shareShort: 'Share'
+      shareShort: 'Share',
+      performanceExcellent: 'Excellent Performance!',
+      performanceGood: 'Great Job!',
+      performanceAverage: 'Room for Improvement!',
+      performancePoor: 'Keep Practicing!'
     },
     index: {
       navTitle: 'Home',

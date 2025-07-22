@@ -68,7 +68,8 @@ createPage({
     achievementName: '',              // 成就名称
     newAchievements: [],              // 收集本次获得的所有成就
     currentAchievementIndex: 0,       // 当前显示的成就索引
-    achievementDescription: ''        // 成就描述文本
+    achievementDescription: '',        // 成就描述文本
+    performanceText: '',
   },
   
   async onLoad(options) {
@@ -118,6 +119,13 @@ createPage({
     const language = wx.getStorageSync('language') || 'zh';
     const correctRatePercent = Math.round((correctCount / totalCount) * 100);
 
+    let performanceKey;
+    if (correctRatePercent >= 90) performanceKey = 'summary.performanceExcellent';
+    else if (correctRatePercent >= 70) performanceKey = 'summary.performanceGood';
+    else if (correctRatePercent >= 50) performanceKey = 'summary.performanceAverage';
+    else performanceKey = 'summary.performancePoor';
+    const performanceText = t(performanceKey, language);
+    
     /* ------ 更新累计正确率 totalCorrectRate ------ */
     const prevChallenges = gameData.completedChallenges || 0; // 本轮之前的完成次数
     const prevTotalRate = gameData.totalCorrectRate || 0;     // 已保存的累计平均
@@ -257,6 +265,22 @@ createPage({
       gameData.achievements.perfectJudge = true;
     }
 
+    const last3Perfect = (() => {
+      const hist = gameData.history || [];
+      if (hist.length < 3) return false;
+      return hist.slice(0,3).every(item => item.correctRate === 100);
+    })();
+
+    if (last3Perfect && !gameData.achievements.flawlessStreak) {
+      newAchievements.push({
+        type: 'flawlessStreak',
+        icon: '/assets/images/summary/flawless.svg',
+        name: t('profile.achievements.flawlessStreak.title', language),
+        description: t('profile.achievements.flawlessStreak.description', language)
+      });
+      gameData.achievements.flawlessStreak = true;
+    }
+
     // 如果有新获得的成就，延时 800ms 后显示第一个成就弹窗
     if (newAchievements.length > 0) {
       // 先保存成就列表
@@ -278,6 +302,7 @@ createPage({
     }
     
     this.setData({
+      performanceText,
       correctRate,
       pointsGained,
       maxCombo,

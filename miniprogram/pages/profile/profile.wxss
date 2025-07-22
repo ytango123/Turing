@@ -255,11 +255,11 @@
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 210rpx; /* 每行固定 210rpx 高度 */
   gap: 32rpx 18rpx;
   justify-items: center;
-  min-height: 400rpx;  /* 预留最小高度 */
   align-items: center;
-  margin-top: -120rpx;
+  margin-top: 32rpx; /* 与上方统计区留间距 */
 }
 
 .badge-item {
@@ -306,7 +306,7 @@
   width: 560rpx;
   background: #ffffff;
   border-radius: 88rpx;
-  padding: 64rpx 30rpx 90rpx;
+  padding: 76rpx 30rpx 70rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,7 +319,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 48rpx;
+  margin-bottom: 10rpx;
 }
 
 .modal-badge {
@@ -331,14 +331,14 @@
   font-size: 48rpx;
   font-weight: bold;
   color: #3b5ba5;
-  margin-bottom: 16rpx;
+  margin-bottom: 14rpx;
 }
 
 .modal-desc {
   font-size: 28rpx;
   color: #9CA3AF;
   text-align: center;
-  margin-bottom: 64rpx;
+  margin-bottom: 74rpx;
 }
 
 .modal-close {
