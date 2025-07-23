@@ -40,44 +40,42 @@
   </view>
   
   <!-- 统计数据 -->
-  <view class="stats-grid mb-medium">
-    <view class="stat-card accuracy-card">
-      <view class="stat-icon">
-        <text class="iconfont icon-check_circle_line"></text>
-      </view>
-      <view class="stat-content">
-        <view class="stat-label">{{t.statsCorrectRate}}</view>
-      <view class="stat-value">{{correctRate}}%</view>
-      </view>
+  <view class="stats-section mb-medium">
+    <!-- 左侧环形正确率 -->
+    <view class="accuracy-ring-wrapper">
+      <t-progress
+        theme="circle"
+        percentage="{{correctRate}}"
+        label="{{false}}"
+        size="200rpx"
+        stroke-width="8"
+        color="{{correctRate >= 80 ? '#10B981' : (correctRate >= 50 ? '#F0B76C' : '#EF4444')}}"
+        track-color="#F3F4F6">
+        <view slot="label" class="circle-text">
+          <text class="accuracy-rate">{{correctRate}}%</text>
+          <text class="accuracy-label">{{t.statsCorrectRate}}</text>
+        </view>
+      </t-progress>
     </view>
-    
-    <view class="stat-card combo-card">
-      <view class="stat-icon">
-        <text class="iconfont icon-flash_line"></text>
+
+    <!-- 右侧综合统计卡片 -->
+    <view class="stats-summary-card">
+      <view class="summary-item">
+        <text class="iconfont icon-flash_line summary-icon summary-icon-combo"></text>
+        <text class="summary-value">{{maxCombo}}</text>
+        <text class="summary-label">{{t.statsMaxCombo}}</text>
       </view>
-      <view class="stat-content">
-        <view class="stat-label">{{t.statsMaxCombo}}</view>
-      <view class="stat-value">{{maxCombo}}</view>
+      <view class="summary-divider"></view>
+      <view class="summary-item">
+        <text class="iconfont icon-star_line summary-icon summary-icon-achievement"></text>
+        <text class="summary-value">{{unlockedAchievements}}</text>
+        <text class="summary-label">{{t.statsAchievements}}</text>
       </view>
-    </view>
-    
-    <view class="stat-card achievement-card">
-      <view class="stat-icon">
-        <text class="iconfont icon-star_line"></text>
-      </view>
-      <view class="stat-content">
-        <view class="stat-label">{{t.statsAchievements}}</view>
-      <view class="stat-value">{{unlockedAchievements}}</view>
-      </view>
-    </view>
-    
-    <view class="stat-card rank-card">
-      <view class="stat-icon">
-        <text class="iconfont icon-medal_line"></text>
-      </view>
-      <view class="stat-content">
-        <view class="stat-label">{{t.statsRank}}</view>
-        <view class="stat-value">#{{userRank}}</view>
+      <view class="summary-divider"></view>
+      <view class="summary-item">
+        <text class="iconfont icon-medal_line summary-icon summary-icon-rank"></text>
+        <text class="summary-value">#{{userRank}}</text>
+        <text class="summary-label">{{t.statsRank}}</text>
       </view>
     </view>
   </view>
@@ -136,8 +134,8 @@
     <view class="modal-title">{{selectedBadge.title}}</view>
     <view class="modal-desc">{{selectedBadge.description}}</view>
     <view class="modal-close-btn" bindtap="closeBadgeModal">
-      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" />
-      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="aspectFit" hidden="{{currentLang!=='zh'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="aspectFit" hidden="{{currentLang!=='en'}}" />
     </view>
   </view>
 </view> 

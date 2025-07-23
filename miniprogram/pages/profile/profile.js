@@ -348,5 +348,38 @@ createPage({
 
   onShow() {
     this.fetchLatestUserData();
+  },
+
+  onReady() {
+    // 页面初次渲染完成后绘制一次环形进度条
+  },
+
+  // 绘制正确率环形进度条
+  drawCorrectRateRing() {
+    const rate = this.data.correctRate || 0;
+    const ctx = wx.createCanvasContext('rateRing', this);
+    const size = 320; // 画布尺寸（px），需与样式匹配
+    const center = size / 2;
+    const radius = center - 8;
+
+    ctx.clearRect(0, 0, size, size);
+    ctx.setLineWidth(12);
+    ctx.setLineCap('round');
+
+    // 背景圆
+    ctx.setStrokeStyle('#F3F4F6');
+    ctx.beginPath();
+    ctx.arc(center, center, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    // 进度圆
+    ctx.setStrokeStyle('#10B981');
+    ctx.beginPath();
+    const startAngle = -Math.PI / 2;
+    const endAngle = startAngle + 2 * Math.PI * rate / 100;
+    ctx.arc(center, center, radius, startAngle, endAngle);
+    ctx.stroke();
+
+    ctx.draw();
   }
 }) 

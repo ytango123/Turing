@@ -125,7 +125,7 @@ createPage({
     else if (correctRatePercent >= 50) performanceKey = 'summary.performanceAverage';
     else performanceKey = 'summary.performancePoor';
     const performanceText = t(performanceKey, language);
-    
+
     /* ------ 更新累计正确率 totalCorrectRate ------ */
     const prevChallenges = gameData.completedChallenges || 0; // 本轮之前的完成次数
     const prevTotalRate = gameData.totalCorrectRate || 0;     // 已保存的累计平均

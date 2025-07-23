@@ -105,8 +105,8 @@
     <view class="modal-title">{{achievementName}}</view>
     <view class="modal-desc">{{achievementDescription}}</view>
     <view class="modal-close-btn" bindtap="closeAchievement">
-      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" />
-      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="aspectFit" hidden="{{currentLang!=='zh'}}" />
+      <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="aspectFit" hidden="{{currentLang!=='en'}}" />
     </view>
   </view>
 </view> 

@@ -235,7 +235,7 @@
 /* Podium item ordering & height */
 .rank-1 {
   order: 2;
-  transform: translateY(-34rpx);
+  transform: translate(14rpx,-34rpx);
 }
 .rank-2 {
   order: 1;

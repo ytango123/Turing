@@ -298,11 +298,11 @@ const i18nMessages = {
       stats: {
         correctRate: 'Accuracy',
         maxCombo: 'Max Combo',
-        achievements: 'Achievements',
+        achievements: 'Badges',
         rank: 'Rank'
       },
       tabs: {
-        achievements: 'Achievements',
+        achievements: 'Badges',
         history: 'History'
       },
       achievements: {

@@ -585,3 +585,90 @@
             linear-gradient(90deg, #FBBF24, #F59E0B);
   border-radius: 8rpx;
 } 
+
+/* ====== 新统计布局 ====== */
+.stats-section {
+  display: flex;
+  align-items: center;
+  gap: 36rpx;
+}
+
+.accuracy-ring-wrapper {
+  position: relative;
+  width: 210rpx;
+  height: 200rpx;
+  margin-left: 18rpx;
+}
+
+
+.circle-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.accuracy-rate {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
+.accuracy-label {
+  font-size: 22rpx;
+  color: #6B7280;
+}
+
+.stats-summary-card {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 36rpx;
+  padding: 32rpx 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-icon {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+}
+
+.summary-icon-combo {
+  color: #385DB6;
+}
+
+.summary-icon-achievement {
+  color: #C95065;
+}
+
+.summary-icon-rank {
+  color: #E2A030;
+}
+
+.summary-value {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #1F2937;
+  margin-bottom: 8rpx;
+}
+
+.summary-label {
+  font-size: 20rpx;
+  color: #6B7280;
+} 
+
+.summary-divider {
+  width: 2rpx;
+  height: 120rpx; /* 分割线长度小于卡片高度 */
+  background: linear-gradient(to bottom, transparent 0%, #E5E7EB 50%, transparent 100%);
+  margin: 0 2rpx;
+} 

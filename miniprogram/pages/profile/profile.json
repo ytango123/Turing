@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "t-progress": "tdesign-miniprogram/progress/progress"
+  },
   "navigationBarTitleText": "个人中心",
   "navigationStyle": "custom"
   
