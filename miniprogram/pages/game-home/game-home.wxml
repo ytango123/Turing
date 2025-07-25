@@ -36,12 +36,12 @@
   </view>
   
   <!-- 游戏模式选择 -->
-  <view class="section-title mb-medium">{{t.challengeModes}}</view>
+  <view class="section-title mb-medium"><view class="title-decor"></view>{{t.challengeModes}}</view>
   
   <view class="challenge-modes mb-large">
     <!-- 快速挑战卡片 -->
     <view class="mode-card" bindtap="startQuickChallenge" hover-class="mode-card-pressed" hover-stay-time="0">
-      <image class="card-icon" src="/assets/figma/quick_challenge_top.png" mode="widthFix"></image>
+      <image class="card-icon-bot" src="/assets/figma/quick_challenge.png" mode="widthFix"></image>
       <image class="card-image" src="{{quickChallengeSvg}}" mode="widthFix"></image>
     </view>
     
@@ -53,13 +53,13 @@
   </view>
   
   <!-- 排行榜 -->
-  <view class="section-title mb-medium">{{t.rankings}}</view>
+  <view class="section-title mb-medium"><view class="title-decor"></view>{{t.rankings}}</view>
   <view class="rank-section">
     <!-- 前三名展示 -->
     <view class="podium">
       <block wx:for="{{topRankings}}" wx:key="rank">
         <view class="podium-item rank-{{item.rank}}">
-          <image wx:if="{{item.rank === 1}}" class="crown-icon" src="/assets/images/game-home/star.svg" mode="widthFix" />
+          <image wx:if="{{item.rank === 1}}" class="crown-icon" src="/assets/figma/crown.png" mode="widthFix" />
           <image wx:if="{{item.avatarUrl}}" class="podium-avatar" src="{{item.avatarUrl}}" mode="aspectFill" priority="true" />
           <view wx:else class="podium-avatar-fallback">
             <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:52rpx;"></text>

@@ -47,7 +47,7 @@
         theme="circle"
         percentage="{{correctRate}}"
         label="{{false}}"
-        size="200rpx"
+        size="190rpx"
         stroke-width="8"
         color="{{correctRate >= 80 ? '#10B981' : (correctRate >= 50 ? '#F0B76C' : '#EF4444')}}"
         track-color="#F3F4F6">
@@ -61,19 +61,18 @@
     <!-- 右侧综合统计卡片 -->
     <view class="stats-summary-card">
       <view class="summary-item">
-        <text class="iconfont icon-flash_line summary-icon summary-icon-combo"></text>
+        <image class="summary-img" src="/assets/figma/combo.png" mode="widthFix" />
         <text class="summary-value">{{maxCombo}}</text>
         <text class="summary-label">{{t.statsMaxCombo}}</text>
       </view>
-      <view class="summary-divider"></view>
+     
       <view class="summary-item">
-        <text class="iconfont icon-star_line summary-icon summary-icon-achievement"></text>
+        <image class="summary-img" src="/assets/figma/achievement.png" mode="widthFix" />
         <text class="summary-value">{{unlockedAchievements}}</text>
         <text class="summary-label">{{t.statsAchievements}}</text>
       </view>
-      <view class="summary-divider"></view>
       <view class="summary-item">
-        <text class="iconfont icon-medal_line summary-icon summary-icon-rank"></text>
+        <image class="summary-img" src="/assets/figma/rank.png" mode="widthFix" />
         <text class="summary-value">#{{userRank}}</text>
         <text class="summary-label">{{t.statsRank}}</text>
       </view>

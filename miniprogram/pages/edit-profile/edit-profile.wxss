@@ -20,6 +20,12 @@
   width: 200rpx;
   height: 200rpx;
   margin-bottom: 24rpx;
+  border:none !important;
+  background:transparent !important;
+  padding:0;
+}
+.avatar-wrapper::after{
+  border:none !important;
 }
 
 .avatar-img {

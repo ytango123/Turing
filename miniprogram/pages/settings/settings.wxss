@@ -18,6 +18,21 @@
   box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
 }
 
+.setting-lan{
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.setting-dark{
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.setting-feedback{
+  width: 74rpx;
+  height: 74rpx;
+}
+
 .setting-left {
   display: flex;
   align-items: center;

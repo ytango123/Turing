@@ -22,7 +22,7 @@ createPage({
     seniorIdentifier: 'seniorIdentifier',
     turingMaster: 'turingMaster',
     superIdentifier: 'superIdentifier',
-    rankingsTip: 'rankingsTip'        // ← 新增
+    rankingsTip: 'rankingsTip'        
   },
 
   data: {
@@ -34,8 +34,8 @@ createPage({
     levelClass: 'green',
     points: 0,
     nextLevel: '',
-    pointsToNextLevel: 35,
-    levelProgress: 65,
+    pointsToNextLevel: 0,
+    levelProgress: 0,
     progressText: '',
 
     // 根据语言切换的模式卡片SVG

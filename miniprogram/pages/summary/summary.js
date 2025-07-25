@@ -246,7 +246,7 @@ createPage({
     if (hasReachedFiveCombo && !gameData.achievements.comboMaster) {
       newAchievements.push({
         type: 'comboMaster',
-        icon: '/assets/images/summary/five.svg',
+        icon: '/assets/images/summary/combo.svg',
         name: t('profile.achievements.comboMaster.title', language),
         description: t('profile.achievements.comboMaster.description', language)
       });

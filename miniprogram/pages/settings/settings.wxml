@@ -13,7 +13,7 @@
     <!-- 语言设置 -->
     <view class="setting-item">
       <view class="setting-left">
-        <t-icon name="translate" size="40rpx" color="#6B7280" />
+        <image class="setting-lan" src="/assets/figma/language.png" mode="widthFix" />
         <text class="setting-title">{{t.languageText}}</text>
       </view>
       <view class="setting-right">
@@ -28,7 +28,7 @@
     <!-- 主题设置 -->
     <view class="setting-item">
       <view class="setting-left">
-        <t-icon name="{{theme === 'light' ? 'sunny' : 'moon'}}" size="40rpx" color="#6B7280" />
+        <image class="setting-dark" src="/assets/figma/dark.png" mode="widthFix" />
         <text class="setting-title">{{t.themeText}}</text>
       </view>
       <view class="setting-right">
@@ -39,7 +39,7 @@
     <!-- 反馈 -->
     <view class="setting-item" bindtap="openFeedback">
       <view class="setting-left">
-        <t-icon name="chat-bubble-1" size="40rpx" color="#6B7280" />
+        <image class="setting-feedback" src="/assets/figma/feedback.png" mode="widthFix" />
         <text class="setting-title">{{t.feedback}}</text>
       </view>
       <view class="setting-right">

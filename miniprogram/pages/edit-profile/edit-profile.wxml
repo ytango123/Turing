@@ -14,16 +14,16 @@
   <scroll-view scroll-y="true" class="scroll-area">
     <!-- 头像 -->
     <view class="avatar-section">
-      <view class="avatar-wrapper">
+      <button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
         <block wx:if="{{avatarUrl}}">
-          <image src="{{avatarUrl}}" class="avatar-img" mode="aspectFill" bindtap="chooseAvatar"></image>
+          <image src="{{avatarUrl}}" class="avatar-img" mode="aspectFill"></image>
         </block>
         <block wx:else>
-          <view class="avatar" bindtap="chooseAvatar">
+          <view class="avatar">
             <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:96rpx;"></text>
           </view>
         </block>
-      </view>
+      </button>
       <text class="hint-text">{{t.avatarHint}}</text>
     </view>
     
@@ -31,7 +31,7 @@
     <view class="form-section">
       <view class="form-item">
         <view class="label">{{t.nickLabel}}</view>
-        <input class="input" value="{{nickname}}" bindinput="onNicknameInput" placeholder="{{t.nickPlaceholder}}"></input>
+        <input class="input" type="nickname" value="{{nickname}}" bindinput="onNicknameInput" placeholder="{{t.nickPlaceholder}}"></input>
       </view>
       
       <view class="form-item">
