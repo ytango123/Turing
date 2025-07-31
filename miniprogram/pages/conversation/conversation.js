@@ -38,7 +38,7 @@ createPage({
   data: {
     currentLang: wx.getStorageSync('language') || 'zh',
     currentDialogue: 1,
-    totalDialogues: 10,
+    totalDialogues: 5,
     pageReady: false,  // 添加页面准备状态标记
     audioLoading: false,  // 音频加载状态
     
@@ -328,7 +328,7 @@ createPage({
       const allDialogues = [].concat(...fulfilled);
       console.log('已加载对话总数:', allDialogues.length);
 
-      const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
+      const gameDialogues = this.selectRandomDialogues(allDialogues, 5);
       this.setData({
         cloudDialogues: allDialogues,
         gameDialogues
@@ -917,7 +917,7 @@ createPage({
   },
   /** 预拉下一题音频 */
   prefetchNextAudio(nextIndex) {
-    if (nextIndex >= this.data.totalDialogues) return;
+    if (nextIndex >= 5) return;
     const nextDlg = this.data.gameDialogues[nextIndex];
     if (!nextDlg) return;
     const cid = nextDlg.name || nextDlg.conversation_id;
@@ -947,7 +947,7 @@ createPage({
     if (wx.vibrateShort) wx.vibrateShort({ type: 'light' });
     
     const nextIdx = this.data.curIndex + 1;
-    if (nextIdx >= 10) {
+    if (nextIdx >= 5) {
       // TODO: 切换到 summary 阶段，保留原逻辑 or redirect
       wx.redirectTo({ url: '/pages/summary/summary' });
       return;

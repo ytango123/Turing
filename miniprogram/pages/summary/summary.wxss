@@ -337,7 +337,7 @@ button.summary-button {
   font-size: 48rpx;
   font-weight: bold;
   color: #3b5ba5;
-  margin-bottom: 14rpx;
+  margin-bottom: 20rpx;
 }
 
 .modal-desc {

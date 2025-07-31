@@ -100,7 +100,7 @@ createPage({
     app.globalData = app.globalData || {};
 
     // 已有缓存则直接返回
-    if (Array.isArray(app.globalData.gameDialogues) && app.globalData.gameDialogues.length === 10) {
+    if (Array.isArray(app.globalData.gameDialogues) && app.globalData.gameDialogues.length === 5) {
       return Promise.resolve();
     }
 
@@ -144,7 +144,7 @@ createPage({
       const fulfilled = results.filter(r => r.status === 'fulfilled').map(r => r.value);
       if (!fulfilled.length) throw new Error('fetch json failed');
       const allDialogues = [].concat(...fulfilled);
-      const gameDialogues = this.selectRandomDialogues(allDialogues, 10);
+      const gameDialogues = this.selectRandomDialogues(allDialogues, 5);
       app.globalData.gameDialogues = gameDialogues;
       app.globalData.totalDialoguesCount = allDialogues.length;
     });

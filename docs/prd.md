@@ -28,5 +28,5 @@
 舒适的视觉比例;
 同时兼具一定的游戏炫酷性
 
-appid：wx858244ef04892940
+appid：wx0aa6c0af7848b725
 云环境id：cloud1-8gbjshfgf7c95b79

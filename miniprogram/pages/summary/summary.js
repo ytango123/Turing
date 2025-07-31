@@ -106,7 +106,7 @@ createPage({
     }
     
     // 计算正确率
-    let totalCount = 10;
+    let totalCount = 5;
     let correctCount = gameData.correctCount || 0;
 
     // 若存在本轮对话记录，则以记录为准计算
@@ -152,8 +152,13 @@ createPage({
       gameData.heardDialogues = [];
     }
 
-    // 将本轮 10 个对话的 name 添加到 heardDialogues
+    // 本轮对话数组
     const currentRoundDialogues = Array.isArray(gameData.dialogues) ? gameData.dialogues : [];
+
+    // 统计每道题的答题情况
+    this.updateDialogueStats(currentRoundDialogues);
+
+    // 将本轮 5 个对话的 name 添加到 heardDialogues
     currentRoundDialogues.forEach(d => {
       if (d && d.name && !gameData.heardDialogues.includes(d.name)) {
         gameData.heardDialogues.push(d.name);
@@ -218,7 +223,7 @@ createPage({
     
     /**  -------- 成就达成检测 -------- */
     const isFirstChallenge = (gameData.completedChallenges || 0) === 0;
-    const hasReachedFiveCombo = (gameData.maxCombo || 0) >= 5;
+    const hasReachedFiveCombo = false; // 成就暂时停用
     const hasPerfectScore = correctCount === totalCount;
 
     // 确保成就字段存在
@@ -242,17 +247,7 @@ createPage({
       // 标记成就已解锁
       gameData.achievements.firstTry = true;
     }
-    // 若达到5连击，且尚未记录成就，则触发弹窗
-    if (hasReachedFiveCombo && !gameData.achievements.comboMaster) {
-      newAchievements.push({
-        type: 'comboMaster',
-        icon: '/assets/images/summary/combo.svg',
-        name: t('profile.achievements.comboMaster.title', language),
-        description: t('profile.achievements.comboMaster.description', language)
-      });
-      // 标记成就已解锁
-      gameData.achievements.comboMaster = true;
-    }
+    // 连击大师成就暂时停用
     // 若完美判断，且尚未记录成就，则触发弹窗
     if (hasPerfectScore && !gameData.achievements.perfectJudge) {
       newAchievements.push({
@@ -603,6 +598,45 @@ createPage({
           icon: 'none'
         });
       });
+  },
+  
+  /** 统计每道题的答题情况（只记录 name / total / correct） */
+  updateDialogueStats(dialogues) {
+    if (!Array.isArray(dialogues) || dialogues.length === 0) return;
+    if (!wx.cloud) { console.error('未初始化云环境'); return; }
+
+    const db = wx.cloud.database();
+    const _  = db.command;
+
+    dialogues.forEach(d => {
+      if (!d || !d.name) return;
+      const name = d.name;
+
+      db.collection('dialogueStats')
+        .where({ name })
+        .update({
+          data: {
+            total:   _.inc(1),
+            correct: _.inc(d.isCorrect ? 1 : 0),
+            updateTime: db.serverDate()
+          }
+        })
+        .then(res => {
+          // 若不存在则新增一条（total / correct 从 0 开始）
+          if (res.stats.updated === 0) {
+            db.collection('dialogueStats').add({
+              data: {
+                name,
+                total: 1,
+                correct: d.isCorrect ? 1 : 0,
+                createTime: db.serverDate(),
+                updateTime: db.serverDate()
+              }
+            }).catch(console.error);
+          }
+        })
+        .catch(console.error);
+    });
   },
   
   /** 关闭成就弹窗 */

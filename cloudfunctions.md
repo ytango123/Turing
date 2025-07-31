@@ -8,7 +8,7 @@
 
 ### 1. 云环境配置
 
-- 云环境ID: `cloud1-9g5s7m8ne3500645`
+- 云环境ID: `cloud1-8gbjshfgf7c95b79`
 - 确保在微信开发者工具中已开通云开发功能
 
 ### 2. 数据库集合创建
@@ -50,7 +50,7 @@
 
 ```javascript
 wx.cloud.init({
-  env: 'turing-0gnrkrhx98fccb50', // 云环境ID
+  env: 'cloud1-8gbjshfgf7c95b79', // 云环境ID
   traceUser: true,
 })
 ```

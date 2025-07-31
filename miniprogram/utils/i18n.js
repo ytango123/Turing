@@ -40,7 +40,7 @@ const i18nMessages = {
       navTitle: '快速挑战',
       title: '快速挑战',
       description: {
-        line1: '10 段随机对话音频，判断对话中的 AI 身份。',
+        line1: '5 段随机对话音频，判断对话中的 AI 身份。',
         line2: '正确 +1 分，错误 -2 分（不低于 0），连续 3 次正确开始连击加分！',
         line3: '点击音频按钮可反复播放。'
       },
@@ -84,7 +84,7 @@ const i18nMessages = {
         },
         perfectJudge: {
           title: '完美判断',
-          description: '在一轮挑战中获得10/10的正确率'
+          description: '在一轮挑战中获得5/5的正确率'
         },
         flawlessStreak: {
           title: '完美连胜',
@@ -272,7 +272,7 @@ const i18nMessages = {
       navTitle: 'Quick Challenge',
       title: 'Quick Challenge',
       description: {
-        line1: 'Judge AI identities in 10 random dialogue audios.',
+        line1: 'Judge AI identities in 5 random dialogue audios.',
         line2: 'Correct: +1 point, Wrong: -2 points (min 0), 3x combo for bonus points!',
         line3: 'Click audio button to replay.'
       },
@@ -316,7 +316,7 @@ const i18nMessages = {
         },
         perfectJudge: {
           title: 'Perfect Judge',
-          description: 'Get 10/10 correct in one challenge'
+          description: 'Get 5/5 correct in one challenge'
         },
         flawlessStreak: {
           title: 'Flawless Streak',

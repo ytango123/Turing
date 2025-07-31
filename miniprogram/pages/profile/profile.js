@@ -57,17 +57,6 @@ createPage({
         size: 210
       },
       {
-        id: 2,
-        title: '连击大师',
-        description: '在一轮挑战中获得5次连击',
-        icon: 'star_line',
-        iconType: 'iconfont',
-        unlocked: false,
-        key: 'comboMaster',
-        image: '/assets/images/summary/combo.svg',
-        size: 210
-      },
-      {
         id: 3,
         title: '完美判断',
         description: '在一轮挑战中获得10/10的正确率',
