@@ -57,7 +57,7 @@ createPage({
         size: 210
       },
       {
-        id: 3,
+        id: 2,
         title: '完美判断',
         description: '在一轮挑战中获得10/10的正确率',
         icon: 'trophy_2_line',
@@ -65,6 +65,17 @@ createPage({
         unlocked: false,
         key: 'perfectJudge',
         image: '/assets/images/summary/perfect.svg',
+        size: 210
+      },
+      {
+        id: 3,
+        title: '连击大师',
+        description: '全局连击达到10',
+        icon: 'flash_line',
+        iconType: 'iconfont',
+        unlocked: false,
+        key: 'comboMaster',
+        image: '/assets/images/summary/combo.svg',
         size: 210
       },
       {
@@ -78,6 +89,7 @@ createPage({
         image: '/assets/images/summary/flawless.svg',
         size: 210
       }
+      
     ],
     
     history: [],

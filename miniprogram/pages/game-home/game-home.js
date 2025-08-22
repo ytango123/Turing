@@ -37,6 +37,8 @@ createPage({
     pointsToNextLevel: 0,
     levelProgress: 0,
     progressText: '',
+    /** 页面是否就绪，用于首屏加载判断 */
+    pageReady: false,
 
     // 根据语言切换的模式卡片SVG
     quickChallengeSvg: '/assets/images/game-home/quick-challenge-zh.svg',
@@ -73,6 +75,24 @@ createPage({
   },
 
   onLoad() {
+    // -------- 路由前置判断：若已知是新用户，直接去 welcome --------
+    if (app.globalData && app.globalData.isNewUser) {
+      wx.reLaunch({ url: '/pages/welcome/welcome' });
+      return;
+    }
+
+    // 若 openid 尚未获取，主动拉取，获取后再根据 isNewUser 状态决定
+    if (!app.globalData.openid) {
+      app.getUserInfo().finally(() => {
+        if (app.globalData.isNewUser) {
+          wx.reLaunch({ url: '/pages/welcome/welcome' });
+        } else {
+          this.updatePageData();
+        }
+      });
+      // 先不继续执行，等待回调
+      return;
+    }
     const language = wx.getStorageSync('language') || 'zh';
     this.setData({ navTitle: t('gameHome.navTitle', language) || (language==='en'?'Home':'首页') });
     // 如果全局缓存有用户信息，先快速渲染头像等基础信息
@@ -150,6 +170,8 @@ createPage({
 
       // 计算等级进度
       this.calculateLevelProgress();
+      // 数据加载完毕，显示页面
+      this.setData({ pageReady: true });
     }
       })
       .catch(err => {

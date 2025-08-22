@@ -93,7 +93,7 @@ createPage({
     preloadAudios: {},         // { audioKey: localPath }
     lastIsCorrect: false,
     lastPointsGained: 0,
-    lastPointsLost: 0,
+    lastPointsLost: 1,
     aiRole: 'none',
     aiFeatures: [],
     comboCount: 0,
@@ -406,9 +406,7 @@ createPage({
       if (Array.isArray(app.globalData.gameData.dialogues) && app.globalData.gameData.dialogues.length === 0) {
         app.globalData.gameData.correctCount = 0;
         app.globalData.gameData.wrongCount = 0;
-        app.globalData.gameData.currentCombo = 0;
-        // 更新basePoints为新一局的起始点数
-        app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
+        // 保留 currentCombo 以支持跨轮次连击
       }
       this.setData({
         gameData: app.globalData.gameData
@@ -600,7 +598,7 @@ createPage({
             app.globalData.gameData.dialogues = [];
             app.globalData.gameData.correctCount = 0;
             app.globalData.gameData.wrongCount = 0;
-            app.globalData.gameData.currentCombo = 0;
+            // 保留 currentCombo 以支持跨轮次连击
             app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
           }
         // 关闭系统 beforeUnload 提示，避免出现两次弹窗
@@ -714,7 +712,12 @@ createPage({
       wx.vibrateShort({ type: 'light' });
     }
     const judgment = e.currentTarget.dataset.judgment;
-    const isCorrect = judgment === this.data.currentAnswer;
+    // --- 修改：仅判断角色 B 是否为 AI ---
+    // 正确答案中，若第二字符为 'M' 则说明 B 为 AI
+    const correctBIsAI = this.data.currentAnswer && this.data.currentAnswer.charAt(1) === 'M';
+    // 用户选择 HM，即认定 B 为 AI；HH 表示认定 B 不是 AI
+    const userBIsAI = judgment === 'HM';
+    const isCorrect = userBIsAI === correctBIsAI;
     
     // 更新游戏数据
     const gameData = this.data.gameData || {};
@@ -739,28 +742,32 @@ createPage({
         gameData.maxCombo = gameData.currentCombo;
       }
       
-      // 计算得分：基础 +1，若当前连击 ≥3 再额外 +2（共计3分）
-      pointsToAdd = 1;
-      if (gameData.currentCombo >= 3) {
-        pointsToAdd += 2;
-      }
+      // 计算得分：基础 +1，并根据连击数递增
+      // 连击 1,2 -> +1；3,4 -> +2；5,6 -> +3 ...
+      pointsToAdd = Math.floor((gameData.currentCombo - 1) / 2) + 1;
       gameData.points += pointsToAdd;
     } else {
       // 判断错误
       gameData.wrongCount++;
-      gameData.currentCombo = 0; // 重置连击
+      gameData.currentCombo = 0; // 连击中断
       
-      // 扣分，但不低于0
-      gameData.points = Math.max(0, gameData.points - 2);
+      // 扣 1 分，但不低于 0
+      gameData.points = Math.max(0, gameData.points - 1);
     }
     
+    // 记录本题分值变化
+    const pointsChange = isCorrect ? pointsToAdd : -1;
+
     // 记录本次对话结果，包含正确答案及音频ID（conversationId）
+    const correctLetter = (this.data.currentAnswer && this.data.currentAnswer.length >= 2) ? this.data.currentAnswer.charAt(1) : this.data.currentAnswer;
+    const userLetter = (judgment === 'HM') ? 'M' : 'H'; // 目前仅存在 HH/HM 两个按钮
     gameData.dialogues.push({
       id: this.data.currentDialogue,            // 本地对话序号 1-10
       name: this.data.currentAudioId,           // 音频文件名
-      correctAnswer: this.data.currentAnswer,   // 正确答案
-      userAnswer: judgment,                     // 用户选择
-      isCorrect: isCorrect                      // 判定是否正确
+      correctAnswer: correctLetter,             // 仅记录角色B的身份字母
+      userAnswer: userLetter,                   // 用户选择的角色B身份
+      isCorrect: isCorrect,                     // 判定是否正确
+      pointsChange: pointsChange                    // 实际分值变化
     });
     
     // 保存游戏数据到全局状态
@@ -791,7 +798,7 @@ createPage({
       isExpanded: false,
       lastIsCorrect: isCorrect,
       lastPointsGained: pointsToAdd || 0,
-      lastPointsLost: 2,
+      lastPointsLost: 1,
       comboCount: gameData.currentCombo,
       showComboResult: false, // 先隐藏，稍后触发动画
       listeningAgain: false,

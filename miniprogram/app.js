@@ -53,7 +53,6 @@ App({
       });
     }
   },
-  
   // 获取用户信息并检查是否已注册
   getUserInfo() {
     return new Promise((resolve, reject) => {

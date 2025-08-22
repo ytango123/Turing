@@ -78,17 +78,17 @@ const i18nMessages = {
           title: '初次尝试',
           description: '完成第一轮图灵挑战'
         },
-        comboMaster: {
-          title: '连击大师',
-          description: '在一轮挑战中获得5次连击'
-        },
         perfectJudge: {
           title: '完美判断',
           description: '在一轮挑战中获得5/5的正确率'
         },
+        comboMaster: {
+          title: '连击大师',
+          description: '最大连击达到10次'
+        },
         flawlessStreak: {
-          title: '完美连胜',
-          description: '连续三轮挑战都达到 100% 正确率'
+          title: '无可挑剔',
+          description: '最大连击达到15次'
         }
       },
       history: {
@@ -310,17 +310,17 @@ const i18nMessages = {
           title: 'First Try',
           description: 'Complete your first Turing challenge'
         },
-        comboMaster: {
-          title: 'Combo Master',
-          description: 'Get a 5x combo in one challenge'
-        },
         perfectJudge: {
           title: 'Perfect Judge',
           description: 'Get 5/5 correct in one challenge'
         },
+        comboMaster: {
+          title: 'Combo Master',
+          description: 'MaxCombo reaches 10x'
+        },
         flawlessStreak: {
           title: 'Flawless Streak',
-          description: 'Achieve 100% accuracy for three consecutive rounds'
+          description: 'MaxCombo reaches 15x'
         }
       },
       history: {

@@ -10,6 +10,7 @@
     "pages/edit-profile/edit-profile",
     "pages/settings/settings"
   ],
+  "entryPagePath": "pages/welcome/welcome",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f9fafb",

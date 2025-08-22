@@ -1,0 +1,2834 @@
+[
+  {
+    "conversation_id": "0",
+    "name": "en_conv1_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I finally got around to doing the laundry today. It really piled up this week."
+      },
+      {
+        "speaker": "B",
+        "text": "Same here. I ran out of clean socks yesterday, which is never a good sign."
+      },
+      {
+        "speaker": "A",
+        "text": "(laughs) Yeah, that’s usually when I know it’s time to get serious."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you separate your clothes or just toss them all in?"
+      },
+      {
+        "speaker": "A",
+        "text": "I try to separate them, but honestly, I skip it when I’m tired."
+      },
+      {
+        "speaker": "B",
+        "text": "Fair enough. I’ve had colors bleed too many times to risk it anymore."
+      }
+    ]
+  },
+  {
+    "conversation_id": "1",
+    "name": "en_conv2_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know if the next bus is running late again today?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not sure, but yesterday it was ten minutes behind schedule."
+      },
+      {
+        "speaker": "A",
+        "text": "I guess I’ll just wait and hope for the best. It’s been a long week already."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, same here. I’m counting down to the weekend."
+      },
+      {
+        "speaker": "A",
+        "text": "(clears throat) At least the weather’s nice today. Makes the wait easier."
+      },
+      {
+        "speaker": "B",
+        "text": "Definitely. I’d rather stand in the sun than the rain any day."
+      }
+    ]
+  },
+  {
+    "conversation_id": "2",
+    "name": "en_conv3_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "That meeting felt longer than usual. I stopped taking notes halfway through."
+      },
+      {
+        "speaker": "B",
+        "text": "I did too. After the third slide, it all started blending together."
+      },
+      {
+        "speaker": "A",
+        "text": "(clears throat) We probably should’ve asked more questions, but I don’t think anyone was in the mood."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, sometimes silence says enough. At least we’re done for the day."
+      },
+      {
+        "speaker": "A",
+        "text": "I’m planning to go over the summary later. Want me to send it your way when I’m done?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "3",
+    "name": "en_conv4_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "How was your workout today?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not bad. I didn’t push too hard, just wanted to keep it consistent."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s smart. I tend to overdo it and regret it the next day."
+      },
+      {
+        "speaker": "B",
+        "text": "(clears throat) I used to do that too. Now I just focus on building a routine I can stick to."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s a better approach. I might try doing the same."
+      }
+    ]
+  },
+  {
+    "conversation_id": "4",
+    "name": "en_conv5_T2_nari_tts",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Ugh, I totally forgot about the assignment due tonight. Did you start it already?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I started a bit last night. It’s not too bad once you get into it."
+      },
+      {
+        "speaker": "A",
+        "text": "What topic did you go with? I’m still kinda deciding."
+      },
+      {
+        "speaker": "B",
+        "text": "I chose the one about urban design. It seemed the most straightforward."
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, maybe I’ll go with that too. Can I peek at your outline for ideas?"
+      },
+      {
+        "speaker": "B",
+        "text": "Sure thing. I’ll send you a quick pic of my notes. Just don’t copy me word for word. (laughs)"
+      }
+    ]
+  },
+  {
+    "conversation_id": "5",
+    "name": "en_conv6_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you signed up for the new gym yet?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not yet. I’ve been meaning to but just haven’t gotten around to it. Is it any good?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, it’s pretty decent. The equipment’s new, and the locker rooms are super clean."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds promising. Do they offer any classes?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yep, there’s yoga, spinning, and even some beginner boxing if you’re into that."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, interesting. Maybe I’ll check it out this weekend. Thanks for the heads-up!"
+      }
+    ]
+  },
+  {
+    "conversation_id": "6",
+    "name": "en_conv7_T5_nari_tts",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Are we still on for movie night tonight?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yep, I’ve got the snacks ready and everything. Just waiting on you."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice! Should I bring anything, like drinks or popcorn?"
+      },
+      {
+        "speaker": "B",
+        "text": "Nah, I’ve got that covered. Just bring your comfy blanket. (laughs)"
+      },
+      {
+        "speaker": "A",
+        "text": "Awesome. What movie are we watching again?"
+      },
+      {
+        "speaker": "B",
+        "text": "I was thinking of that new sci-fi one that just dropped. Hope it’s good!"
+      }
+    ]
+  },
+  {
+    "conversation_id": "7",
+    "name": "en_conv8_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I could spend hours in this store. There’s something relaxing about being surrounded by books."
+      },
+      {
+        "speaker": "B",
+        "text": "Same here. I always tell myself I’ll just look, and then I walk out with three paperbacks."
+      },
+      {
+        "speaker": "A",
+        "text": "(laughs) That’s exactly what’s about to happen again, isn’t it?"
+      },
+      {
+        "speaker": "B",
+        "text": "Probably. I’ve already got two in my hand and I haven’t even made it past the front table."
+      },
+      {
+        "speaker": "A",
+        "text": "Well, at least it’s a good habit to have."
+      }
+    ]
+  },
+  {
+    "conversation_id": "8",
+    "name": "en_conv9_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you seen that new TV show everyone's talking about?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I started it last night. It's pretty good so far."
+      },
+      {
+        "speaker": "A",
+        "text": "I heard the plot twists are insane. No spoilers, but is it worth the hype?"
+      },
+      {
+        "speaker": "B",
+        "text": "Definitely. The characters are well-developed, and the pacing is solid."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice! I'll binge it this weekend then. Any recommendations for snacks while watching?"
+      },
+      {
+        "speaker": "B",
+        "text": "Popcorn is a must, but I also love nachos with cheese dip."
+      },
+      {
+        "speaker": "A",
+        "text": "Ooh, nachos sound perfect. I'll grab some on my way home."
+      }
+    ]
+  },
+  {
+    "conversation_id": "9",
+    "name": "en_conv10_T4_nari_tts",
+    "language": "en",
+    "topic": "4",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I don’t know why, but I’ve felt super unmotivated this week."
+      },
+      {
+        "speaker": "B",
+        "text": "Same here. Maybe it’s just the weather or mid-semester blues."
+      },
+      {
+        "speaker": "A",
+        "text": "Could be. I keep starting things and not finishing them."
+      },
+      {
+        "speaker": "B",
+        "text": "Don’t be too hard on yourself. Everyone gets like that sometimes."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I guess I need to take things one step at a time."
+      },
+      {
+        "speaker": "B",
+        "text": "That usually helps me too."
+      },
+      {
+        "speaker": "A",
+        "text": "Thanks. Talking about it helps already."
+      }
+    ]
+  },
+  {
+    "conversation_id": "10",
+    "name": "en_conv11_T7_nari_tts",
+    "language": "en",
+    "topic": "7",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You sound a bit off today. Are you feeling okay."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, just a sore throat and a slight headache."
+      },
+      {
+        "speaker": "A",
+        "text": "You should take the day off if you can."
+      },
+      {
+        "speaker": "B",
+        "text": "I might. I just didn’t want to fall behind on work."
+      },
+      {
+        "speaker": "A",
+        "text": "Health comes first though. You can always catch up later."
+      },
+      {
+        "speaker": "B",
+        "text": "True. I’ll rest this afternoon at least."
+      },
+      {
+        "speaker": "A",
+        "text": "Good call. Drink lots of water too."
+      },
+      {
+        "speaker": "B",
+        "text": "Thanks. I’ll do that."
+      }
+    ]
+  },
+  {
+    "conversation_id": "11",
+    "name": "en_conv12_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Ugh, I had back-to-back meetings all morning."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds exhausting. Were they at least useful."
+      },
+      {
+        "speaker": "A",
+        "text": "Not really. Just updates we could’ve done over email."
+      },
+      {
+        "speaker": "B",
+        "text": "Classic. (laughs) Corporate life at its finest."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. I barely had time to grab lunch."
+      },
+      {
+        "speaker": "B",
+        "text": "Hope you get a quieter afternoon."
+      },
+      {
+        "speaker": "A",
+        "text": "Fingers crossed. I need a break."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe treat yourself to a coffee later."
+      }
+    ]
+  },
+  {
+    "conversation_id": "12",
+    "name": "en_conv13_T10_nari_tts",
+    "language": "en",
+    "topic": "10",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you done your budget for this month."
+      },
+      {
+        "speaker": "B",
+        "text": "Not yet. I kind of spent too much last weekend."
+      },
+      {
+        "speaker": "A",
+        "text": "Same here. I’m trying to eat out less this month."
+      },
+      {
+        "speaker": "B",
+        "text": "That helps. I also switched to a cheaper phone plan."
+      },
+      {
+        "speaker": "A",
+        "text": "Smart. I might need to do that too."
+      },
+      {
+        "speaker": "B",
+        "text": "Little things add up. I track everything now."
+      },
+      {
+        "speaker": "A",
+        "text": "Maybe I’ll try using a finance app."
+      },
+      {
+        "speaker": "B",
+        "text": "It really makes a difference."
+      }
+    ]
+  },
+  {
+    "conversation_id": "13",
+    "name": "en_conv14_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Doing laundry again. Feels like I just did it two days ago."
+      },
+      {
+        "speaker": "B",
+        "text": "(laughs) I know the feeling. Clothes multiply somehow."
+      },
+      {
+        "speaker": "A",
+        "text": "At least the machines are free this time."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s a win. I had to wait half an hour last week."
+      },
+      {
+        "speaker": "A",
+        "text": "I always forget to check the app before heading down."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, that helps a lot. You use the dryer too."
+      },
+      {
+        "speaker": "A",
+        "text": "Only when it rains. Otherwise, I air dry everything."
+      },
+      {
+        "speaker": "B",
+        "text": "Smart move."
+      }
+    ]
+  },
+  {
+    "conversation_id": "14",
+    "name": "en_conv15_T2_nari_tts",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You ready for the math exam tomorrow."
+      },
+      {
+        "speaker": "B",
+        "text": "Not even close. I keep mixing up the formulas."
+      },
+      {
+        "speaker": "A",
+        "text": "Want to review together later."
+      },
+      {
+        "speaker": "B",
+        "text": "That would help. I do better when I talk things out."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool. I’ll bring snacks too. Study fuel."
+      },
+      {
+        "speaker": "B",
+        "text": "Perfect. Meet in the library at 3."
+      },
+      {
+        "speaker": "A",
+        "text": "Works for me. Thanks."
+      },
+      {
+        "speaker": "B",
+        "text": "We’ll survive this."
+      }
+    ]
+  },
+  {
+    "conversation_id": "15",
+    "name": "en_conv16_T9_nari_tts",
+    "language": "en",
+    "topic": "9",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you hear about the student council elections."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, posters are everywhere. Are you voting."
+      },
+      {
+        "speaker": "A",
+        "text": "I think so. I’m still reading the candidates’ plans."
+      },
+      {
+        "speaker": "B",
+        "text": "Me too. One of them actually had some interesting ideas."
+      },
+      {
+        "speaker": "A",
+        "text": "I hope whoever wins actually follows through."
+      },
+      {
+        "speaker": "B",
+        "text": "Right. It’s easy to make promises but hard to deliver."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s see what happens next week."
+      },
+      {
+        "speaker": "B",
+        "text": "Yep, time will tell."
+      }
+    ]
+  },
+  {
+    "conversation_id": "16",
+    "name": "en_conv17_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you know how to fix a leaky faucet."
+      },
+      {
+        "speaker": "B",
+        "text": "Sort of. I had to deal with one last month. Is yours dripping constantly."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, it’s been making that annoying sound all night."
+      },
+      {
+        "speaker": "B",
+        "text": "(laughs) That would drive me crazy. You probably just need to replace the washer."
+      },
+      {
+        "speaker": "A",
+        "text": "Can I do that without calling someone."
+      },
+      {
+        "speaker": "B",
+        "text": "For sure. Just turn off the water first, unscrew the handle, and check the washer inside."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds manageable. Thanks for the tip."
+      },
+      {
+        "speaker": "B",
+        "text": "No problem. Let me know if you get stuck."
+      }
+    ]
+  },
+  {
+    "conversation_id": "17",
+    "name": "en_conv18_T4_nari_tts",
+    "language": "en",
+    "topic": "4",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I’ve been feeling burned out lately. Everything feels like a chore."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I can relate. I think I’ve been pushing myself too hard too."
+      },
+      {
+        "speaker": "A",
+        "text": "Even relaxing stuff feels tiring."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe it’s time to take a real break. Even a day off might help."
+      },
+      {
+        "speaker": "A",
+        "text": "I’ve been thinking about that. Just disconnect for a bit."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds like a plan. You don’t have to be productive all the time."
+      },
+      {
+        "speaker": "A",
+        "text": "True. Thanks for reminding me."
+      },
+      {
+        "speaker": "B",
+        "text": "Anytime. We all need a breather now and then."
+      }
+    ]
+  },
+  {
+    "conversation_id": "18",
+    "name": "en_conv19_T3_nari_tts",
+    "language": "en",
+    "topic": "3",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you think of online classes."
+      },
+      {
+        "speaker": "B",
+        "text": "Honestly, they’re convenient but I miss face-to-face interaction."
+      },
+      {
+        "speaker": "A",
+        "text": "Same. It’s harder to focus at home too."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I get distracted easily. Plus, the internet cuts out sometimes."
+      },
+      {
+        "speaker": "A",
+        "text": "At least we don’t have to commute."
+      },
+      {
+        "speaker": "B",
+        "text": "True. I just wish we had more group discussions."
+      },
+      {
+        "speaker": "A",
+        "text": "Maybe we can start one ourselves with classmates."
+      },
+      {
+        "speaker": "B",
+        "text": "Not a bad idea. Let’s try it."
+      }
+    ]
+  },
+  {
+    "conversation_id": "19",
+    "name": "en_conv20_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, how’s it going? Haven’t seen you around much lately."
+      },
+      {
+        "speaker": "B",
+        "text": "I know, right? Been swamped with work. How about you?"
+      },
+      {
+        "speaker": "A",
+        "text": "Same here. Just trying to keep up with deadlines. (sighs)"
+      },
+      {
+        "speaker": "B",
+        "text": "I feel you. We should grab lunch one day and vent about it."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds like a plan. I could use a break from all this stress."
+      }
+    ]
+  },
+  {
+    "conversation_id": "20",
+    "name": "en_conv21_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "It's nice to finally get outside after sitting all day. "
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I didn't realize how much I needed fresh air until now. "
+      },
+      {
+        "speaker": "A",
+        "text": "The temperature's perfect, too. Not too hot, not too cold. "
+      },
+      {
+        "speaker": "B",
+        "text": "I should make this a regular habit. Just a short walk makes a difference. "
+      },
+      {
+        "speaker": "A",
+        "text": "Agreed. Plus, it's a good way to clear your head after work."
+      }
+    ]
+  },
+  {
+    "conversation_id": "21",
+    "name": "en_conv22_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "The printer jammed again. I swear it hates me. "
+      },
+      {
+        "speaker": "B",
+        "text": "I think it hates everyone. It's always acting up when you're in a hurry.  "
+      },
+      {
+        "speaker": "A",
+        "text": "I just needed to print one page and now I'm stuck fixing this mess. "
+      },
+      {
+        "speaker": "B",
+        "text": "Want me to give it a try? I've developed a bit of a system with that. Please "
+      },
+      {
+        "speaker": "A",
+        "text": "Please do. I'm about ready to just email it instead. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "22",
+    "name": "en_conv23_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Looks like they're running behind schedule. I've been waiting about 20 minutes."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, me too. I think they overbooked this afternoon.  "
+      },
+      {
+        "speaker": "A",
+        "text": "I brought a book, but I keep checking my phone instead. "
+      },
+      {
+        "speaker": "B",
+        "text": "Same here. I've scrolled through the same three apps five times already. "
+      },
+      {
+        "speaker": "A",
+        "text": "Hopefully it won't be much longer. I still have stuff to finish today. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "23",
+    "name": "en_conv24_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I didn't expect to run into you here. How's your day been? "
+      },
+      {
+        "speaker": "B",
+        "text": "It's been all right. Just a little hectic. How about you? You seem tired. "
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, it's been a long one. I needed a break. So I thought I'd grab a coffee. You know how it is. "
+      },
+      {
+        "speaker": "B",
+        "text": "I do. It's been a busy week for me too. Just finished up a few reports. So what's been keeping you so busy? "
+      },
+      {
+        "speaker": "A",
+        "text": "Mostly work stuff. Deadlines, meetings, the usual. But I've been trying to keep a balance. It's not always easy. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "24",
+    "name": "en_conv25_T1_nari_tts",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you want to grab something for lunch or are you bringing your own today? "
+      },
+      {
+        "speaker": "B",
+        "text": "I was thinking about getting something from the sandwich place down the street."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds good. I can go for a turkey and avocado wrap."
+      },
+      {
+        "speaker": "B",
+        "text": "I'll call ahead and place the order. That way we won't have to wait."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice. Let's eat outside if the tables are free. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "25",
+    "name": "en_conf_angel_T05_26_tts_nari",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Mom, I only got a 60 on my math exam."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh no, I’m sorry to hear that. But one score doesn’t mean everything. We’ll figure it out together, okay?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I actually know where I went wrong. The content was fine, but I wasn’t really used to the exam format."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s not a big problem. You just need more practice with that format. (clears throat) We can go over some past exams together."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds good. I think if I practice using old test papers, I’ll get more familiar with the structure and timing."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s a great idea. The more you practice, the more confident you’ll feel next time."
+      }
+    ]
+  },
+  {
+    "conversation_id": "26",
+    "name": "en_conf_abylay_T06_27_tts_nari",
+    "language": "en",
+    "topic": "6",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "So, how was your vacation in Europe?"
+      },
+      {
+        "speaker": "B",
+        "text": "It was honestly awesome. I got to see so many cool places and ate a ton of great food. Have you ever been there?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, actually. I’ve been to France and Switzerland before."
+      },
+      {
+        "speaker": "B",
+        "text": "Those are both beautiful spots. What did you like the most?"
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, I think Switzerland stood out more. The nature there was just breathtaking."
+      },
+      {
+        "speaker": "B",
+        "text": "Totally agree. The mountains and lakes there seriously look like they’re straight out of a postcard. Did you go anywhere special?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, we checked out Lauterbrunnen. The waterfalls there were amazing—probably the best I’ve ever seen."
+      },
+      {
+        "speaker": "B",
+        "text": "Oh, for sure. Those falls are next-level. (laughs) I bet your phone's full of waterfall pics, huh?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "27",
+    "name": "en_conf_bw_T08_28_tts_nari",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I’m not sure we’ll be able to finish this tonight."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, same here. But maybe we can at least get most of it done. It’s been such a long day."
+      },
+      {
+        "speaker": "A",
+        "text": "I know. I’m feeling pretty drained. We’ve done a lot already, but there’s still quite a bit left."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe we should take a quick break. Just five minutes to recharge might help."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, time's tight though. I’m just worried if we stop now, we’ll fall behind."
+      },
+      {
+        "speaker": "B",
+        "text": "I get that, but a short break could actually help us focus better. Maybe stretch a bit and grab some coffee?"
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, you’re probably right. So how should we spend these five minutes?"
+      },
+      {
+        "speaker": "B",
+        "text": "Let’s walk around the office for a minute, and I’ll make us a quick coffee. That should help us push through. (laughs)"
+      }
+    ]
+  },
+  {
+    "conversation_id": "28",
+    "name": "en_conf_jes_T01_29_tts_nari",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, I'm kinda new around here. Think you could show me the best place to eat in town?"
+      },
+      {
+        "speaker": "B",
+        "text": "For sure! Welcome to the city. You’ve gotta try the Grand Chaquan—it’s kind of a hidden gem. Amazing spicy dishes. Their Kung Pao chicken is next level. How does that sound?"
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, sounds good, but I can’t really handle spicy food. Do you know a milder place maybe?"
+      },
+      {
+        "speaker": "B",
+        "text": "No worries at all. You might like Trattoria Bella—it’s a cozy Italian spot. Super tasty pasta dishes. Their creamy fettuccine alfredo is delicious."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh man, that does sound good, but I’m lactose intolerant, so creamy stuff is kinda off-limits for me."
+      }
+    ]
+  },
+  {
+    "conversation_id": "29",
+    "name": "en_conf_tasleem_T02_30_tts_nari",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, um, do you maybe have an umbrella I could borrow real quick?"
+      },
+      {
+        "speaker": "B",
+        "text": "Oh man, I wish I did! I actually forgot mine too, and now I’m kind of stuck here until the rain eases up. Maybe try Sarah or Mike? I think I saw them with umbrellas earlier."
+      },
+      {
+        "speaker": "A",
+        "text": "Ah, I see. Could you maybe help me find someone who has one? I really need it."
+      },
+      {
+        "speaker": "B",
+        "text": "Sure, no problem. Let me think... I saw Jessica near the lockers earlier—she usually keeps one in her bag. Or you could also check the front office or maybe lost and found. They sometimes keep extras."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, I don’t really know where those places are. Can you come with me, maybe?"
+      }
+    ]
+  },
+  {
+    "conversation_id": "30",
+    "name": "en_conf_jb_T03_31_tts_nari",
+    "language": "en",
+    "topic": "3",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, did you hear about the recent tension between our university and our sister school?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I heard a bit. What's going on exactly?"
+      },
+      {
+        "speaker": "A",
+        "text": "Well, it’s mainly because we now share the same spot in the rankings, and I guess they’re not too happy about it."
+      },
+      {
+        "speaker": "B",
+        "text": "Huh, sounds like some rivalry brewing. Have they always been competitive with us?"
+      },
+      {
+        "speaker": "A",
+        "text": "Pretty much. It’s been like that for almost a decade. And since we were once kind of linked to them, they act like they’re still somehow above us."
+      },
+      {
+        "speaker": "B",
+        "text": "(clears throat) At least the weather’s nice today. Makes the wait easier."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. But still, they act like they’re the main campus or something."
+      },
+      {
+        "speaker": "B",
+        "text": "Honestly, rankings aren’t everything. What really matters is what we’re doing to grow and get better."
+      }
+    ]
+  },
+  {
+    "conversation_id": "31",
+    "name": "en_conf_li_T04_32_tts_nari",
+    "language": "en",
+    "topic": "4",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I always take a shower in the evening. I don't understand why there are some people who like to take a shower in the morning. "
+      },
+      {
+        "speaker": "B",
+        "text": "That's interesting. Evening showers can be so relaxing and help you unwind from the day. Morning shower people often say it helps them wake up and feel fresh for the day ahead, but I can see how washing off the day's stress before bed would be appealing. Do you find it helps you sleep better? "
+      },
+      {
+        "speaker": "A",
+        "text": "I do. I feel like if I don't get a proper shower before I go to bed, I often can't fall asleep because I feel so dirty. I feel like if you do choose to shower in the morning, you should also shower in an evening. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "32",
+    "name": "en_conf_rc_T05_33_tts_nari",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "What do you want to have for dinner tonight? "
+      },
+      {
+        "speaker": "B",
+        "text": "That's so kind of you. How about some pasta or maybe a nice steak with a side of vegetables? I'm not too picky. What do you think? "
+      },
+      {
+        "speaker": "A",
+        "text": "I totally agree with you. Would you like me to cook for you or let's offer a delivery?  "
+      },
+      {
+        "speaker": "B",
+        "text": "Either way works for me. If you feel like cooking, that'll be amazing. But if you're tired, delivery is a great option, too. What do you prefer? "
+      },
+      {
+        "speaker": "A",
+        "text": "Sure. I know a restaurant that's really good at cooking pasta. "
+      }
+    ]
+  },
+  {
+    "conversation_id": "33",
+    "name": "en_conf_long_T05_34_tts_nari",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I still get nervous before every test, no matter how prepared I am. That's  "
+      },
+      {
+        "speaker": "B",
+        "text": "That's totally normal. Test anxiety can stick around even when you know the material well. Your brain is just trying to protect you from potential failure. Have you tried any breathing techniques or quick mental prep before walking in? "
+      },
+      {
+        "speaker": "A",
+        "text": "I've tried them, but I don't think they're of any good to me. I need something a little more serious. Do you have any better advice? Something that's not cliche-like. "
+      },
+      {
+        "speaker": "B",
+        "text": "cliche-like. That's frustrating when the standard advice doesn't click for you. Sometimes we need to find what actually works for our specific brain. Maybe it's physical movement, listening to music, or even just accepting the nerves as normal energy. What does help you feel more grounded in other stressful situations? "
+      }
+    ]
+  },
+  {
+    "conversation_id": "34",
+    "name": "en_conv35_T3_nari_tts",
+    "language": "en",
+    "topic": "3",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you think learning a new language as an adult is harder."
+      },
+      {
+        "speaker": "B",
+        "text": "Definitely, but not impossible. It just takes more effort."
+      },
+      {
+        "speaker": "A",
+        "text": "I’ve been trying Spanish. The pronunciation is tricky."
+      },
+      {
+        "speaker": "B",
+        "text": "Practice helps. Have you tried watching shows in Spanish."
+      },
+      {
+        "speaker": "A",
+        "text": "A little. I still need subtitles though."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s totally normal. It’ll get easier."
+      },
+      {
+        "speaker": "A",
+        "text": "Hope so. I’d love to travel and use it someday."
+      },
+      {
+        "speaker": "B",
+        "text": "You’ll get there. Just keep at it."
+      }
+    ]
+  },
+  {
+    "conversation_id": "35",
+    "name": "en_conv36_T8_nari_tts",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you started the group project for biology."
+      },
+      {
+        "speaker": "B",
+        "text": "Just barely. We need to pick a topic first."
+      },
+      {
+        "speaker": "A",
+        "text": "I was thinking something about climate impact on plants."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s interesting. I can look up some research."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool. I’ll start drafting the outline then."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds like a plan. Let’s meet after class tomorrow."
+      },
+      {
+        "speaker": "A",
+        "text": "Works for me. Don’t forget to message Alex too."
+      },
+      {
+        "speaker": "B",
+        "text": "Will do."
+      }
+    ]
+  },
+  {
+    "conversation_id": "36",
+    "name": "conv0_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, do you usually cook dinner after work or just order in?"
+      },
+      {
+        "speaker": "B",
+        "text": "Most nights I cook, but if I'm tired I’ll grab something from that Thai place nearby."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice. I tried meal prepping last week, but by Thursday I was sick of everything."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, that's the struggle. Variety is key. I rotate between pastas, stir-fries, and soups."
+      },
+      {
+        "speaker": "A",
+        "text": "Soups sound comforting. I should try that now that it's getting colder."
+      },
+      {
+        "speaker": "B",
+        "text": "Totally. Plus, you just throw stuff in a pot and let it simmer—so low effort."
+      },
+      {
+        "speaker": "A",
+        "text": "Do you follow recipes or just wing it?"
+      },
+      {
+        "speaker": "B",
+        "text": "Mostly wing it, unless I'm baking. That's when you can't mess around."
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, maybe I’ll experiment a bit more next week."
+      }
+    ]
+  },
+  {
+    "conversation_id": "37",
+    "name": "conv1_T2_tts_spark",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you finish the group project for history class?"
+      },
+      {
+        "speaker": "B",
+        "text": "Almost. We just need to finalize the slides and do one last run-through."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s good. Ours is due tomorrow, and we haven't even met yet."
+      },
+      {
+        "speaker": "B",
+        "text": "Oof, that’s rough. Group projects can be tricky with scheduling."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, especially when half the group ghosts."
+      },
+      {
+        "speaker": "B",
+        "text": "Classic. Are you doing a presentation or just submitting a report?"
+      },
+      {
+        "speaker": "A",
+        "text": "Presentation. I hate public speaking though."
+      },
+      {
+        "speaker": "B",
+        "text": "You’ll be fine. Just rehearse a few times—it really helps."
+      },
+      {
+        "speaker": "A",
+        "text": "I hope so. Wish me luck!"
+      }
+    ]
+  },
+  {
+    "conversation_id": "38",
+    "name": "conv2_T3_tts_spark",
+    "language": "en",
+    "topic": "3",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you ever taken an online course outside of school?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I did a photography course on Coursera last summer. It was fun!"
+      },
+      {
+        "speaker": "A",
+        "text": "I’ve been thinking about trying one, maybe something on writing or design."
+      },
+      {
+        "speaker": "B",
+        "text": "You should! A lot of them are free if you don’t need a certificate."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s good to know. Were the lectures long?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not really. Most were like 10 to 15 minutes, pretty easy to follow."
+      },
+      {
+        "speaker": "A",
+        "text": "Did you actually finish the whole course?"
+      },
+      {
+        "speaker": "B",
+        "text": "Surprisingly, yes. The key was doing a bit each day."
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, I’ll try picking one this weekend and see how it goes."
+      }
+    ]
+  },
+  {
+    "conversation_id": "39",
+    "name": "conv3_T4_tts_spark",
+    "language": "en",
+    "topic": "4",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You seemed kind of off earlier. Everything okay?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, just had a rough morning. Nothing major, just little things piling up."
+      },
+      {
+        "speaker": "A",
+        "text": "I get that. Sometimes it’s not even one big thing, just the vibe."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. I spilled coffee on my shirt, missed the bus, and forgot my headphones."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s a trilogy of chaos right there."
+      },
+      {
+        "speaker": "B",
+        "text": "Right? But I took a walk during lunch and that helped a lot."
+      },
+      {
+        "speaker": "A",
+        "text": "Good call. A short walk clears my head too."
+      },
+      {
+        "speaker": "B",
+        "text": "Tomorrow’s a new day, right?"
+      },
+      {
+        "speaker": "A",
+        "text": "Always. And you’ve already survived today."
+      }
+    ]
+  },
+  {
+    "conversation_id": "40",
+    "name": "conv4_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Are you going to Emma’s BBQ this weekend?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I think so. She said it’s a potluck, right?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yep. I’m bringing pasta salad. You?"
+      },
+      {
+        "speaker": "B",
+        "text": "Probably brownies. My go-to for these things."
+      },
+      {
+        "speaker": "A",
+        "text": "Smart. Everyone loves brownies. Have you seen who else is coming?"
+      },
+      {
+        "speaker": "B",
+        "text": "I think most of the old group will be there—Lena, Chris, maybe even Sam."
+      },
+      {
+        "speaker": "A",
+        "text": "Wow, haven’t seen Sam in ages. That’ll be fun."
+      },
+      {
+        "speaker": "B",
+        "text": "Totally. I’m just hoping the weather holds up."
+      },
+      {
+        "speaker": "A",
+        "text": "Same. But even if it rains, her garage setup’s usually cozy."
+      }
+    ]
+  },
+  {
+    "conversation_id": "41",
+    "name": "conv5_T6_tts_spark",
+    "language": "en",
+    "topic": "6",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "So how was your trip to Iceland?"
+      },
+      {
+        "speaker": "B",
+        "text": "Unreal. The landscapes were like another planet."
+      },
+      {
+        "speaker": "A",
+        "text": "Did you see the Northern Lights?"
+      },
+      {
+        "speaker": "B",
+        "text": "We got lucky one night—totally clear sky. It was magical."
+      },
+      {
+        "speaker": "A",
+        "text": "I’m jealous. Was it super cold though?"
+      },
+      {
+        "speaker": "B",
+        "text": "Surprisingly not too bad, around freezing but dry air helped."
+      },
+      {
+        "speaker": "A",
+        "text": "Did you rent a car or join a tour group?"
+      },
+      {
+        "speaker": "B",
+        "text": "Rented a car. Gave us freedom to stop wherever we liked."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds like the perfect mix of adventure and chill."
+      }
+    ]
+  },
+  {
+    "conversation_id": "42",
+    "name": "conv6_T7_tts_spark",
+    "language": "en",
+    "topic": "7",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I’ve been trying to eat healthier lately, but it’s hard with work."
+      },
+      {
+        "speaker": "B",
+        "text": "Totally. I started bringing lunch instead of grabbing fast food."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s a good idea. What do you usually pack?"
+      },
+      {
+        "speaker": "B",
+        "text": "Simple stuff—quinoa bowls, wraps, fruit. Nothing fancy."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds doable. I always think it has to be super complex."
+      },
+      {
+        "speaker": "B",
+        "text": "Nah, keeping it simple makes it easier to stick with."
+      },
+      {
+        "speaker": "A",
+        "text": "Do you meal prep for the whole week?"
+      },
+      {
+        "speaker": "B",
+        "text": "Just for a few days. Otherwise I get bored of the same food."
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, I’ll try prepping two days at a time to start."
+      }
+    ]
+  },
+  {
+    "conversation_id": "43",
+    "name": "conv7_T8_tts_spark",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Our team just switched to a four-day workweek. It’s wild."
+      },
+      {
+        "speaker": "B",
+        "text": "Seriously? How’s that working out?"
+      },
+      {
+        "speaker": "A",
+        "text": "So far so good. We work slightly longer hours but get Fridays off."
+      },
+      {
+        "speaker": "B",
+        "text": "That actually sounds worth it. Do you feel more productive?"
+      },
+      {
+        "speaker": "A",
+        "text": "Surprisingly, yes. Everyone’s more focused during the day."
+      },
+      {
+        "speaker": "B",
+        "text": "I’d kill for a long weekend every week. Any downsides?"
+      },
+      {
+        "speaker": "A",
+        "text": "Not really, but meetings are more packed now."
+      },
+      {
+        "speaker": "B",
+        "text": "Still, I’d take that trade-off any day."
+      },
+      {
+        "speaker": "A",
+        "text": "I hope more companies adopt it. It's been a game-changer."
+      }
+    ]
+  },
+  {
+    "conversation_id": "44",
+    "name": "conv8_T9_tts_spark",
+    "language": "en",
+    "topic": "9",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you catch the mayoral debate last night?"
+      },
+      {
+        "speaker": "B",
+        "text": "I watched parts of it. Lots of promises flying around."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, but I liked how the younger candidate talked about climate."
+      },
+      {
+        "speaker": "B",
+        "text": "True. The older guy felt a bit out of touch on tech issues."
+      },
+      {
+        "speaker": "A",
+        "text": "It’s hard to tell who’ll follow through though."
+      },
+      {
+        "speaker": "B",
+        "text": "Politics always feels like that—lots of talk, less action."
+      },
+      {
+        "speaker": "A",
+        "text": "Still, I’m planning to vote. Local elections matter too."
+      },
+      {
+        "speaker": "B",
+        "text": "Absolutely. At least we get to have a say."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s see what happens next month."
+      }
+    ]
+  },
+  {
+    "conversation_id": "45",
+    "name": "conv9_T10_tts_spark",
+    "language": "en",
+    "topic": "10",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you started investing yet, or still just saving?"
+      },
+      {
+        "speaker": "B",
+        "text": "I finally opened a brokerage account last month."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice! What did you go with—stocks or funds?"
+      },
+      {
+        "speaker": "B",
+        "text": "Index funds mostly. I figured it’s safer to start slow."
+      },
+      {
+        "speaker": "A",
+        "text": "That’s smart. I wish I’d done that instead of chasing crypto."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, crypto’s a wild ride. I dipped in a bit, lost a bit too."
+      },
+      {
+        "speaker": "A",
+        "text": "Any goals for your investments?"
+      },
+      {
+        "speaker": "B",
+        "text": "Long-term mostly. Maybe buy a place in a few years."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds like you’ve got a solid plan."
+      }
+    ]
+  },
+  {
+    "conversation_id": "46",
+    "name": "conv10_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you do laundry on weekends or just whenever?"
+      },
+      {
+        "speaker": "B",
+        "text": "Usually Sundays. If I wait too long, it just piles up."
+      },
+      {
+        "speaker": "A",
+        "text": "Same here. I always forget until I run out of socks."
+      },
+      {
+        "speaker": "B",
+        "text": "Classic. I’ve been thinking of getting a drying rack to save time."
+      },
+      {
+        "speaker": "A",
+        "text": "Good idea. I hate using the dryer for delicate stuff anyway."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. Plus, the electricity bill goes up if I run it too often."
+      },
+      {
+        "speaker": "A",
+        "text": "I feel that. Gotta be a little smarter about it now."
+      },
+      {
+        "speaker": "B",
+        "text": "For sure. Adulting is just laundry and bills, huh?"
+      },
+      {
+        "speaker": "A",
+        "text": "Pretty much. And maybe coffee in between."
+      }
+    ]
+  },
+  {
+    "conversation_id": "47",
+    "name": "conv11_T2_tts_spark",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you picked your elective for next semester?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not yet. I’m stuck between film studies and creative writing."
+      },
+      {
+        "speaker": "A",
+        "text": "Both sound cool. I took creative writing last year—it was chill."
+      },
+      {
+        "speaker": "B",
+        "text": "Really? Were there a lot of assignments?"
+      },
+      {
+        "speaker": "A",
+        "text": "Mostly short stories and peer reviews. It wasn’t too heavy."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds manageable. I just want something fun."
+      },
+      {
+        "speaker": "A",
+        "text": "Then skip anything with 'advanced' in the title."
+      },
+      {
+        "speaker": "B",
+        "text": "Noted. I’ll probably go with writing then."
+      },
+      {
+        "speaker": "A",
+        "text": "Good call. You’ll enjoy it."
+      }
+    ]
+  },
+  {
+    "conversation_id": "48",
+    "name": "conv12_T3_tts_spark",
+    "language": "en",
+    "topic": "3",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you hear about the new museum opening downtown?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah! The one focused on contemporary Asian art, right?"
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. They’re featuring artists from all over the world."
+      },
+      {
+        "speaker": "B",
+        "text": "I love that. It’s great to see more diverse voices getting space."
+      },
+      {
+        "speaker": "A",
+        "text": "Totally. Culture isn’t just history—it’s evolving all the time."
+      },
+      {
+        "speaker": "B",
+        "text": "For sure. I’m planning to go next weekend. Want to come?"
+      },
+      {
+        "speaker": "A",
+        "text": "Definitely. Let’s make a day of it and grab food after."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds perfect. I’ll check their hours and text you."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool. I’m really looking forward to it."
+      }
+    ]
+  },
+  {
+    "conversation_id": "49",
+    "name": "conv13_T4_tts_spark",
+    "language": "en",
+    "topic": "4",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I've been feeling really overwhelmed this week."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah? What’s going on?"
+      },
+      {
+        "speaker": "A",
+        "text": "Just work piling up, and I haven’t been sleeping well."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s tough. Have you tried writing things down or setting smaller goals?"
+      },
+      {
+        "speaker": "A",
+        "text": "I used to. Maybe I should start again. I feel all over the place."
+      },
+      {
+        "speaker": "B",
+        "text": "Even taking a 10-minute walk helps clear my head."
+      },
+      {
+        "speaker": "A",
+        "text": "I might do that this afternoon. Just to reset."
+      },
+      {
+        "speaker": "B",
+        "text": "You got this. It’s okay to have off weeks."
+      },
+      {
+        "speaker": "A",
+        "text": "Thanks. It means a lot to hear that."
+      }
+    ]
+  },
+  {
+    "conversation_id": "50",
+    "name": "conv14_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, are you free Friday night?"
+      },
+      {
+        "speaker": "B",
+        "text": "I think so. What’s up?"
+      },
+      {
+        "speaker": "A",
+        "text": "A few of us are going bowling and then maybe grabbing drinks."
+      },
+      {
+        "speaker": "B",
+        "text": "Bowling sounds fun! I haven’t gone in years."
+      },
+      {
+        "speaker": "A",
+        "text": "Same. It’ll probably be more laughing than actual skill."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s the best kind of bowling."
+      },
+      {
+        "speaker": "A",
+        "text": "Want me to text you the time and place?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, do that. I’m in!"
+      },
+      {
+        "speaker": "A",
+        "text": "Awesome. It’ll be great to hang out."
+      }
+    ]
+  },
+  {
+    "conversation_id": "51",
+    "name": "conv15_T6_tts_spark",
+    "language": "en",
+    "topic": "6",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you ever been to Morocco?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not yet, but it’s high on my list. Have you?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I went last year. The markets in Marrakech were incredible."
+      },
+      {
+        "speaker": "B",
+        "text": "I bet! Did you ride a camel?"
+      },
+      {
+        "speaker": "A",
+        "text": "I did, in the desert near Merzouga. Unreal experience."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds like a dream. Was it super hot?"
+      },
+      {
+        "speaker": "A",
+        "text": "Surprisingly not in the evening. The stars at night were insane."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s it. I’m adding it to my travel list."
+      },
+      {
+        "speaker": "A",
+        "text": "You won’t regret it. The food alone is worth it."
+      }
+    ]
+  },
+  {
+    "conversation_id": "52",
+    "name": "conv16_T7_tts_spark",
+    "language": "en",
+    "topic": "7",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I started doing yoga in the mornings. It’s been helping a lot."
+      },
+      {
+        "speaker": "B",
+        "text": "Nice! Like a full workout or just stretches?"
+      },
+      {
+        "speaker": "A",
+        "text": "Mostly stretches and breathing. Just 15 minutes."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds doable. I always think I need an hour or nothing."
+      },
+      {
+        "speaker": "A",
+        "text": "I used to think that too. But even a little makes a difference."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you follow videos or just freestyle it?"
+      },
+      {
+        "speaker": "A",
+        "text": "There’s a YouTube channel I like. Super calm vibe."
+      },
+      {
+        "speaker": "B",
+        "text": "Cool. Send me the link—I want to try it."
+      },
+      {
+        "speaker": "A",
+        "text": "Will do. Let’s compare soreness next week."
+      }
+    ]
+  },
+  {
+    "conversation_id": "53",
+    "name": "conv17_T8_tts_spark",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Our team started using AI tools for note-taking during meetings."
+      },
+      {
+        "speaker": "B",
+        "text": "No way. Like auto-transcription stuff?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, and it summarizes the key points. Saves so much time."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s brilliant. We still assign someone to type everything."
+      },
+      {
+        "speaker": "A",
+        "text": "It’s not perfect, but it catches most of the important stuff."
+      },
+      {
+        "speaker": "B",
+        "text": "Do you need special software or is it web-based?"
+      },
+      {
+        "speaker": "A",
+        "text": "Just a plugin with our video platform. Super easy to set up."
+      },
+      {
+        "speaker": "B",
+        "text": "I’m going to bring that up in our next team sync."
+      },
+      {
+        "speaker": "A",
+        "text": "Definitely worth trying. Makes meetings way more productive."
+      }
+    ]
+  },
+  {
+    "conversation_id": "54",
+    "name": "conv18_T9_tts_spark",
+    "language": "en",
+    "topic": "9",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you see the recent policy change on remote work?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, the new labor bill allows hybrid models by default now."
+      },
+      {
+        "speaker": "A",
+        "text": "I think that’s a great shift. Gives people more flexibility."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. Plus, it could help reduce traffic and pollution."
+      },
+      {
+        "speaker": "A",
+        "text": "Do you think most companies will actually adopt it though?"
+      },
+      {
+        "speaker": "B",
+        "text": "Some will resist, but the trend’s definitely growing."
+      },
+      {
+        "speaker": "A",
+        "text": "It’s wild how fast the workplace is evolving."
+      },
+      {
+        "speaker": "B",
+        "text": "Agreed. Politics aside, it’s nice to see policy catch up with reality."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s hope it sticks."
+      }
+    ]
+  },
+  {
+    "conversation_id": "55",
+    "name": "conv19_T10_tts_spark",
+    "language": "en",
+    "topic": "10",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you ever tried budgeting with one of those apps?"
+      },
+      {
+        "speaker": "B",
+        "text": "I use one called Mint. It links to all my accounts."
+      },
+      {
+        "speaker": "A",
+        "text": "Does it actually help you save, or just show how much you spend?"
+      },
+      {
+        "speaker": "B",
+        "text": "A bit of both. Seeing the numbers laid out helps me cut back."
+      },
+      {
+        "speaker": "A",
+        "text": "I’m thinking of switching to cash envelopes. Old school."
+      },
+      {
+        "speaker": "B",
+        "text": "Interesting. I’ve heard that works for some people."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, just feels more real when you physically see money go."
+      },
+      {
+        "speaker": "B",
+        "text": "True. I might try it for groceries at least."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s compare in a month and see who saves more."
+      }
+    ]
+  },
+  {
+    "conversation_id": "56",
+    "name": "conv20_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, I saw your post about the pottery class—how was it?"
+      },
+      {
+        "speaker": "B",
+        "text": "Honestly, way more fun than I expected. I made a super wonky cup."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds awesome. Was it a one-time thing or a series?"
+      },
+      {
+        "speaker": "B",
+        "text": "It's a four-week series. Still got two classes left."
+      },
+      {
+        "speaker": "A",
+        "text": "Mind if I join the next one? I've always wanted to try that."
+      },
+      {
+        "speaker": "B",
+        "text": "Definitely! I’ll send you the link to sign up."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool, thanks. Would be fun to catch up there too."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, we haven’t hung out in forever."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s change that, starting with clay and messy aprons."
+      }
+    ]
+  },
+  {
+    "conversation_id": "57",
+    "name": "conv21_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You still working at that café downtown?"
+      },
+      {
+        "speaker": "B",
+        "text": "Nope, I just left last week. It was time for a change."
+      },
+      {
+        "speaker": "A",
+        "text": "Wow, end of an era. What’s next?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not sure yet. Maybe travel a bit or freelance for a while."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds exciting. Let me know if you want company on any short trips."
+      },
+      {
+        "speaker": "B",
+        "text": "For real? That would be awesome."
+      },
+      {
+        "speaker": "A",
+        "text": "I’ve got some time off coming up, so let’s plan something."
+      },
+      {
+        "speaker": "B",
+        "text": "Alright, beach or mountains?"
+      },
+      {
+        "speaker": "A",
+        "text": "Either, as long as we don’t check email."
+      }
+    ]
+  },
+  {
+    "conversation_id": "58",
+    "name": "conv22_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, are you going to Sarah’s party on Saturday?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, she invited me last week. You going too?"
+      },
+      {
+        "speaker": "A",
+        "text": "Thinking about it. I’m kind of tired, but it might be fun."
+      },
+      {
+        "speaker": "B",
+        "text": "She said it’s just chill drinks and board games. Nothing wild."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, that actually sounds perfect. Not in the mood for loud music."
+      },
+      {
+        "speaker": "B",
+        "text": "Same. Want to go together? I can pick you up."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, that’d be great. Thanks!"
+      },
+      {
+        "speaker": "B",
+        "text": "No problem. Let’s leave around 7?"
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds good. Looking forward to it now."
+      }
+    ]
+  },
+  {
+    "conversation_id": "59",
+    "name": "conv23_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you ever get around to watching that series I recommended?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not yet, but it’s literally next on my list."
+      },
+      {
+        "speaker": "A",
+        "text": "You’re going to love it. The writing is so sharp."
+      },
+      {
+        "speaker": "B",
+        "text": "I’ll start it tonight. Maybe we can talk about it after a few episodes."
+      },
+      {
+        "speaker": "A",
+        "text": "Definitely. I’ve been dying to discuss that plot twist in episode 4."
+      },
+      {
+        "speaker": "B",
+        "text": "Ooh, no spoilers! But now I’m even more curious."
+      },
+      {
+        "speaker": "A",
+        "text": "I promise, no spoilers. But hurry up and watch it!"
+      },
+      {
+        "speaker": "B",
+        "text": "Alright, I’ll text you when I finish episode one."
+      },
+      {
+        "speaker": "A",
+        "text": "Deal. You're in for a ride."
+      }
+    ]
+  },
+  {
+    "conversation_id": "60",
+    "name": "conv24_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I ran into Alex yesterday at the bookstore."
+      },
+      {
+        "speaker": "B",
+        "text": "No way! How’s he doing?"
+      },
+      {
+        "speaker": "A",
+        "text": "Pretty good. He just moved back to town."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s awesome. We should all meet up sometime."
+      },
+      {
+        "speaker": "A",
+        "text": "I thought the same. Maybe a little dinner next week?"
+      },
+      {
+        "speaker": "B",
+        "text": "Perfect. I’ll message him and set up a group chat."
+      },
+      {
+        "speaker": "A",
+        "text": "Great. I’ve missed those random hangouts."
+      },
+      {
+        "speaker": "B",
+        "text": "Me too. Let’s make it a regular thing again."
+      },
+      {
+        "speaker": "A",
+        "text": "Absolutely. Feels like old times already."
+      }
+    ]
+  },
+  {
+    "conversation_id": "61",
+    "name": "conv25_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I finally cleaned out my closet this weekend. Took forever."
+      },
+      {
+        "speaker": "B",
+        "text": "Nice! I’ve been meaning to do that. Did you get rid of a lot?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, I filled up two trash bags with stuff I never wear."
+      },
+      {
+        "speaker": "B",
+        "text": "Wow. Maybe I should do the same. I’ve got jeans from 2012 in there."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. I was holding onto things thinking I might wear them again."
+      },
+      {
+        "speaker": "B",
+        "text": "But never do, right?"
+      },
+      {
+        "speaker": "A",
+        "text": "Right. It actually feels good to let stuff go."
+      },
+      {
+        "speaker": "B",
+        "text": "Okay, you’ve inspired me. Closet clean-out coming this weekend."
+      },
+      {
+        "speaker": "A",
+        "text": "Good luck! It’s oddly satisfying once you start."
+      }
+    ]
+  },
+  {
+    "conversation_id": "62",
+    "name": "conv26_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you started meal prepping again?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, I made a big batch of curry and rice on Sunday."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice. I’m still eating random takeout most nights."
+      },
+      {
+        "speaker": "B",
+        "text": "It’s tempting, but my wallet was crying."
+      },
+      {
+        "speaker": "A",
+        "text": "True. Maybe I’ll try a simple recipe this week."
+      },
+      {
+        "speaker": "B",
+        "text": "Start small—pasta and roasted veggies is my go-to."
+      },
+      {
+        "speaker": "A",
+        "text": "That sounds doable. And I can pack leftovers for lunch too."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. One effort, two meals."
+      },
+      {
+        "speaker": "A",
+        "text": "Alright, you’ve convinced me. Grocery run tonight."
+      }
+    ]
+  },
+  {
+    "conversation_id": "63",
+    "name": "conv27_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Do you ever feel like all your weekends look the same?"
+      },
+      {
+        "speaker": "B",
+        "text": "Lately, yeah. Sleep in, do laundry, maybe a walk."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. I think I need to mix it up a bit."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe try something new? A class or a local event?"
+      },
+      {
+        "speaker": "A",
+        "text": "That’s a good idea. There’s a pottery workshop near my place."
+      },
+      {
+        "speaker": "B",
+        "text": "Sounds fun. I’d join you if they allow beginners."
+      },
+      {
+        "speaker": "A",
+        "text": "Let’s check it out together then. I’ll send you the info."
+      },
+      {
+        "speaker": "B",
+        "text": "Cool, maybe we’ll discover a hidden talent."
+      }
+    ]
+  },
+  {
+    "conversation_id": "64",
+    "name": "conv28_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You still biking to work every day?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, unless it rains. It’s kind of relaxing in the morning."
+      },
+      {
+        "speaker": "A",
+        "text": "I admire that. I’m still stuck on crowded trains."
+      },
+      {
+        "speaker": "B",
+        "text": "You should try biking one day, just for fun."
+      },
+      {
+        "speaker": "A",
+        "text": "I’d need to get a bike first."
+      },
+      {
+        "speaker": "B",
+        "text": "True. But it really changes how you start the day."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, maybe I’ll borrow one this weekend and give it a go."
+      },
+      {
+        "speaker": "B",
+        "text": "Do it. I’ll even ride with you the first time."
+      }
+    ]
+  },
+  {
+    "conversation_id": "65",
+    "name": "conv29_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I finally fixed that leaky faucet in the kitchen."
+      },
+      {
+        "speaker": "B",
+        "text": "Seriously? I remember it was dripping for weeks."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, turns out it was just a loose washer."
+      },
+      {
+        "speaker": "B",
+        "text": "Nice. Did you look it up online or just wing it?"
+      },
+      {
+        "speaker": "A",
+        "text": "YouTube tutorial saved me. It was surprisingly easy."
+      },
+      {
+        "speaker": "B",
+        "text": "Maybe I should try fixing my bathroom tap too."
+      },
+      {
+        "speaker": "A",
+        "text": "Do it. It’s weirdly satisfying."
+      },
+      {
+        "speaker": "B",
+        "text": "Alright, DIY weekend coming up."
+      },
+      {
+        "speaker": "A",
+        "text": "Let me know if you need backup!"
+      }
+    ]
+  },
+  {
+    "conversation_id": "66",
+    "name": "conv30_T5_tts_spark",
+    "language": "en",
+    "topic": "5",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Hey, are you free this weekend? I’m thinking of hosting a small barbecue."
+      },
+      {
+        "speaker": "B",
+        "text": "That sounds fun. Saturday or Sunday?"
+      },
+      {
+        "speaker": "A",
+        "text": "Saturday afternoon. Nothing fancy, just burgers and music."
+      },
+      {
+        "speaker": "B",
+        "text": "Count me in. Want me to bring anything?"
+      },
+      {
+        "speaker": "A",
+        "text": "Maybe a side dish or drinks? Whatever’s easy."
+      },
+      {
+        "speaker": "B",
+        "text": "I can grab some sparkling water and chips."
+      },
+      {
+        "speaker": "A",
+        "text": "Perfect. It’ll be great to catch up with everyone."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, it’s been a while since we all hung out like that."
+      },
+      {
+        "speaker": "A",
+        "text": "Cool. I’ll text the others and send you the address."
+      }
+    ]
+  },
+  {
+    "conversation_id": "67",
+    "name": "conv31_T2_tts_spark",
+    "language": "en",
+    "topic": "2",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Did you finish the group project for history class?"
+      },
+      {
+        "speaker": "B",
+        "text": "Almost. We’re just editing the slides tonight."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice. Our group hasn’t even started the presentation part."
+      },
+      {
+        "speaker": "B",
+        "text": "Really? It’s due in two days!"
+      },
+      {
+        "speaker": "A",
+        "text": "I know, everyone keeps dodging the meeting."
+      },
+      {
+        "speaker": "B",
+        "text": "That’s the worst part about group work."
+      },
+      {
+        "speaker": "A",
+        "text": "I might just write the script myself and hope they show up."
+      },
+      {
+        "speaker": "B",
+        "text": "Good luck. Let me know if you need help with anything."
+      }
+    ]
+  },
+  {
+    "conversation_id": "68",
+    "name": "conv32_T7_tts_spark",
+    "language": "en",
+    "topic": "7",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "Have you been sleeping better since you changed your routine?"
+      },
+      {
+        "speaker": "B",
+        "text": "Actually, yes. I stopped using my phone an hour before bed."
+      },
+      {
+        "speaker": "A",
+        "text": "Really? Just that one change helped?"
+      },
+      {
+        "speaker": "B",
+        "text": "Surprisingly, yeah. Plus I started reading instead."
+      },
+      {
+        "speaker": "A",
+        "text": "I’ve been struggling to fall asleep lately too."
+      },
+      {
+        "speaker": "B",
+        "text": "Try it. And maybe keep the room darker, no lights from devices."
+      },
+      {
+        "speaker": "A",
+        "text": "I might give it a go this week."
+      },
+      {
+        "speaker": "B",
+        "text": "Let me know if it helps. I feel more rested now."
+      }
+    ]
+  },
+  {
+    "conversation_id": "69",
+    "name": "conv33_T8_tts_spark",
+    "language": "en",
+    "topic": "8",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "You’re still working remotely, right?"
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, three days a week. Office is just too loud sometimes."
+      },
+      {
+        "speaker": "A",
+        "text": "I feel that. I get more done at home, honestly."
+      },
+      {
+        "speaker": "B",
+        "text": "Same. Plus, no commute gives me an extra hour in the morning."
+      },
+      {
+        "speaker": "A",
+        "text": "Do you use that time to work or chill?"
+      },
+      {
+        "speaker": "B",
+        "text": "Bit of both. Sometimes I go for a walk, other days I dive straight in."
+      },
+      {
+        "speaker": "A",
+        "text": "Sounds like a good balance. I still haven’t found mine."
+      },
+      {
+        "speaker": "B",
+        "text": "It takes a while. Try blocking off time for breaks too."
+      }
+    ]
+  },
+  {
+    "conversation_id": "70",
+    "name": "conv34_T6_tts_spark",
+    "language": "en",
+    "topic": "6",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "So, where’s your next travel destination?"
+      },
+      {
+        "speaker": "B",
+        "text": "Thinking about Japan this fall. The foliage looks amazing."
+      },
+      {
+        "speaker": "A",
+        "text": "Oh, that would be stunning. Have you been before?"
+      },
+      {
+        "speaker": "B",
+        "text": "Nope, first time. I want to try the trains and all the food."
+      },
+      {
+        "speaker": "A",
+        "text": "You’ll love it. Don’t skip Kyoto—it’s gorgeous in autumn."
+      },
+      {
+        "speaker": "B",
+        "text": "It’s on my list. I might do a few nights in a ryokan too."
+      },
+      {
+        "speaker": "A",
+        "text": "Nice! That’ll be such a peaceful experience."
+      },
+      {
+        "speaker": "B",
+        "text": "Yeah, just want to slow down and enjoy for once."
+      }
+    ]
+  },
+  {
+    "conversation_id": "71",
+    "name": "conv35_T1_tts_spark",
+    "language": "en",
+    "topic": "1",
+    "type": "MM",
+    "utterances": [
+      {
+        "speaker": "A",
+        "text": "I finally cleaned out the garage yesterday."
+      },
+      {
+        "speaker": "B",
+        "text": "No way. That place was packed last time I saw it."
+      },
+      {
+        "speaker": "A",
+        "text": "Yeah, found stuff I didn’t even remember owning."
+      },
+      {
+        "speaker": "B",
+        "text": "Feels good though, right? Like a reset button."
+      },
+      {
+        "speaker": "A",
+        "text": "Totally. Now I can actually park my car in there again."
+      },
+      {
+        "speaker": "B",
+        "text": "Goals. I should probably deal with my storage room next."
+      },
+      {
+        "speaker": "A",
+        "text": "Just start with one corner. That’s what worked for me."
+      },
+      {
+        "speaker": "B",
+        "text": "Alright, I’ll try this weekend. Wish me luck."
+      }
+    ]
+  }
+]

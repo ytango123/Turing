@@ -1,4 +1,4 @@
-<view class="container">
+<view wx:if="{{pageReady}}" class="container">
   <!-- 顶部导航 -->
   
   <t-navbar 

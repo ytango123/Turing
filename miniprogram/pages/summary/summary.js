@@ -154,6 +154,26 @@ createPage({
 
     // 本轮对话数组
     const currentRoundDialogues = Array.isArray(gameData.dialogues) ? gameData.dialogues : [];
+    // ------------ 根据新计分规则重新计算本轮得分及最大连击 ------------
+    let roundPoints = 0;
+    let roundMaxCombo = 0;
+    let comboTmp = 0;
+    currentRoundDialogues.forEach(d => {
+      roundPoints += d.pointsChange || 0;
+      if (d.isCorrect) {
+        comboTmp++;
+        if (comboTmp > roundMaxCombo) roundMaxCombo = comboTmp;
+      } else {
+        comboTmp = 0;
+      }
+    });
+    pointsGained = roundPoints;
+    // 更新总分
+    gameData.points = (gameData.basePoints || 0) + roundPoints;
+    // 若本轮最大连击超过历史，则更新全局 maxCombo
+    if (roundMaxCombo > (gameData.maxCombo || 0)) {
+      gameData.maxCombo = roundMaxCombo;
+    }
 
     // 统计每道题的答题情况
     this.updateDialogueStats(currentRoundDialogues);
@@ -188,7 +208,7 @@ createPage({
     gameData.dialogues = [];
     
     // 获取最大连击数
-    const maxCombo = gameData.maxCombo || 3;
+    const maxCombo = roundMaxCombo || 0;
     
     // 根据正确率映射超过的用户百分比（固定映射，确保结果可重复）
     const percentileMap = [0, 10, 20, 30, 45, 55, 65, 75, 85, 95, 99];
@@ -223,7 +243,7 @@ createPage({
     
     /**  -------- 成就达成检测 -------- */
     const isFirstChallenge = (gameData.completedChallenges || 0) === 0;
-    const hasReachedFiveCombo = false; // 成就暂时停用
+    const hasComboMaster = (gameData.maxCombo || 0) >= 10;
     const hasPerfectScore = correctCount === totalCount;
 
     // 确保成就字段存在
@@ -247,8 +267,18 @@ createPage({
       // 标记成就已解锁
       gameData.achievements.firstTry = true;
     }
-    // 连击大师成就暂时停用
-    // 若完美判断，且尚未记录成就，则触发弹窗
+    // --------- Combo Master 成就 ---------
+    if (hasComboMaster && !gameData.achievements.comboMaster) {
+      newAchievements.push({
+        type: 'comboMaster',
+        icon: '/assets/images/summary/combo.svg',
+        name: t('profile.achievements.comboMaster.title', language),
+        description: t('profile.achievements.comboMaster.description', language)
+      });
+      gameData.achievements.comboMaster = true;
+    }
+
+    // --------- Perfect 判断成就 ---------
     if (hasPerfectScore && !gameData.achievements.perfectJudge) {
       newAchievements.push({
         type: 'perfectJudge',
@@ -260,13 +290,10 @@ createPage({
       gameData.achievements.perfectJudge = true;
     }
 
-    const last3Perfect = (() => {
-      const hist = gameData.history || [];
-      if (hist.length < 3) return false;
-      return hist.slice(0,3).every(item => item.correctRate === 100);
-    })();
+    // --------- Flawless Streak 成就（全局连击>=15） ---------
+    const hasFlawless = (gameData.maxCombo || 0) >= 15;
 
-    if (last3Perfect && !gameData.achievements.flawlessStreak) {
+    if (hasFlawless && !gameData.achievements.flawlessStreak) {
       newAchievements.push({
         type: 'flawlessStreak',
         icon: '/assets/images/summary/flawless.svg',
@@ -492,7 +519,7 @@ createPage({
       // 保留点数和等级，但重置其他状态
       app.globalData.gameData.correctCount = 0;
       app.globalData.gameData.wrongCount = 0;
-      app.globalData.gameData.currentCombo = 0;
+      // 保持 currentCombo，不重置，以实现跨轮次连击
       app.globalData.gameData.dialogues = [];
       // 更新 basePoints 为重新开始前的点数
       app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
