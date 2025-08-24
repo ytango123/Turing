@@ -1,14 +1,5 @@
 const i18nMessages = {
   zh: {
-    settings: {
-      navTitle: '设置',
-      title: '设置',
-      language: '语言',
-      theme: '深色模式',
-      feedback: '意见反馈',
-      chinese: '中文',
-      english: '英文'
-    },
     gameHome: {
       navTitle: '首页',
       challengeModes: '挑战模式',
@@ -31,7 +22,16 @@ const i18nMessages = {
       seniorIdentifier: '资深鉴别师',
       turingMaster: '图灵大师',
       superIdentifier: '超级鉴别者',
-      rankingsTip:'注：排行榜仅展示前十名用户'
+      rankingsTip:'注：排行榜仅展示前十名用户',
+      voiceCloneModes: '语音克隆模式',
+      voiceMovie: {
+        title: '经典影视台词',
+        description: '参与即可获得额外奖励'
+      },
+      voiceMusic: {
+        title: '歌手歌曲挑战',
+        description: '歌词接龙，人机还是原声'
+      }
     },
     common: {
       close: '关闭'
@@ -71,7 +71,8 @@ const i18nMessages = {
       },
       tabs: {
         achievements: '成就',
-        history: '历史记录'
+        history: '历史记录',
+        settings: '设置'
       },
       achievements: {
         firstTry: {
@@ -97,6 +98,9 @@ const i18nMessages = {
         correctRate: '正确率',
         pointsGained: '获得'
       },
+      language: '语言',
+      theme: '深色模式',
+      feedback: '意见反馈',
       editProfile: {
         navTitle: '编辑资料',
         avatarHint: '点击更换头像',
@@ -229,6 +233,9 @@ const i18nMessages = {
       genders: ['男', '女', '其他'],
       educations: ['高中及以下', '大专', '本科', '硕士', '博士及以上'],
       aiFamiliarities: ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具']
+    },
+    campus: {
+      navTitle: '校园'
     }
   },
   en: {
@@ -263,7 +270,16 @@ const i18nMessages = {
       seniorIdentifier: 'Senior Identifier',
       turingMaster: 'Turing Master',
       superIdentifier: 'Super Identifier',
-      rankingsTip:'Note: The leaderboard displays only the top 10 users'
+      rankingsTip:'Note: The leaderboard displays only the top 10 users',
+      voiceCloneModes: 'Voice Clone Modes',
+      voiceMovie: {
+        title: 'Classic Movie Lines',
+        description: 'Participate to earn extra reward'
+      },
+      voiceMusic: {
+        title: 'Singer Lyrics Challenge',
+        description: 'Lyrics relay, human or original voice?'
+      }
     },
     common: {
       close: 'Close'
@@ -303,7 +319,8 @@ const i18nMessages = {
       },
       tabs: {
         achievements: 'Badges',
-        history: 'History'
+        history: 'History',
+        settings: 'Settings'
       },
       achievements: {
         firstTry: {
@@ -329,6 +346,9 @@ const i18nMessages = {
         correctRate: 'Accuracy',
         pointsGained: 'Earned'
       },
+      language: 'Language',
+      theme: 'Dark Mode', 
+      feedback: 'Feedback',
       editProfile: {
         navTitle: 'Edit Profile',
         avatarHint: 'Tap to change avatar',
@@ -461,6 +481,9 @@ const i18nMessages = {
       genders: ['Male', 'Female', 'Other'],
       educations: ['High school or below', 'Associate', 'Bachelor', 'Master', 'PhD+'],
       aiFamiliarities: ['Never used', 'Occasionally encountered (e.g., saw others use)', 'Used a few times, understand basic functions', 'Use frequently, have some operational experience', 'Very familiar, have extensively used multiple AI tools']
+    },
+    campus: {
+      navTitle: 'Campus'
     }
   }
 }

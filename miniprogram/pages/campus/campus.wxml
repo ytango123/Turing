@@ -1,0 +1,12 @@
+<view class="container">
+  <t-navbar 
+    title="{{t.navTitle}}" 
+    title-color="#ffffff"
+    t-class="t-navbar"
+    fixed
+    placeholder
+  />
+  <view class="flex-center" style="margin-top:200rpx; color:#9CA3AF; font-size:32rpx;">
+    {{currentLang === 'en' ? 'Coming soon...' : '敬请期待...'}}
+  </view>
+</view> 

@@ -22,7 +22,12 @@ createPage({
     seniorIdentifier: 'seniorIdentifier',
     turingMaster: 'turingMaster',
     superIdentifier: 'superIdentifier',
-    rankingsTip: 'rankingsTip'        
+    rankingsTip: 'rankingsTip',
+    voiceCloneModes: 'voiceCloneModes',
+    voiceMovieTitle: 'voiceMovie.title',
+    voiceMovieDesc: 'voiceMovie.description',
+    voiceMusicTitle: 'voiceMusic.title',
+    voiceMusicDesc: 'voiceMusic.description'       
   },
 
   data: {
@@ -43,6 +48,8 @@ createPage({
     // 根据语言切换的模式卡片SVG
     quickChallengeSvg: '/assets/images/game-home/quick-challenge-zh.svg',
     hardModeSvg: '/assets/images/game-home/hard-mode-zh.svg',
+    voiceMovieSvg: '/assets/images/game-home/movie-zh.svg',
+    voiceMusicSvg: '/assets/images/game-home/music-zh.svg',
 
     gameModes: [
       {
@@ -61,6 +68,11 @@ createPage({
         bgColor: '#F3E8FF',
         locked: true
       }
+    ],
+
+    voiceModes: [
+      { id: 'movie', titleKey: 'voiceMovieTitle', descKey: 'voiceMovieDesc', svgField: 'voiceMovieSvg', new: true },
+      { id: 'music', titleKey: 'voiceMusicTitle', descKey: 'voiceMusicDesc', svgField: 'voiceMusicSvg', new: true }
     ],
 
     rankings: [],
@@ -267,7 +279,9 @@ createPage({
     const langCode = (language === 'en') ? 'en' : 'zh'
     this.setData({
       quickChallengeSvg: `/assets/images/game-home/quick-challenge-${langCode}.svg`,
-      hardModeSvg: `/assets/images/game-home/hard-mode-${langCode}.svg`
+      hardModeSvg: `/assets/images/game-home/hard-mode-${langCode}.svg`,
+      voiceMovieSvg: `/assets/images/game-home/movie-${langCode}.svg`,
+      voiceMusicSvg: `/assets/images/game-home/music-${langCode}.svg`
     })
   },
 
@@ -338,6 +352,26 @@ createPage({
     }, () => {
       this.updateDisplayRankings()
     });
+  },
+
+  /** 点击语音克隆卡片震动反馈并占位页面跳转 */
+  onVoiceCardTap(e) {
+    // 轻微震动反馈
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' })
+    }
+
+    // 根据 data-id 判断目标卡片
+    const { currentTarget } = e
+    const id = currentTarget.dataset && currentTarget.dataset.id
+
+    if (id === 'movie') {
+      // TODO: 跳转至语音克隆-电影台词页面
+      wx.showToast({ title: '该功能开发中', icon: 'none' })
+    } else if (id === 'music') {
+      // TODO: 跳转至语音克隆-歌手演唱页面
+      wx.showToast({ title: '该功能开发中', icon: 'none' })
+    }
   },
 
   editProfile() {

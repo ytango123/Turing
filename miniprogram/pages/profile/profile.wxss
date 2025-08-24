@@ -678,3 +678,134 @@
   height: 64rpx;
   margin-bottom: 8rpx;
 } 
+
+/* ========== 设置页面样式 ========== */
+.settings-content {
+  margin-top: 32rpx;
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48rpx;
+  background-color: white;
+  border-radius: 34rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+}
+
+.setting-lan {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.setting-dark {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.setting-feedback {
+  width: 74rpx;
+  height: 74rpx;
+}
+
+.setting-left {
+  display: flex;
+  align-items: center;
+  gap: 34rpx;
+}
+
+.setting-title {
+  font-size: 32rpx;
+  color: #1F2937;
+}
+
+.setting-right {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.coming-soon-tag {
+  padding: 8rpx 24rpx;
+  border-radius: 32rpx;
+  background-color: #F3F4F6;
+  font-size: 24rpx;
+  color: #6B7280;
+}
+
+/* === 反馈弹窗 === */
+.feedback-modal {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-mask {
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4rpx);
+}
+
+.feedback-modal .modal-content {
+  width: 80%;
+  max-width: 640rpx;
+  background: #ffffff;
+  border-radius: 32rpx;
+  padding: 48rpx 32rpx;
+  box-sizing: border-box;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  gap:32rpx;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-header {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F2937;
+  text-align:center;
+}
+
+.modal-textarea {
+  width: 100%;
+  min-height: 300rpx;
+  border: 2rpx solid #E5E7EB;
+  border-radius: 24rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rpx;
+}
+
+.modal-btn-img {
+  width: 300rpx;
+  height: 90rpx;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform: scale(0.9);} 
+  to {opacity:1; transform:scale(1);} 
+} 

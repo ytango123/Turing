@@ -89,6 +89,10 @@
       <text class="tab-text {{currentTab === 'history' ? 'active' : ''}}">{{t.tabHistory}}</text>
       <view wx:if="{{currentTab === 'history'}}" class="tab-dot"></view>
     </view>
+    <view class="tab" bindtap="switchTab" data-tab="settings">
+      <text class="tab-text {{currentTab === 'settings' ? 'active' : ''}}">{{t.tabSettings}}</text>
+      <view wx:if="{{currentTab === 'settings'}}" class="tab-dot"></view>
+    </view>
   </view>
   
   <!-- 成就徽章网格 -->
@@ -122,6 +126,48 @@
       </view>
     </view>
   </view>
+  
+  <!-- 设置页面 -->
+  <view class="settings-content" wx:if="{{currentTab === 'settings'}}">
+    <view class="settings-list">
+      <!-- 语言设置 -->
+      <view class="setting-item">
+        <view class="setting-left">
+          <image class="setting-lan" src="/assets/figma/language.png" mode="widthFix" />
+          <text class="setting-title">{{t.languageText}}</text>
+        </view>
+        <view class="setting-right">
+          <view class="language-switch" bindtap="switchLanguage">
+            <text>{{language === 'zh' ? '中文' : 'English'}}</text>
+            <view class="arrow"></view>
+          </view>
+          <t-icon name="chevron-right" size="32rpx" color="#9CA3AF" />
+        </view>
+      </view>
+      
+      <!-- 主题设置 -->
+      <view class="setting-item">
+        <view class="setting-left">
+          <image class="setting-dark" src="/assets/figma/dark.png" mode="widthFix" />
+          <text class="setting-title">{{t.themeText}}</text>
+        </view>
+        <view class="setting-right">
+          <view class="coming-soon-tag">{{language === 'zh' ? '即将推出' : 'Coming'}}</view>
+        </view>
+      </view>
+
+      <!-- 反馈 -->
+      <view class="setting-item" bindtap="openFeedback">
+        <view class="setting-left">
+          <image class="setting-feedback" src="/assets/figma/feedback.png" mode="widthFix" />
+          <text class="setting-title">{{t.feedback}}</text>
+        </view>
+        <view class="setting-right">
+          <t-icon name="chevron-right" size="32rpx" color="#9CA3AF" />
+        </view>
+      </view>
+    </view>
+  </view>
 </view> 
 
 <!-- 徽章弹窗 -->
@@ -135,6 +181,19 @@
     <view class="modal-close-btn" bindtap="closeBadgeModal">
       <image class="close-btn-img" src="/assets/images/component/close_button_zh.svg" mode="aspectFit" hidden="{{currentLang!=='zh'}}" />
       <image class="close-btn-img" src="/assets/images/component/close_button_en.svg" mode="aspectFit" hidden="{{currentLang!=='en'}}" />
+    </view>
+  </view>
+</view>
+
+<!-- 反馈弹窗 -->
+<view class="feedback-modal" wx:if="{{showFeedbackModal}}">
+  <view class="modal-mask" bindtap="closeFeedback"></view>
+  <view class="modal-content">
+    <view class="modal-header">{{language==='zh'?'意见反馈':'Feedback'}}</view>
+    <textarea class="modal-textarea" placeholder="{{language==='zh'?'请输入您的建议...':'Please enter your feedback...'}}" value="{{feedbackText}}" bindinput="onInputFeedback" maxlength="300"/>
+    <view class="modal-actions">
+      <image class="modal-btn-img" src="/assets/images/settings/cancel_{{language}}.svg" bindtap="closeFeedback" />
+      <image class="modal-btn-img" src="/assets/images/settings/submit_{{language}}.svg" bindtap="submitFeedback" />
     </view>
   </view>
 </view> 

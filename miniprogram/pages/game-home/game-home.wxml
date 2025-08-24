@@ -51,6 +51,19 @@
       <image class="card-image" src="{{hardModeSvg}}" mode="widthFix"></image>
     </view>
   </view>
+
+  <!-- 语音克隆模式 -->
+  <view class="section-title mb-medium"><view class="title-decor"></view>{{t.voiceCloneModes}}</view>
+  <view class="voice-modes mb-large">
+    <view class="mode-card" data-id="movie" bindtap="onVoiceCardTap" hover-class="mode-card-pressed" hover-stay-time="0">
+      <image class="card-icon" src="/assets/figma/movie.png" mode="widthFix"></image>
+      <image class="card-image" src="{{voiceMovieSvg}}" mode="widthFix"></image>
+    </view>
+    <view class="mode-card" data-id="music" bindtap="onVoiceCardTap" hover-class="mode-card-pressed" hover-stay-time="0">
+      <image class="card-icon" src="/assets/figma/music.png" mode="widthFix"></image>
+      <image class="card-image" src="{{voiceMusicSvg}}" mode="widthFix"></image>
+    </view>
+  </view>
   
   <!-- 排行榜 -->
   <view class="section-title mb-medium"><view class="title-decor"></view>{{t.rankings}}</view>

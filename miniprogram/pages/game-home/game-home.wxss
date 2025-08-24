@@ -447,3 +447,25 @@
   text-align: center;
   z-index :2;
 }
+
+/* ========== Voice Clone Modes Styles ========== */
+.voice-modes {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 居中 */
+  gap: 6rpx;
+  padding-top: 16rpx; /* 与 challenge-modes 对齐顶部图标区域 */
+}
+
+/* 语音克隆卡片宽度更大 */
+.voice-modes .mode-card {
+  width: 660rpx;
+}
+
+.voice-modes .card-icon {
+  /* 覆盖通用 card-icon 设置，使图标位于卡片左侧居中 */
+  top: 46%;                /* 垂直居中 */
+  left: 40rpx;            /* 向左偏移使一半露出 */
+  transform: translateY(-50%); /* 取消水平位移，仅保持垂直居中 */
+  width: 130rpx;
+}

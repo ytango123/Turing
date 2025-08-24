@@ -3,12 +3,12 @@
     "pages/welcome/welcome",
     "pages/user-info/user-info",
     "pages/game-home/game-home",
+    "pages/campus/campus",
     "pages/quick-intro/quick-intro",
     "pages/conversation/conversation",
     "pages/summary/summary",
     "pages/profile/profile",
-    "pages/edit-profile/edit-profile",
-    "pages/settings/settings"
+    "pages/edit-profile/edit-profile"
   ],
   "entryPagePath": "pages/welcome/welcome",
   "window": {
@@ -31,16 +31,16 @@
         "selectedIconPath": "assets/icons/home-active.png"
       },
       {
+        "pagePath": "pages/campus/campus",
+        "text": "校园",
+        "iconPath": "assets/icons/campus.png",
+        "selectedIconPath": "assets/icons/campus-active.png"
+      },
+      {
         "pagePath": "pages/profile/profile",
         "text": "我的",
         "iconPath": "assets/icons/profile.png",
         "selectedIconPath": "assets/icons/profile-active.png"
-      },
-      {
-        "pagePath": "pages/settings/settings",
-        "text": "设置",
-        "iconPath": "assets/icons/settings.png",
-        "selectedIconPath": "assets/icons/settings-active.png"
       }
     ]
   },

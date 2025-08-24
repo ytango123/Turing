@@ -216,8 +216,8 @@ App({
   // 根据语言更新底部 TabBar 文本
   updateTabBarLabels(language) {
     // 默认中文文案
-    const textsZh = ['首页', '我的', '设置'];
-    const textsEn = ['Home', 'Profile', 'Settings'];
+    const textsZh = ['首页', '校园', '我的'];
+    const textsEn = ['Home', 'Campus', 'Profile'];
     const texts = language === 'en' ? textsEn : textsZh;
 
     texts.forEach((text, idx) => {
