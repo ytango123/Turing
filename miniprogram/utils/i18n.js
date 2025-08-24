@@ -78,16 +78,16 @@ const i18nMessages = {
           title: '初次尝试',
           description: '完成第一轮图灵挑战'
         },
-        perfectJudge: {
-          title: '完美判断',
-          description: '在一轮挑战中获得5/5的正确率'
-        },
         comboMaster: {
           title: '连击大师',
           description: '最大连击达到10次'
         },
+        perfectJudge: {
+          title: '完美判断',
+          description: '在一轮挑战中获得5/5的正确率'
+        },
         flawlessStreak: {
-          title: '无可挑剔',
+          title: '完美连胜',
           description: '最大连击达到15次'
         }
       },
@@ -131,7 +131,7 @@ const i18nMessages = {
       descA: '选择此项若你认为B是真人',
       descB: '选择此项若你认为B是AI',
       descNone: '',
-      exitConfirm: '确定要退出当前挑战吗？退出后将不会保存进度',
+      exitConfirm: '确定要退出吗？退出后将不会保存进度，连击也将中断！',
       relisten: '再听一次？',
       relistenStop: '点击结束'
     },
@@ -156,7 +156,7 @@ const i18nMessages = {
       resultPrefix: '你在本轮挑战中获得了',
       accuracySuffix: '的正确率',
       statPoints: '获得点数',
-      statCombo: '最大连击',
+      statCombo: '本轮最大连击',
       statPercentile: '超过用户',
       yourLevel: '你的等级',
       pointsUnit: '点',
@@ -310,17 +310,17 @@ const i18nMessages = {
           title: 'First Try',
           description: 'Complete your first Turing challenge'
         },
+        comboMaster: {
+          title: 'Combo Master',
+          description: 'Max Combo reached 10x'
+        },
         perfectJudge: {
           title: 'Perfect Judge',
           description: 'Get 5/5 correct in one challenge'
         },
-        comboMaster: {
-          title: 'Combo Master',
-          description: 'MaxCombo reaches 10x'
-        },
         flawlessStreak: {
           title: 'Flawless Streak',
-          description: 'MaxCombo reaches 15x'
+          description: 'Max Combo reached 15x'
         }
       },
       history: {
@@ -363,7 +363,7 @@ const i18nMessages = {
       descA: 'Select if you think B is human',
       descB: 'Select if you think B is AI',
       descNone: '',
-      exitConfirm: 'Are you sure you want to quit the current challenge? Your progress will not be saved.',
+      exitConfirm: 'Are you sure you want to quit? Your progress will not be saved and combo will terminate!',
       relisten: 'Listen again?',
       relistenStop: 'Stop'
     },
@@ -388,7 +388,7 @@ const i18nMessages = {
       resultPrefix: 'You achieved ',
       accuracySuffix: ' accuracy this round',
       statPoints: 'Points',
-      statCombo: 'Max Combo',
+      statCombo: 'Round Max Combo',
       statPercentile: 'Beat users',
       yourLevel: 'Your Level',
       pointsUnit: ' pts',

@@ -100,18 +100,18 @@ createPage({
   onChooseAvatar(e) {
     const tempPath = e.detail.avatarUrl;
     if (!tempPath) return;
-    wx.showLoading({ title: this.data.t.uploading, mask: true })
-    const cloudPath = `userAvatars/${getApp().globalData.openid}_${Date.now()}.png`
-    wx.cloud.uploadFile({ cloudPath, filePath: tempPath })
-      .then(uploadRes => {
-        this.setData({ avatarUrl: uploadRes.fileID })
-        wx.hideLoading()
-      })
-      .catch(err => {
-        console.error('头像上传失败', err)
-        wx.hideLoading()
-        wx.showToast({ title: this.data.t.uploadFailed, icon: 'none' })
-      })
+        wx.showLoading({ title: this.data.t.uploading, mask: true })
+        const cloudPath = `userAvatars/${getApp().globalData.openid}_${Date.now()}.png`
+        wx.cloud.uploadFile({ cloudPath, filePath: tempPath })
+          .then(uploadRes => {
+            this.setData({ avatarUrl: uploadRes.fileID })
+            wx.hideLoading()
+          })
+          .catch(err => {
+            console.error('头像上传失败', err)
+            wx.hideLoading()
+            wx.showToast({ title: this.data.t.uploadFailed, icon: 'none' })
+    })
   },
 
   onNicknameInput(e) {

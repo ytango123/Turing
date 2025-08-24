@@ -89,7 +89,6 @@ createPage({
         image: '/assets/images/summary/flawless.svg',
         size: 210
       }
-      
     ],
     
     history: [],

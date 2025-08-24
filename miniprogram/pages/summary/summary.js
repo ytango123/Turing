@@ -63,7 +63,7 @@ createPage({
     },
     // --- 成就弹窗相关 ---
     showAchievementModal: false,      // 是否展示成就弹窗
-    achievementType: '',              // 成就类型：'firstTry' | 'comboMaster' | 'perfectJudge'
+    achievementType: '',              // 成就类型：'firstTry' | 'perfectJudge'
     achievementIcon: '',              // 成就图标路径
     achievementName: '',              // 成就名称
     newAchievements: [],              // 收集本次获得的所有成就
@@ -135,16 +135,43 @@ createPage({
     // 生成分析结果
     this.generateAnalysisResult(correctRatePercent, gameData.dialogues || []);
     
-    // 计算本次挑战获得的点数（总分 - 挑战开始前的基础分）
-    let pointsGained = (gameData.points || 0) - (gameData.basePoints || 0);
+    // 计算本次挑战获得的点数：直接使用conversation页面记录的得分变化
+    let pointsGained = gameData.roundPointsChange || 0;
+    
+    // 如果roundPointsChange不存在，则回退到原来的计算方式
+    if (typeof pointsGained !== 'number') {
+      pointsGained = (gameData.points || 0) - (gameData.basePoints || 0);
     // 挑战最低得分为 0，如出现负数则归零，并恢复原始点数
     if (pointsGained < 0) {
       pointsGained = 0;
       gameData.points = gameData.basePoints || 0;
+      }
+    }
+    
+    // 重要：更新全局总分 = 基础分 + 本轮得分
+    if (typeof gameData.basePoints === 'number' && typeof pointsGained === 'number') {
+      gameData.points = gameData.basePoints + pointsGained;
+      console.log('更新全局总分:', gameData.basePoints, '+', pointsGained, '=', gameData.points);
     }
     
     // 新增：计算正确率百分比，并保存至游戏数据
     gameData.correctRate = correctRatePercent;
+
+    // 计算本轮最大连击数（仅限本轮）
+    let roundMaxCombo = 0;
+    if (Array.isArray(gameData.dialogues) && gameData.dialogues.length > 0) {
+      let currentCombo = 0;
+      gameData.dialogues.forEach(d => {
+        if (d.isCorrect) {
+          currentCombo++;
+          if (currentCombo > roundMaxCombo) {
+            roundMaxCombo = currentCombo;
+          }
+        } else {
+          currentCombo = 0;
+        }
+      });
+    }
 
     /** -------------- 挑战完成，更新 heardDialogues -------------- */
     // 确保 heardDialogues 为数组
@@ -154,26 +181,6 @@ createPage({
 
     // 本轮对话数组
     const currentRoundDialogues = Array.isArray(gameData.dialogues) ? gameData.dialogues : [];
-    // ------------ 根据新计分规则重新计算本轮得分及最大连击 ------------
-    let roundPoints = 0;
-    let roundMaxCombo = 0;
-    let comboTmp = 0;
-    currentRoundDialogues.forEach(d => {
-      roundPoints += d.pointsChange || 0;
-      if (d.isCorrect) {
-        comboTmp++;
-        if (comboTmp > roundMaxCombo) roundMaxCombo = comboTmp;
-      } else {
-        comboTmp = 0;
-      }
-    });
-    pointsGained = roundPoints;
-    // 更新总分
-    gameData.points = (gameData.basePoints || 0) + roundPoints;
-    // 若本轮最大连击超过历史，则更新全局 maxCombo
-    if (roundMaxCombo > (gameData.maxCombo || 0)) {
-      gameData.maxCombo = roundMaxCombo;
-    }
 
     // 统计每道题的答题情况
     this.updateDialogueStats(currentRoundDialogues);
@@ -207,8 +214,12 @@ createPage({
     // 清空本轮对话记录，为下一轮做准备
     gameData.dialogues = [];
     
-    // 获取最大连击数
-    const maxCombo = roundMaxCombo || 0;
+    // 重要：保持跨轮次连击数，不清零
+    // 连击数在 conversation 页面已经正确维护，这里不需要重置
+    console.log('挑战完成，保持连击数:', gameData.currentCombo);
+    
+    // 获取最大连击数（跨轮次连击）
+    const maxCombo = gameData.maxCombo || 0;
     
     // 根据正确率映射超过的用户百分比（固定映射，确保结果可重复）
     const percentileMap = [0, 10, 20, 30, 45, 55, 65, 75, 85, 95, 99];
@@ -216,17 +227,26 @@ createPage({
     const percentileIndex = Math.min(Math.floor(correctRatePercent / 10), percentileMap.length - 1);
     const percentile = percentileMap[percentileIndex];
  
-    /** -------- 若发现 pointsGained 异常（如为 0 且有对话记录），则根据对话记录重新计算 -------- */
-    if (pointsGained === 0 && currentRoundDialogues.length > 0) {
+    /** -------- 若发现 pointsGained 异常（如为 0 且有对话记录），且没有roundPointsChange，则根据对话记录重新计算 -------- */
+    if (pointsGained === 0 && currentRoundDialogues.length > 0 && !gameData.roundPointsChange) {
+      // 重新计算得分
       let calcPoints = 0;
-      let combo = 0;
+      let combo = gameData.currentCombo || 0; // 使用跨轮次连击数
       currentRoundDialogues.forEach(d => {
         if (d.isCorrect) {
           combo++;
-          calcPoints += (combo >= 3 ? 3 : 1);
+          // 使用新的统一连击得分逻辑
+          let pointsToAdd = 1;
+          if (combo >= 3) {
+            // 从第三连击开始，每两次递增1分
+            // 第3连击：+2，第4连击：+2，第5连击：+3，第6连击：+3...
+            const extraPoints = Math.floor((combo - 1) / 2);
+            pointsToAdd += extraPoints;
+          }
+          calcPoints += pointsToAdd;
         } else {
-          combo = 0;
-          calcPoints = Math.max(0, calcPoints - 2);
+          combo = 0; // 答错重置连击
+          calcPoints = Math.max(0, calcPoints - 1);
         }
       });
       pointsGained = calcPoints;
@@ -327,7 +347,7 @@ createPage({
       performanceText,
       correctRate,
       pointsGained,
-      maxCombo,
+      maxCombo: roundMaxCombo, // 使用本轮最大连击数
       percentile,
       correctRatePercent,
       dialoguesSnapshot: currentRoundDialogues
@@ -490,7 +510,7 @@ createPage({
     }
     const inviter = app.globalData.openid || '';
     const shareOptions = {
-      title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
+      title: `别笑，你试你也分不清人类和AI！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };
@@ -516,11 +536,15 @@ createPage({
       }
       // 重置当前对话ID为1
       app.globalData.gameData.currentDialogue = 1;
-      // 保留点数和等级，但重置其他状态
+      // 保留点数、等级和跨轮次连击数，但重置其他状态
       app.globalData.gameData.correctCount = 0;
       app.globalData.gameData.wrongCount = 0;
-      // 保持 currentCombo，不重置，以实现跨轮次连击
+      // 保持跨轮次连击数，不清零
+      // app.globalData.gameData.currentCombo = 0; // 注释掉，保持连击
       app.globalData.gameData.dialogues = [];
+      
+      // 重要：确保连击数状态正确
+      console.log('重新开始挑战，保持连击数:', app.globalData.gameData.currentCombo);
       // 更新 basePoints 为重新开始前的点数
       app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
       // 清空缓存的对话，确保下次重新抽取
@@ -535,7 +559,7 @@ createPage({
   onShareAppMessage() {
     const inviter = app.globalData.openid || '';
     return {
-      title: `我在人机鉴别挑战中获得了${this.data.correctRate}的正确率，你也来试试吧！`,
+      title: `别笑，你试你也分不清人类和AI！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };
@@ -544,7 +568,7 @@ createPage({
   onShareTimeline() {
     const inviter = app.globalData.openid || '';
     return {
-      title: '快来参与图灵对话挑战！',
+      title: '别笑，你试你也分不清人类和AI！',
       query: `inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };
@@ -663,7 +687,7 @@ createPage({
           }
         })
         .catch(console.error);
-    });
+      });
   },
   
   /** 关闭成就弹窗 */

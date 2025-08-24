@@ -111,7 +111,7 @@ const createPage = (pageConfig) => {
         if (data) return data
       }
       return {
-        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
+        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '别笑，你试你也分不清人类和AI！',
         path: '/pages/game-home/game-home',
         imageUrl: '/assets/figma/share2.png'
       }
@@ -126,7 +126,7 @@ const createPage = (pageConfig) => {
         if (data) return data
       }
       return {
-        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '快来参加图灵对话挑战！',
+        title: language === 'en' ? 'Join the Turing Dialogue Challenge!' : '别笑，你试你也分不清人类和AI！',
         query: '',
         imageUrl: '/assets/figma/share2.png'
       }

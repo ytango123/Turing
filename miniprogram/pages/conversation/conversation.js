@@ -93,7 +93,7 @@ createPage({
     preloadAudios: {},         // { audioKey: localPath }
     lastIsCorrect: false,
     lastPointsGained: 0,
-    lastPointsLost: 1,
+    lastPointsLost: 0,
     aiRole: 'none',
     aiFeatures: [],
     comboCount: 0,
@@ -103,6 +103,9 @@ createPage({
     progress: 0, // 音频播放进度百分比
     isSeeking: false, // 是否正在拖动滑块
     duration: 0, // 音频总时长
+    
+    // 新增：本轮得分变化记录
+    roundPointsChange: 0,  // 本轮累计得分变化（正数表示得分，负数表示失分）
   },
 
   /** 滚动到页面顶部 */
@@ -151,6 +154,9 @@ createPage({
     if (app.globalData && app.globalData.preloadAudios) {
       this.setData({ preloadAudios: app.globalData.preloadAudios });
     }
+    
+    // 先从云端获取最新的游戏数据，确保连击数等状态是最新的
+    await this.fetchLatestGameDataFromCloud();
     
     // 初始化游戏数据
     this.initGameData();
@@ -402,14 +408,24 @@ createPage({
       if (typeof app.globalData.gameData.basePoints !== 'number') {
         app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
       }
-      // 若 dialogues 已被清空，说明是新一局，重置连击及计数数据
+      
+      // 若 dialogues 已被清空，说明是新一局，重置计数数据
       if (Array.isArray(app.globalData.gameData.dialogues) && app.globalData.gameData.dialogues.length === 0) {
         app.globalData.gameData.correctCount = 0;
         app.globalData.gameData.wrongCount = 0;
-        // 保留 currentCombo 以支持跨轮次连击
+        
+        // 重要：保持云端同步的连击数状态
+        // 如果用户中途退出过，云端数据中的 currentCombo 应该已经是 0
+        // 这里不需要重置连击数，应该保持云端的最新状态
+        console.log('新一局开始，使用云端同步的连击数:', app.globalData.gameData.currentCombo);
+        
+        // 更新basePoints为新一局的起始点数
+        app.globalData.gameData.basePoints = app.globalData.gameData.points || 0;
       }
+      
       this.setData({
-        gameData: app.globalData.gameData
+        gameData: app.globalData.gameData,
+        roundPointsChange: 0  // 重置本轮得分变化
       });
       return;
     }
@@ -430,7 +446,8 @@ createPage({
     }
     
     this.setData({
-      gameData: gameData
+      gameData: gameData,
+      roundPointsChange: 0  // 重置本轮得分变化
     });
     
     // 为新游戏数据记录基础点数
@@ -586,21 +603,39 @@ createPage({
       content: confirmMsg,
       cancelText: language === 'en' ? 'Cancel' : '取消',
       confirmText: language === 'en' ? 'Exit' : '退出',
-      success: (res) => {
+      success: async (res) => {
         if (!res.confirm) return; // 用户取消
 
         // 停止并销毁音频，避免后台播放
         this.stopAndDestroyAudio();
-          // 退出挑战时恢复到挑战开始前的点数
-          if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
-            app.globalData.gameData.points = app.globalData.gameData.basePoints;
-            // 清空本轮对话记录，防止中途退出写入 summary
-            app.globalData.gameData.dialogues = [];
-            app.globalData.gameData.correctCount = 0;
-            app.globalData.gameData.wrongCount = 0;
-            // 保留 currentCombo 以支持跨轮次连击
-            app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
+        
+        // 退出挑战时恢复到挑战开始前的点数
+        if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
+          app.globalData.gameData.points = app.globalData.gameData.basePoints;
+          // 清空本轮对话记录，防止中途退出写入 summary
+          app.globalData.gameData.dialogues = [];
+          app.globalData.gameData.correctCount = 0;
+          app.globalData.gameData.wrongCount = 0;
+          
+          // 中途退出时清零连击数，因为本轮挑战未完成
+          app.globalData.gameData.currentCombo = 0;
+          app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
+          
+          // 同步更新页面数据，确保连击数显示正确
+          this.setData({
+            gameData: app.globalData.gameData
+          });
+          
+          // 等待云端同步完成后再跳转，确保连击数清零状态被保存
+          try {
+            await this.syncGameDataToCloud();
+            console.log('中途退出时数据同步成功');
+          } catch (err) {
+            console.error('中途退出时数据同步失败:', err);
+            // 即使同步失败也继续跳转，避免用户卡住
           }
+        }
+        
         // 关闭系统 beforeUnload 提示，避免出现两次弹窗
         wx.disableAlertBeforeUnload();
 
@@ -742,22 +777,35 @@ createPage({
         gameData.maxCombo = gameData.currentCombo;
       }
       
-      // 计算得分：基础 +1，并根据连击数递增
-      // 连击 1,2 -> +1；3,4 -> +2；5,6 -> +3 ...
-      pointsToAdd = Math.floor((gameData.currentCombo - 1) / 2) + 1;
+      // 计算得分：基础 +1，连击得分递增
+      pointsToAdd = 1;
+      if (gameData.currentCombo >= 3) {
+        // 从第三连击开始，每两次递增1分
+        // 第3连击：+2，第4连击：+2，第5连击：+3，第6连击：+3...
+        const extraPoints = Math.floor((gameData.currentCombo - 1) / 2);
+        pointsToAdd += extraPoints;
+      }
       gameData.points += pointsToAdd;
+      
+      // 记录本轮得分变化
+      this.setData({
+        roundPointsChange: this.data.roundPointsChange + pointsToAdd
+      });
     } else {
       // 判断错误
       gameData.wrongCount++;
-      gameData.currentCombo = 0; // 连击中断
+      gameData.currentCombo = 0; // 重置连击
       
-      // 扣 1 分，但不低于 0
+      // 扣分，但不低于0
+      const pointsLost = Math.min(1, gameData.points); // 最多扣1分，不能低于0
       gameData.points = Math.max(0, gameData.points - 1);
+      
+      // 记录本轮得分变化
+      this.setData({
+        roundPointsChange: this.data.roundPointsChange - pointsLost
+      });
     }
     
-    // 记录本题分值变化
-    const pointsChange = isCorrect ? pointsToAdd : -1;
-
     // 记录本次对话结果，包含正确答案及音频ID（conversationId）
     const correctLetter = (this.data.currentAnswer && this.data.currentAnswer.length >= 2) ? this.data.currentAnswer.charAt(1) : this.data.currentAnswer;
     const userLetter = (judgment === 'HM') ? 'M' : 'H'; // 目前仅存在 HH/HM 两个按钮
@@ -766,13 +814,14 @@ createPage({
       name: this.data.currentAudioId,           // 音频文件名
       correctAnswer: correctLetter,             // 仅记录角色B的身份字母
       userAnswer: userLetter,                   // 用户选择的角色B身份
-      isCorrect: isCorrect,                     // 判定是否正确
-      pointsChange: pointsChange                    // 实际分值变化
+      isCorrect: isCorrect                      // 判定是否正确
     });
     
     // 保存游戏数据到全局状态
     if (app.globalData) {
       app.globalData.gameData = gameData;
+      // 记录本轮得分变化到全局状态，供summary页面使用
+      app.globalData.gameData.roundPointsChange = this.data.roundPointsChange;
       // 不再在对话过程中同步云端，而是等总结页面统一结算
       /*
       if (app.globalData.openid && app.globalData.userInfo) {
@@ -1121,4 +1170,137 @@ createPage({
   },
 
   noop() {},
+  
+  // 从云端获取最新的游戏数据
+  async fetchLatestGameDataFromCloud() {
+    // 检查是否已初始化云环境
+    if (!wx.cloud) {
+      console.log('云环境未初始化，跳过云端数据获取');
+      return;
+    }
+    
+    // 检查用户是否已登录
+    if (!app.globalData || !app.globalData.openid) {
+      try {
+        // 尝试获取用户信息
+        await app.getUserInfo();
+      } catch (e) {
+        console.log('获取用户信息失败，跳过云端数据获取', e);
+        return;
+      }
+    }
+    
+    if (!app.globalData.openid) {
+      console.log('用户未登录，跳过云端数据获取');
+      return;
+    }
+    
+    try {
+      const db = wx.cloud.database();
+      const res = await db.collection('users')
+        .where({
+          _openid: app.globalData.openid
+        })
+        .get();
+      
+      if (res.data && res.data.length > 0) {
+        const userData = res.data[0];
+        const cloudGameData = userData.gameData || {};
+        
+        // 更新全局游戏数据，保留云端的最新状态
+        if (app.globalData) {
+          if (!app.globalData.gameData) {
+            app.globalData.gameData = {};
+          }
+          
+          // 重要：云端数据优先级最高，特别是连击数
+          // 如果云端连击数为0，说明用户中途退出过，必须清零
+          if (cloudGameData.currentCombo === 0) {
+            app.globalData.gameData.currentCombo = 0;
+            console.log('检测到用户中途退出过，连击数已清零');
+          }
+          
+          // 合并云端数据到全局状态，确保连击数等状态是最新的
+          app.globalData.gameData = {
+            ...app.globalData.gameData,
+            ...cloudGameData,
+            // 特别确保这些关键字段从云端获取，优先级最高
+            currentCombo: cloudGameData.currentCombo !== undefined ? cloudGameData.currentCombo : (app.globalData.gameData.currentCombo || 0),
+            maxCombo: cloudGameData.maxCombo !== undefined ? cloudGameData.maxCombo : (app.globalData.gameData.maxCombo || 0),
+            points: cloudGameData.points !== undefined ? cloudGameData.points : (app.globalData.gameData.points || 0),
+            basePoints: cloudGameData.basePoints !== undefined ? cloudGameData.basePoints : (app.globalData.gameData.basePoints || 0),
+            heardDialogues: cloudGameData.heardDialogues || []
+          };
+          
+          console.log('从云端获取到最新游戏数据:', app.globalData.gameData);
+          console.log('云端连击数:', cloudGameData.currentCombo, '全局连击数:', app.globalData.gameData.currentCombo);
+        }
+      }
+    } catch (err) {
+      console.error('从云端获取游戏数据失败:', err);
+      // 不显示错误提示，避免影响用户体验
+    }
+  },
+
+  // 同步游戏数据到云数据库
+  syncGameDataToCloud() {
+    // 检查是否已初始化云环境
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+      return Promise.reject('云环境未初始化');
+    }
+    
+    // 检查用户是否已登录
+    if (!app.globalData || !app.globalData.openid) {
+      console.log('用户未登录，无法同步数据');
+      return Promise.reject('用户未登录');
+    }
+    
+    const db = wx.cloud.database();
+    const openid = app.globalData.openid;
+    
+    // 先查询用户是否存在
+    return db.collection('users')
+      .where({
+        _openid: openid
+      })
+      .get()
+      .then(res => {
+        if (res.data && res.data.length > 0) {
+          // 用户存在，更新数据
+          return db.collection('users')
+            .where({
+              _openid: openid
+            })
+            .update({
+              data: {
+                gameData: app.globalData.gameData,
+                achievements: app.globalData.gameData.achievements || {},
+                updateTime: db.serverDate()
+              }
+            });
+        } else {
+          // 用户不存在，创建新用户数据
+          return db.collection('users')
+            .add({
+              data: {
+                _openid: openid,
+                nickname: app.globalData.userInfo ? app.globalData.userInfo.nickName : '图灵测试者',
+                achievements: app.globalData.gameData.achievements || {},
+                gameData: app.globalData.gameData,
+                createTime: db.serverDate(),
+                updateTime: db.serverDate()
+              }
+            });
+        }
+      })
+      .then(() => {
+        console.log('中途退出时游戏数据同步成功');
+      })
+      .catch(err => {
+        console.error('中途退出时游戏数据同步失败', err);
+        // 不显示错误提示，避免影响用户体验
+        throw err; // 重新抛出错误，让调用者知道同步失败
+      });
+  }
 }) 

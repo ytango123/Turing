@@ -139,7 +139,7 @@
 
 /* 音频进度条样式 */
 .audio-progress-container {
-  width: 84%; /* 将宽度从100%改为80%，使其变短 */
+  width: 80%; /* 将宽度从100%改为80%，使其变短 */
   margin: 0 auto 44rpx; /* 水平居中并保持24rpx的底部外边距 */
   height: 50rpx; /* 增加容器高度以容纳滑块 */
   display: flex;
@@ -270,7 +270,6 @@
   text-align: center;
   font-size: 28rpx;
   color: #6B7280;
-  padding: 0 48rpx; /* 新增：左右留白 */
 }
 
 /* 新：判断选项SVG容器 */
