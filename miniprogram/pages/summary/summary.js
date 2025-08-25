@@ -138,14 +138,9 @@ createPage({
     // 计算本次挑战获得的点数：直接使用conversation页面记录的得分变化
     let pointsGained = gameData.roundPointsChange || 0;
     
-    // 如果roundPointsChange不存在，则回退到原来的计算方式
-    if (typeof pointsGained !== 'number') {
-      pointsGained = (gameData.points || 0) - (gameData.basePoints || 0);
-    // 挑战最低得分为 0，如出现负数则归零，并恢复原始点数
+    // 确保得分不为负数
     if (pointsGained < 0) {
       pointsGained = 0;
-      gameData.points = gameData.basePoints || 0;
-      }
     }
     
     // 重要：更新全局总分 = 基础分 + 本轮得分

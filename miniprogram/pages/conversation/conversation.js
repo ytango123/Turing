@@ -785,11 +785,11 @@ createPage({
         const extraPoints = Math.floor((gameData.currentCombo - 1) / 2);
         pointsToAdd += extraPoints;
       }
-      gameData.points += pointsToAdd;
       
-      // 记录本轮得分变化
+      // 不直接修改全局总分，只记录本轮得分变化
+      const newRoundPointsChange = this.data.roundPointsChange + pointsToAdd;
       this.setData({
-        roundPointsChange: this.data.roundPointsChange + pointsToAdd
+        roundPointsChange: newRoundPointsChange
       });
     } else {
       // 判断错误
@@ -797,12 +797,13 @@ createPage({
       gameData.currentCombo = 0; // 重置连击
       
       // 扣分，但不低于0
-      const pointsLost = Math.min(1, gameData.points); // 最多扣1分，不能低于0
-      gameData.points = Math.max(0, gameData.points - 1);
+      const currentRoundPoints = this.data.roundPointsChange;
+      const pointsLost = Math.min(1, currentRoundPoints); // 最多扣1分，不能低于0
+      const newRoundPointsChange = Math.max(0, currentRoundPoints - 1);
       
       // 记录本轮得分变化
       this.setData({
-        roundPointsChange: this.data.roundPointsChange - pointsLost
+        roundPointsChange: newRoundPointsChange
       });
     }
     

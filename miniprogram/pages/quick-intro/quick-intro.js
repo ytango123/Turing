@@ -196,5 +196,11 @@ createPage({
         url: '/pages/game-home/game-home'
       });
     }
+  },
+
+  /** 语言切换后刷新动态文本 */
+  refreshLanguageDependentData(language) {
+    this.setData({ currentLang: language });
+    this.updateSelectBtnSrc();
   }
 }) 

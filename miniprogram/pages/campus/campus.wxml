@@ -1,12 +1,58 @@
 <view class="container">
-  <t-navbar 
-    title="{{t.navTitle}}" 
-    title-color="#ffffff"
-    t-class="t-navbar"
-    fixed
-    placeholder
-  />
-  <view class="flex-center" style="margin-top:200rpx; color:#9CA3AF; font-size:32rpx;">
-    {{currentLang === 'en' ? 'Coming soon...' : '敬请期待...'}}
+   <!-- 自定义导航栏 -->
+  <view class="custom-nav" style="height: {{navBarHeight}}px;">
+    <view class="nav-title" style="top: {{statusBarHeight + (menuButtonInfo.top - statusBarHeight)/2}}px; height: {{menuButtonInfo.height}}px; line-height: {{menuButtonInfo.height}}px;">
+      {{t.navTitle}}
+    </view>
+  </view> 
+  
+  <!-- 顶部卡片 -->
+  <image class="top-card" src="{{topCardSvg}}" mode="widthFix" />
+
+  <!-- 任务卡片列表 -->
+  <view class="task-cards">
+    <!-- 邀请好友任务 -->
+    <view class="task-card" bindtap="onInviteFriends">
+      <image src="{{friendsCardSvg}}" mode="widthFix" />
+      <view class="task-icon">
+        <image src="/assets/figma/friends.png" mode="aspectFit" />
+      </view>
+      <button class="task-button">
+        <image src="{{inviteTask.completed ? claimSvg : goCompleteSvg}}" mode="aspectFit" />
+      </button>
+    </view>
+
+    <!-- 新用户签到任务 -->
+    <view class="task-card" bindtap="onSignInTask">
+      <image src="{{signInCardSvg}}" mode="widthFix" />
+      <view class="task-icon">
+        <image src="/assets/figma/sign-in.png" mode="aspectFit" />
+      </view>
+      <button class="task-button">
+        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      </button>
+    </view>
+
+    <!-- 大转盘抽奖任务 -->
+    <view class="task-card" bindtap="onDrawTask">
+      <image src="{{drawCardSvg}}" mode="widthFix" />
+      <view class="task-icon">
+        <image src="/assets/figma/draw.png" mode="aspectFit" />
+      </view>
+      <button class="task-button">
+        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      </button>
+    </view>
+
+    <!-- 打卡好礼任务 -->
+    <view class="task-card" bindtap="onGiftTask">
+      <image src="{{giftCardSvg}}" mode="widthFix" />
+      <view class="task-icon">
+        <image src="/assets/figma/gift.png" mode="aspectFit" />
+      </view>
+      <button class="task-button">
+        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      </button>
+    </view>
   </view>
 </view> 

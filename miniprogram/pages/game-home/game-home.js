@@ -295,13 +295,26 @@ createPage({
     });
   },
 
+  /** 困难模式点击事件 */
+  onHardModeClick() {
+    // 震动反馈
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    
+    wx.showToast({
+      title: '困难模式功能开发中',
+      icon: 'none'
+    });
+  },
+
   // 根据是否展开设置显示的排行榜数据
   updateDisplayRankings(rankList = this.data.rankings) {
     const top = rankList.slice(0, 3)
     const rest = rankList.slice(3)
     // 估算每条记录高度（含间距）
     const ITEM_HEIGHT = 230 // rpx，包括卡片本身+间距
-    const cardHeight = rest.length * ITEM_HEIGHT ; // 顶部+底部留白
+    const cardHeight = rest.length * ITEM_HEIGHT  ; // 顶部+底部留白
 
     this.setData({
       topRankings: top,
@@ -367,10 +380,10 @@ createPage({
 
     if (id === 'movie') {
       // TODO: 跳转至语音克隆-电影台词页面
-      wx.showToast({ title: '该功能开发中', icon: 'none' })
+      wx.showToast({ title: '电影语音克隆功能开发中', icon: 'none' })
     } else if (id === 'music') {
       // TODO: 跳转至语音克隆-歌手演唱页面
-      wx.showToast({ title: '该功能开发中', icon: 'none' })
+      wx.showToast({ title: '歌曲语音克隆功能开发中', icon: 'none' })
     }
   },
 

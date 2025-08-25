@@ -46,7 +46,7 @@
     </view>
     
     <!-- 困难模式卡片 -->
-    <view class="mode-card" hover-class="mode-card-pressed" hover-stay-time="0">
+    <view class="mode-card" bindtap="onHardModeClick" hover-class="mode-card-pressed" hover-stay-time="0">
       <image class="card-icon" src="/assets/figma/hard_mode_top.png" mode="widthFix"></image>
       <image class="card-image" src="{{hardModeSvg}}" mode="widthFix"></image>
     </view>

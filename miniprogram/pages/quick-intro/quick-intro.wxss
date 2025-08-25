@@ -19,12 +19,67 @@
   height: 100%;
 }
 
-/* 重新定位按钮容器至底部中央 */
+/* 标题容器 */
+.title-container {
+  position: absolute;
+  left: 50%;
+  top: 45vh; /* 位于屏幕上方1/4位置 */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-img {
+  width: 30vw;
+  max-width: 230rpx;
+  object-fit: contain;
+}
+
+/* 描述内容容器 - 位于标题下方 */
+.description-container {
+  position: absolute;
+  left: 50%;
+  top: 56vh; /* 位于标题下方 */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-img {
+  width: 68vw;
+  max-width: 560rpx;
+  object-fit: contain;
+}
+
+/* 题库选择容器 - 位于描述下方 */
+.select-container {
+  position: absolute;
+  left: 50%;
+  top: 71vh; /* 位于描述下方 */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 42rpx;
+}
+
+.select-btn {
+  width: 16vh;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.select-btn:active {
+  transform: scale(0.93);
+}
+
+/* 开始按钮容器 - 位于选择按钮下方 */
 .button-container {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 160rpx;
+  left: 50%;
+  top: 85vh; /* 位于选择按钮下方 */
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,26 +103,5 @@
 
 /* 使用active伪类代替JS控制的transform */
 .start-button-img:active {
-  transform: scale(0.93);
-} 
-
-/* 题库选择容器 */
-.select-container {
-  position: absolute;
-  left: 50%;
-  bottom: 360rpx; /* 位于开始按钮之上 */
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 42rpx;
-}
-
-.select-btn {
-  width: 16vh;
-  object-fit: contain;
-  transition: transform 0.15s ease;
-}
-
-.select-btn:active {
   transform: scale(0.93);
 } 

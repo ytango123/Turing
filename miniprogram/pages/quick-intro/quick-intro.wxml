@@ -1,7 +1,34 @@
 <view class="intro-container" hidden="{{!pageReady}}">
-  <!-- 背景 SVG，根据语言切换 -->
-  <image class="intro-bg" src="/assets/images/quick-intro/bg_zh.svg" mode="aspectFill" hidden="{{currentLang!=='zh'}}" />
-  <image class="intro-bg" src="/assets/images/quick-intro/bg_en.svg" mode="aspectFill" hidden="{{currentLang!=='en'}}" />
+  <!-- 背景 SVG，不再随语言切换 -->
+  <image class="intro-bg" src="/assets/images/quick-intro/bg.svg" mode="aspectFill" />
+
+  <!-- 标题区域 -->
+  <view class="title-container">
+    <image 
+      class="title-img" 
+      src="/assets/images/quick-intro/title_zh.svg" 
+      mode="widthFix" 
+      hidden="{{currentLang!=='zh'}}" />
+    <image 
+      class="title-img" 
+      src="/assets/images/quick-intro/title_en.svg" 
+      mode="widthFix" 
+      hidden="{{currentLang!=='en'}}" />
+  </view>
+
+  <!-- 描述内容区域 -->
+  <view class="description-container">
+    <image 
+      class="description-img" 
+      src="/assets/images/quick-intro/description_zh.svg" 
+      mode="widthFix" 
+      hidden="{{currentLang!=='zh'}}" />
+    <image 
+      class="description-img" 
+      src="/assets/images/quick-intro/description_en.svg" 
+      mode="widthFix" 
+      hidden="{{currentLang!=='en'}}" />
+  </view>
 
   <!-- 题库选择按钮 -->
   <view class="select-container">

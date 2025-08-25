@@ -162,7 +162,7 @@
   background-color: #DBECFF;
 }
 .combo-card .stat-icon .iconfont {
-  color: #385DB6;
+  color: #9ED4F6;
 }
 
 .achievement-card {
@@ -239,7 +239,7 @@
 }
 
 .tab-text.active {
-  color: #577CE2;
+  color: #64b2df;
   font-weight: bold;
 }
 
@@ -247,7 +247,7 @@
   width: 8rpx;
   height: 8rpx;
   border-radius: 50%;
-  background-color: #577CE2;
+  background-color: #64b2df;
   margin-top: 12rpx;
 }
 
