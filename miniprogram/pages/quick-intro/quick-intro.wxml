@@ -1,4 +1,4 @@
-<view class="intro-container" hidden="{{!pageReady}}">
+<view class="intro-container" hidden="{{!pageReady}}" data-lang="{{currentLang}}">
   <!-- 背景 SVG，不再随语言切换 -->
   <image class="intro-bg" src="/assets/images/quick-intro/bg.svg" mode="aspectFill" />
 

@@ -609,17 +609,17 @@ createPage({
         // 停止并销毁音频，避免后台播放
         this.stopAndDestroyAudio();
         
-        // 退出挑战时恢复到挑战开始前的点数
-        if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
-          app.globalData.gameData.points = app.globalData.gameData.basePoints;
-          // 清空本轮对话记录，防止中途退出写入 summary
-          app.globalData.gameData.dialogues = [];
-          app.globalData.gameData.correctCount = 0;
-          app.globalData.gameData.wrongCount = 0;
+          // 退出挑战时恢复到挑战开始前的点数
+          if (app.globalData && app.globalData.gameData && typeof app.globalData.gameData.basePoints === 'number') {
+            app.globalData.gameData.points = app.globalData.gameData.basePoints;
+            // 清空本轮对话记录，防止中途退出写入 summary
+            app.globalData.gameData.dialogues = [];
+            app.globalData.gameData.correctCount = 0;
+            app.globalData.gameData.wrongCount = 0;
           
           // 中途退出时清零连击数，因为本轮挑战未完成
-          app.globalData.gameData.currentCombo = 0;
-          app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
+            app.globalData.gameData.currentCombo = 0;
+            app.globalData.gameData.maxCombo = app.globalData.gameData.maxCombo || 0; // 保持历史最大连击
           
           // 同步更新页面数据，确保连击数显示正确
           this.setData({

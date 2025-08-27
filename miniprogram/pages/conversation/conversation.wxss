@@ -71,11 +71,13 @@
 
 .mb-large {
   margin-bottom: 64rpx;
+  
 }
 
 .text-gray {
   color: #6B7280;
   font-size: 28rpx;
+  font-weight:bold;
 }
 
 .dialogue-card {
@@ -139,7 +141,7 @@
 
 /* 音频进度条样式 */
 .audio-progress-container {
-  width: 80%; /* 将宽度从100%改为80%，使其变短 */
+  width: 82%; /* 将宽度从100%改为80%，使其变短 */
   margin: 0 auto 44rpx; /* 水平居中并保持24rpx的底部外边距 */
   height: 50rpx; /* 增加容器高度以容纳滑块 */
   display: flex;
@@ -269,7 +271,10 @@
 .hint-text {
   text-align: center;
   font-size: 28rpx;
+  font-weight: 600;
   color: #6B7280;
+  padding: 0 10rpx;
+
 }
 
 /* 新：判断选项SVG容器 */
@@ -349,6 +354,7 @@
   font-size: 48rpx;
   font-weight: bold;
   color: #1F2937;
+  
   margin-bottom: 16rpx;
 }
 

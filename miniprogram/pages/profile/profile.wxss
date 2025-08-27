@@ -50,15 +50,16 @@
 }
 
 .text-gray {
-  color: #6B7280;
+  color:rgb(111, 116, 125);
 }
 
 .text-xs {
-  font-size: 24rpx;
+  font-size: 22rpx;
 }
 
 .text-sm {
-  font-size: 28rpx;
+  font-size: 26rpx;
+  font-weight:600;
 }
 
 .text-primary {
@@ -78,19 +79,65 @@
 }
 
 .user-info-card {
-  padding: 48rpx;
-  position: relative;
+  padding: 38rpx;
+  position: relative; /* 为金币定位做准备 */
 }
+.user-info-card .avatar-wrapper {
+  margin-right: 32rpx;
+  margin-top: 4rpx;
+  margin-bottom: 4rpx;
+}
+.user-info-card .flex-start.mb-small {
+  margin-bottom: 8rpx;
+}
+.user-info-card .progress-bar {
+  margin-top: 16rpx;
+  margin-bottom: 4rpx;
+}
+.user-info-card .text-right.text-xs { 
+  margin-bottom: -10rpx; 
+}
+
+/* 新增：金币显示样式 */
+.coins-display {
+  position: absolute;
+  top: 38rpx;
+  right: 38rpx;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.coins-container {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 26rpx;
+  padding: 8rpx 18rpx;
+  border: 6rpx solid #EAEEED;
+}
+
+.coin-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.coins-amount {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1F2937;
+}
+
 
 .avatar-wrapper {
   position: relative;
-  width: 160rpx;
-  height: 160rpx;
+  width: 136rpx;
 }
 
 .avatar {
-  width: 160rpx;
-  height: 160rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   background: linear-gradient(135deg, #7072f0, #4767c2);
   display: flex;
@@ -100,122 +147,15 @@
   color: white;
   font-weight: bold;
   position: relative;
+  border: 8rpx solid #EAEEED; /* 灰色描边 */
 }
 
-/* 外圈描边 */
-.avatar-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 4rpx solid #f59e0b;
-  border-radius: 50%;
-  box-sizing: border-box;
-  pointer-events: none;
-}
+
 
 .username {
-  font-size: 40rpx;
+  font-size: 38rpx;
   font-weight: bold;
   color: #1F2937;
-}
-
-/* 统计卡片样式 */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
-}
-
-/* 统计卡片基础样式 */
-.stat-card {
-  border-radius: 36rpx;
-  padding: 22rpx;
-  display: flex;
-  align-items: flex-start;
-  gap: 24rpx;
-  box-shadow: none;
-}
-
-.stat-icon {
-  width: 94rpx;
-  height: 94rpx;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFFFFF;
-  /* 移除阴影 */
-  box-shadow: none;
-}
-
-/* 不同卡片的颜色方案 */
-.accuracy-card {
-  background-color: #F0F6E8;
-}
-.accuracy-card .stat-icon .iconfont {
-  color: #57B404;
-}
-
-.combo-card {
-  background-color: #DBECFF;
-}
-.combo-card .stat-icon .iconfont {
-  color: #9ED4F6;
-}
-
-.achievement-card {
-  background-color: #FFEDF9;
-}
-.achievement-card .stat-icon .iconfont {
-  color: #C95065;
-}
-
-.rank-card {
-  background-color: #F5F2E1;
-}
-.rank-card .stat-icon .iconfont {
-  color: #E2A030;
-}
-
-/* 调整图标大小 */
-.stat-icon .iconfont {
-  font-size: 48rpx;
-}
-
-/* 调整文字样式 */
-.stat-content {
-  flex: 1;
-}
-
-.stat-label {
-  font-size: 24rpx;
-  color: #6B7280;
-  margin-bottom: 8rpx;
-}
-
-.stat-value {
-  font-size: 46rpx;
-  font-weight: bold;
-  color: #1F2937;
-}
-
-/* 不同卡片的背景色 */
-.accuracy-card .stat-icon {
-  background-color: #FFFFFF;
-}
-
-.combo-card .stat-icon {
-  background-color: #FFFFFF;
-}
-
-.achievement-card .stat-icon {
-  background-color: #FFFFFF;
-}
-
-.rank-card .stat-icon {
-  background-color: #FFFFFF;
 }
 
 .tabs {
@@ -230,25 +170,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .tab-text {
   font-size: 32rpx;
   color: #6B7280;
   font-weight: 500;
+  position: relative;
+  z-index: 2;
 }
 
 .tab-text.active {
-  color: #64b2df;
-  font-weight: bold;
+  color: #1F2937;
+  font-weight: 800;
 }
 
-.tab-dot {
-  width: 8rpx;
-  height: 8rpx;
-  border-radius: 50%;
-  background-color: #64b2df;
-  margin-top: 12rpx;
+.tab-underline {
+  height: 11rpx;
+  border-radius: 16rpx;
+  background: linear-gradient(90deg,rgb(215, 238, 251), #9ED4F6);
+ 
+  position: relative;
+  z-index: 1;
+}
+.tab-underline.zh {
+  width: 60rpx;
+  margin-top: -9rpx;
+}
+.tab-underline.en {
+  margin-top: -11rpx;
+  width: 100rpx;
 }
 
 /* 成就徽章网格 */
@@ -357,62 +309,7 @@
   height: 90rpx;
 }
 
-/* 移除旧成就列表样式不再使用 (可留作备份) */
-
-.achievements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24rpx;
-}
-
-.achievement {
-  border: 4rpx solid #E5E7EB;
-  border-radius: 24rpx;
-  padding: 32rpx;
-  display: flex;
-  align-items: center;
-  transition: all 0.2s;
-}
-
-.achievement.unlocked {
-  border-color: #10B981;
-  background-color: #ECFDF5;
-}
-
-.achievement.locked {
-  opacity: 0.7;
-  background-color: #F3F4F6;
-}
-
-.achievement-icon {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 24rpx;
-}
-
-.achievement-icon.unlocked {
-  background-color: #D1FAE5;
-}
-
-.achievement-icon.locked {
-  background-color: #F3F4F6;
-}
-
-.achievement-title {
-  font-weight: bold;
-  font-size: 32rpx;
-  color: #1F2937;
-  margin-bottom: 8rpx;
-}
-
-.achievement-desc {
-  font-size: 28rpx;
-  color: #6B7280;
-}
+/* 旧成就列表样式已删除 */
 
 .history-list {
   display: flex;
@@ -566,10 +463,28 @@
 }
 
 .avatar-img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   object-fit: cover;
+  border: 8rpx solid #EAEEED;
+}
+
+/* 头像整体与卡片保持间距 */
+.user-info-card .avatar-wrapper {
+  margin-top: 6rpx;
+  margin-bottom: 6rpx;
+}
+
+/* 新增：徽章SVG覆盖在头像下沿 */
+.badge-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 136rpx;
+  bottom: -6rpx;
+  margin-bottom: 6rpx;
+  z-index: 2;
 }
 
 /* ========== Level Progress Bar ========== */
@@ -582,7 +497,7 @@
               transparent 8rpx,
               transparent 16rpx
             ),
-            linear-gradient(90deg, #FBBF24, #F59E0B);
+            linear-gradient(90deg,rgb(59, 197, 75),rgb(43, 205, 62));
   border-radius: 8rpx;
 } 
 
@@ -616,6 +531,7 @@
 
 .accuracy-label {
   font-size: 20rpx;
+  font-weight: 600;
   color: #6B7280;
 }
 
@@ -637,22 +553,6 @@
   align-items: center;
 }
 
-.summary-icon {
-  font-size: 48rpx;
-  margin-bottom: 16rpx;
-}
-
-.summary-icon-combo {
-  color: #385DB6;
-}
-
-.summary-icon-achievement {
-  color: #C95065;
-}
-
-.summary-icon-rank {
-  color: #E2A030;
-}
 
 .summary-value {
   font-size: 42rpx;
@@ -663,6 +563,7 @@
 
 .summary-label {
   font-size: 20rpx;
+  font-weight: 600;
   color: #6B7280;
 } 
 
@@ -723,7 +624,8 @@
 
 .setting-title {
   font-size: 32rpx;
-  color: #1F2937;
+  font-weight: bold;
+  color:#535353;
 }
 
 .setting-right {

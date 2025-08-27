@@ -1,5 +1,6 @@
 const { createPage } = require('../../utils/basePage')
 const { t } = require('../../utils/i18n')
+const { truncateDisplay } = require('../../utils/stringUtils')
 
 createPage({
   pageKey: 'profile',
@@ -30,6 +31,7 @@ createPage({
     avatarUrl: '',
     userInitial: 'T',
     username: '图灵测试者',
+    shortUsername: '图灵测试者',
     level: '业余探索者',
     levelClass: 'blue',
     points: 0,
@@ -38,6 +40,10 @@ createPage({
     pointsToNextLevel: 0,
     levelProgress: 0,
     hasFrame: true,
+    // 新增：用户金币数
+    coins: 0,
+    // 新增：等级徽章 SVG 路径
+    badgeSvg: '',
     
     correctRate: 0,
     maxCombo: 0,
@@ -166,40 +172,42 @@ createPage({
           const avatarUrl = userData.avatarUrl || '';
           
           // 更新页面数据
-      this.setData({
-        level: gameData.level,
-        points: gameData.points,
+          this.setData({
+            level: gameData.level,
+            points: gameData.points,
             username: nickname,
+            shortUsername: truncateDisplay(nickname,7),
             userInitial: userInitial,
             avatarUrl: avatarUrl,
-        completedChallenges: gameData.completedChallenges || 0,
+            completedChallenges: gameData.completedChallenges || 0,
             maxCombo: gameData.maxCombo || 0,
-            history: gameData.history || []
-      });
-      
-      // 计算等级进度
-      this.calculateLevelProgress();
+            history: gameData.history || [],
+            coins: gameData.coins || 0 // 从云端获取用户金币数
+          });
+          
+          // 计算等级进度
+          this.calculateLevelProgress();
           
           // 更新成就解锁状态
           if (gameData.achievements) {
             const language = this.currentLanguage || wx.getStorageSync('language') || 'zh';
             const achievements = this.data.achievements.map(achievement => {
               return {
-              ...achievement,
+                ...achievement,
                 title: t(`profile.achievements.${achievement.key}.title`, language),
                 description: t(`profile.achievements.${achievement.key}.description`, language),
-              unlocked: !!gameData.achievements[achievement.key]
+                unlocked: !!gameData.achievements[achievement.key]
               };
             });
-      
-      // 计算已解锁成就数量
+            
+            // 计算已解锁成就数量
             const unlockedAchievements = Object.keys(gameData.achievements).length;
             
-      this.setData({
+            this.setData({
               achievements,
-        unlockedAchievements
-      });
-    }
+              unlockedAchievements
+            });
+          }
 
           /* 计算总正确率：优先使用累计字段 totalCorrectRate；
              若不存在则回退到历史平均或最后一轮 */
@@ -216,14 +224,14 @@ createPage({
             }
           }
           
-    this.setData({
-      correctRate: totalCorrectRate
+          this.setData({
+            correctRate: totalCorrectRate
           });
         }
       })
       .catch(err => {
         console.error('获取用户数据失败', err);
-    });
+      });
   },
   
   calculateLevelProgress() {
@@ -267,31 +275,44 @@ createPage({
       .replace('{nextLevel}', nextLevelText)
       .replace('{points}', pointsToNextLevel);
       
-      // 最高等级时隐藏进度文本
-      if (currentLevelKey === 'superIdentifier') {
-        progressText = '';
-      }
+    // 最高等级时隐藏进度文本
+    if (currentLevelKey === 'superIdentifier') {
+      progressText = '';
+    }
       
-      // 根据等级键映射徽章颜色类
-      let badgeClass = 'green';
-      if (currentLevelKey === 'amateurExplorer') {
-        badgeClass = 'blue';
-      } else if (currentLevelKey === 'seniorIdentifier') {
-        badgeClass = 'purple';
-      } else if (currentLevelKey === 'turingMaster') {
-        badgeClass = 'orange';
-      } else if (currentLevelKey === 'superIdentifier') {
-        badgeClass = 'platinum';
-      }
+    // 根据等级键映射徽章颜色类
+    let badgeClass = 'green';
+    if (currentLevelKey === 'amateurExplorer') {
+      badgeClass = 'blue';
+    } else if (currentLevelKey === 'seniorIdentifier') {
+      badgeClass = 'purple';
+    } else if (currentLevelKey === 'turingMaster') {
+      badgeClass = 'orange';
+    } else if (currentLevelKey === 'superIdentifier') {
+      badgeClass = 'platinum';
+    }
+
+    // 新增：根据等级与语言映射徽章SVG
+    const levelNameMap = {
+      newUser: 'beginner',
+      amateurExplorer: 'explorer',
+      seniorIdentifier: 'identifier',
+      turingMaster: 'master',
+      superIdentifier: 'superior'
+    };
+    const langCode = language === 'en' ? 'en' : 'zh';
+    const badgeKey = levelNameMap[currentLevelKey] || 'beginner';
+    const badgeSvg = `/assets/images/component/${badgeKey}_${langCode}.svg`;
       
-      this.setData({
+    this.setData({
       level: currentLevelText,
       nextLevel: nextLevelText,
-        pointsToNextLevel,
+      pointsToNextLevel,
       levelProgress: progress,
       progressText,
-      levelClass: badgeClass
-      });
+      levelClass: badgeClass,
+      badgeSvg
+    });
   },
 
   // 语言切换后刷新动态文本

@@ -71,7 +71,7 @@ const i18nMessages = {
       },
       tabs: {
         achievements: '成就',
-        history: '历史记录',
+        history: '历史',
         settings: '设置'
       },
       achievements: {
@@ -180,7 +180,10 @@ const i18nMessages = {
       performanceExcellent: '优秀的表现！',
       performanceGood: '不错的表现！',
       performanceAverage: '还有提升空间！',
-      performancePoor: '继续加油！'
+      performancePoor: '完蛋了！',
+      // 新增：金币相关
+      coinsLabel: '金币',
+      coinsUnit: '个'
     },
     index: {
       navTitle: '首页',
@@ -428,7 +431,10 @@ const i18nMessages = {
       performanceExcellent: 'Excellent Performance!',
       performanceGood: 'Great Job!',
       performanceAverage: 'Room for Improvement!',
-      performancePoor: 'Keep Practicing!'
+      performancePoor: 'Keep Practicing!',
+      // 新增：金币相关
+      coinsLabel: 'Coins',
+      coinsUnit: ''
     },
     index: {
       navTitle: 'Home',

@@ -1,6 +1,7 @@
 const app = getApp()
 const { createPage } = require('../../utils/basePage')
 const { t } = require('../../utils/i18n')
+const { truncateDisplay } = require('../../utils/stringUtils')
 
 createPage({
   pageKey: 'gameHome',
@@ -44,6 +45,11 @@ createPage({
     progressText: '',
     /** 页面是否就绪，用于首屏加载判断 */
     pageReady: false,
+    // 新增：用户金币数
+    coins: 0,
+
+    // 新增：等级徽章 SVG 路径
+    badgeSvg: '',
 
     // 根据语言切换的模式卡片SVG
     quickChallengeSvg: '/assets/images/game-home/quick-challenge-zh.svg',
@@ -83,7 +89,9 @@ createPage({
     restRankings: [],
     rankCardHeight: 0,
     // 标记排行榜数据是否已准备完毕，用于避免初始渲染闪屏
-    rankDataReady: false
+    rankDataReady: false,
+    // 新增：金币相关
+    userCoins: 0
   },
 
   onLoad() {
@@ -114,6 +122,7 @@ createPage({
       this.setData({
         avatarUrl: info.avatarUrl || '',
         username: nickname,
+        shortUsername: truncateDisplay(nickname,7),
         userInitial: nickname.charAt(0)
       });
     }
@@ -172,19 +181,21 @@ createPage({
           const avatarUrl = userData.avatarUrl || '';
 
           // 更新页面数据
-      this.setData({
-        points: gameData.points || 0,
+          this.setData({
+            points: gameData.points || 0,
             level: t('gameHome.newUser'),  // 直接使用多语言文本
             username: nickname,
-            userInitial: userInitial,
-            avatarUrl: avatarUrl
-      });
+            shortUsername: truncateDisplay(nickname,7),
+            avatarUrl: avatarUrl,
+            coins: gameData.coins || 0, // 从云端获取用户金币数
+            userCoins: gameData.coins || 0 // 新增：用户金币数
+          });
 
-      // 计算等级进度
-      this.calculateLevelProgress();
-      // 数据加载完毕，显示页面
-      this.setData({ pageReady: true });
-    }
+          // 计算等级进度
+          this.calculateLevelProgress();
+          // 数据加载完毕，显示页面
+          this.setData({ pageReady: true });
+        }
       })
       .catch(err => {
         console.error('获取用户数据失败', err);
@@ -259,14 +270,27 @@ createPage({
       progressText = '';
     }
 
-      this.setData({
+    // 新增：根据等级与语言映射徽章SVG
+    const levelNameMap = {
+      newUser: 'beginner',
+      amateurExplorer: 'explorer',
+      seniorIdentifier: 'identifier',
+      turingMaster: 'master',
+      superIdentifier: 'superior'
+    };
+    const langCode = language === 'en' ? 'en' : 'zh';
+    const badgeKey = levelNameMap[currentLevel] || 'beginner';
+    const badgeSvg = `/assets/images/component/${badgeKey}_${langCode}.svg`;
+
+    this.setData({
       level: currentLevelText,
       nextLevel: nextLevelText,
-        pointsToNextLevel,
+      pointsToNextLevel,
       levelProgress: progress,
       progressText,
-      levelClass: badgeClass
-      });
+      levelClass: badgeClass,
+      badgeSvg
+    });
   },
 
   // 语言切换后刷新动态文本
@@ -310,7 +334,10 @@ createPage({
 
   // 根据是否展开设置显示的排行榜数据
   updateDisplayRankings(rankList = this.data.rankings) {
-    const top = rankList.slice(0, 3)
+    const top = rankList.slice(0, 3).map(item => ({
+      ...item,
+      name: truncateDisplay(item.name, 5)
+    }))
     const rest = rankList.slice(3)
     // 估算每条记录高度（含间距）
     const ITEM_HEIGHT = 230 // rpx，包括卡片本身+间距

@@ -21,12 +21,23 @@
   
   <!-- 成绩展示 -->
   <view class="result-container mb-large">
-    <view class="trophy mb-medium">
-      <text class="iconfont icon-magic_star_line" style="font-size: 112rpx; color: #FFF;"></text>
+    <view class="robot-icon mb-robot-title">
+      <image class="robot-img" src="{{robotIconSrc}}" mode="aspectFit" />
     </view>
     <view class="result-title mb-small">{{performanceText}}</view>
-    <view class="result-desc mb-medium">
-      {{t.resultPrefix}}<text class="text-primary font-bold">{{correctRate}}</text>{{t.accuracySuffix}}
+    <!-- 挑战结果统计 -->
+    <view class="result-stats">
+      <view class="stat-item">
+        <text class="stat-label">{{t.resultPrefix}}</text>
+        <text class="stat-value accuracy">{{correctRate}}</text>
+        <text class="stat-suffix">{{t.accuracySuffix}}</text>
+      </view>
+      <!-- 新增：金币获得显示 -->
+      <view class="stat-item">
+        <text class="stat-label">{{t.coinsLabel}}</text>
+        <text class="stat-value coins">+{{coinsGained}}</text>
+        <text class="stat-suffix">{{t.coinsUnit}}</text>
+      </view>
     </view>
     
     <view class="stats-container">
@@ -57,7 +68,7 @@
     <view class="flex-start text-gray mb-small">
       <text class="mr-small">{{totalPoints}}{{t.pointsUnit}}</text>
       <text class="dot mx-small">•</text>
-      <text>{{t.distanceTo}}{{nextLevel}}"{{t.needPointsSuffix}}{{pointsToNextLevel}}{{t.pointsUnit}}</text>
+      <text>{{t.distanceTo}}"{{nextLevel}}"{{t.needPointsSuffix}}{{pointsToNextLevel}}{{t.pointsUnit}}</text>
     </view>
     
     <view class="progress-bar">

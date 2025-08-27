@@ -104,4 +104,27 @@
 /* 使用active伪类代替JS控制的transform */
 .start-button-img:active {
   transform: scale(0.93);
+}
+
+/* 英文版本特殊样式 */
+.intro-container[data-lang="en"] .title-img {
+  width: 58vw !important; /* 英文标题稍宽 */
+  max-width: 540rpx !important;
+}
+
+.intro-container[data-lang="en"] .description-container {
+  top: 54vh !important; /* 英文描述位置调整 */
+}
+
+.intro-container[data-lang="en"] .description-img {
+  width: 82vw !important; /* 英文描述稍宽 */
+  max-width: 700rpx !important; /* 增加最大宽度 */
+}
+
+.intro-container[data-lang="en"] .select-container {
+  top: 68vh !important; /* 英文选择按钮位置调整 */
+}
+
+.intro-container[data-lang="en"] .button-container {
+  top: 79vh !important; /* 英文开始按钮位置调整 */
 } 

@@ -29,6 +29,10 @@
   margin-bottom: 16rpx;
 }
 
+.mb-robot-title {
+   margin-bottom: -24rpx;
+}
+
 .mb-medium {
   margin-bottom: 32rpx;
 }
@@ -47,7 +51,7 @@
 }
 
 .text-primary {
-  color: #577CE2;
+  color: rgb(97, 178, 224);
 }
 
 .font-bold {
@@ -57,6 +61,7 @@
 .text-gray {
   color: #6B7280;
   font-size: 28rpx;
+  font-weight: bold;
 }
 
 .dot {
@@ -71,7 +76,7 @@
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 1;
+  z-index: 100;
 }
 
 .confetti {
@@ -121,18 +126,20 @@
   align-items: center;
   z-index: 2;
   position: relative;
-  margin-top: 32rpx;
 }
 
-.trophy {
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
+.robot-icon {
+  width: 330rpx;
+  height: 330rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 16rpx 32rpx rgba(239, 68, 68, 0.2);
+}
+
+.robot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .result-title {
@@ -141,9 +148,50 @@
   color: #1F2937;
 }
 
+.result-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.result-stats .stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.result-stats .stat-label {
+  font-size: 32rpx;
+  color: #6B7280;
+}
+
+.result-stats .stat-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #6B7280; /* 默认颜色 */
+}
+
+.result-stats .stat-value.coins {
+  font-size: 38rpx;
+  color: #F59E0B; /* 只有金币数显示为黄色 */
+}
+
+.result-stats .stat-value.accuracy {
+  font-size: 38rpx;
+  color: rgb(97, 127, 224); /* 正确率保持蓝色 */
+}
+
+.result-stats .stat-suffix {
+  font-size: 32rpx;
+  
+  color: #6B7280;
+}
+
 .result-desc {
   font-size: 32rpx;
   color: #6B7280;
+  
   text-align: center;
 }
 
@@ -152,20 +200,21 @@
   gap: 48rpx;
 }
 
-.stat-item {
+.stats-container .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.stat-value {
+.stats-container .stat-value {
   font-size: 60rpx;
   font-weight: bold;
-  color: #577CE2;
+  color:rgb(85,150,214);
 }
 
-.stat-label {
+.stats-container .stat-label {
   font-size: 28rpx;
+  font-weight:bold;
   color: #6B7280;
 }
 
@@ -209,6 +258,7 @@
 .analysis-desc {
   font-size: 28rpx;
   color: #4B5563;
+
   line-height: 1.5;
 }
 
@@ -290,7 +340,7 @@ button.summary-button {
               transparent 8rpx,
               transparent 16rpx
             ),
-            linear-gradient(90deg, #FBBF24, #F59E0B);
+            linear-gradient(90deg, rgb(59, 197, 75),rgb(43, 205, 62));
   border-radius: 8rpx;
 } 
 

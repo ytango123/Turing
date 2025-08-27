@@ -26,7 +26,10 @@ createPage({
     shareButton: 'shareButton',
     playAgain: 'playAgain',
     achievementUnlocked: 'achievementUnlocked',
-    closeLabel: 'close'
+    closeLabel: 'close',
+    // 新增：金币相关
+    coinsLabel: 'coinsLabel',
+    coinsUnit: 'coinsUnit'
   },
 
   data: {
@@ -45,6 +48,12 @@ createPage({
     pointsToNextLevel: 0,
     levelProgress: 0,
     hasLevelUp: true,
+    
+    // 新增：金币相关
+    coinsGained: 0,
+    
+    // 新增：机器人图标路径
+    robotIconSrc: '',
     
     // 分析结果相关
     analysisResult: '',
@@ -126,6 +135,18 @@ createPage({
     else performanceKey = 'summary.performancePoor';
     const performanceText = t(performanceKey, language);
 
+    // 根据表现设置对应的机器人图标
+    let robotIconSrc;
+    if (correctRatePercent >= 90) {
+      robotIconSrc = '/assets/figma/robot_excellent.png';
+    } else if (correctRatePercent >= 70) {
+      robotIconSrc = '/assets/figma/robot_good.png';
+    } else if (correctRatePercent >= 50) {
+      robotIconSrc = '/assets/figma/robot_average.png';
+    } else {
+      robotIconSrc = '/assets/figma/robot_poor.png';
+    }
+
     /* ------ 更新累计正确率 totalCorrectRate ------ */
     const prevChallenges = gameData.completedChallenges || 0; // 本轮之前的完成次数
     const prevTotalRate = gameData.totalCorrectRate || 0;     // 已保存的累计平均
@@ -141,6 +162,20 @@ createPage({
     // 确保得分不为负数
     if (pointsGained < 0) {
       pointsGained = 0;
+    }
+    
+    // 新增：计算金币获得数量（按答对数*2）
+    let coinsGained = 0;
+    if (Array.isArray(gameData.dialogues) && gameData.dialogues.length > 0) {
+      const correctCount = gameData.dialogues.filter(d => d.isCorrect).length;
+      coinsGained = correctCount * 2;
+    }
+    
+    // 更新用户金币数
+    if (app.globalData && app.globalData.gameData) {
+      const currentCoins = app.globalData.gameData.coins || 0;
+      app.globalData.gameData.coins = currentCoins + coinsGained;
+      console.log('更新用户金币数:', currentCoins, '+', coinsGained, '=', app.globalData.gameData.coins);
     }
     
     // 重要：更新全局总分 = 基础分 + 本轮得分
@@ -189,8 +224,8 @@ createPage({
 
     // 判断剩余可用对话数量，若不足 10 则清空 heardDialogues
     const totalDialoguesCount = app.globalData && app.globalData.totalDialoguesCount ? app.globalData.totalDialoguesCount : 0;
-    if (totalDialoguesCount && (totalDialoguesCount - gameData.heardDialogues.length) < 10) {
-      console.warn('剩余可用对话不足 10，已重置 heardDialogues');
+    if (totalDialoguesCount && (totalDialoguesCount - gameData.heardDialogues.length) < 5) {
+      console.warn('剩余可用对话不足 5，已重置 heardDialogues');
       gameData.heardDialogues = [];
     }
 
@@ -345,7 +380,9 @@ createPage({
       maxCombo: roundMaxCombo, // 使用本轮最大连击数
       percentile,
       correctRatePercent,
-      dialoguesSnapshot: currentRoundDialogues
+      dialoguesSnapshot: currentRoundDialogues,
+      coinsGained, // 新增：设置金币获得数量
+      robotIconSrc // 新增：设置机器人图标
     });
     
     // 更新游戏数据中的完成挑战次数

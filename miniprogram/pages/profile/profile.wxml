@@ -12,28 +12,33 @@
   
   <!-- 用户信息卡片 -->
   <view class="card user-info-card mb-medium" bindtap="editProfile">
+    <!-- 新增：右上角金币显示 -->
+    <view class="coins-display">
+      <view class="coins-container">
+        <image class="coin-icon" src="/assets/images/component/coin.svg" mode="aspectFit" />
+        <text class="coins-amount">{{coins}}</text>
+      </view>
+    </view>
+    
     <view class="flex-start">
       <view class="avatar-wrapper mr-medium">
         <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
         <view wx:else class="avatar">
           <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:80rpx;"></text>
         </view>
+        <image class="badge-svg" src="{{badgeSvg}}" mode="widthFix" />
       </view>
       <view class="flex-1">
         <view class="flex-start mb-small">
-          <text class="username mr-small">{{username}}</text>
-          <view class="level-badge level-{{levelClass}}">{{level}}</view>
+          <text class="username mr-small">{{shortUsername}}</text>
         </view>
         <view class="flex-start text-gray text-sm">
-          <text class="mr-small">{{t.challengesCompleted}}{{completedChallenges}}</text>
+          <text class="mr-small">{{points}}{{t.points}}</text>
           <text class="dot mx-small">•</text>
-          <text>{{points}}{{t.pointsLabel}}</text>
+          <text>{{progressText}}</text>
         </view>
         <view class="progress-bar mt-small">
           <view class="progress-bar-fill" style="width: {{levelProgress + '%'}}"></view>
-        </view>
-        <view class="text-right text-gray text-xs mt-small">
-          {{progressText}}
         </view>
       </view>
     </view>
@@ -83,15 +88,15 @@
   <view class="tabs mb-medium">
     <view class="tab" bindtap="switchTab" data-tab="achievements">
       <text class="tab-text {{currentTab === 'achievements' ? 'active' : ''}}">{{t.tabAchievements}}</text>
-      <view wx:if="{{currentTab === 'achievements'}}" class="tab-dot"></view>
+      <view wx:if="{{currentTab === 'achievements'}}" class="tab-underline {{language==='en' ? 'en' : 'zh'}}"></view>
     </view>
     <view class="tab" bindtap="switchTab" data-tab="history">
       <text class="tab-text {{currentTab === 'history' ? 'active' : ''}}">{{t.tabHistory}}</text>
-      <view wx:if="{{currentTab === 'history'}}" class="tab-dot"></view>
+      <view wx:if="{{currentTab === 'history'}}" class="tab-underline {{language==='en' ? 'en' : 'zh'}}"></view>
     </view>
     <view class="tab" bindtap="switchTab" data-tab="settings">
       <text class="tab-text {{currentTab === 'settings' ? 'active' : ''}}">{{t.tabSettings}}</text>
-      <view wx:if="{{currentTab === 'settings'}}" class="tab-dot"></view>
+      <view wx:if="{{currentTab === 'settings'}}" class="tab-underline {{language==='en' ? 'en' : 'zh'}}"></view>
     </view>
   </view>
   

@@ -4,7 +4,39 @@
 }
 
 .user-info-card {
-  padding: 32rpx;
+  padding: 36rpx;
+  position: relative; /* 为金币定位做准备 */
+}
+
+/* 新增：金币显示样式 */
+.coins-display {
+  position: absolute;
+  top: 34rpx;
+  right: 34rpx;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.coins-container {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 22rpx;
+  padding: 4rpx 14rpx;
+  border: 6rpx solid #EAEEED;
+}
+
+.coin-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 16rpx;
+}
+
+.coins-amount {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #1F2937;
 }
 
 .flex-start {
@@ -32,7 +64,7 @@
 }
 
 .mb-small {
-  margin-bottom: 8rpx;
+  margin-bottom: 12rpx;
 }
 
 .mb-medium {
@@ -44,7 +76,7 @@
 }
 
 .mt-small {
-  margin-top: 8rpx;
+  margin-top: 12rpx;
 }
 
 .flex-1 {
@@ -52,7 +84,7 @@
 }
 
 .username {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: bold;
   color: #1F2937;
 }
@@ -63,11 +95,9 @@
 
 .text-sm {
   font-size: 24rpx;
+  font-weight: 600;
 }
 
-.text-primary {
-  color: #4a6ed3;
-}
 
 .font-bold {
   font-weight: bold;
@@ -93,62 +123,13 @@
   margin-right:15rpx;
 }
 
-.game-modes {
-  display: flex;
-  flex-direction: column;
-  gap: 32rpx;
-}
 
-.game-card {
-  border: 4rpx solid #E5E7EB;
-  border-radius: 32rpx;
-  padding: 32rpx;
-  display: flex;
-  align-items: center;
-  transition: all 0.2s;
-}
-
-.game-card:active {
-  transform: scale(0.98);
-}
-
-.game-icon-container {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 50%;
-  background-color: #EEF2FF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.game-icon-container.purple {
-  background-color: #F5F3FF;
-}
-
-.game-mode-title {
-  font-weight: bold;
-  font-size: 32rpx;
-  color: #1F2937;
-}
-
-.game-mode-desc {
-  font-size: 28rpx;
-  color: #6B7280;
-}
-
-.coming-soon-tag {
-  padding: 8rpx 24rpx;
-  border-radius: 32rpx;
-  background-color: #F3F4F6;
-  font-size: 24rpx;
-  color: #6B7280;
-}
 
 /* 展开/收起按钮样式 */
 
 .avatar-wrapper {
   position: relative;
+  width: 136rpx;
 }
 
 .avatar,
@@ -156,6 +137,7 @@
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
+  border: 8rpx solid #EAEEED; /* 灰色描边 */
 }
 
 /* 文字头像背景 */
@@ -174,9 +156,21 @@
   object-fit: cover;
 }
 
+/* 新增：徽章SVG 与头像形成叠加整体 */
+.badge-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 136rpx; /* 比头像略宽，形成肩带效果 */
+  bottom: -6rpx; /* 与头像有重叠 */
+  z-index: 2;
+  margin-bottom: 6rpx;
+}
+
 /* ========== Level Progress Bar ========== */
 .user-info-card .progress-bar-fill {
   height: 100%;
+
   background: repeating-linear-gradient(
               45deg,
               rgba(255,255,255,0.15) 0rpx,
@@ -184,9 +178,13 @@
               transparent 8rpx,
               transparent 16rpx
             ),
-            linear-gradient(90deg, #FBBF24, #F59E0B);
+            linear-gradient(90deg,rgb(59, 197, 75),rgb(43, 205, 62));
   border-radius: 8rpx;
 } 
+
+.user-info-card .progress-bar {
+  margin-top: 12rpx;
+}
 
 /* 新版挑战模式卡片样式 */
 .challenge-modes {
@@ -303,10 +301,11 @@
 .podium-points {
   margin-top: 16rpx;
   font-size: 28rpx;
-  color: #6B7280;
+  color:rgb(104, 110, 122);
   background-color: #F5F1F1;
   padding: 12rpx 26rpx;
   border-radius: 24rpx;
+  font-weight: bold;
 }
 
 /* 冠军标志 */
@@ -418,6 +417,7 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  
   font-size: 48rpx;
 }
 
@@ -436,7 +436,8 @@
 
 .rest-points {
   font-size: 28rpx;
-  color: #6B7280;
+  font-weight: bold;
+  color: rgb(104, 110, 122);
 } 
 
 /* 排行榜提示小字 */

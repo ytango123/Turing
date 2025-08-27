@@ -23,7 +23,7 @@ page {
   border-radius: 24rpx;
   padding: 4rpx 20rpx;
   color: white;
-  font-size: 24rpx;
+  font-size: 22rpx;
   font-weight: bold;
 }
 
@@ -176,22 +176,22 @@ page {
 
 /* === Level Badge Gradient Colors === */
 .level-badge.level-green {
-  background: linear-gradient(135deg, #34D399, #10B981);
+  background:  #CDCDCD;
 }
 
 .level-badge.level-blue {
-  background: linear-gradient(135deg, #4a6ed3, #6366F1);
+  background: #6CA4E8;
 }
 
 .level-badge.level-purple {
-  background: linear-gradient(135deg, #8B5CF6, #A855F7);
+  background: #A95EFF;
 }
 
 .level-badge.level-orange {
-  background: linear-gradient(135deg, #F59E0B, #F97316);
+  background: #FF9022;
 }
 
 .level-badge.level-platinum {
-  background: linear-gradient(135deg, #E6D7BA, rgb(214, 199, 170));
+  background: #FF7BD1;
  
 } 

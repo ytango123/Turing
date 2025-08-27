@@ -1,5 +1,6 @@
 const { createPage } = require('../../utils/basePage')
 const { t } = require('../../utils/i18n')
+const { calcDisplayLen } = require('../../utils/stringUtils')
 
 createPage({
   pageKey: 'editProfile',
@@ -115,7 +116,21 @@ createPage({
   },
 
   onNicknameInput(e) {
-    this.setData({ nickname: e.detail.value })
+    const value = (e.detail.value || '').trim();
+    // 昵称限制：最多 10 字符
+    if (calcDisplayLen(value) > 10) {
+      if (!this._nickLenToastShown) {
+        wx.showToast({
+          title: this.data.t.nickTooLong || ((wx.getStorageSync('language')||'zh')==='en' ? 'Up to 10 chars' : '最多10个字'),
+          icon: 'none'
+        });
+        // 避免长按连续输入导致 toast 频繁弹出
+        this._nickLenToastShown = true;
+        setTimeout(()=>{ this._nickLenToastShown = false },1500);
+      }
+      return;
+    }
+    this.setData({ nickname: value });
   },
   onAgeChange(e) {
     this.setData({ ageIndex: e.detail.value })
@@ -141,6 +156,11 @@ createPage({
     if (!nickname) {
       wx.showToast({ title: this.data.t.pleaseFillNick, icon: 'none' })
       return
+    }
+
+    if (calcDisplayLen(nickname) > 10) {
+      wx.showToast({ title: this.data.t.nickTooLong || ((wx.getStorageSync('language')||'zh')==='en' ? 'Up to 10 chars' : '最多10个字'), icon:'none' });
+      return;
     }
 
     // 更新本地全局数据
