@@ -407,10 +407,10 @@ createPage({
 
     if (id === 'movie') {
       // TODO: 跳转至语音克隆-电影台词页面
-      wx.showToast({ title: '电影语音克隆功能开发中', icon: 'none' })
+      wx.showToast({ title: '开发中，于后续版本中上线', icon: 'none' })
     } else if (id === 'music') {
       // TODO: 跳转至语音克隆-歌手演唱页面
-      wx.showToast({ title: '歌曲语音克隆功能开发中', icon: 'none' })
+      wx.showToast({ title: '开发中，于后续版本中上线', icon: 'none' })
     }
   },
 

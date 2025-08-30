@@ -169,10 +169,18 @@ App({
     // 若未提供昵称，则基于 openid 生成唯一默认昵称
     const defaultNickname = `用户${this.globalData.openid.slice(-4)}`
 
+    // 生成邀请码
+    const inviteCode = this.generateInviteCode()
+
     const userData = {
       nickname: userInfo.nickname || defaultNickname,
       ...userInfo,
       gameData: this.globalData.gameData,
+      // 邀请码相关字段
+      inviteCode: inviteCode,
+      invitedUsers: userInfo.invitedUsers || [], // 保留原有的invitedUsers，如果没有则初始化为空数组
+      inviterID: userInfo.inviterID || '', // 从userInfo中获取邀请者ID
+      claimCount: 0,
       createTime: db.serverDate(),
       updateTime: db.serverDate()
     }
@@ -181,13 +189,28 @@ App({
       data: userData
     }).then(res => {
       console.log('用户注册成功', res)
-      this.globalData.userInfo = userData
+      // 确保userInfo包含_openid字段
+      this.globalData.userInfo = {
+        ...userData,
+        _openid: this.globalData.openid,
+        _id: res._id
+      }
       this.globalData.isNewUser = false
       return res
     }).catch(err => {
       console.error('用户注册失败', err)
       return Promise.reject(err)
     })
+  },
+
+  // 生成随机邀请码
+  generateInviteCode() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let inviteCode = '';
+    for (let i = 0; i < 6; i++) {
+      inviteCode += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return inviteCode;
   },
   
   // 更新用户游戏数据
@@ -243,7 +266,8 @@ App({
       dialogues: [],
       completedChallenges: 0,
       achievements: {},
-      heardDialogues: [] // 存储用户听过的对话ID
+      heardDialogues: [], // 存储用户听过的对话ID
+      coins: 0 // 初始化金币字段
     },
     totalDialoguesCount: 0,
     language: 'zh',    // 默认中文

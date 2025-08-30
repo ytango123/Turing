@@ -26,7 +26,8 @@
   <view class="card p-medium mb-medium">
     <view class="form-title mb-medium">{{formTitle}}</view>
     
-    <view class="options-container">
+    <!-- 普通选项步骤 -->
+    <view class="options-container" wx:if="{{currentStep < 5}}">
       <block wx:for="{{options}}" wx:key="index">
         <view class="option-card {{selectedOption === index ? 'selected' : ''}}" 
               bindtap="selectOption" data-index="{{index}}">
@@ -37,11 +38,32 @@
         </view>
       </block>
     </view>
+    
+    <!-- 邀请码步骤 -->
+    <view class="invite-code-container" wx:if="{{currentStep === 5}}">
+      
+      <view class="codes">
+        <view class="code-item" wx:for="{{codeLength}}" wx:for-index="index" wx:key="index">
+          <view>{{computedCodeValue[index]}}</view>
+          <view class="item__cursor" wx:if="{{isFocus && computedCodeValue.length === index}}"></view>
+        </view>
+        <input class="code-input-son" type="text" value="{{inputValue}}" bindfocus="inputFocus" bindblur="inputBlur" bindinput="codeInput" focus="{{isFocus}}" maxlength="{{codeLength}}" />
+      </view>
+      <view class="invite-code-status" wx:if="{{isInviteCodeValid !== null}}">
+        <text class="{{isInviteCodeValid ? 'valid-text' : 'invalid-text'}}">
+          {{isInviteCodeValid ? (t.inviteCodeValid || '邀请码有效') : (t.inviteCodeInvalid || '邀请码无效')}}
+        </text>
+      </view>
+    </view>
   </view>
   
   <!-- 底部按钮 -->
+  <view class="button-container">
+
+    <!-- 下一步按钮 -->
   <image wx:if="{{currentLang==='zh'}}" class="next-button" src="/assets/images/user-info/next_zh.svg" mode="widthFix" bindtap="nextStep" />
   <image wx:if="{{currentLang==='en'}}" class="next-button" src="/assets/images/user-info/next_en.svg" mode="widthFix" bindtap="nextStep" />
+  </view>
   
   <view class="privacy-notice">
     <text>{{t.privacyNotice}}</text>

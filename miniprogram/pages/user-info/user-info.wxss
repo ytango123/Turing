@@ -117,3 +117,86 @@
   /* 移除缩放保留点击反馈，可添加轻微透明度变化 */
   
 } 
+
+/* 邀请码样式（单输入 + 展示格子） */
+.codes {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx;
+  margin-top: 32rpx;
+  gap: 0 12rpx;
+}
+.codes .code-item {
+  position: relative;
+  width: 0;
+  flex: 1;
+  height: 100rpx;
+  color: #262626;
+  font-size: 48rpx;
+  border-radius: 16rpx;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #E5E7EB;
+}
+.codes .code-item .item__cursor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rpx;
+  height: 40%;
+  animation: 1s uv-cursor-flicker infinite;
+  background-color: #000;
+}
+.codes .code-input-son {
+  position: absolute;
+  left: -750rpx;
+  width: 1500rpx;
+  height: 100rpx;
+  top: 0;
+  background-color: transparent;
+  text-align: left;
+  color: #262626;
+  font-size: 48rpx;
+}
+
+@keyframes uv-cursor-flicker {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.invite-code-status {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+
+.valid-text {
+  color: #10B981;
+}
+
+.invalid-text {
+  color: #EF4444;
+}
+
+/* 按钮容器 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.skip-button {
+  font-size: 32rpx;
+  color: #6B7280;
+  padding: 16rpx 32rpx;
+  border-radius: 16rpx;
+  background-color: transparent;
+  border: 2rpx solid #E5E7EB;
+} 

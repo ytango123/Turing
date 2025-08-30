@@ -91,7 +91,7 @@
   margin-bottom: 8rpx;
 }
 .user-info-card .progress-bar {
-  margin-top: 16rpx;
+  margin-top: 20rpx;
   margin-bottom: 4rpx;
 }
 .user-info-card .text-right.text-xs { 
@@ -101,8 +101,8 @@
 /* 新增：金币显示样式 */
 .coins-display {
   position: absolute;
-  top: 38rpx;
-  right: 38rpx;
+  top: 32rpx;
+  right: 32rpx;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -174,7 +174,7 @@
 }
 
 .tab-text {
-  font-size: 32rpx;
+  font-size: 34rpx;
   color: #6B7280;
   font-weight: 500;
   position: relative;

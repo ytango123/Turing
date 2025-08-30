@@ -69,7 +69,7 @@ createPage({
         iconType: 'iconfont',
         unlocked: false,
         key: 'firstTry',
-        image: '/assets/images/summary/first_try.svg',
+        image: '/assets/images/component/first_try.svg',
         size: 210
       },
       {
@@ -80,7 +80,7 @@ createPage({
         iconType: 'iconfont',
         unlocked: false,
         key: 'perfectJudge',
-        image: '/assets/images/summary/perfect.svg',
+        image: '/assets/images/component/perfect.svg',
         size: 210
       },
       {
@@ -91,7 +91,7 @@ createPage({
         iconType: 'iconfont',
         unlocked: false,
         key: 'comboMaster',
-        image: '/assets/images/summary/combo.svg',
+        image: '/assets/images/component/combo.svg',
         size: 210
       },
       {
@@ -102,7 +102,7 @@ createPage({
         iconType: 'iconfont',
         unlocked: false,
         key: 'flawlessStreak',
-        image: '/assets/images/summary/flawless.svg',
+        image: '/assets/images/component/flawless.svg',
         size: 210
       }
       

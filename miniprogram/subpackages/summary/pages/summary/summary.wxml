@@ -68,7 +68,7 @@
     <view class="flex-start text-gray mb-small">
       <text class="mr-small">{{totalPoints}}{{t.pointsUnit}}</text>
       <text class="dot mx-small">•</text>
-      <text>{{t.distanceTo}}"{{nextLevel}}"{{t.needPointsSuffix}}{{pointsToNextLevel}}{{t.pointsUnit}}</text>
+      <text>{{progressText}}</text>
     </view>
     
     <view class="progress-bar">
@@ -95,15 +95,15 @@
   <!-- 分享按钮替换为可分享的 button 组件 -->
   <!-- 分享 -->
   <button class="summary-button mb-medium" bindtap="shareResults" open-type="share" hidden="{{currentLang!=='zh'}}">
-    <image src="/assets/images/summary/share_zh.svg" mode="widthFix" class="btn-img" />
+    <image src="/subpackages/summary/assets/images/share_zh.svg" mode="widthFix" class="btn-img" />
   </button>
   <button class="summary-button mb-medium" bindtap="shareResults" open-type="share" hidden="{{currentLang!=='en'}}">
-    <image src="/assets/images/summary/share_en.svg" mode="widthFix" class="btn-img" />
+    <image src="/subpackages/summary/assets/images/share_en.svg" mode="widthFix" class="btn-img" />
   </button>
   
   <!-- 再来一轮 -->
-  <image class="summary-button" src="/assets/images/summary/again_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="playAgain" />
-  <image class="summary-button" src="/assets/images/summary/again_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="playAgain" />
+  <image class="summary-button" src="/subpackages/summary/assets/images/again_zh.svg" mode="widthFix" hidden="{{currentLang!=='zh'}}" bindtap="playAgain" />
+  <image class="summary-button" src="/subpackages/summary/assets/images/again_en.svg" mode="widthFix" hidden="{{currentLang!=='en'}}" bindtap="playAgain" />
   
 </view> 
 

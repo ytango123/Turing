@@ -11,14 +11,15 @@
 
   <!-- 任务卡片列表 -->
   <view class="task-cards">
-    <!-- 邀请好友任务 -->
-    <view class="task-card" bindtap="onInviteFriends">
+    <!-- 邀请好友任务 - 只有当showInviteTask为true时显示 -->
+    <view class="task-card" bindtap="onInviteFriends" wx:if="{{showInviteTask}}">
       <image src="{{friendsCardSvg}}" mode="widthFix" />
       <view class="task-icon">
         <image src="/assets/figma/friends.png" mode="aspectFit" />
       </view>
-      <button class="task-button">
-        <image src="{{inviteTask.completed ? claimSvg : goCompleteSvg}}" mode="aspectFit" />
+      <button class="task-button {{inviteCodeFields.invitedUsers.length > inviteCodeFields.claimCount ? 'green' : 'yellow'}} {{language === 'en' ? 'en' : ''}}">
+        <block wx:if="{{inviteCodeFields.invitedUsers.length > inviteCodeFields.claimCount}}">{{claimReward}}</block>
+        <block wx:else>{{invitedText}}{{inviteCodeFields.invitedUsers.length}}/5{{language === 'zh' ? '人' : ''}}</block>
       </button>
     </view>
 
@@ -28,8 +29,8 @@
       <view class="task-icon">
         <image src="/assets/figma/sign-in.png" mode="aspectFit" />
       </view>
-      <button class="task-button">
-        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      <button class="task-button yellow {{language === 'en' ? 'en' : ''}}">
+        {{goComplete}}
       </button>
     </view>
 
@@ -39,8 +40,8 @@
       <view class="task-icon">
         <image src="/assets/figma/draw.png" mode="aspectFit" />
       </view>
-      <button class="task-button">
-        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      <button class="task-button yellow {{language === 'en' ? 'en' : ''}}">
+        {{goComplete}}
       </button>
     </view>
 
@@ -50,8 +51,37 @@
       <view class="task-icon">
         <image src="/assets/figma/gift.png" mode="aspectFit" />
       </view>
-      <button class="task-button">
-        <image src="{{goCompleteSvg}}" mode="aspectFit" />
+      <button class="task-button yellow {{language === 'en' ? 'en' : ''}}">
+        {{goComplete}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 邀请好友弹窗 -->
+  <view class="invite-modal-mask" wx:if="{{showInviteModal}}" bindtap="closeInviteModal">
+    <view class="invite-modal" catchtap="preventBubble">
+      <!-- 关闭按钮 -->
+      <view class="invite-close" bindtap="closeInviteModal">
+        <image src="/assets/images/component/close_icon.svg" mode="aspectFit"></image>
+      </view>
+      
+      <!-- 机器人插画 -->
+      <image class="invite-robot" src="/assets/images/campus/invite_robot.svg" mode="widthFix"></image>
+      
+      <!-- 标题和内容 -->
+      <view class="invite-title">{{inviteTitle}}</view>
+      <view class="invite-content">{{inviteContent}}</view>
+      
+      <!-- 邀请码 -->
+      <view class="invite-code-container">
+        <view class="invite-code-box" wx:for="{{6}}" wx:key="index">
+          <text>{{inviteCode[index] || ''}}</text>
+        </view>
+      </view>
+      
+      <!-- 复制邀请码并分享按钮 -->
+      <button class="invite-share-btn {{language === 'en' ? 'en' : ''}}" bindtap="copyInviteCode" open-type="share">
+        {{copyButton}}
       </button>
     </view>
   </view>

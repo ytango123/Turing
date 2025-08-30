@@ -23,7 +23,7 @@
       <view class="avatar-wrapper mr-medium">
         <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" priority="true" />
         <view wx:else class="avatar">
-          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:64rpx;"></text>
+          <text class="iconfont icon-a-MATE_huaban1fuben118" style="color:#ffffff;font-size:56rpx;"></text>
         </view>
         <image class="badge-svg" src="{{badgeSvg}}" mode="widthFix" />
       </view>

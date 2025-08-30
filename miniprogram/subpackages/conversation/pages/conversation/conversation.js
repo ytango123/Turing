@@ -1,7 +1,7 @@
-// pages/conversation/conversation.js
+// subpackages/conversation/pages/conversation/conversation.js
 const app = getApp()
-const { createPage } = require('../../utils/basePage')
-const { t } = require('../../utils/i18n')
+const { createPage } = require('../../../../utils/basePage')
+const { t } = require('../../../../utils/i18n')
 
 // 统一生成音频缓存 Key，避免同 id 跨 session 复用错误
 function makeAudioKey(session, name) {
@@ -1006,7 +1006,7 @@ createPage({
     const nextIdx = this.data.curIndex + 1;
     if (nextIdx >= 5) {
       // TODO: 切换到 summary 阶段，保留原逻辑 or redirect
-      wx.redirectTo({ url: '/pages/summary/summary' });
+      wx.redirectTo({ url: '/subpackages/summary/pages/summary/summary' });
       return;
     }
     

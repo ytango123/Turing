@@ -204,14 +204,18 @@ const i18nMessages = {
       genderTitle: '请选择您的性别',
       educationTitle: '请选择您的学历',
       aiFamiliarityTitle: '请选择您对 AI 工具熟悉程度',
+      inviteCodeTitle: '邀请码（选填）', // 新增邀请码标题
       nextButton: '下一步',
       privacyNotice: '信息仅用于研究目的，我们将严格保护您的隐私',
       pleaseSelect: '请选择一个选项',
       savingInfo: '保存信息中...',
-      saveError: '保存信息失败，请重试'
+      saveError: '保存信息失败，请重试',
+      skipButton: '跳过', // 新增跳过按钮文本
+      inviteCodeInvalid: '邀请码无效', // 新增邀请码无效提示
+      inviteCodeValid: '邀请码有效' // 新增邀请码有效提示
     },
     levels: {
-      newUser: '新手',
+      newUser: '图灵萌新',
       amateurExplorer: '业余探索者',
       seniorIdentifier: '资深鉴别师',
       turingMaster: '图灵大师',
@@ -238,7 +242,16 @@ const i18nMessages = {
       aiFamiliarities: ['从未使用过', '偶尔接触（如看别人用）', '使用过几次，了解基本功能', '经常使用，有一定操作经验', '非常熟悉，深入使用过多个 AI 工具']
     },
     campus: {
-      navTitle: '校园'
+      navTitle: '校园',
+      goComplete: '去完成',
+      claimReward: '领取奖励',
+      invitedCount: '已邀请_/5人',
+      invitedText: '已邀请',
+      // 添加邀请弹窗相关翻译
+      inviteTitle: '邀请好友获得金币',
+      inviteContent: '每位用户至多邀请五位好友，邀请越多，金币奖励越多！',
+      copyButton: '复制邀请码并分享',
+      codeCopied: '邀请码已复制'
     }
   },
   en: {
@@ -268,11 +281,11 @@ const i18nMessages = {
       collapse: 'Collapse',
       points: 'pts',
       levelProgress: '{points} points to "{nextLevel}"',
-      newUser: 'Novice',
-      amateurExplorer: 'Amateur Explorer',
-      seniorIdentifier: 'Senior Identifier',
-      turingMaster: 'Turing Master',
-      superIdentifier: 'Super Identifier',
+      newUser: 'BEGINNER',
+      amateurExplorer: 'EXPLORER',
+      seniorIdentifier: 'IDENTIFIER',
+      turingMaster: 'MASTER',
+      superIdentifier: 'SUPERIOR',
       rankingsTip:'Note: The leaderboard displays only the top 10 users',
       voiceCloneModes: 'Voice Clone Modes',
       voiceMovie: {
@@ -455,18 +468,22 @@ const i18nMessages = {
       genderTitle: 'Please select your gender',
       educationTitle: 'Please select your education',
       aiFamiliarityTitle: 'Please select your familiarity with AI tools',
+      inviteCodeTitle: 'Invitation Code (Optional)', // 新增邀请码标题
       nextButton: 'Next',
       privacyNotice: 'Information is for research purposes only, we will protect your privacy',
       pleaseSelect: 'Please select an option',
       savingInfo: 'Saving information...',
-      saveError: 'Failed to save info, please try again'
+      saveError: 'Failed to save info, please try again',
+      skipButton: 'Skip', // 新增跳过按钮文本
+      inviteCodeInvalid: 'Invalid invitation code', // 新增邀请码无效提示
+      inviteCodeValid: 'Valid invitation code' // 新增邀请码有效提示
     },
     levels: {
-      newUser: 'Novice',
-      amateurExplorer: 'Amateur Explorer',
-      seniorIdentifier: 'Senior Identifier',
-      turingMaster: 'Turing Master',
-      superIdentifier: 'Super Identifier'
+      newUser: 'BEGINNER',
+      amateurExplorer: 'EXPLORER',
+      seniorIdentifier: 'IDENTIFIER',
+      turingMaster: 'MASTER',
+      superIdentifier: 'SUPERIOR'
     },
     editProfile: {
       navTitle: 'Edit Profile',
@@ -489,7 +506,16 @@ const i18nMessages = {
       aiFamiliarities: ['Never used', 'Occasionally encountered (e.g., saw others use)', 'Used a few times, understand basic functions', 'Use frequently, have some operational experience', 'Very familiar, have extensively used multiple AI tools']
     },
     campus: {
-      navTitle: 'Campus'
+      navTitle: 'Campus',
+      goComplete: 'Action',
+      claimReward: 'Claim',
+      invitedCount: 'Invited _/5',
+      invitedText: 'Invited ',
+      // Add invitation modal translations
+      inviteTitle: 'Invite Friends for Coins',
+      inviteContent: 'Each user can invite up to 5 friends. More invitations, more coin rewards!',
+      copyButton: 'Copy Code and Share',
+      codeCopied: 'Code copied!'
     }
   }
 }

@@ -5,10 +5,22 @@
     "pages/game-home/game-home",
     "pages/campus/campus",
     "pages/quick-intro/quick-intro",
-    "pages/conversation/conversation",
-    "pages/summary/summary",
     "pages/profile/profile",
     "pages/edit-profile/edit-profile"
+  ],
+  "subpackages": [
+    {
+      "root": "subpackages/summary",
+      "pages": [
+        "pages/summary/summary"
+      ]
+    },
+    {
+      "root": "subpackages/conversation",
+      "pages": [
+        "pages/conversation/conversation"
+      ]
+    }
   ],
   "entryPagePath": "pages/welcome/welcome",
   "window": {

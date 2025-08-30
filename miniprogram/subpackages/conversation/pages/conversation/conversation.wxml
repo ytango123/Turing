@@ -78,8 +78,8 @@
         <view class="loading-icon"></view>
       </block>
       <block wx:else>
-        <image wx:if="{{!isPlaying}}" class="play-icon" src="/assets/images/conversation/play.svg" mode="widthFix" />
-        <image wx:if="{{isPlaying}}" class="play-icon" src="/assets/images/conversation/pause.svg" mode="widthFix" />
+        <image wx:if="{{!isPlaying}}" class="play-icon" src="/subpackages/conversation/assets/images/play.svg" mode="widthFix" />
+        <image wx:if="{{isPlaying}}" class="play-icon" src="/subpackages/conversation/assets/images/pause.svg" mode="widthFix" />
       </block>
     </view>
 
@@ -94,12 +94,12 @@
   <!-- 判断按钮改为SVG -->
   <view class="judgment-images" wx:if="{{!replayMode}}">
     <!-- 人类判断 -->
-    <image class="judge-img" src="/assets/images/conversation/H_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='zh'}}" />
-    <image class="judge-img" src="/assets/images/conversation/H_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='en'}}" />
+    <image class="judge-img" src="/subpackages/conversation/assets/images/H_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/subpackages/conversation/assets/images/H_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HH" hidden="{{currentLang!=='en'}}" />
       
     <!-- AI 判断 -->
-    <image class="judge-img" src="/assets/images/conversation/M_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='zh'}}" />
-    <image class="judge-img" src="/assets/images/conversation/M_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='en'}}" />
+    <image class="judge-img" src="/subpackages/conversation/assets/images/M_zh.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='zh'}}" />
+    <image class="judge-img" src="/subpackages/conversation/assets/images/M_en.svg" mode="widthFix" bindtap="makeJudgment" data-judgment="HM" hidden="{{currentLang!=='en'}}" />
     </view>
     
     <!-- 底部安全区域 -->

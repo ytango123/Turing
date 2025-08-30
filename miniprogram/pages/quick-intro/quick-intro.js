@@ -81,7 +81,7 @@ createPage({
       .then(() => {
         wx.hideLoading();
         this.setData({ challengeStarted: true, loadingDialogues: false });
-        wx.redirectTo({ url: '/pages/conversation/conversation?dialogueId=1' });
+        wx.redirectTo({ url: '/subpackages/conversation/pages/conversation/conversation?dialogueId=1' });
       })
       .catch(err => {
         console.error('预加载失败', err);

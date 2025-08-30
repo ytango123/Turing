@@ -1,6 +1,6 @@
 const app = getApp()
-const { createPage } = require('../../utils/basePage')
-const { t } = require('../../utils/i18n')
+const { createPage } = require('../../../../utils/basePage')
+const { t } = require('../../../../utils/i18n')
 
 createPage({
   pageKey: 'summary',
@@ -14,8 +14,7 @@ createPage({
     statPercentile: 'statPercentile',
     yourLevel: 'yourLevel',
     pointsUnit: 'pointsUnit',
-    distanceTo: 'distanceTo',
-    needPointsSuffix: 'needPointsSuffix',
+    levelProgress: 'levelProgress',
     levelUpNotice1: 'levelUpNotice1',
     levelUpNotice2: 'levelUpNotice2',
     analysisTitle: 'analysisTitle',
@@ -47,6 +46,7 @@ createPage({
     nextLevel: '资深鉴别师',
     pointsToNextLevel: 0,
     levelProgress: 0,
+    progressText: '',
     hasLevelUp: true,
     
     // 新增：金币相关
@@ -138,13 +138,13 @@ createPage({
     // 根据表现设置对应的机器人图标
     let robotIconSrc;
     if (correctRatePercent >= 90) {
-      robotIconSrc = '/assets/figma/robot_excellent.png';
+      robotIconSrc = '/subpackages/summary/assets/figma/robot_excellent.png';
     } else if (correctRatePercent >= 70) {
-      robotIconSrc = '/assets/figma/robot_good.png';
+      robotIconSrc = '/subpackages/summary/assets/figma/robot_good.png';
     } else if (correctRatePercent >= 50) {
-      robotIconSrc = '/assets/figma/robot_average.png';
+      robotIconSrc = '/subpackages/summary/assets/figma/robot_average.png';
     } else {
-      robotIconSrc = '/assets/figma/robot_poor.png';
+      robotIconSrc = '/subpackages/summary/assets/figma/robot_poor.png';
     }
 
     /* ------ 更新累计正确率 totalCorrectRate ------ */
@@ -171,7 +171,7 @@ createPage({
       coinsGained = correctCount * 2;
     }
     
-    // 更新用户金币数
+    // 更新用户金币数，确保只更新gameData.coins
     if (app.globalData && app.globalData.gameData) {
       const currentCoins = app.globalData.gameData.coins || 0;
       app.globalData.gameData.coins = currentCoins + coinsGained;
@@ -310,7 +310,7 @@ createPage({
     if (isFirstChallenge && !gameData.achievements.firstTry) {
       newAchievements.push({
         type: 'firstTry',
-        icon: '/assets/images/summary/first_try.svg',
+        icon: '/assets/images/component/first_try.svg',
         name: t('profile.achievements.firstTry.title', language),
         description: t('profile.achievements.firstTry.description', language)
       });
@@ -321,7 +321,7 @@ createPage({
     if (hasComboMaster && !gameData.achievements.comboMaster) {
       newAchievements.push({
         type: 'comboMaster',
-        icon: '/assets/images/summary/combo.svg',
+        icon: '/assets/images/component/combo.svg',
         name: t('profile.achievements.comboMaster.title', language),
         description: t('profile.achievements.comboMaster.description', language)
       });
@@ -332,7 +332,7 @@ createPage({
     if (hasPerfectScore && !gameData.achievements.perfectJudge) {
       newAchievements.push({
         type: 'perfectJudge',
-        icon: '/assets/images/summary/perfect.svg',
+        icon: '/assets/images/component/perfect.svg',
         name: t('profile.achievements.perfectJudge.title', language),
         description: t('profile.achievements.perfectJudge.description', language)
       });
@@ -346,7 +346,7 @@ createPage({
     if (hasFlawless && !gameData.achievements.flawlessStreak) {
       newAchievements.push({
         type: 'flawlessStreak',
-        icon: '/assets/images/summary/flawless.svg',
+        icon: '/assets/images/component/flawless.svg',
         name: t('profile.achievements.flawlessStreak.title', language),
         description: t('profile.achievements.flawlessStreak.description', language)
       });
@@ -487,6 +487,17 @@ createPage({
       levelProgress = points % 100; // 0-99
     }
     
+    // 获取进度文本模板并替换变量
+    const progressTemplate = t('gameHome.levelProgress', language);
+    let progressText = progressTemplate
+      .replace('{nextLevel}', nextLevel)
+      .replace('{points}', pointsToNextLevel);
+    
+    // 最高等级（superIdentifier）时不显示进度文本
+    if (levelKey === 'superIdentifier') {
+      progressText = '';
+    }
+    
     // 根据等级键映射徽章颜色类
     let badgeClass = 'green';
     if (levelKey === 'amateurExplorer') {
@@ -505,6 +516,7 @@ createPage({
       nextLevel,
       pointsToNextLevel,
       levelProgress,
+      progressText, // 添加进度文本
       hasLevelUp,
       levelClass: badgeClass
     });
@@ -584,7 +596,7 @@ createPage({
     }
     // 跳转到对话页面，从第一个对话开始
     wx.redirectTo({
-      url: '/pages/conversation/conversation?dialogueId=1'
+      url: '/subpackages/conversation/pages/conversation/conversation?dialogueId=1'
     });
   },
   
