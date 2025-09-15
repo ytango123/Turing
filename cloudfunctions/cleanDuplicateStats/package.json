@@ -1,0 +1,13 @@
+{
+  "name": "cleanDuplicateStats",
+  "version": "1.0.0",
+  "description": "清理重复的对话统计记录",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  },
+  "cloudfunction-config": {
+    "timeout": 30,
+    "memorySize": 256
+  }
+} 

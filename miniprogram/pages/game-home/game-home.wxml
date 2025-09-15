@@ -30,6 +30,7 @@
       <view class="flex-1">
         <view class="flex-start mb-small">
           <text class="username mr-small">{{shortUsername}}</text>
+          <t-icon name="edit" size="32rpx" color="#9CA3AF" />
         </view>
         <view class="flex-start text-gray text-sm">
           <text class="mr-small">{{points}}{{t.points}}</text>

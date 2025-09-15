@@ -28,7 +28,9 @@ createPage({
     voiceMovieTitle: 'voiceMovie.title',
     voiceMovieDesc: 'voiceMovie.description',
     voiceMusicTitle: 'voiceMusic.title',
-    voiceMusicDesc: 'voiceMusic.description'       
+    voiceMusicDesc: 'voiceMusic.description',
+    hardModeInDevelopment: 'hardModeInDevelopment',
+    voiceInDevelopment: 'voiceInDevelopment'       
   },
 
   data: {
@@ -327,7 +329,7 @@ createPage({
     }
     
     wx.showToast({
-      title: '困难模式功能开发中',
+      title: this.data.t.hardModeInDevelopment,
       icon: 'none'
     });
   },
@@ -407,10 +409,10 @@ createPage({
 
     if (id === 'movie') {
       // TODO: 跳转至语音克隆-电影台词页面
-      wx.showToast({ title: '开发中，于后续版本中上线', icon: 'none' })
+      wx.showToast({ title: this.data.t.voiceInDevelopment, icon: 'none' })
     } else if (id === 'music') {
       // TODO: 跳转至语音克隆-歌手演唱页面
-      wx.showToast({ title: '开发中，于后续版本中上线', icon: 'none' })
+      wx.showToast({ title: this.data.t.voiceInDevelopment, icon: 'none' })
     }
   },
 

@@ -13,7 +13,11 @@ createPage({
     inviteTitle: 'inviteTitle',
     inviteContent: 'inviteContent',
     copyButton: 'copyButton',
-    codeCopied: 'codeCopied'
+    codeCopied: 'codeCopied',
+    // 添加开发中提示的i18n键
+    signInInDevelopment: 'signInInDevelopment',
+    drawInDevelopment: 'drawInDevelopment',
+    giftInDevelopment: 'giftInDevelopment'
   },
 
   data: {
@@ -60,7 +64,11 @@ createPage({
       invitedUsers: [], // 被邀请用户的openid数组
       inviterID: '', // 邀请者的openid
       claimCount: 0 // 领奖次数
-    }
+    },
+    // 开发中提示文本
+    signInInDevelopment: '签到功能开发中',
+    drawInDevelopment: '大转盘功能开发中',
+    giftInDevelopment: '打卡好礼功能开发中'
   },
 
   onLoad() {
@@ -75,7 +83,11 @@ createPage({
       inviteTitle: this.data.t.inviteTitle || (language === 'en' ? 'Invite Friends for Coins' : '邀请好友获得金币'),
       inviteContent: this.data.t.inviteContent || (language === 'en' ? 'Each user can invite up to 5 friends. More invitations, more coin rewards!' : '每位用户至多邀请五位好友，邀请越多，金币奖励越多！'),
       copyButton: this.data.t.copyButton || (language === 'en' ? 'Copy Code and Share' : '复制邀请码并分享'),
-      codeCopied: this.data.t.codeCopied || (language === 'en' ? 'Code copied!' : '邀请码已复制')
+      codeCopied: this.data.t.codeCopied || (language === 'en' ? 'Code copied!' : '邀请码已复制'),
+      // 初始化开发中提示文本
+      signInInDevelopment: this.data.t.signInInDevelopment || (language === 'en' ? 'Sign-in feature under development' : '签到功能开发中'),
+      drawInDevelopment: this.data.t.drawInDevelopment || (language === 'en' ? 'Lucky draw under development' : '大转盘功能开发中'),
+      giftInDevelopment: this.data.t.giftInDevelopment || (language === 'en' ? 'Gift rewards under development' : '打卡好礼功能开发中')
     });
     
     // 打印当前 t 对象，用于调试
@@ -312,8 +324,8 @@ createPage({
                   // 更新邀请码字段和金币数据
           const gameData = userData.gameData || {};
           const coins = gameData.coins || 0; // 只从gameData中读取金币数据
-          
-          this.setData({
+        
+        this.setData({
             inviteCode: userData.inviteCode || '',
             'inviteCodeFields.inviteCode': userData.inviteCode || '',
             'inviteCodeFields.invitedUsers': userData.invitedUsers || [],
@@ -743,7 +755,7 @@ createPage({
     }
     
     wx.showToast({
-      title: '签到功能开发中',
+      title: this.data.t.signInInDevelopment,
       icon: 'none'
     });
   },
@@ -756,7 +768,7 @@ createPage({
     }
     
     wx.showToast({
-      title: '大转盘功能开发中',
+      title: this.data.t.drawInDevelopment,
       icon: 'none'
     });
   },
@@ -769,7 +781,7 @@ createPage({
     }
     
     wx.showToast({
-      title: '打卡好礼功能开发中',
+      title: this.data.t.giftInDevelopment,
       icon: 'none'
     });
   },
@@ -795,7 +807,11 @@ createPage({
       navTitle: this.data.t.navTitle || (language === 'en' ? 'Campus' : '校园'),
       // 更新任务按钮文本
       goComplete: this.data.t.goComplete || (language === 'en' ? 'ACTION' : '去完成'),
-      claimReward: this.data.t.claimReward || (language === 'en' ? 'CLAIM' : '领取奖励')
+      claimReward: this.data.t.claimReward || (language === 'en' ? 'CLAIM' : '领取奖励'),
+      // 更新开发中提示文本
+      signInInDevelopment: this.data.t.signInInDevelopment || (language === 'en' ? 'Sign-in feature under development' : '签到功能开发中'),
+      drawInDevelopment: this.data.t.drawInDevelopment || (language === 'en' ? 'Lucky draw under development' : '大转盘功能开发中'),
+      giftInDevelopment: this.data.t.giftInDevelopment || (language === 'en' ? 'Gift rewards under development' : '打卡好礼功能开发中')
     });
   }
 }); 

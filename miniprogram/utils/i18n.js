@@ -31,7 +31,10 @@ const i18nMessages = {
       voiceMusic: {
         title: '歌手歌曲挑战',
         description: '歌词接龙，人机还是原声'
-      }
+      },
+      // 开发中提示
+      hardModeInDevelopment: '困难模式功能开发中',
+      voiceInDevelopment: '开发中，于后续版本中上线'
     },
     common: {
       close: '关闭'
@@ -251,7 +254,11 @@ const i18nMessages = {
       inviteTitle: '邀请好友获得金币',
       inviteContent: '每位用户至多邀请五位好友，邀请越多，金币奖励越多！',
       copyButton: '复制邀请码并分享',
-      codeCopied: '邀请码已复制'
+      codeCopied: '邀请码已复制',
+      // 开发中提示
+      signInInDevelopment: '签到功能开发中',
+      drawInDevelopment: '大转盘功能开发中',
+      giftInDevelopment: '打卡好礼功能开发中'
     }
   },
   en: {
@@ -295,7 +302,10 @@ const i18nMessages = {
       voiceMusic: {
         title: 'Singer Lyrics Challenge',
         description: 'Lyrics relay, human or original voice?'
-      }
+      },
+      // Development messages
+      hardModeInDevelopment: 'Hard mode under development',
+      voiceInDevelopment: 'Coming in future updates'
     },
     common: {
       close: 'Close'
@@ -515,7 +525,11 @@ const i18nMessages = {
       inviteTitle: 'Invite Friends for Coins',
       inviteContent: 'Each user can invite up to 5 friends. More invitations, more coin rewards!',
       copyButton: 'Copy Code and Share',
-      codeCopied: 'Code copied!'
+      codeCopied: 'Code copied!',
+      // Development messages
+      signInInDevelopment: 'Sign-in feature under development',
+      drawInDevelopment: 'Lucky draw under development',
+      giftInDevelopment: 'Gift rewards under development'
     }
   }
 }

@@ -553,8 +553,11 @@ createPage({
       wx.vibrateShort({ type: 'light' });
     }
     const inviter = app.globalData.openid || '';
+    const language = wx.getStorageSync('language') || 'zh';
     const shareOptions = {
-      title: `别笑，你试你也分不清人类和AI！`,
+      title: language === 'en' 
+        ? 'Think you can tell human from AI? Try and see!' 
+        : `别笑，你试你也分不清人类和AI！`,
       path: `/pages/welcome/welcome?inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };
@@ -602,8 +605,11 @@ createPage({
   
   onShareAppMessage() {
     const inviter = app.globalData.openid || '';
+    const language = wx.getStorageSync('language') || 'zh';
     return {
-      title: `别笑，你试你也分不清人类和AI！`,
+      title: language === 'en' 
+        ? 'Think you can tell human from AI? Try and see!' 
+        : '别笑，你试你也分不清人类和AI！',
       path: `/pages/welcome/welcome?inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };
@@ -611,8 +617,11 @@ createPage({
 
   onShareTimeline() {
     const inviter = app.globalData.openid || '';
+    const language = wx.getStorageSync('language') || 'zh';
     return {
-      title: '别笑，你试你也分不清人类和AI！',
+      title: language === 'en' 
+        ? 'Think you can tell human from AI? Try and see!' 
+        : '别笑，你试你也分不清人类和AI！',
       query: `inviter=${inviter}`,
       imageUrl: '/assets/figma/share2.png'
     };

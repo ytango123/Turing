@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  },
   "navigationBarTitleText": "首页",
   "navigationStyle": "custom"
 } 
